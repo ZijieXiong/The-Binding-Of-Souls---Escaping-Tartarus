@@ -6,10 +6,10 @@ dungeon = ds_grid_create(_dungeonWidth, _dungeonHeight);
 roomList = ds_list_create();
 
 // Room size ranges
-roomWidthMin = 22;
-roomWidthMax = 26;
-roomHeightMin = 22;
-roomHeightMax = 26;
+roomWidthMin = 24;
+roomWidthMax = 34;
+roomHeightMin = 24;
+roomHeightMax = 34;
 
 // Hallway size ranges
 hallwayLengthMin = 6;
@@ -648,7 +648,7 @@ CreateHazards = function(rm) {
 CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 	var enemyCount = irandom_range(1 + currLevel div 3,2 + currLevel div 3);
 	var placedEnemies = [];
-	var enemyDistance = 64;
+	var enemyDistance = 128;
 	var wallDistance = 64;
 	for(var j = 0; j<enemyCount;j++){
 		var enemyType = choose(oTracker, oTurret);
