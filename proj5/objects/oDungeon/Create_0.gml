@@ -36,6 +36,8 @@ richochetProb = 0.2;
 highestLevel = 0;
 currLevel = 0;
 
+chestProb = 50;
+
 GenerateNewDungeon = function() {
 	
 	// Reset dungeon data
@@ -383,6 +385,21 @@ GenerateNewDungeon = function() {
 	var reloadRoom = ds_list_find_value(deadEnd, reloadRand);
 	var reloadRoomInd = reloadRoom.roomInd;
 	
+	var chestRoomInd = noone;
+	var haveChestRoom = random_range(0,100)<=chestProb;
+	
+	if(haveChestRoom)
+	{
+		chestRoomInd = reloadRoomInd;
+		while(chestRoomInd==reloadRoomInd)
+		{
+			var chestRand = irandom(ds_list_size(deadEnd) - 1);
+			var chestRoom = ds_list_find_value(deadEnd, chestRand);
+			chestRoomInd = chestRoom.roomInd;
+		}
+		
+	}
+	
 	//Generating rooms
 	var richochetRoom = noone;
 	show_debug_message(string(global.richochet));
@@ -393,7 +410,7 @@ GenerateNewDungeon = function() {
 		var rm = ds_list_find_value(roomList,i);
 		var enemy = [];
 		var hazards = [];
-		if(i!=0 && i!=reloadRoomInd){
+		if(i!=0 && i!=reloadRoomInd && i!=chestRoomInd){
 			hazards = CreateHazards(rm);
 			enemy = CreateEnemies(rm.x1,rm.y1,rm.x2,rm.y2, hazards);
 			if(richochetRoom==i){
@@ -411,6 +428,13 @@ GenerateNewDungeon = function() {
 	centerY = (reloadRoom.roomId.y1 + reloadRoom.roomId.y2) / 2;
 	
 	var exitInstance = instance_create_layer(centerX * CELL_SIZE, centerY * CELL_SIZE, "Dungeon", oDunReload);
+	if(haveChestRoom)
+	{
+		centerX = (chestRoom.roomId.x1 + chestRoom.roomId.x2) / 2;
+		centerY = (chestRoom.roomId.y1 + chestRoom.roomId.y2) / 2;
+		var chestInstance = instance_create_layer(centerX * CELL_SIZE, centerY * CELL_SIZE, "Dungeon", obj_chest);
+	}
+
 
 
 	
