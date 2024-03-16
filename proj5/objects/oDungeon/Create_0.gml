@@ -36,7 +36,7 @@ richochetProb = 0.2;
 highestLevel = 0;
 currLevel = 0;
 
-chestProb = 50;
+chestProb = 100;
 
 GenerateNewDungeon = function() {
 	
@@ -69,6 +69,9 @@ GenerateNewDungeon = function() {
 		instance_destroy();
 	}
 	with(oBomb){
+		instance_destroy();
+	}
+	with(obj_chest){
 		instance_destroy();
 	}
 	var _dungeonWidth = ds_grid_width(dungeon);
