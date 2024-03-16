@@ -74,6 +74,15 @@ GenerateNewDungeon = function() {
 	with(obj_chest){
 		instance_destroy();
 	}
+	with(obj_upgrade_UI){
+		instance_destroy();
+	}
+	for(var i = 0; i < ds_list_size(global.upgrade_objs); i++)
+	{
+		var upgrade_obj = ds_list_find_value(global.upgrade_objs, i);
+		instance_destroy(upgrade_obj);
+	}
+	ds_list_clear(global.upgrade_objs);
 	var _dungeonWidth = ds_grid_width(dungeon);
 	var _dungeonHeight = ds_grid_height(dungeon);
 	

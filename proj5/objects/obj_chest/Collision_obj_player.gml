@@ -2,10 +2,14 @@
 // You can write your code in this editor
 
 var chosenUpgrades = chooseTwoDifferentUpgrades(global.upgrade_pool);
-if (array_length(chosenUpgrades) > 0) {
-    show_debug_message(string(chosenUpgrades[0]));
-} else {
-    show_debug_message("No upgrades chosen.");
+
+var midX = display_get_width() / 2;
+var midY = display_get_height() / 2;
+
+for (var i = 0; i < 2; i++) {
+    var upgradeInstance = instance_create_layer(midX + (i * 300 - 150), midY, "Instances", asset_get_index(chosenUpgrades[i]));
+    upgradeInstance.createUI(midX + (i * 300 - 150), midY);
+	ds_list_add(global.upgrade_objs, upgradeInstance);
 }
 
 instance_destroy();

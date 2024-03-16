@@ -50,6 +50,8 @@ ds_map_add(global.common_upgrade, "obj_upgrade_riffle", 5);
 
 initUpgradePool();
 
+global.upgrade_objs = ds_list_create();
+
 /// @description initUpgradePool();
 /// @param none
 /// @return none

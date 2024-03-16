@@ -17,7 +17,6 @@
   ],
   "ResourceOrderSettings":[
     {"name":"obj_blackout","order":18,"path":"objects/obj_blackout/obj_blackout.yy",},
-    {"name":"obj_bullet","order":1,"path":"objects/obj_bullet/obj_bullet.yy",},
     {"name":"obj_camera","order":3,"path":"objects/obj_camera/obj_camera.yy",},
     {"name":"obj_chest","order":19,"path":"objects/obj_chest/obj_chest.yy",},
     {"name":"obj_game_over_screen","order":15,"path":"objects/obj_game_over_screen/obj_game_over_screen.yy",},
@@ -30,6 +29,7 @@
     {"name":"obj_upgrade_riffle","order":3,"path":"objects/obj_upgrade_riffle/obj_upgrade_riffle.yy",},
     {"name":"obj_upgrade_shotgun","order":1,"path":"objects/obj_upgrade_shotgun/obj_upgrade_shotgun.yy",},
     {"name":"obj_wall","order":4,"path":"objects/obj_wall/obj_wall.yy",},
+    {"name":"obj_upgrade_UI","order":4,"path":"objects/obj_upgrade_UI/obj_upgrade_UI.yy",},
     {"name":"oBomb","order":16,"path":"objects/oBomb/oBomb.yy",},
     {"name":"oDunReload","order":8,"path":"objects/oDunReload/oDunReload.yy",},
     {"name":"oEnemBullet","order":7,"path":"objects/oEnemBullet/oEnemBullet.yy",},
