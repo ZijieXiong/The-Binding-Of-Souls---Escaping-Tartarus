@@ -6,10 +6,10 @@ dungeon = ds_grid_create(_dungeonWidth, _dungeonHeight);
 roomList = ds_list_create();
 
 // Room size ranges
-roomWidthMin = 22;
-roomWidthMax = 26;
-roomHeightMin = 22;
-roomHeightMax = 26;
+roomWidthMin = 24;
+roomWidthMax = 34;
+roomHeightMin = 24;
+roomHeightMax = 34;
 
 // Hallway size ranges
 hallwayLengthMin = 6;
@@ -35,6 +35,8 @@ richochetProb = 0.2;
 
 highestLevel = 0;
 currLevel = 0;
+
+chestProb = 100;
 
 GenerateNewDungeon = function() {
 	
@@ -67,6 +69,9 @@ GenerateNewDungeon = function() {
 		instance_destroy();
 	}
 	with(oBomb){
+		instance_destroy();
+	}
+	with(obj_chest){
 		instance_destroy();
 	}
 	var _dungeonWidth = ds_grid_width(dungeon);
@@ -383,6 +388,21 @@ GenerateNewDungeon = function() {
 	var reloadRoom = ds_list_find_value(deadEnd, reloadRand);
 	var reloadRoomInd = reloadRoom.roomInd;
 	
+	var chestRoomInd = noone;
+	var haveChestRoom = random_range(0,100)<=chestProb;
+	
+	if(haveChestRoom)
+	{
+		chestRoomInd = reloadRoomInd;
+		while(chestRoomInd==reloadRoomInd)
+		{
+			var chestRand = irandom(ds_list_size(deadEnd) - 1);
+			var chestRoom = ds_list_find_value(deadEnd, chestRand);
+			chestRoomInd = chestRoom.roomInd;
+		}
+		
+	}
+	
 	//Generating rooms
 	var richochetRoom = noone;
 	show_debug_message(string(global.richochet));
@@ -393,7 +413,7 @@ GenerateNewDungeon = function() {
 		var rm = ds_list_find_value(roomList,i);
 		var enemy = [];
 		var hazards = [];
-		if(i!=0 && i!=reloadRoomInd){
+		if(i!=0 && i!=reloadRoomInd && i!=chestRoomInd){
 			hazards = CreateHazards(rm);
 			enemy = CreateEnemies(rm.x1,rm.y1,rm.x2,rm.y2, hazards);
 			if(richochetRoom==i){
@@ -411,6 +431,13 @@ GenerateNewDungeon = function() {
 	centerY = (reloadRoom.roomId.y1 + reloadRoom.roomId.y2) / 2;
 	
 	var exitInstance = instance_create_layer(centerX * CELL_SIZE, centerY * CELL_SIZE, "Dungeon", oDunReload);
+	if(haveChestRoom)
+	{
+		centerX = (chestRoom.roomId.x1 + chestRoom.roomId.x2) / 2;
+		centerY = (chestRoom.roomId.y1 + chestRoom.roomId.y2) / 2;
+		var chestInstance = instance_create_layer(centerX * CELL_SIZE, centerY * CELL_SIZE, "Dungeon", obj_chest);
+	}
+
 
 
 	
@@ -648,7 +675,7 @@ CreateHazards = function(rm) {
 CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 	var enemyCount = irandom_range(1 + currLevel div 3,2 + currLevel div 3);
 	var placedEnemies = [];
-	var enemyDistance = 64;
+	var enemyDistance = 128;
 	var wallDistance = 64;
 	for(var j = 0; j<enemyCount;j++){
 		var enemyType = choose(oTracker, oTurret);

@@ -1,3 +1,4 @@
+show_debug_message("close to turret");
 var _inst = instance_create_layer(x,y,"Instances", oEnemBullet);
 _inst.direction = (360/bulletSpiralCount) * bulletSpiralIterator;
 _inst.speed = bulletSpiralSpeed;
