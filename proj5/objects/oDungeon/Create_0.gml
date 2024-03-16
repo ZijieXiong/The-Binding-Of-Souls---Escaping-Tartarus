@@ -53,7 +53,7 @@ GenerateNewDungeon = function() {
 	with(oTurret){
 		instance_destroy();
 	}
-	with(obj_bullet){
+	with(obj_pistol_bullet){
 		instance_destroy();
 	}
 	with(oEnemBullet){

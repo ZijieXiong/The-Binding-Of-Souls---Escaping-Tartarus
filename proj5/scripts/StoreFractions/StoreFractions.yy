@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"StoreFractions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"StoreFractions",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

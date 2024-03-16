@@ -1,4 +1,5 @@
 direction = 0;
 canBomb = true;
-bouncesLeft = 3;
+damage = 20;
+bouncesLeft = 0;
 timer = room_speed * 3
