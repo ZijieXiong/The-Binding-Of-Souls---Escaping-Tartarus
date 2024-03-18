@@ -3,3 +3,5 @@
 upgradeName = "";
 upgradeDescription = "";
 parentUpgrade = noone;
+hovering = false;
+clicked = false;

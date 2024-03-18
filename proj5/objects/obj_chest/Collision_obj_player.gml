@@ -3,8 +3,8 @@
 
 var chosenUpgrades = chooseTwoDifferentUpgrades(global.upgrade_pool);
 
-var midX = display_get_width() / 2;
-var midY = display_get_height() / 2;
+var midX = display_get_gui_width() / 2;
+var midY = display_get_gui_height() / 2;
 
 for (var i = 0; i < 2; i++) {
     var upgradeInstance = instance_create_layer(midX + (i * 300 - 150), midY, "Instances", asset_get_index(chosenUpgrades[i]));
