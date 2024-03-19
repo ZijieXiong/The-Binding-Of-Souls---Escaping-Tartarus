@@ -3,14 +3,29 @@
 
 vx = 0;
 vy = 0;
-
+self.image_xscale = 1.5;
+self.image_yscale = 1.5;
 #region Inputs
+sprite_index=spr_player_idle;
 
-if (keyboard_check(ord("W"))) vy -= moveSpeed;
-if (keyboard_check(ord("S"))) vy += moveSpeed;
-if (keyboard_check(ord("A"))) vx -= moveSpeed;
-if (keyboard_check(ord("D"))) vx += moveSpeed;
-
+if (keyboard_check(ord("W"))) {
+	vy -= moveSpeed;
+	sprite_index=spr_player_run;
+}
+if (keyboard_check(ord("S"))) {
+	vy += moveSpeed;
+	self.image_xscale = -1.5;
+	sprite_index=spr_player_run;
+}
+if (keyboard_check(ord("A"))) {
+	vx -= moveSpeed;
+	self.image_xscale = -1.5;
+	sprite_index=spr_player_run;
+}
+if (keyboard_check(ord("D"))) {
+	vx += moveSpeed;
+	sprite_index=spr_player_run;
+}
 shoot = mouse_check_button(mb_left);
 bombInput = mouse_check_button(mb_right);
 
@@ -49,9 +64,14 @@ var halfHeight = sprite_get_height(sprite_index) / 2;
 x = clamp(x, halfWidth, room_width - halfWidth);
 y = clamp(y, halfHeight, room_height - halfHeight);
 
-self.image_xscale = 0.5;
-self.image_yscale = 0.5;
-self.image_angle = point_direction(x, y, mouse_x, mouse_y);
+
+//self.image_angle = point_direction(x, y, mouse_x, mouse_y); remove rotate of the player
+// Flip sprite based on mouse position
+if (mouse_x < x) {
+    self.image_xscale = -1.5; // Flip to face left
+} else {
+    self.image_xscale = 1.5;  // Face right
+}
 
 if (global.richochet) {
 	bulletLimit = 10;
