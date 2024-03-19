@@ -24,8 +24,8 @@
   "name":"spr_laser_beam",
   "nineSlice":{
     "$GMNineSliceData":"",
-    "bottom":25,
-    "enabled":false,
+    "bottom":26,
+    "enabled":true,
     "guideColour":[4294902015,4294902015,4294902015,4294902015,],
     "highlightColour":1728023040,
     "highlightStyle":0,
