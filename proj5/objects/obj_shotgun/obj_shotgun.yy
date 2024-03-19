@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"test_gun_shotgun",
+    "path":"sprites/test_gun_shotgun/test_gun_shotgun.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
