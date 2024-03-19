@@ -31,7 +31,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"test_gun_pistol",
+    "path":"sprites/test_gun_pistol/test_gun_pistol.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
