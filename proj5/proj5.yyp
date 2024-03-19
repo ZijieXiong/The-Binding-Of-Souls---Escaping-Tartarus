@@ -115,8 +115,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rmDungeon","path":"rooms/rmDungeon/rmDungeon.yy",},},
     {"roomId":{"name":"playerTesting","path":"rooms/playerTesting/playerTesting.yy",},},
+    {"roomId":{"name":"rmDungeon","path":"rooms/rmDungeon/rmDungeon.yy",},},
     {"roomId":{"name":"rmGameOver","path":"rooms/rmGameOver/rmGameOver.yy",},},
     {"roomId":{"name":"rmGetUpgrade","path":"rooms/rmGetUpgrade/rmGetUpgrade.yy",},},
   ],
