@@ -5,4 +5,6 @@ trackerShooterLives = 3;
 self.image_xscale = 0.7;
 self.image_yscale = 0.7;
 
+_health = 50
+
 dm = instance_find(oDungeon, 0);

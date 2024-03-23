@@ -1,1 +1,0 @@
-turretLives -= 1;

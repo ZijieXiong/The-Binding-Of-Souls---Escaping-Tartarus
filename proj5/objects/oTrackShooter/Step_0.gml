@@ -14,6 +14,7 @@ function shoot() {
 	}
 }
 
+/*
 if (trackerShooterLives <= 0) {
 	chance = random(100);
 	if (chance <= global.dropRate && dm.currLevel > 10) {

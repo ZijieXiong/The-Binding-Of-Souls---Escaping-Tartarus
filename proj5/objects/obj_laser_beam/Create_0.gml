@@ -2,7 +2,7 @@ xEnd = 0;     // breakpoints
 yEnd = 0;
 length_laser = 0; // total length used to determine and draw laser
 
-damage = 0;
+damage = 5;
 bouncesLeft = 0;
 timer = room_speed * 3
 

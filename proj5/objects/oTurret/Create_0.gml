@@ -9,4 +9,6 @@ bulletSpiralSpeed = 2; // Speed of the bullet
 self.image_xscale = 2;
 self.image_yscale = 2;
 
+_health = 50;
+
 dm = instance_find(oDungeon, 0);

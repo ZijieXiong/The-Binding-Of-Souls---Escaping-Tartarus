@@ -1,16 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_pistol",
+  "%Name":"oEnemiesParent",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_pistol",
+  "name":"oEnemiesParent",
   "overriddenProperties":[],
   "parent":{
-    "name":"weapons",
-    "path":"folders/Objects/weapons.yy",
+    "name":"Enemies",
+    "path":"folders/Objects/Enemies.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"test_gun_pistol",
-    "path":"sprites/test_gun_pistol/test_gun_pistol.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

@@ -1,6 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-
 #region Inputs
 shoot = mouse_check_button(mb_left);
 #endregion
@@ -8,6 +5,12 @@ shoot = mouse_check_button(mb_left);
 x = obj_player.x;
 y = obj_player.y;
 direction = point_direction(x,y,mouse_x,mouse_y);
+
+if (direction > 90) && (direction < 270) image_yscale = -1; else image_yscale = 1;
+
+image_angle = direction;
+depth = obj_player.depth-1;
+
 
 if (shoot){
 	rifle_timer += 1
@@ -29,7 +32,7 @@ if(mouse_check_button_released(mb_left)){
 	if(rifle_cooldown <= 0){
 		show_debug_message("fires")
 		audio_play_sound(laserShoot, 0, false);
-		var bullet = instance_create_layer(obj_player.x, obj_player.y, "Instances", obj_rifle_bullet);
+		var bullet = instance_create_layer(x+lengthdir_x(24,direction),y+lengthdir_y(24,direction), "Instances", obj_rifle_bullet);
 	    bullet.speed = 13;
 	    bullet.direction= point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y);
 	    bullet.image_angle = bullet.direction;

@@ -17,7 +17,7 @@ function shoot() {
 	//shoot(); // Get ready to (potentially) spawn the next bullet
 	bulletSpiralIterator++; // Increment the iterator
 }
-
+/*
 if (turretLives <= 0) {
 	chance = random(100);
 	if (chance <= global.dropRate && dm.currLevel > 10) {

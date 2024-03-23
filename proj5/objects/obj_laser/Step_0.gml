@@ -1,9 +1,16 @@
+x = obj_player.x;
+y = obj_player.y;
+direction = point_direction(x,y,mouse_x,mouse_y);
 
+if (direction > 90) && (direction < 270) image_yscale = -1; else image_yscale = 1;
+
+image_angle = direction;
+depth = obj_player.depth-1;
 
 if mouse_check_button(mb_left){
 	if (current_duration < max_duration) && (current_overheat == -1) {
-		if !(instance_exists(obj_laser_beam)){
-			instance_create_layer(mouse_x , mouse_y, "Instances",obj_laser_beam  );
+		if (!instance_exists(obj_laser_beam)){
+			instance_create_layer(x+lengthdir_x(64,direction),y+lengthdir_y(64,direction), "Instances",obj_laser_beam  );
 		}
 		current_duration+=1
 	}else{
