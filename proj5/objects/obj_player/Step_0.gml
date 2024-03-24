@@ -9,21 +9,21 @@ self.image_yscale = 1.5;
 sprite_index=spr_player_idle;
 
 if (keyboard_check(ord("W"))) {
-	vy -= moveSpeed;
+	vy -= moveSpeed * global.playerSpeedMultiplier;
 	sprite_index=spr_player_run;
 }
 if (keyboard_check(ord("S"))) {
-	vy += moveSpeed;
+	vy += moveSpeed * global.playerSpeedMultiplier;
 	self.image_xscale = -1.5;
 	sprite_index=spr_player_run;
 }
 if (keyboard_check(ord("A"))) {
-	vx -= moveSpeed;
+	vx -= moveSpeed * global.playerSpeedMultiplier;
 	self.image_xscale = -1.5;
 	sprite_index=spr_player_run;
 }
 if (keyboard_check(ord("D"))) {
-	vx += moveSpeed;
+	vx += moveSpeed * global.playerSpeedMultiplier;
 	sprite_index=spr_player_run;
 }
 shoot = mouse_check_button(mb_left);

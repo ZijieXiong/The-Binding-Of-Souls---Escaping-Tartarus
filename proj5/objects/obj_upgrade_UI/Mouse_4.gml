@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-show_debug_message("clicked");
+/*show_debug_message("clicked");
 if (parentUpgrade != noone) {
 	show_debug_message("upgrade");
     with (parentUpgrade) {
@@ -11,4 +11,4 @@ if (parentUpgrade != noone) {
 	{
 	    instance_destroy();
 	}
-}
+}*/

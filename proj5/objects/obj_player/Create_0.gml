@@ -1,6 +1,6 @@
 playerLives = 3;
 attack_cooldown = 0;
-moveSpeed = 6.5;
+moveSpeed = 3;
 grazeMeter = 0;
 
 canBomb = false;

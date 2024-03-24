@@ -12,9 +12,9 @@ roomHeightMin = 24;
 roomHeightMax = 34;
 
 // Hallway size ranges
-hallwayLengthMin = 6;
-hallwayLengthMax = 16;
-hallwayWidthMin = 4;
+hallwayLengthMin = 8;
+hallwayLengthMax = 12;
+hallwayWidthMin = 5;
 hallwayWidthMax = 6;
 
 // Room to create a new room from
@@ -413,11 +413,12 @@ GenerateNewDungeon = function() {
 	}
 	
 	//Generating rooms
+	/*
 	var richochetRoom = noone;
 	show_debug_message(string(global.richochet));
 	if(!global.richochet && random_range(0,1)<richochetProb){
 		richochetRoom = irandom_range(1, ds_list_size(roomList)-1);
-	}
+	}*/
 	for(var i = 0; i < ds_list_size(roomList);i++){
 		var rm = ds_list_find_value(roomList,i);
 		var enemy = [];
@@ -425,10 +426,10 @@ GenerateNewDungeon = function() {
 		if(i!=0 && i!=reloadRoomInd && i!=chestRoomInd){
 			hazards = CreateHazards(rm);
 			enemy = CreateEnemies(rm.x1,rm.y1,rm.x2,rm.y2, hazards);
-			if(richochetRoom==i){
+			/*if(richochetRoom==i){
 				CreateRichochet(rm, hazards);
-			}
-			else if(random_range(0,1) < healthBoostProb && !isBoostGenerated){
+			}*/
+			if(random_range(0,1) < healthBoostProb && !isBoostGenerated){
 				CreateHealthBooster(rm, hazards);
 			}
 		}
@@ -737,6 +738,8 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 	}
 	return placedEnemies;
 }
+
+initParas();
 
 GenerateNewDungeon();
 

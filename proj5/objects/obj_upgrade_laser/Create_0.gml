@@ -2,6 +2,7 @@
 // You can write your code in this editor
 function applyUpgrade()
 {
+	selectRoute(4);
 	show_debug_message("Upgrade applied: Laser");
 }
 

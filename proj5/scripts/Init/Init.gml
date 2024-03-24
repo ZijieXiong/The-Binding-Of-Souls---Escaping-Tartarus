@@ -18,6 +18,9 @@ global.healthBoost = 0;
 global.spawns = [oHeartBooster, oRichochet, oBomb];
 global.dropRate = 20;
 
+global.dmgMultiplier = 1;
+global.playerSpeedMultiplier = 1;
+
 #endregion
 
 enum CELL_TYPES {
@@ -47,10 +50,18 @@ ds_map_add(global.common_upgrade, "obj_upgrade_damage", 30);
 ds_map_add(global.common_upgrade, "obj_upgrade_shotgun", 5);
 ds_map_add(global.common_upgrade, "obj_upgrade_laser", 5);
 ds_map_add(global.common_upgrade, "obj_upgrade_riffle", 5);
+ds_map_add(global.common_upgrade, "obj_upgrade_speed", 10);
 
-initUpgradePool();
 
 global.upgrade_objs = ds_list_create();
+
+/// @description reset all parameters to original value
+function initParas()
+{
+	global.dmgMultiplier = 1;
+	global.playerSpeedMultiplier = 1;
+	initUpgradePool();
+}
 
 /// @description initUpgradePool();
 /// @param none
@@ -58,15 +69,10 @@ global.upgrade_objs = ds_list_create();
 function initUpgradePool()
 {
 	global.upgrade_pool = ds_map_create();
-	var keys = ds_map_keys_to_array(global.common_upgrade);
-    
-    for (var i = 0; i < array_length(keys); ++i) {
-        var key = keys[i];
-        var value = ds_map_find_value(global.common_upgrade, key);
-        ds_map_add(global.upgrade_pool, key, value);
-    }
+	addSelecteRouteUpgrades(global.common_upgrade);
     
     // test
+	var keys = ds_map_keys_to_array(global.upgrade_pool);
     for (var i = 0; i < array_length(keys); ++i) {
         var key = keys[i];
         show_debug_message(key + ": " + string(ds_map_find_value(global.upgrade_pool, key)));
@@ -138,4 +144,50 @@ function chooseTwoDifferentUpgrades(upgradesMap) {
     ds_map_destroy(tempMap);
 
     return chosenKeys;
+}
+
+/// @description drop all routes from upgrade pool once selected a route
+function dropUpgradeRoutes(){
+	var keysToDelete = ["obj_upgrade_shotgun", "obj_upgrade_laser", "obj_upgrade_riffle"];
+	for (var i = 0; i < array_length(keysToDelete); i++) {
+		var _key = keysToDelete[i];
+		if (ds_map_exists(global.upgrade_pool, _key)) {
+		    ds_map_delete(global.upgrade_pool, _key);
+		}
+	}
+}
+
+/// @description select a certain upgrade route
+/// @param route: integer
+function selectRoute(route){
+	var player = instance_find(obj_player, 0);
+	switch(route)
+	{
+		case 2:
+			player.ChangeWeapon(2);
+			addSelecteRouteUpgrades(global.shotgun_upgrade);
+			break;
+		case 3:
+			player.ChangeWeapon(3);
+			addSelecteRouteUpgrades(global.riffle_upgrade);
+			break;
+		case 4:
+			player.ChangeWeapon(4);
+			addSelecteRouteUpgrades(global.laser_upgrade);
+			break;
+	}
+	dropUpgradeRoutes();
+}
+
+/// @description add all upgrades in a certain route to upgrade pool
+/// @description upgrade route map variable
+function addSelecteRouteUpgrades(routeUpgrade)
+{
+	var keys = ds_map_keys_to_array(routeUpgrade);
+    
+    for (var i = 0; i < array_length(keys); ++i) {
+        var key = keys[i];
+        var value = ds_map_find_value(routeUpgrade, key);
+        ds_map_add(global.upgrade_pool, key, value);
+    }
 }

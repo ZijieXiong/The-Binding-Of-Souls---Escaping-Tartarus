@@ -1,3 +1,4 @@
+event_inherited();
 attack_cooldown = 0;
 turretLives = 3;
 

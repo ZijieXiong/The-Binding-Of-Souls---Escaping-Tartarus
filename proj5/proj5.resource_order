@@ -34,6 +34,7 @@
     {"name":"obj_upgrade_shotgun","order":1,"path":"objects/obj_upgrade_shotgun/obj_upgrade_shotgun.yy",},
     {"name":"obj_upgrade_UI","order":4,"path":"objects/obj_upgrade_UI/obj_upgrade_UI.yy",},
     {"name":"obj_wall","order":4,"path":"objects/obj_wall/obj_wall.yy",},
+    {"name":"obj_upgrade_speed","order":5,"path":"objects/obj_upgrade_speed/obj_upgrade_speed.yy",},
     {"name":"oBomb","order":16,"path":"objects/oBomb/oBomb.yy",},
     {"name":"oDunReload","order":8,"path":"objects/oDunReload/oDunReload.yy",},
     {"name":"oEnemBullet","order":7,"path":"objects/oEnemBullet/oEnemBullet.yy",},
