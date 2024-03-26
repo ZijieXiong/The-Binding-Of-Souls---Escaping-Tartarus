@@ -1,4 +1,4 @@
-#macro CELL_SIZE 16
+#macro CELL_SIZE 48
 #macro ENEM_DISTANCE 250
 #macro ENEM_HEALTH 2
 
