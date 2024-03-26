@@ -4,7 +4,7 @@ y = obj_player.y + lengthdir_y(26, direction);
 
 direction = point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y)
 
-var max_length = 900
+var max_length = 200
 
 for (i = 0; i < max_length; i++ ) {
 

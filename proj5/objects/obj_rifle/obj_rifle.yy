@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"test_gun_rifle",
-    "path":"sprites/test_gun_rifle/test_gun_rifle.yy",
+    "name":"spr_rifle",
+    "path":"sprites/spr_rifle/spr_rifle.yy",
   },
   "spriteMaskId":null,
   "visible":true,
