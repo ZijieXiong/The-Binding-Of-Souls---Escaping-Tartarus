@@ -15,3 +15,5 @@ increase_damage = 0
 cooldown = interval
 bullet_speed = 13
 increase_cooldown = 0
+
+_reload = false
