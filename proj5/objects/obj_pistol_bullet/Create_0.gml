@@ -1,5 +1,5 @@
 event_inherited();
 
-damage = 10;
+damage = 20;
 bouncesLeft = 0;
 timer = room_speed * 3

@@ -18,6 +18,8 @@ global.healthBoost = 0;
 global.spawns = [oHeartBooster, oRichochet, oBomb];
 global.dropRate = 20;
 
+global.currLevel = 0;
+
 global.dmgMultiplier = 1;
 global.playerSpeedMultiplier = 1;
 
@@ -48,7 +50,7 @@ global.upgrade_pool = ds_map_create();
 
 ds_map_add(global.common_upgrade, "obj_upgrade_damage", 30);
 ds_map_add(global.common_upgrade, "obj_upgrade_shotgun", 5);
-ds_map_add(global.common_upgrade, "obj_upgrade_laser", 5);
+//ds_map_add(global.common_upgrade, "obj_upgrade_laser", 5);
 ds_map_add(global.common_upgrade, "obj_upgrade_riffle", 5);
 ds_map_add(global.common_upgrade, "obj_upgrade_speed", 10);
 
@@ -60,6 +62,7 @@ function initParas()
 {
 	global.dmgMultiplier = 1;
 	global.playerSpeedMultiplier = 1;
+	global.currLevel = 0;
 	initUpgradePool();
 }
 

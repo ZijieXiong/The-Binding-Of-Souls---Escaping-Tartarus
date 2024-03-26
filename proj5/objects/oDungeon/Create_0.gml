@@ -367,7 +367,7 @@ GenerateNewDungeon = function() {
 		playerLives = playerInstance.playerLives;
 	}
 	var healthBoostProb;
-	if(currLevel>=10){
+	if(global.currLevel>=10){
 		healthBoostProb = 0.1;
 	}
 	else if(playerLives <=1){
@@ -683,14 +683,14 @@ CreateHazards = function(rm) {
 }
 
 CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
-	var enemyCount = irandom_range(1 + currLevel div 3,2 + currLevel div 3);
+	var enemyCount = irandom_range(2 + global.currLevel div 2,3 + global.currLevel div 2);
 	var placedEnemies = [];
 	var enemyDistance = 128;
 	var wallDistance = 64;
 	for(var j = 0; j<enemyCount;j++){
 		var enemyType = choose(oTracker, oTurret);
 		
-		if (currLevel > 30 || global.richochet) {
+		if (global.currLevel > 3 || global.richochet) {
 			enemyType = choose(oTracker, oTurret, oTrackShooter);
 		}
 		
