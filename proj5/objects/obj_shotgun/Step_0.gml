@@ -33,7 +33,7 @@ if(!_reload){
 			   if(_bullet == 0){
 			   	   _shotgun_shell.direction = dir  
 			   }
-			    if(_bullet == 1){
+			   else if(_bullet == 1){
 			       _shotgun_shell.direction = dir + 20  
 			   }else if(_bullet == 2){
 				   _shotgun_shell.direction = dir- 20 
