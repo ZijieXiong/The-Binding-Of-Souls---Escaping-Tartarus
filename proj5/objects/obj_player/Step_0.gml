@@ -9,23 +9,33 @@ self.image_yscale = 1.5;
 sprite_index=spr_player_idle;
 
 if (keyboard_check(ord("W"))) {
-	vy -= moveSpeed * global.playerSpeedMultiplier;
+	vy -= moveSpeed;
 	sprite_index=spr_player_run;
 }
 if (keyboard_check(ord("S"))) {
-	vy += moveSpeed * global.playerSpeedMultiplier;
+	vy += moveSpeed;
 	self.image_xscale = -1.5;
 	sprite_index=spr_player_run;
 }
 if (keyboard_check(ord("A"))) {
-	vx -= moveSpeed * global.playerSpeedMultiplier;
+	vx -= moveSpeed;
 	self.image_xscale = -1.5;
 	sprite_index=spr_player_run;
 }
 if (keyboard_check(ord("D"))) {
-	vx += moveSpeed * global.playerSpeedMultiplier;
+	vx += moveSpeed;
 	sprite_index=spr_player_run;
 }
+
+var totalSpeed = point_distance(0, 0, vx, vy);
+if (totalSpeed > moveSpeed) {
+    vx = (vx / totalSpeed) * moveSpeed * global.playerSpeedMultiplier;
+    vy = (vy / totalSpeed) * moveSpeed * global.playerSpeedMultiplier;
+} else {
+    vx *= global.playerSpeedMultiplier;
+    vy *= global.playerSpeedMultiplier;
+}
+
 shoot = mouse_check_button(mb_left);
 bombInput = mouse_check_button(mb_right);
 
@@ -48,10 +58,10 @@ if (place_meeting(x, nextY, obj_wall)) {
 }
 
 //normalize vector
-if (vx + vy > point_distance(0,0,vx,vy)) {
+/*if (vx + vy > point_distance(0,0,vx,vy)) {
 	vx *= moveSpeed/point_distance(0,0,vx,vy);
 	vy *= moveSpeed/point_distance(0,0,vx,vy);
-}
+}*/
 
 x += vx;
 y += vy;
@@ -136,10 +146,11 @@ if (playerLives <= 0) {
 	room_goto(rmGameOver);
 	playerLives = 3;
 	global.richochet = false;
-	global.graze = false;
-	global.healthBoost = 0;
+	//global.graze = false;
+	//global.healthBoost = 0;
 }
 
+/*
 if (bombInput && canBomb) {
 	playerTimer = room_speed * 0.5;
 	bomb();
@@ -148,3 +159,5 @@ if (bombInput && canBomb) {
 if (global.graze) {
 	doGraze();
 }
+	*/
+	

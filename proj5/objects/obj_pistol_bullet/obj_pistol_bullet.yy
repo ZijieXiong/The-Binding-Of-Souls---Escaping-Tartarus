@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bullet",
-    "path":"sprites/spr_bullet/spr_bullet.yy",
+    "name":"spr_pistol_bullet",
+    "path":"sprites/spr_pistol_bullet/spr_pistol_bullet.yy",
   },
   "spriteMaskId":null,
   "visible":true,
