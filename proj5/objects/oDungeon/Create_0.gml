@@ -6,16 +6,16 @@ dungeon = ds_grid_create(_dungeonWidth, _dungeonHeight);
 roomList = ds_list_create();
 
 // Room size ranges
-roomWidthMin = 24;
-roomWidthMax = 34;
-roomHeightMin = 24;
-roomHeightMax = 34;
+roomWidthMin = 8;
+roomWidthMax = 10;
+roomHeightMin = 8;
+roomHeightMax = 10;
 
 // Hallway size ranges
-hallwayLengthMin = 8;
-hallwayLengthMax = 12;
-hallwayWidthMin = 5;
-hallwayWidthMax = 6;
+hallwayLengthMin = 3;
+hallwayLengthMax = 4;
+hallwayWidthMin = 1;
+hallwayWidthMax = 2;
 
 // Room to create a new room from
 currentRoom = noone;
@@ -43,7 +43,7 @@ GenerateNewDungeon = function() {
 	// Reset dungeon data
 	iterations = 0;
 	ds_list_clear(roomList);
-	tilemap_clear(layer_tilemap_get_id(layer_get_id("Tiles")), 0);
+	tilemap_clear(layer_tilemap_get_id(layer_get_id("Tiles_1")), 0);
 	with(obj_wall){
 		instance_destroy();
 	}
@@ -83,6 +83,8 @@ GenerateNewDungeon = function() {
 		instance_destroy(upgrade_obj);
 	}
 	ds_list_clear(global.upgrade_objs);
+	
+	
 	var _dungeonWidth = ds_grid_width(dungeon);
 	var _dungeonHeight = ds_grid_height(dungeon);
 	
@@ -325,13 +327,13 @@ GenerateNewDungeon = function() {
 			var _tileInd = 0;
 		
 			if (_cell = CELL_TYPES.ROOM) {
-				_tileInd = 1;
+				_tileInd = 11;
 			}
 			else if (_cell == CELL_TYPES.HALLWAY) {
-				_tileInd = 2;
+				_tileInd = 21;
 			}
 			
-			tilemap_set(layer_tilemap_get_id(layer_get_id("Tiles")), _tileInd, xx, yy);
+			tilemap_set(layer_tilemap_get_id(layer_get_id("Tiles_1")), _tileInd, xx, yy);
 		}
 	}
 	
@@ -469,14 +471,13 @@ CreateRoom = function(_x1, _y1, _x2, _y2) {
         tilemap_set(layer_tilemap_get_id(layer_get_id("WallTile")), wallTileIndex, _x1 - 1, yy);
         tilemap_set(layer_tilemap_get_id(layer_get_id("WallTile")), wallTileIndex, _x2 + 1, yy);
     }*/
-	var cellSize = 16;
     for (var xx = _x1 - 1; xx <= _x2 + 1; xx++) {
-        instance_create_layer(xx * cellSize, (_y1 - 1) * cellSize, "WallTile", obj_wall);
-        instance_create_layer(xx * cellSize, (_y2 + 1) * cellSize, "WallTile", obj_wall);
+        instance_create_layer(xx * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "WallTile", obj_wall);
+        instance_create_layer(xx * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "WallTile", obj_wall);
     }
     for (var yy = _y1 - 1; yy <= _y2 + 1; yy++) {
-        instance_create_layer((_x1 - 1) * cellSize, yy * cellSize, "WallTile", obj_wall);
-        instance_create_layer((_x2 + 1) * cellSize, yy * cellSize, "WallTile", obj_wall);
+        instance_create_layer((_x1 - 1) * CELL_SIZE, yy * CELL_SIZE, "WallTile", obj_wall);
+        instance_create_layer((_x2 + 1) * CELL_SIZE, yy * CELL_SIZE, "WallTile", obj_wall);
     }
 	
 	return currentRoom;
@@ -509,30 +510,29 @@ CreateHallway = function(_x1, _y1, _x2, _y2, isNorthSouth) {
         }
     }*/
 	
-	var cellSize = 16;
     
     if (isNorthSouth) {
         for (var temp_y = _y1; temp_y <= _y2; temp_y++) {
-            instance_create_layer((_x1 - 1) * cellSize, temp_y * cellSize, "Dungeon", obj_wall);
-            instance_create_layer((_x2 + 1) * cellSize, temp_y * cellSize, "Dungeon", obj_wall);
+            instance_create_layer((_x1 - 1) * CELL_SIZE, temp_y * CELL_SIZE, "Dungeon", obj_wall);
+            instance_create_layer((_x2 + 1) * CELL_SIZE, temp_y * CELL_SIZE, "Dungeon", obj_wall);
         }
 		for (var temp_x = _x1; temp_x <= _x2; temp_x++) {
-            var instanceLeft = instance_position((temp_x) * cellSize, _y1 * cellSize, obj_wall);
+            var instanceLeft = instance_position((temp_x) * CELL_SIZE, _y1 * CELL_SIZE, obj_wall);
 	        if (instanceLeft != noone) instance_destroy(instanceLeft);
 
-	        var instanceRight = instance_position((temp_x) * cellSize, _y2 * cellSize, obj_wall);
+	        var instanceRight = instance_position((temp_x) * CELL_SIZE, _y2 * CELL_SIZE, obj_wall);
 	        if (instanceRight != noone) instance_destroy(instanceRight);
 	        }
     } else {
         for (var temp_x = _x1; temp_x <= _x2; temp_x++) {
-            instance_create_layer(temp_x * cellSize, (_y1 - 1) * cellSize, "Dungeon", obj_wall);
-            instance_create_layer(temp_x * cellSize, (_y2 + 1) * cellSize, "Dungeon", obj_wall);
+            instance_create_layer(temp_x * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "Dungeon", obj_wall);
+            instance_create_layer(temp_x * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "Dungeon", obj_wall);
         }
 		for (var temp_y = _y1; temp_y <= _y2; temp_y++) {
-	        var instanceLeft = instance_position((_x1) * cellSize, temp_y * cellSize, obj_wall);
+	        var instanceLeft = instance_position((_x1) * CELL_SIZE, temp_y * CELL_SIZE, obj_wall);
 	        if (instanceLeft != noone) instance_destroy(instanceLeft);
 
-	        var instanceRight = instance_position((_x2) * cellSize, temp_y * cellSize, obj_wall);
+	        var instanceRight = instance_position((_x2) * CELL_SIZE, temp_y * CELL_SIZE, obj_wall);
 	        if (instanceRight != noone) instance_destroy(instanceRight);
 	    }
     }
