@@ -12,6 +12,9 @@ image_angle = direction;
 depth = obj_player.depth-1;
 
 
+
+
+
 if (shoot){
 	rifle_timer += 1
 	if(!_reload && increase_damage < max_damage_increase && rifle_timer > room_speed*0.3){
@@ -19,8 +22,9 @@ if (shoot){
 	increase_cooldown += cooldown_increase_pre_frame
 	bullet_speed = 18
 	show_debug_message(increase_damage)
-	}
 	pressed = true
+	}
+	
 }
 
 if(increase_damage > max_damage_increase){
