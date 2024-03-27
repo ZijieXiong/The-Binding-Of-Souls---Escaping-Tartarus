@@ -1,5 +1,4 @@
 dm.richochetProb += 0.05;
-global.currLevel += 1;
 
 
 /*if (instance_number(oTracker) <= 0 && instance_number(oTurret) <= 0
