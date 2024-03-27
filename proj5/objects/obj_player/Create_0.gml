@@ -12,6 +12,9 @@ bulletLimit = 3;
 
 playerTimer = room_speed * 0.5
 
+window_set_cursor(cr_none)
+cursor_sprite = spr_cursor
+
 current_weapon = instance_create_layer(x,y,"Instances",obj_pistol)
 
 function ChangeWeapon(arg){
