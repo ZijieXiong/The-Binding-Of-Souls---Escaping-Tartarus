@@ -2,6 +2,7 @@ if (place_meeting(x, y, [oTracker, oTurret])) {
 	instance_destroy();
 }
 
+translation += speed;
 
 if (global.richochet) {
 	show_debug_message(string(timer));
@@ -20,6 +21,10 @@ if (global.richochet) {
 
 else {
 	if (place_meeting(x, y, [obj_wall])) {
+		instance_destroy();
+	}
+	else if(translation >= max_trans)
+	{
 		instance_destroy();
 	}
 }

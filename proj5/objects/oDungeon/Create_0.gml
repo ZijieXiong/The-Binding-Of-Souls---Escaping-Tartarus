@@ -12,9 +12,9 @@ roomHeightMin = 8;
 roomHeightMax = 10;
 
 // Hallway size ranges
-hallwayLengthMin = 3;
-hallwayLengthMax = 4;
-hallwayWidthMin = 1;
+hallwayLengthMin = 4;
+hallwayLengthMax = 5;
+hallwayWidthMin = 2;
 hallwayWidthMax = 2;
 
 // Room to create a new room from
@@ -401,6 +401,15 @@ GenerateNewDungeon = function() {
 	var reloadRoom = ds_list_find_value(deadEnd, reloadRand);
 	var reloadRoomInd = reloadRoom.roomInd;
 	
+	
+	if(global.currLevel < 2)
+	{
+		chestProb = 100;
+	}
+	else
+	{
+		chestProb = max(20,  80 - 5 * global.currLevel);
+	}
 	var chestRoomInd = noone;
 	var haveChestRoom = random_range(0,100)<=chestProb;
 	
@@ -664,7 +673,7 @@ CreateHazards = function(rm) {
 		var hazard;
 		var posX, posY;
 		var validPosition = false;
-		var size = random_range(2,3);
+		var size = random_range(0.8,1.2);
 		hazard = instance_create_layer(0,0,"WallTile", obj_wall);
 		var iter = 0;
 		while(!validPosition && iter < 50){
@@ -736,10 +745,10 @@ CreateHazards = function(rm) {
 }
 
 CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
-	var enemyCount = irandom_range(2 + global.currLevel div 2,3 + global.currLevel div 2);
+	var enemyCount = irandom_range(2 + global.currLevel div 3,3 + global.currLevel div 3);
 	var placedEnemies = [];
-	var enemyDistance = 128;
-	var wallDistance = 64;
+	var enemyDistance = 60;
+	var wallDistance = 70;
 	for(var j = 0; j<enemyCount;j++){
 		var enemyType = choose(oTracker, oTurret);
 		
@@ -753,7 +762,7 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 		enemy = instance_create_layer(0,0,"Dungeon", enemyType);
 		var iter = 0;
 		
-		while(!validPosition && iter < 50){
+		while(!validPosition && iter < 100){
 			iter++;
 			var adjusted_x1 = _x1 * CELL_SIZE + wallDistance;
 	        var adjusted_y1 = _y1 * CELL_SIZE + wallDistance;

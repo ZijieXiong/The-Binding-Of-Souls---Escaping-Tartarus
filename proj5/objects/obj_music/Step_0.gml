@@ -16,7 +16,8 @@ else{
 		timer--;
 		if(timer==0)
 		{
-			audio_play_sound(snd_background, 0, true);
+			var bgm = audio_play_sound(snd_background, 0, true);
+			audio_sound_gain(bgm, 0.2, 0);
 			timer = -1;
 		}
 	}

@@ -22,6 +22,7 @@ global.currLevel = 0;
 
 global.dmgMultiplier = 1;
 global.playerSpeedMultiplier = 1;
+global.shotgunRange = 1;
 
 #endregion
 
@@ -48,12 +49,16 @@ global.laser_upgrade = ds_map_create();
 global.riffle_upgrade = ds_map_create();
 global.upgrade_pool = ds_map_create();
 
-ds_map_add(global.common_upgrade, "obj_upgrade_damage", 30);
+//common upgrade init
+ds_map_add(global.common_upgrade, "obj_upgrade_damage", 20);
 ds_map_add(global.common_upgrade, "obj_upgrade_shotgun", 5);
 //ds_map_add(global.common_upgrade, "obj_upgrade_laser", 5);
 ds_map_add(global.common_upgrade, "obj_upgrade_riffle", 5);
-ds_map_add(global.common_upgrade, "obj_upgrade_speed", 10);
+ds_map_add(global.common_upgrade, "obj_upgrade_speed", 20);
 
+//shotgun upgrade init
+ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_range", 10);
+ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_bullet", 10);
 
 global.upgrade_objs = ds_list_create();
 
@@ -62,7 +67,9 @@ function initParas()
 {
 	global.dmgMultiplier = 1;
 	global.playerSpeedMultiplier = 1;
+	global.shotgunRange = 1;
 	global.currLevel = 0;
+
 	initUpgradePool();
 }
 
