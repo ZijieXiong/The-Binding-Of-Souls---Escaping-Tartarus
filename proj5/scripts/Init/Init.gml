@@ -23,6 +23,7 @@ global.currLevel = 0;
 global.dmgMultiplier = 1;
 global.playerSpeedMultiplier = 1;
 global.shotgunRange = 1;
+global.rifflePenetrate = false;
 
 #endregion
 
@@ -59,6 +60,9 @@ ds_map_add(global.common_upgrade, "obj_upgrade_speed", 20);
 //shotgun upgrade init
 ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_range", 10);
 ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_bullet", 10);
+
+//riffle upgrade init
+ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_penetrate", 5);
 
 global.upgrade_objs = ds_list_create();
 

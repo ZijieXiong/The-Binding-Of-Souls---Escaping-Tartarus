@@ -5,13 +5,20 @@ if (point_distance(obj_player.x, obj_player.y, x, y) < ENEM_DISTANCE) {
 		shoot();
 		attack_cooldown = 0;
 	}
-
-	
+}
+else{
+	bulletSpiralIterator = 0;
 }
 
 function shoot() {
 	var _inst = instance_create_layer(x,y,"Instances", oEnemBullet);
-	_inst.direction = (360/bulletSpiralCount) * bulletSpiralIterator;
+	if(bulletSpiralIterator == 0){
+		initial_direction = point_direction(x,y,obj_player.x, obj_player.y);
+		_inst.direction = initial_direction;
+	}
+	else{
+		_inst.direction = (360/bulletSpiralCount) * bulletSpiralIterator + initial_direction;
+	}
 	_inst.speed = bulletSpiralSpeed;
 
 	//shoot(); // Get ready to (potentially) spawn the next bullet
