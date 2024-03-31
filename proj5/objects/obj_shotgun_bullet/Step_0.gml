@@ -2,7 +2,7 @@ event_inherited();
 
 translation += speed;
 
-if(_shotgun_split) && translation >= (max_trans / 2){
+if(_shotgun_split) && translation >= (max_trans * (2/3)){
 	instance_destroy();
 	var bullet1 = instance_create_layer(x,y,"Instances",obj_shotgun_bullet);
 	var bullet2 = instance_create_layer(x,y,"Instances",obj_shotgun_bullet);

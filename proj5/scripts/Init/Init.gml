@@ -30,7 +30,7 @@ global.playerSpeedMultiplier = 1;
 global.shotgunRange = 1;
 global.split_angel = 15;
 global.shotgun_bulletcount = 3
-global.shotgun_split = true;
+global.shotgun_split = false;
 //riffle
 global.rifflePenetrate = false;
 
@@ -59,21 +59,23 @@ global.laser_upgrade = ds_map_create();
 global.riffle_upgrade = ds_map_create();
 global.upgrade_pool = ds_map_create();
 
+
 //common upgrade init
 ds_map_add(global.common_upgrade, "obj_upgrade_damage", 20);
-ds_map_add(global.common_upgrade, "obj_upgrade_shotgun", 5);
+ds_map_add(global.common_upgrade, "obj_upgrade_plus_one_bounce", 20);
+ds_map_add(global.common_upgrade, "obj_upgrade_shotgun", 1000);
 //ds_map_add(global.common_upgrade, "obj_upgrade_laser", 5);
-ds_map_add(global.common_upgrade, "obj_upgrade_riffle", 1000);
+ds_map_add(global.common_upgrade, "obj_upgrade_riffle", 5);
 ds_map_add(global.common_upgrade, "obj_upgrade_speed", 20);
 ds_map_add(global.common_upgrade, "obj_upgrade_shooting_interval", 20);
 
-//shotgun upgrade init
+//shotgun upgrade init 
 ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_range", 10);
 ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_bullet", 10);
-
+ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_bullet_split", 1000);
 //riffle upgrade init
 ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_penetrate", 5);
-ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_charging_speed", 10000);
+ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_charging_speed", 5);
 
 global.upgrade_objs = ds_list_create();
 
