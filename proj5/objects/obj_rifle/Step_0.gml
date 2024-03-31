@@ -18,8 +18,8 @@ depth = obj_player.depth-1;
 if (shoot){
 	rifle_timer += 1
 	if(!_reload && increase_damage < max_damage_increase && rifle_timer > room_speed*0.3){
-	increase_damage += damage_increase_pre_frame
-	increase_cooldown += cooldown_increase_pre_frame
+	increase_damage += damage_increase_pre_frame * global.riffleChargingSpeed;
+	increase_cooldown += cooldown_increase_pre_frame * global.riffleChargingSpeed;
 	bullet_speed = 18
 	show_debug_message(increase_damage)
 	pressed = true
@@ -45,10 +45,10 @@ if(mouse_check_button_released(mb_left)){
 		}else{
 			sprite_index = spr_rifle_shoot_normal
 		}
-		rifle_cooldown = room_speed * (interval+increase_cooldown);
+		rifle_cooldown = room_speed * (interval+increase_cooldown) * global.shootingIntervalMultiplier;
 		
 		var _reload_total_frames = sprite_get_number(spr_rifle_reload)
-		var _reload_fps = _reload_total_frames / (max(0.3,interval+increase_cooldown))
+		var _reload_fps = _reload_total_frames / (max(0.3,(interval+increase_cooldown)*global.shootingIntervalMultiplier))
 		sprite_set_speed(spr_rifle_reload, _reload_fps, spritespeed_framespersecond)
 		
 		_reload = true

@@ -1,7 +1,7 @@
 
 
 pistol_cooldown = 0
-interval = 0.5
+interval = 0.5;
 
 /*
 weapons[0] = ds_map_create();

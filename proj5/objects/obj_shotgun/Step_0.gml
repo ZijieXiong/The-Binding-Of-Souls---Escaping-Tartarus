@@ -45,12 +45,12 @@ if(!_reload){
             }
 		}
 
-		shotgun_cooldown = room_speed * interval;
+		shotgun_cooldown = room_speed * interval * global.shootingIntervalMultiplier;
 	}
 }
 
 var _reload_total_frames = sprite_get_number(spr_shotgun_reload)
-var _reload_fps = _reload_total_frames / (interval)
+var _reload_fps = _reload_total_frames / (interval * global.shootingIntervalMultiplier)
 sprite_set_speed(spr_shotgun_reload, _reload_fps, spritespeed_framespersecond)
 
 //if(shotgun_cooldown != 0){

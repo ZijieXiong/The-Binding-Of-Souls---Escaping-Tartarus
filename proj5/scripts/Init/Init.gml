@@ -56,6 +56,7 @@ ds_map_add(global.common_upgrade, "obj_upgrade_shotgun", 5);
 //ds_map_add(global.common_upgrade, "obj_upgrade_laser", 5);
 ds_map_add(global.common_upgrade, "obj_upgrade_riffle", 5);
 ds_map_add(global.common_upgrade, "obj_upgrade_speed", 20);
+ds_map_add(global.common_upgrade, "obj_upgrade_shooting_interval", 20);
 
 //shotgun upgrade init
 ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_range", 10);
@@ -71,7 +72,14 @@ function initParas()
 {
 	global.dmgMultiplier = 1;
 	global.playerSpeedMultiplier = 1;
+	global.shootingIntervalMultiplier = 1;
+	
 	global.shotgunRange = 1;
+	
+	global.rifflePenetrate = false;
+	global.riffleChargingSpeed = 2;
+	
+	
 	global.currLevel = 0;
 
 	initUpgradePool();

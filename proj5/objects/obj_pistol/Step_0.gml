@@ -22,7 +22,7 @@ if (shoot) {
 		bullet.speed = 13;
 		bullet.direction= point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y);
 		bullet.image_angle = bullet.direction;
-		pistol_cooldown = room_speed * interval;
+		pistol_cooldown = room_speed * interval * global.shootingIntervalMultiplier;
 	}
 }
 
