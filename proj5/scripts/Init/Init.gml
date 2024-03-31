@@ -87,6 +87,7 @@ function initParas()
 	global.shootingIntervalMultiplier = 1;
 	
 	global.shotgunRange = 1;
+	global.shotgun_split = false;
 	
 	global.rifflePenetrate = false;
 	global.riffleChargingSpeed = 1;
@@ -94,6 +95,7 @@ function initParas()
 	
 	global.currLevel = 0;
 	global.bouncesLeft = 0;
+	global.richochet = false;
 
 	initUpgradePool();
 }
