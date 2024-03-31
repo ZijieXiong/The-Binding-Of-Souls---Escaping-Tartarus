@@ -752,7 +752,7 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 	for(var j = 0; j<enemyCount;j++){
 		var enemyType = choose(oTracker, oTurret);
 		
-		if (global.currLevel > 3 || global.richochet) {
+		if (global.currLevel > 3) {
 			enemyType = choose(oTracker, oTurret, oTrackShooter);
 		}
 		

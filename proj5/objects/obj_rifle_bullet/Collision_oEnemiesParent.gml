@@ -17,6 +17,6 @@ if(ds_list_find_index(hitEnemies, enemyInstance) == -1){
 
 
 
-if(_rifflePenetrate){
+if(!_rifflePenetrate){
 	instance_destroy();
 }

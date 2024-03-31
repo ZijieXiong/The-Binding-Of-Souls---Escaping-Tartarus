@@ -3,6 +3,10 @@
 function applyUpgrade()
 {
 	global.shootingIntervalMultiplier -= 0.1;
+	if(global.shootingIntervalMultiplier <= 0.3)
+	{
+		ds_map_delete(global.upgrade_pool, "obj_upgrade_shooting_interval");
+	}
 	show_debug_message("Upgrade applied: Shooting interval");
 }
 

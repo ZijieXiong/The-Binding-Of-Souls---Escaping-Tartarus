@@ -63,7 +63,7 @@ global.upgrade_pool = ds_map_create();
 ds_map_add(global.common_upgrade, "obj_upgrade_damage", 20);
 ds_map_add(global.common_upgrade, "obj_upgrade_shotgun", 5);
 //ds_map_add(global.common_upgrade, "obj_upgrade_laser", 5);
-ds_map_add(global.common_upgrade, "obj_upgrade_riffle", 5);
+ds_map_add(global.common_upgrade, "obj_upgrade_riffle", 1000);
 ds_map_add(global.common_upgrade, "obj_upgrade_speed", 20);
 ds_map_add(global.common_upgrade, "obj_upgrade_shooting_interval", 20);
 
@@ -73,6 +73,7 @@ ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_bullet", 10);
 
 //riffle upgrade init
 ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_penetrate", 5);
+ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_charging_speed", 10000);
 
 global.upgrade_objs = ds_list_create();
 
@@ -86,7 +87,7 @@ function initParas()
 	global.shotgunRange = 1;
 	
 	global.rifflePenetrate = false;
-	global.riffleChargingSpeed = 2;
+	global.riffleChargingSpeed = 1;
 	
 	
 	global.currLevel = 0;
