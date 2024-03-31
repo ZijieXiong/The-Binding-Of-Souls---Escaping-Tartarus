@@ -167,10 +167,10 @@ GenerateNewDungeon = function() {
 						}
                  
 						if (_roomY2 > currentRoom.y2) {
-							_maxRange = currentRoom.y2 - (_hallwayWidth - 1) - 1;
+							_maxRange = currentRoom.y2 - (_hallwayWidth - 1);
 						}
 						else {
-							_maxRange = _roomY2 - (_hallwayWidth - 1) - 1;
+							_maxRange = _roomY2 - (_hallwayWidth - 1);
 						}
                  
 						_hallwayY1 = _minRange + round(abs(_maxRange - _minRange) / 2);
@@ -189,10 +189,10 @@ GenerateNewDungeon = function() {
 						}
                  
 						if (_roomY2 > currentRoom.y2) {
-							_maxRange = currentRoom.y2 - (_hallwayWidth - 1) - 1;
+							_maxRange = currentRoom.y2 - (_hallwayWidth - 1);
 						}
 						else {
-							_maxRange = _roomY2 - (_hallwayWidth - 1) - 1;
+							_maxRange = _roomY2 - (_hallwayWidth - 1);
 						}
                  
 						_hallwayY1 = _minRange + round(abs(_maxRange - _minRange) / 2);
