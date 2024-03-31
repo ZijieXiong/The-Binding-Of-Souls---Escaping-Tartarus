@@ -12,8 +12,12 @@
 
 
 global.graze = false;
-global.richochet = false;
+global.richochet = true;
+global.bouncesLeft = 0
+
 global.healthBoost = 0;
+
+global.bulletSpeed = 13
 
 global.spawns = [oHeartBooster, oRichochet, oBomb];
 global.dropRate = 20;
@@ -22,7 +26,12 @@ global.currLevel = 0;
 
 global.dmgMultiplier = 1;
 global.playerSpeedMultiplier = 1;
+//shotgun
 global.shotgunRange = 1;
+global.split_angel = 15;
+global.shotgun_bulletcount = 3
+global.shotgun_split = true;
+//riffle
 global.rifflePenetrate = false;
 
 #endregion
@@ -81,6 +90,7 @@ function initParas()
 	
 	
 	global.currLevel = 0;
+	global.bouncesLeft = 0;
 
 	initUpgradePool();
 }

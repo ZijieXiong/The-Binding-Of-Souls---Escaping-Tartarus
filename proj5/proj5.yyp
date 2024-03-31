@@ -89,6 +89,7 @@
     {"id":{"name":"obj_wall_wallcover","path":"objects/obj_wall_wallcover/obj_wall_wallcover.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"obj_upgrade_shooting_interval","path":"objects/obj_upgrade_shooting_interval/obj_upgrade_shooting_interval.yy",},},
+    {"id":{"name":"obj_bullet_parent","path":"objects/obj_bullet_parent/obj_bullet_parent.yy",},},
     {"id":{"name":"oBomb","path":"objects/oBomb/oBomb.yy",},},
     {"id":{"name":"oDungeon","path":"objects/oDungeon/oDungeon.yy",},},
     {"id":{"name":"oDunReload","path":"objects/oDunReload/oDunReload.yy",},},
