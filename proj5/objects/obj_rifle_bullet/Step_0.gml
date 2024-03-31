@@ -1,8 +1,10 @@
+event_inherited();
+
 /*if (place_meeting(x, y, [oTracker, oTurret])) {
 	instance_destroy();
 }*/
 
-
+/*
 if (global.richochet) {
 	show_debug_message(string(timer));
 	if (timer > 0) {timer--;}

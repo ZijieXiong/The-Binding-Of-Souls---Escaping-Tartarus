@@ -1,0 +1,1 @@
+_bouncesLeft = global.bouncesLeft

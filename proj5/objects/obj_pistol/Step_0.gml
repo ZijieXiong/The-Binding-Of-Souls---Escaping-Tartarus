@@ -19,7 +19,7 @@ if (shoot) {
 		audio_play_sound(laserShoot, 0, false);
 		sprite_index = spr_pistol_shoot
 		var bullet = instance_create_layer(x+lengthdir_x(5,direction),y+lengthdir_y(5,direction), "Instances", obj_pistol_bullet);
-		bullet.speed = 13;
+		bullet.speed = global.bulletSpeed;
 		bullet.direction= point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y);
 		bullet.image_angle = bullet.direction;
 		pistol_cooldown = room_speed * interval;
