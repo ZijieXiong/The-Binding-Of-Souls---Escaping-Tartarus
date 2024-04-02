@@ -748,12 +748,12 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 	var enemyCount = irandom_range(2 + global.currLevel div 3,3 + global.currLevel div 3);
 	var placedEnemies = [];
 	var enemyDistance = 60;
-	var wallDistance = 70;
+	var wallDistance = 80;
 	for(var j = 0; j<enemyCount;j++){
-		var enemyType = choose(oTracker, oTurret);
+		var enemyType = choose(oTracker, oTurret, oSlime);
 		
 		if (global.currLevel > 3) {
-			enemyType = choose(oTracker, oTurret, oTrackShooter);
+			enemyType = choose(oTracker, oTurret, oTrackShooter, oSlime);
 		}
 		
 		var enemy;

@@ -24,6 +24,15 @@ function shoot() {
 	//shoot(); // Get ready to (potentially) spawn the next bullet
 	bulletSpiralIterator++; // Increment the iterator
 }
+
+if(_health <= 0)
+{
+	die();
+}
+
+function die(){
+	instance_destroy();
+}
 /*
 if (turretLives <= 0) {
 	chance = random(100);

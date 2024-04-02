@@ -27,6 +27,7 @@ global.currLevel = 0;
 global.dmgMultiplier = 1;
 global.playerSpeedMultiplier = 1;
 global.shootingIntervalMultiplier = 1;
+
 //shotgun
 global.shotgunRange = 1;
 global.split_angel = 15;
@@ -71,11 +72,14 @@ ds_map_add(global.common_upgrade, "obj_upgrade_shotgun", 5);
 ds_map_add(global.common_upgrade, "obj_upgrade_riffle", 5);
 ds_map_add(global.common_upgrade, "obj_upgrade_speed", 20);
 ds_map_add(global.common_upgrade, "obj_upgrade_shooting_interval", 20);
+ds_map_add(global.common_upgrade, "obj_upgrade_revive", 1);
+ds_map_add(global.common_upgrade, "obj_upgrade_add_upgrade_option", 1);
 
 //shotgun upgrade init 
 ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_range", 10);
 ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_bullet", 10);
 ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_bullet_split", 5);
+ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_block_attack", 5);
 //riffle upgrade init
 ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_penetrate", 5);
 ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_charging_speed", 5);
@@ -86,19 +90,29 @@ global.upgrade_objs = ds_list_create();
 /// @description reset all parameters to original value
 function initParas()
 {
+	global.upgradeNum = 2;
+	
 	global.dmgMultiplier = 1;
 	global.playerSpeedMultiplier = 1;
 	global.shootingIntervalMultiplier = 1;
+	global.revive = 0;
 	
 	global.shotgunRange = 1;
 	global.shotgun_split = false;
+	global.shotgunBlockAttack = false;
+	global.shotgunBlockPenetrate = false;
+	global.shotgun_bulletcount = 3;
 	
 	global.rifflePenetrate = false;
 	global.riffleChargingSpeed = 1;
+
 	global.riffle_bullet_explosive = false;
+
 	
 	
 	global.currLevel = 0;
+	global.playerFreeze = false;
+	global.globalFreeze = false;
 	global.bouncesLeft = 0;
 	global.richochet = false;
 
@@ -138,7 +152,7 @@ function calculateTotalProbability(upgradesMap) {
 }
 
 /// @description chooseTwoDifferentUpgrades
-/// @param upgradesMap
+/// @param upgradesMap variable that stores upgrades
 /// @return chosenUpgrades
 
 function chooseTwoDifferentUpgrades(upgradesMap) {
@@ -183,6 +197,43 @@ function chooseTwoDifferentUpgrades(upgradesMap) {
     }
 
     // clear
+    ds_map_destroy(tempMap);
+
+    return chosenKeys;
+}
+
+/// @description choose n different upgrades
+/// @param upgradesMap variable that stores upgrades
+/// @param n number of upgrades
+/// @return chosenKeys chosen upgrades
+function chooseNDifferentUpgrades(upgradesMap, n) {
+    var chosenKeys = [];
+    var tempMap = ds_map_create();
+    ds_map_copy(tempMap, upgradesMap);
+
+    n = min(n, ds_map_size(tempMap));
+
+    while (array_length(chosenKeys) < n) {
+        var totalProbability = calculateTotalProbability(tempMap);
+        if (totalProbability <= 0) break;
+        
+        var randomProb = random(totalProbability);
+        var cumulativeProb = 0;
+        var keys = ds_map_keys_to_array(tempMap);
+        
+        for (var i = 0; i < array_length(keys); ++i) {
+            var key = keys[i];
+            var prob = ds_map_find_value(tempMap, key);
+            cumulativeProb += prob;
+            
+            if (randomProb <= cumulativeProb) {
+                array_push(chosenKeys, key);
+                ds_map_delete(tempMap, key);
+                break;
+            }
+        }
+    }
+
     ds_map_destroy(tempMap);
 
     return chosenKeys;
