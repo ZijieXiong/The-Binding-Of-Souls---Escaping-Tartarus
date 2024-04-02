@@ -26,6 +26,8 @@ global.currLevel = 0;
 
 global.dmgMultiplier = 1;
 global.playerSpeedMultiplier = 1;
+global.shootingIntervalMultiplier = 1;
+
 //shotgun
 global.shotgunRange = 1;
 global.split_angel = 15;
@@ -33,6 +35,8 @@ global.shotgun_bulletcount = 3
 global.shotgun_split = false;
 //riffle
 global.rifflePenetrate = false;
+global.riffle_bullet_explosive = true;
+global.riffleChargingSpeed = 1;
 
 #endregion
 
@@ -100,6 +104,7 @@ function initParas()
 	
 	global.rifflePenetrate = false;
 	global.riffleChargingSpeed = 1;
+	global.riffle_bullet_explosive = true;
 	
 	
 	global.currLevel = 0;
