@@ -1,10 +1,16 @@
 var enemyInstance = other.id;
 
+
+
 if(ds_list_find_index(hitEnemies, enemyInstance) == -1){
+	ds_list_add(hitEnemies, enemyInstance);
+	if _explosive{
+    instance_create_layer(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),"Instances",obj_explosion);
+	}else{
 	var dmg = damage * global.dmgMultiplier;
 	var _instance = instance_create_layer(x,y,"UI_Layer", obj_damage_number);
 	_instance.damage = dmg;
-	ds_list_add(hitEnemies, enemyInstance);
+	
 	with(other){
 		_flash = 1;
 		show_debug_message(_health)
@@ -13,8 +19,9 @@ if(ds_list_find_index(hitEnemies, enemyInstance) == -1){
 			instance_destroy();
 		}
 	}
-}
+	}
 
+}
 
 
 if(!_rifflePenetrate){

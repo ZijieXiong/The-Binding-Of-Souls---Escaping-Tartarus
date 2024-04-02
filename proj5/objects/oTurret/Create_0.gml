@@ -10,6 +10,6 @@ initial_direction = 0;
 self.image_xscale = 2;
 self.image_yscale = 2;
 
-_health = 50 + global.currLevel * 10;
+_health = 1550 + global.currLevel * 10;
 
 dm = instance_find(oDungeon, 0);
