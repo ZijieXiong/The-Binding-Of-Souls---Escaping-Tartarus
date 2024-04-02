@@ -6,76 +6,101 @@ vy = 0;
 self.image_xscale = 1.5;
 self.image_yscale = 1.5;
 #region Inputs
-sprite_index=spr_player_idle;
+if(!global.playerFreeze && !global.globalFreeze)
+{
+	sprite_index=spr_player_idle;
+	if (keyboard_check(ord("W"))) {
+		vy -= moveSpeed;
+		sprite_index=spr_player_run;
+	}
+	if (keyboard_check(ord("S"))) {
+		vy += moveSpeed;
+		self.image_xscale = -1.5;
+		sprite_index=spr_player_run;
+	}
+	if (keyboard_check(ord("A"))) {
+		vx -= moveSpeed;
+		self.image_xscale = -1.5;
+		sprite_index=spr_player_run;
+	}
+	if (keyboard_check(ord("D"))) {
+		vx += moveSpeed;
+		sprite_index=spr_player_run;
+	}
 
-if (keyboard_check(ord("W"))) {
-	vy -= moveSpeed * global.playerSpeedMultiplier;
-	sprite_index=spr_player_run;
+	var totalSpeed = point_distance(0, 0, vx, vy);
+	if (totalSpeed > moveSpeed) {
+	    vx = (vx / totalSpeed) * moveSpeed * global.playerSpeedMultiplier;
+	    vy = (vy / totalSpeed) * moveSpeed * global.playerSpeedMultiplier;
+	} else {
+	    vx *= global.playerSpeedMultiplier;
+	    vy *= global.playerSpeedMultiplier;
+	}
+
+	shoot = mouse_check_button(mb_left);
+	bombInput = mouse_check_button(mb_right);
+
+	if (keyboard_check_pressed(ord("1"))) ChangeWeapon(1);
+	if (keyboard_check_pressed(ord("2"))) ChangeWeapon(2);
+	if (keyboard_check_pressed(ord("3"))) ChangeWeapon(3);
+	if (keyboard_check_pressed(ord("4"))) ChangeWeapon(4);
+	//show_debug_message(obj_pistol.name);
+	collisionTileIndex = 16;
+
+	var nextX = x + vx;
+	var nextY = y + vy;
+
+	if (place_meeting(nextX, y, obj_wall)) {
+	    vx = 0;
+	}
+
+	if (place_meeting(x, nextY, obj_wall)) {
+	    vy = 0;
+	}
+
+	//normalize vector
+	/*if (vx + vy > point_distance(0,0,vx,vy)) {
+		vx *= moveSpeed/point_distance(0,0,vx,vy);
+		vy *= moveSpeed/point_distance(0,0,vx,vy);
+	}*/
+
+	x += vx;
+	y += vy;
+
+	var halfWidth = sprite_get_width(sprite_index) / 2;
+	var halfHeight = sprite_get_height(sprite_index) / 2;
+
+	#endregion
+
+	x = clamp(x, halfWidth, room_width - halfWidth);
+	y = clamp(y, halfHeight, room_height - halfHeight);
+
+
+	//self.image_angle = point_direction(x, y, mouse_x, mouse_y); remove rotate of the player
+	// Flip sprite based on mouse position
+	if (mouse_x < x) {
+	    self.image_xscale = -1.5; // Flip to face left
+	} else {
+	    self.image_xscale = 1.5;  // Face right
+	}
+	
+	if (playerLives <= 0) {
+		//teleport to death limbo room
+		if(!death_animation_started){
+			instance_destroy(current_weapon);
+			sprite_index = spr_player_death;
+			image_index = 0;
+			image_speed = 0.2;
+			global.playerFreeze = true;
+			death_animation_started = true;
+		}
+		//global.graze = false;
+		//global.healthBoost = 0;
+	}
 }
-if (keyboard_check(ord("S"))) {
-	vy += moveSpeed * global.playerSpeedMultiplier;
-	self.image_xscale = -1.5;
-	sprite_index=spr_player_run;
-}
-if (keyboard_check(ord("A"))) {
-	vx -= moveSpeed * global.playerSpeedMultiplier;
-	self.image_xscale = -1.5;
-	sprite_index=spr_player_run;
-}
-if (keyboard_check(ord("D"))) {
-	vx += moveSpeed * global.playerSpeedMultiplier;
-	sprite_index=spr_player_run;
-}
-shoot = mouse_check_button(mb_left);
-bombInput = mouse_check_button(mb_right);
-
-if (keyboard_check_pressed(ord("1"))) ChangeWeapon(1);
-if (keyboard_check_pressed(ord("2"))) ChangeWeapon(2);
-if (keyboard_check_pressed(ord("3"))) ChangeWeapon(3);
-if (keyboard_check_pressed(ord("4"))) ChangeWeapon(4);
-//show_debug_message(obj_pistol.name);
-collisionTileIndex = 16;
-
-var nextX = x + vx;
-var nextY = y + vy;
-
-if (place_meeting(nextX, y, obj_wall)) {
-    vx = 0;
-}
-
-if (place_meeting(x, nextY, obj_wall)) {
-    vy = 0;
-}
-
-//normalize vector
-if (vx + vy > point_distance(0,0,vx,vy)) {
-	vx *= moveSpeed/point_distance(0,0,vx,vy);
-	vy *= moveSpeed/point_distance(0,0,vx,vy);
-}
-
-x += vx;
-y += vy;
-
-var halfWidth = sprite_get_width(sprite_index) / 2;
-var halfHeight = sprite_get_height(sprite_index) / 2;
-
-#endregion
-
-x = clamp(x, halfWidth, room_width - halfWidth);
-y = clamp(y, halfHeight, room_height - halfHeight);
 
 
-//self.image_angle = point_direction(x, y, mouse_x, mouse_y); remove rotate of the player
-// Flip sprite based on mouse position
-if (mouse_x < x) {
-    self.image_xscale = -1.5; // Flip to face left
-} else {
-    self.image_xscale = 1.5;  // Face right
-}
 
-if (global.richochet) {
-	bulletLimit = 10;
-}
 
 //_shotgun.current_weapon = true
 //var current_weapon =_pistol
@@ -131,15 +156,43 @@ function bomb() {
 }
 
 
-if (playerLives <= 0) {
-	//teleport to death limbo room
-	room_goto(rmGameOver);
-	playerLives = 3;
-	global.richochet = false;
-	global.graze = false;
-	global.healthBoost = 0;
+if(death_animation_started && image_index >= sprite_get_number(sprite_index) - 1){
+	image_index = sprite_get_number(sprite_index) - 1;
+	image_speed = 0;
+	if(death_animation_timer == -1){
+		death_animation_timer = room_speed;
+	}
+	else if(death_animation_timer > 0)
+	{
+		death_animation_timer -= 1;
+	}
+	else if(global.revive > 0)
+	{
+		global.revive -= 1;
+		death_animation_started = false;
+		revive_animation_started = true;
+		death_animation_timer = -1;
+		sprite_index = spr_player_revive;
+		image_index = 0;
+		image_speed = 0.2;
+		show_debug_message("revive starts");
+	}
+	else
+	{
+		room_goto(rmGameOver);
+	}
 }
 
+if(revive_animation_started && image_index >= sprite_get_number(sprite_index) - 1)
+{
+	playerLives = 3;
+	global.playerFreeze = false;
+	revive_animation_started = false;
+	ChangeWeapon(current_weapon_arg);
+	
+}
+
+/*
 if (bombInput && canBomb) {
 	playerTimer = room_speed * 0.5;
 	bomb();
@@ -148,3 +201,5 @@ if (bombInput && canBomb) {
 if (global.graze) {
 	doGraze();
 }
+	*/
+	

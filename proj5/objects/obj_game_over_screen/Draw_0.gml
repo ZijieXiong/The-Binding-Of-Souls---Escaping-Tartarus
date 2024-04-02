@@ -9,8 +9,8 @@
 /// @DnDHash : 4596230B
 /// @DnDArgument : "x" "500"
 /// @DnDArgument : "y" "300"
-/// @DnDArgument : "caption" ""Game Over. Press Any Key to Restart.""
-draw_text(500, 300, string("Game Over. Press Any Key to Restart.") + "");
+/// @DnDArgument : "caption" ""Game Over. Press Space Key to Restart.""
+draw_text(500, 300, string("Game Over. Press Space Key to Restart.") + "");
 
 /// @DnDAction : YoYo Games.Drawing.Set_Alignment
 /// @DnDVersion : 1.1

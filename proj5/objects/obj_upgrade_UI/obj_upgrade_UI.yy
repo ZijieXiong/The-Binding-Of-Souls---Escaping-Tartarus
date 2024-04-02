@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_rock_big",
-    "path":"sprites/spr_rock_big/spr_rock_big.yy",
+    "name":"spr_upgrade_general",
+    "path":"sprites/spr_upgrade_general/spr_upgrade_general.yy",
   },
   "spriteMaskId":null,
   "visible":true,

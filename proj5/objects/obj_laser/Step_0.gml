@@ -28,5 +28,5 @@ if !mouse_check_button(mb_left) {
 	}
 if current_overheat >-1 {
 	
-	current_overheat -= 1
+	current_overheat =  max(0,current_overheat-1)
 }

@@ -7,11 +7,15 @@ max_damage_increase = 90
 
 recoil_push = 20
 
-damage_increase = 0
-interval = 0.05
+interval = 0.3
 cooldown_increase_pre_frame = 1.5/ room_speed
 pressed  = false
 increase_damage = 0
 cooldown = interval
-bullet_speed = 13
+bullet_speed = global.bulletSpeed 
+max_bullet_speed = 20
 increase_cooldown = 0
+
+left_buttom_damage = 5
+
+_reload = false

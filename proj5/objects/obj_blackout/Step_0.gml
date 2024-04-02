@@ -8,7 +8,7 @@ if(fading_in){
 		fading_in = false;
 		show_debug_message("fade in");
 		if(!callback_triggered){
-			dm.currLevel += 1;
+			global.currLevel += 1;
 			dm.GenerateNewDungeon();
 			callback_triggerd = true;
 		}

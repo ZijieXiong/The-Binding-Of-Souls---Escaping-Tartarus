@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"test_gun_pistol",
-    "path":"sprites/test_gun_pistol/test_gun_pistol.yy",
+    "name":"spr_pistol",
+    "path":"sprites/spr_pistol/spr_pistol.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -14,7 +14,10 @@
     "name":"weapons",
     "path":"folders/Objects/weapons.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_bullet_parent",
+    "path":"objects/obj_bullet_parent/obj_bullet_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -38,8 +41,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bullet",
-    "path":"sprites/spr_bullet/spr_bullet.yy",
+    "name":"spr_pistol_bullet",
+    "path":"sprites/spr_pistol_bullet/spr_pistol_bullet.yy",
   },
   "spriteMaskId":null,
   "visible":true,

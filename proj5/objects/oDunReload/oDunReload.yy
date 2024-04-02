@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":true,
   "spriteId":{
-    "name":"exit_stairs",
-    "path":"sprites/exit_stairs/exit_stairs.yy",
+    "name":"spr_portal",
+    "path":"sprites/spr_portal/spr_portal.yy",
   },
   "spriteMaskId":null,
   "visible":true,
