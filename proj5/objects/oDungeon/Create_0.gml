@@ -750,10 +750,10 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 	var enemyDistance = 60;
 	var wallDistance = 80;
 	for(var j = 0; j<enemyCount;j++){
-		var enemyType = choose(oTracker, oTurret);
+		var enemyType = choose(oTracker, oTurret, oSlime);
 		
 		if (global.currLevel > 3) {
-			enemyType = choose(oTracker, oTurret, oTrackShooter);
+			enemyType = choose(oTracker, oTurret, oTrackShooter, oSlime);
 		}
 		
 		var enemy;
