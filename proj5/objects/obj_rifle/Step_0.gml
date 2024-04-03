@@ -44,6 +44,7 @@ if(mouse_check_button_released(mb_right)){
 		if(rifle_timer >= room_speed){
 			bullet.sprite_index = spr_rifle_bullet_max
 			bullet._rifflePenetrate = global.rifflePenetrate
+			bullet._explosive = global.riffle_bullet_explosive
 		}
 		//rifle_cooldown = room_speed * (interval+increase_cooldown);
 		

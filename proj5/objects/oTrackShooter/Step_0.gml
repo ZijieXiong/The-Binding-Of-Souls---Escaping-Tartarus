@@ -14,6 +14,15 @@ function shoot() {
 	}
 }
 
+if(_health <= 0)
+{
+	die();
+}
+
+function die(){
+	instance_destroy();
+}
+
 /*
 if (trackerShooterLives <= 0) {
 	chance = random(100);

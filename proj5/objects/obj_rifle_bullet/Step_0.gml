@@ -1,5 +1,10 @@
 event_inherited();
-
+if _explosive{
+	if (place_meeting(x+lengthdir_x(14,direction), y+lengthdir_y(14,direction), [obj_wall])) {
+		instance_destroy();
+		instance_create_layer(x+lengthdir_x(14,direction),y+lengthdir_y(14,direction),"Instances",obj_explosion);
+	}
+}
 /*if (place_meeting(x, y, [oTracker, oTurret])) {
 	instance_destroy();
 }*/
