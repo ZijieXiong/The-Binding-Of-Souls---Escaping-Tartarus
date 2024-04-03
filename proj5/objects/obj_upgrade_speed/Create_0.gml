@@ -12,5 +12,6 @@ function createUI(_x, _y)
 	var ui = instance_create_layer(_x, _y, "UI_Layer", obj_upgrade_UI);
 	ui.parentUpgrade = id;
     ui.upgradeDescription = "Player speed \n increase by 10%";
+	ui.upgradeIcon = spr_player_idle;
 	show_debug_message("speed ui created");
 }
