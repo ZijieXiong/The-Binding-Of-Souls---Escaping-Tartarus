@@ -13,6 +13,6 @@ function createUI(_x, _y)
 	var ui = instance_create_layer(_x, _y, "UI_Layer", obj_upgrade_UI);
 	ui.parentUpgrade = id;
     ui.upgradeDescription = "Bullet can block bullet";
-	ui.upgradeIcon = spr_shotgun;
+	ui.upgradeIcon = spr_ui_shotgun;
 	show_debug_message("shotgun block attack ui created");
 }

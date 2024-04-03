@@ -7,7 +7,7 @@ draw_set_color(c_black);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
-draw_sprite_ext(upgradeIcon, 0, x, y - 10, 3, 3, 0, -1, 1);
+draw_sprite(upgradeIcon, 0, x, y);
 //draw_text(x, y, upgradeName);
 
 draw_set_font(fnt_upgrade_ui);
