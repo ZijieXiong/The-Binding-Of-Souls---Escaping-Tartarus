@@ -29,6 +29,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"fnt_upgrade_ui","order":1,"path":"fonts/fnt_upgrade_ui/fnt_upgrade_ui.yy",},
+    {"name":"fnt_label","order":2,"path":"fonts/fnt_label/fnt_label.yy",},
     {"name":"obj_blackout","order":18,"path":"objects/obj_blackout/obj_blackout.yy",},
     {"name":"obj_bullet_parent","order":1,"path":"objects/obj_bullet_parent/obj_bullet_parent.yy",},
     {"name":"obj_camera","order":3,"path":"objects/obj_camera/obj_camera.yy",},
@@ -46,6 +47,7 @@
     {"name":"obj_music","order":13,"path":"objects/obj_music/obj_music.yy",},
     {"name":"obj_player","order":2,"path":"objects/obj_player/obj_player.yy",},
     {"name":"obj_restart","order":14,"path":"objects/obj_restart/obj_restart.yy",},
+    {"name":"obj_slot_label","order":1,"path":"objects/obj_slot_label/obj_slot_label.yy",},
     {"name":"obj_upgrade_add_upgrade_option","order":18,"path":"objects/obj_upgrade_add_upgrade_option/obj_upgrade_add_upgrade_option.yy",},
     {"name":"obj_upgrade_laser","order":2,"path":"objects/obj_upgrade_laser/obj_upgrade_laser.yy",},
     {"name":"obj_upgrade_pistol","order":7,"path":"objects/obj_upgrade_pistol/obj_upgrade_pistol.yy",},
@@ -100,6 +102,7 @@
     {"name":"spr_grazeIndicator","order":16,"path":"sprites/spr_grazeIndicator/spr_grazeIndicator.yy",},
     {"name":"spr_hazard","order":9,"path":"sprites/spr_hazard/spr_hazard.yy",},
     {"name":"spr_heartboost","order":11,"path":"sprites/spr_heartboost/spr_heartboost.yy",},
+    {"name":"spr_label","order":1,"path":"sprites/spr_label/spr_label.yy",},
     {"name":"spr_pistol_shoot","order":2,"path":"sprites/spr_pistol_shoot/spr_pistol_shoot.yy",},
     {"name":"spr_pistol","order":1,"path":"sprites/spr_pistol/spr_pistol.yy",},
     {"name":"spr_player_death","order":3,"path":"sprites/spr_player_death/spr_player_death.yy",},

@@ -12,6 +12,7 @@
     {"name":"inst_758C3C5F","path":"rooms/rmDungeon/rmDungeon.yy",},
     {"name":"inst_7F7E83C4","path":"rooms/rmDungeon/rmDungeon.yy",},
     {"name":"inst_5BFBB6B6","path":"rooms/rmDungeon/rmDungeon.yy",},
+    {"name":"inst_564146D8","path":"rooms/rmDungeon/rmDungeon.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -19,6 +20,7 @@
         {"$GMRInstance":"","%Name":"inst_758C3C5F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_758C3C5F","objectId":{"name":"obj_slot_ui","path":"objects/obj_slot_ui/obj_slot_ui.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":4.0,"scaleY":4.0,"x":96.0,"y":864.0,},
         {"$GMRInstance":"","%Name":"inst_7F7E83C4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7F7E83C4","objectId":{"name":"obj_slot_ui","path":"objects/obj_slot_ui/obj_slot_ui.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":4.0,"scaleY":4.0,"x":224.0,"y":864.0,},
         {"$GMRInstance":"","%Name":"inst_5BFBB6B6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5BFBB6B6","objectId":{"name":"obj_slot_ui","path":"objects/obj_slot_ui/obj_slot_ui.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":4.0,"scaleY":4.0,"x":352.0,"y":864.0,},
+        {"$GMRInstance":"","%Name":"inst_564146D8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_564146D8","objectId":{"name":"obj_slot_label","path":"objects/obj_slot_label/obj_slot_label.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0937499,"scaleY":1.21875,"x":96.0,"y":770.5,},
       ],"layers":[],"name":"UI_Layer","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Music","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[

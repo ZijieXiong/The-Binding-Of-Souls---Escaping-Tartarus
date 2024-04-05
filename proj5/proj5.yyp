@@ -48,6 +48,7 @@
   "name":"proj5",
   "resources":[
     {"id":{"name":"fnt_upgrade_ui","path":"fonts/fnt_upgrade_ui/fnt_upgrade_ui.yy",},},
+    {"id":{"name":"fnt_label","path":"fonts/fnt_label/fnt_label.yy",},},
     {"id":{"name":"HighScore","path":"fonts/HighScore/HighScore.yy",},},
     {"id":{"name":"obj_blackout","path":"objects/obj_blackout/obj_blackout.yy",},},
     {"id":{"name":"obj_bullet_parent","path":"objects/obj_bullet_parent/obj_bullet_parent.yy",},},
@@ -75,6 +76,7 @@
     {"id":{"name":"obj_rifle","path":"objects/obj_rifle/obj_rifle.yy",},},
     {"id":{"name":"obj_shotgun_bullet","path":"objects/obj_shotgun_bullet/obj_shotgun_bullet.yy",},},
     {"id":{"name":"obj_shotgun","path":"objects/obj_shotgun/obj_shotgun.yy",},},
+    {"id":{"name":"obj_slot_label","path":"objects/obj_slot_label/obj_slot_label.yy",},},
     {"id":{"name":"obj_slot_ui","path":"objects/obj_slot_ui/obj_slot_ui.yy",},},
     {"id":{"name":"obj_upgrade_add_upgrade_option","path":"objects/obj_upgrade_add_upgrade_option/obj_upgrade_add_upgrade_option.yy",},},
     {"id":{"name":"obj_upgrade_damage","path":"objects/obj_upgrade_damage/obj_upgrade_damage.yy",},},
@@ -150,6 +152,7 @@
     {"id":{"name":"spr_grazeIndicator","path":"sprites/spr_grazeIndicator/spr_grazeIndicator.yy",},},
     {"id":{"name":"spr_hazard","path":"sprites/spr_hazard/spr_hazard.yy",},},
     {"id":{"name":"spr_heartboost","path":"sprites/spr_heartboost/spr_heartboost.yy",},},
+    {"id":{"name":"spr_label","path":"sprites/spr_label/spr_label.yy",},},
     {"id":{"name":"spr_laser_beam","path":"sprites/spr_laser_beam/spr_laser_beam.yy",},},
     {"id":{"name":"spr_pistol_bullet","path":"sprites/spr_pistol_bullet/spr_pistol_bullet.yy",},},
     {"id":{"name":"spr_pistol_shoot","path":"sprites/spr_pistol_shoot/spr_pistol_shoot.yy",},},
