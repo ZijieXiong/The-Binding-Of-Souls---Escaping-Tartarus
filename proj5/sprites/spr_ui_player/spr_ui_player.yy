@@ -48,8 +48,8 @@
   },
   "origin":9,
   "parent":{
-    "name":"UI",
-    "path":"folders/Sprites/UI.yy",
+    "name":"Upgrade Group",
+    "path":"folders/Sprites/UI/Upgrade Group.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
