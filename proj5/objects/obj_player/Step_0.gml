@@ -91,7 +91,7 @@ if(!global.playerFreeze && !global.globalFreeze)
 			sprite_index = spr_player_death;
 			image_index = 0;
 			image_speed = 0.2;
-			global.playerFreeze = true;
+			global.globalFreeze = true;
 			death_animation_started = true;
 		}
 		//global.graze = false;
@@ -186,7 +186,7 @@ if(death_animation_started && image_index >= sprite_get_number(sprite_index) - 1
 if(revive_animation_started && image_index >= sprite_get_number(sprite_index) - 1)
 {
 	playerLives = 3;
-	global.playerFreeze = false;
+	global.globalFreeze = false;
 	revive_animation_started = false;
 	ChangeWeapon(current_weapon_arg);
 	
