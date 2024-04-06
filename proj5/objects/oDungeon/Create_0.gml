@@ -467,6 +467,7 @@ GenerateNewDungeon = function() {
 			if(random_range(0,1) < healthBoostProb && !isBoostGenerated){
 				CreateHealthBooster(rm, hazards);
 			}
+			CreateDoors(rm);
 		}
 	}
 	
@@ -833,7 +834,7 @@ CreateDoors = function(eliteRoom){
                 doorY = hallway.y2 * CELL_SIZE + CELL_SIZE / 2;
                 doorAngle = 0;
             } else {
-                doorY = hallway.y1 * CELL_SIZE - CELL_SIZE / 2;
+                doorY = hallway.y1 * CELL_SIZE + CELL_SIZE / 2;
                 doorAngle = 180;
             }
         } else {
@@ -842,7 +843,7 @@ CreateDoors = function(eliteRoom){
                 doorX = hallway.x2 * CELL_SIZE + CELL_SIZE / 2;
                 doorAngle = 270;
             } else {
-                doorX = hallway.x1 * CELL_SIZE - CELL_SIZE / 2;
+                doorX = hallway.x1 * CELL_SIZE + CELL_SIZE / 2;
                 doorAngle = 90;
             }
         }
