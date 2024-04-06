@@ -1,11 +1,12 @@
 {
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
+    {"name":"oEliteTurret","order":1,"path":"objects/oEliteTurret/oEliteTurret.yy",},
     {"name":"spr_label","order":1,"path":"sprites/spr_label/spr_label.yy",},
     {"name":"spr_revive","order":3,"path":"sprites/spr_revive/spr_revive.yy",},
-    {"name":"spr_ui_revive","order":6,"path":"sprites/spr_ui_revive/spr_ui_revive.yy",},
     {"name":"spr_select","order":2,"path":"sprites/spr_select/spr_select.yy",},
     {"name":"spr_ui_extra","order":5,"path":"sprites/spr_ui_extra/spr_ui_extra.yy",},
+    {"name":"spr_ui_revive","order":6,"path":"sprites/spr_ui_revive/spr_ui_revive.yy",},
     {"name":"spr_ui_riffle","order":3,"path":"sprites/spr_ui_riffle/spr_ui_riffle.yy",},
     {"name":"spr_ui_shotgun","order":2,"path":"sprites/spr_ui_shotgun/spr_ui_shotgun.yy",},
     {"name":"spr_ui_weapon","order":1,"path":"sprites/spr_ui_weapon/spr_ui_weapon.yy",},

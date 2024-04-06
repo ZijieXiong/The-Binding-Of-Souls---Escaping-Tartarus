@@ -440,8 +440,8 @@ GenerateNewDungeon = function() {
 	    if (roomInd != reloadRoomInd && roomInd != chestRoomInd) {
 	        if (random(1) <= 1) {
 				show_debug_message("elite room");
-	            var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", oEliteEnemies);
-				CreateDoors(roomId);
+	            var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", oEliteTurret);
+				CreateDoors(roomId, true);
 	            roomId.is_elite = true;
 	        }
 	    }
@@ -467,7 +467,11 @@ GenerateNewDungeon = function() {
 			if(random_range(0,1) < healthBoostProb && !isBoostGenerated){
 				CreateHealthBooster(rm, hazards);
 			}
-			CreateDoors(rm);
+			CreateDoors(rm, true);
+		}
+		else if(!rm.is_elite)
+		{
+			CreateDoors(rm, false);
 		}
 	}
 	
@@ -822,7 +826,7 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 	return placedEnemies;
 }
 
-CreateDoors = function(eliteRoom){
+CreateDoors = function(eliteRoom, isEnemy){
     for (var i = 0; i < ds_list_size(eliteRoom.hallways); i++) {
         var hallway = ds_list_find_value(eliteRoom.hallways, i);
 
@@ -851,6 +855,7 @@ CreateDoors = function(eliteRoom){
         var doorInstance = instance_create_layer(doorX, doorY, "Instances", obj_door);
         doorInstance.image_angle = doorAngle;
 		doorInstance.linked_room = eliteRoom;
+		doorInstance.enemy_cleared = !isEnemy;
     }
 }
 
