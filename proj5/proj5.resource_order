@@ -69,6 +69,7 @@
     {"name":"oPango","order":6,"path":"objects/oPango/oPango.yy",},
     {"name":"oRichochet","order":12,"path":"objects/oRichochet/oRichochet.yy",},
     {"name":"oSlime","order":4,"path":"objects/oSlime/oSlime.yy",},
+    {"name":"oMegaSlime","order":7,"path":"objects/oMegaSlime/oMegaSlime.yy",},
     {"name":"oSlimeAlpha","order":5,"path":"objects/oSlimeAlpha/oSlimeAlpha.yy",},
     {"name":"oTrackShooter","order":1,"path":"objects/oTrackShooter/oTrackShooter.yy",},
     {"name":"oTurret","order":2,"path":"objects/oTurret/oTurret.yy",},
