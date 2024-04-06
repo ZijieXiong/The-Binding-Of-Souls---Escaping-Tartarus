@@ -21,7 +21,7 @@ hallwayWidthMax = 2;
 currentRoom = noone;
 
 // 1 in n chance of branching from the newly created room
-branchOdds = 4;
+branchOdds = 3;
 
 // The number of failed iterations to create a new room
 iterations = 0;
@@ -393,8 +393,18 @@ GenerateNewDungeon = function() {
 	var deadEnd = ds_list_create();
 	for(var i = 1;i < ds_list_size(roomList);i++){
 		var rm = ds_list_find_value(roomList,i);
+		show_debug_message("Room " + string(i) + ": (" + string(rm.x1) + ", " + string(rm.y1) + ") to (" + string(rm.x2) + ", " + string(rm.y2) + ")");
+	    show_debug_message("Width: " + string(rm.width) + ", Height: " + string(rm.height));
+
+	    // 检查并打印关联的走廊信息
+	    for (var j = 0; j < ds_list_size(rm.hallways); j++) {
+	        var hallway = ds_list_find_value(rm.hallways, j);
+	        show_debug_message("  Hallway " + string(j) + ": (" + string(hallway.x1) + ", " + string(hallway.y1) + ") to (" + string(hallway.x2) + ", " + string(hallway.y2) + ")");
+	        show_debug_message("  Width: " + string(hallway.width) + ", Height: " + string(hallway.height) + ", Orientation: " + (hallway.NorthSouth ? "North-South" : "East-West"));
+		}
 		if(ds_list_size(rm.hallways)<=1){
 			ds_list_add(deadEnd,{roomId: rm, roomInd: i});
+			show_debug_message("is deadEnd");
 		}
 	}
 	var reloadRand = irandom(ds_list_size(deadEnd) - 1);
@@ -424,6 +434,21 @@ GenerateNewDungeon = function() {
 		}
 		
 	}
+	show_debug_message("dead end ammount" + string(ds_list_size(deadEnd)));
+	for (var i = 0; i < ds_list_size(deadEnd); i++) {
+	    var roomInfo = ds_list_find_value(deadEnd, i);
+	    var roomId = roomInfo.roomId;
+	    var roomInd = roomInfo.roomInd;
+
+	    if (roomInd != reloadRoomInd && roomInd != chestRoomInd) {
+	        if (random(1) <= 1) {
+				show_debug_message("elite room");
+	            var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", oEliteEnemies);
+				CreateDoors(roomId);
+	            roomId.is_elite = true;
+	        }
+	    }
+	}
 	
 	//Generating rooms
 	/*
@@ -436,7 +461,7 @@ GenerateNewDungeon = function() {
 		var rm = ds_list_find_value(roomList,i);
 		var enemy = [];
 		var hazards = [];
-		if(i!=0 && i!=reloadRoomInd && i!=chestRoomInd){
+		if(i!=0 && i!=reloadRoomInd && i!=chestRoomInd && !rm.is_elite){
 			hazards = CreateHazards(rm);
 			enemy = CreateEnemies(rm.x1,rm.y1,rm.x2,rm.y2, hazards);
 			/*if(richochetRoom==i){
@@ -750,10 +775,10 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 	var enemyDistance = 60;
 	var wallDistance = 80;
 	for(var j = 0; j<enemyCount;j++){
-		var enemyType = choose(oTracker, oTurret, oSlime);
+		var enemyType = choose(oTracker, oTurret);
 		
 		if (global.currLevel > 3) {
-			enemyType = choose(oTracker, oTurret, oTrackShooter, oSlime);
+			enemyType = choose(oTracker, oTurret, oTrackShooter);
 		}
 		
 		var enemy;
@@ -799,6 +824,38 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 		}
 	}
 	return placedEnemies;
+}
+
+CreateDoors = function(eliteRoom){
+    for (var i = 0; i < ds_list_size(eliteRoom.hallways); i++) {
+        var hallway = ds_list_find_value(eliteRoom.hallways, i);
+
+        var doorX, doorY, doorAngle;
+
+        if (hallway.NorthSouth) {
+            doorX = (hallway.x1 + hallway.x2) / 2 * CELL_SIZE + CELL_SIZE / 2;
+            if (eliteRoom.y1 == hallway.y2 + 1) {
+                doorY = hallway.y2 * CELL_SIZE + CELL_SIZE / 2;
+                doorAngle = 0;
+            } else {
+                doorY = hallway.y1 * CELL_SIZE - CELL_SIZE / 2;
+                doorAngle = 180;
+            }
+        } else {
+            doorY = (hallway.y1 + hallway.y2) / 2 * CELL_SIZE + CELL_SIZE / 2;
+            if (eliteRoom.x1 == hallway.x2 + 1) {
+                doorX = hallway.x2 * CELL_SIZE + CELL_SIZE / 2;
+                doorAngle = 270;
+            } else {
+                doorX = hallway.x1 * CELL_SIZE - CELL_SIZE / 2;
+                doorAngle = 90;
+            }
+        }
+
+        var doorInstance = instance_create_layer(doorX, doorY, "Instances", obj_door);
+        doorInstance.image_angle = doorAngle;
+		doorInstance.linked_room = eliteRoom;
+    }
 }
 
 initParas();

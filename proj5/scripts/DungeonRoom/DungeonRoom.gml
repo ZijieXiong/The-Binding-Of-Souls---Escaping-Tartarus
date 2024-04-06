@@ -12,6 +12,7 @@ function DungeonRoom(_x1, _y1, _x2, _y2) constructor {
 	height = y2 - y1 + 1;
 	
 	hallways = ds_list_create();
+	is_elite = false;
 }
 
 function DungeonHallway(_x1, _y1, _x2, _y2, isNorthSouth) constructor{
