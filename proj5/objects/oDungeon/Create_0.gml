@@ -47,10 +47,7 @@ GenerateNewDungeon = function() {
 	with(obj_wall){
 		instance_destroy();
 	}
-	with(oTracker){
-		instance_destroy();
-	}
-	with(oTurret){
+	with(oEnemiesParent){
 		instance_destroy();
 	}
 	with(obj_pistol_bullet){
@@ -411,7 +408,6 @@ GenerateNewDungeon = function() {
 	var reloadRoom = ds_list_find_value(deadEnd, reloadRand);
 	var reloadRoomInd = reloadRoom.roomInd;
 	
-	
 	if(global.currLevel < 2)
 	{
 		chestProb = 100;
@@ -420,8 +416,9 @@ GenerateNewDungeon = function() {
 	{
 		chestProb = max(20,  80 - 5 * global.currLevel);
 	}
+	
 	var chestRoomInd = noone;
-	var haveChestRoom = random_range(0,100)<=chestProb;
+	var haveChestRoom = random_range(0,100)<=chestProb && ds_list_size(deadEnd) >= 2;
 	
 	if(haveChestRoom)
 	{
