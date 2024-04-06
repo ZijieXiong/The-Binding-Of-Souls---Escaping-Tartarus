@@ -27,17 +27,8 @@ if(_health <= 0){
 	
 	show_debug_message("Mega Slime died!");
 	
-	if (slime_size>1)
-	{
-		slime_size -= 1;
-		_health = 10 * slime_size;
-		instance_copy(true);
-		
-	} else
-	{
-		instance_destroy();
-	}
-
+	instance_create_layer(x+10, y, "Instances", oSlime);
+	instance_create_layer(x-10, y, "Instances", oSlime);
 	
 }
 

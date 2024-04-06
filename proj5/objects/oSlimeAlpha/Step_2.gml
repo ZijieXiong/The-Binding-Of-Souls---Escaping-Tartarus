@@ -2,12 +2,12 @@ var x_movement = x-xprevious;
 
 if(x_movement < 0)
 {
-	image_xscale = -1 * slime_size;
-	image_yscale = slime_size;
+	image_xscale = size_scale;
+	image_yscale = size_scale;
 }
 
 else
 {
-	image_xscale = 1 * slime_size;
-	image_yscale = slime_size;
+	image_xscale = -size_scale;
+	image_yscale = size_scale;
 }

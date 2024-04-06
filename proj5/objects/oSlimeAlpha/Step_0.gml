@@ -1,38 +1,34 @@
+event_inherited();
+
+//State execution
+if(is_jump)
+{
+	speed = jump_speed;
+	direction = point_direction(x, y, target_x, target_y);
+	
+} else {
+	speed = 0;
+}
+
+
+//Update state
+if(is_jump && point_distance(x, y, target_x, target_y)<5)
+{
+	speed = 0;
+	is_jump = false;
+	alarm[0] = 60;
+	sprite_index = spr_slime_idle;
+	image_speed = 1;
+}
 
 
 if(_health <= 0){
 	
-	show_debug_message(" Slime died!");
+	show_debug_message("Mega Slime died!");
 	
-	if (slime_size>1)
-	{
-		slime_size -= 1;
-		_health = 10 * slime_size;
-		instance_copy(true);
-		
-	} else
-	{
-		instance_destroy();
-	}
-
+	instance_create_layer(x+20, y, "Instances", oMegaSlime);
+	instance_create_layer(x-20, y, "Instances", oMegaSlime);
 	
-}
-
-var alert_radius = 150;
-
-var collision_res = collision_rectangle(x + -alert_radius, y + -alert_radius, x + alert_radius, y + alert_radius, obj_player, true, 1);
-if(collision_res)
-{
-	speed = 1;
-
-	direction = point_direction(x, y, obj_player.x, obj_player.y);
-}
-
-else
-{
-	speed = 1;
-
-	direction += 2;
 }
 
 //show_debug_message("666");
