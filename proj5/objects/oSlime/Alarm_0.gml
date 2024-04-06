@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Alarm to jump
 // You can write your code in this editor
 
 
@@ -16,14 +16,21 @@ if(_collision_res)
 {
 		
 	// Generate a random distance within the specified range
-	var _distance = random_range(30, 60);
+	//var _distance = random_range(30, 60);
 
 	// Generate a random direction (0 to 360 degrees)
-	var _direction = random(360);
+	//var _direction = random(360);
 
 	// Calculate the new position
-	target_x = x + lengthdir_x(_distance, _direction);
-	target_y = y + lengthdir_y(_distance, _direction);
+	//target_x = x + lengthdir_x(_distance, _direction);
+	//target_y = y + lengthdir_y(_distance, _direction);
+	
+	var _target_loc = get_new_location(30, 60);
+	
+	target_x = _target_loc[0];
+	target_y = _target_loc[1];
+	
+	
 	
 }
 
