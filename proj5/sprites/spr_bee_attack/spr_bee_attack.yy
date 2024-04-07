@@ -33,7 +33,7 @@
   "origin":4,
   "parent":{
     "name":"Enemy-Bee",
-    "path":"folders/Sprites/Enemy-Bee.yy",
+    "path":"folders/Sprites/enemy/Enemy-Bee.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

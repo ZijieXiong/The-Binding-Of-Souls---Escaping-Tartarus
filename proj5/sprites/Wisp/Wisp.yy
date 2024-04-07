@@ -35,7 +35,7 @@
   "origin":4,
   "parent":{
     "name":"Enemy-Tracker",
-    "path":"folders/Sprites/Enemy-Tracker.yy",
+    "path":"folders/Sprites/enemy/Enemy-Tracker.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

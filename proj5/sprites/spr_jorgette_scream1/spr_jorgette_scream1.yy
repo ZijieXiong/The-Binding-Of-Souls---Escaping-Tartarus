@@ -30,7 +30,7 @@
   "origin":4,
   "parent":{
     "name":"Enemy-Jorgette",
-    "path":"folders/Sprites/Enemy-Jorgette.yy",
+    "path":"folders/Sprites/enemy/Enemy-Jorgette.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
