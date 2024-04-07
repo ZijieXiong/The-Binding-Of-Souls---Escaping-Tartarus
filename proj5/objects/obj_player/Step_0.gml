@@ -44,6 +44,7 @@ if(!global.playerFreeze && !global.globalFreeze)
 	if (keyboard_check_pressed(ord("2"))) ChangeWeapon(2);
 	if (keyboard_check_pressed(ord("3"))) ChangeWeapon(3);
 	if (keyboard_check_pressed(ord("4"))) ChangeWeapon(4);
+	
 	//show_debug_message(obj_pistol.name);
 	collisionTileIndex = 16;
 
