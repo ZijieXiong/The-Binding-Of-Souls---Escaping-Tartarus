@@ -1,12 +1,16 @@
 if (point_distance(obj_player.x, obj_player.y, x, y) < ENEM_DISTANCE) {
+	self.image_angle = point_direction(x, y, obj_player.x, obj_player.y);
+	sprite_index = spr_bee_attack
 	move_towards_point(obj_player.x, obj_player.y, trackShooterSpeed);
 	shoot();
+}else{
+	sprite_index = spr_bee_idle
 }
 
 function shoot() {
 	attack_cooldown +=1;
 	if(attack_cooldown >= 60) {
-	    bullet = instance_create_layer(x, y, "Instances", oEnemBullet);
+	    bullet = instance_create_layer(x, y, "Instances", oBeeBullet);
 	    bullet.speed = 5  + 0.1 * global.currLevel;
 	    bullet.direction= point_direction(x, y, obj_player.x, obj_player.y);
 	    bullet.image_angle = bullet.direction;

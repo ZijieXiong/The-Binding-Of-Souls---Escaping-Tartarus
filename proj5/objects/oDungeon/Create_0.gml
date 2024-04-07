@@ -2,6 +2,7 @@ var _dungeonWidth = floor(room_width / CELL_SIZE);
 var _dungeonHeight = floor(room_height / CELL_SIZE);
 dungeon = ds_grid_create(_dungeonWidth, _dungeonHeight);
 
+
 // Keeps track of all room structs
 roomList = ds_list_create();
 

@@ -1,7 +1,19 @@
 {
-  "FolderOrderSettings":[],
+  "FolderOrderSettings":[
+    {"name":"Enemy-Jorgette","order":1,"path":"folders/Sprites/Enemy-Jorgette.yy",},
+    {"name":"Enemy-Tracker","order":2,"path":"folders/Sprites/Enemy-Tracker.yy",},
+    {"name":"Enemy-Bee","order":3,"path":"folders/Sprites/Enemy-Bee.yy",},
+  ],
   "ResourceOrderSettings":[
+    {"name":"oBeeBullet","order":2,"path":"objects/oBeeBullet/oBeeBullet.yy",},
     {"name":"oEliteTurret","order":1,"path":"objects/oEliteTurret/oEliteTurret.yy",},
+    {"name":"spr_bee_attack","order":1,"path":"sprites/spr_bee_attack/spr_bee_attack.yy",},
+    {"name":"spr_bee_bullet","order":2,"path":"sprites/spr_bee_bullet/spr_bee_bullet.yy",},
+    {"name":"spr_elite_jorgette_die","order":2,"path":"sprites/spr_elite_jorgette_die/spr_elite_jorgette_die.yy",},
+    {"name":"spr_elite_jorgette_scream1","order":1,"path":"sprites/spr_elite_jorgette_scream1/spr_elite_jorgette_scream1.yy",},
+    {"name":"spr_jorgette_Die","order":3,"path":"sprites/spr_jorgette_Die/spr_jorgette_Die.yy",},
+    {"name":"spr_jorgette_idle","order":5,"path":"sprites/spr_jorgette_idle/spr_jorgette_idle.yy",},
+    {"name":"spr_jorgette_scream1","order":4,"path":"sprites/spr_jorgette_scream1/spr_jorgette_scream1.yy",},
     {"name":"spr_label","order":1,"path":"sprites/spr_label/spr_label.yy",},
     {"name":"spr_revive","order":3,"path":"sprites/spr_revive/spr_revive.yy",},
     {"name":"spr_select","order":2,"path":"sprites/spr_select/spr_select.yy",},

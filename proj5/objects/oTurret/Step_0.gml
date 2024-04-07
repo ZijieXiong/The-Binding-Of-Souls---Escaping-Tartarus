@@ -1,12 +1,14 @@
 if (point_distance(obj_player.x, obj_player.y, x, y) < ENEM_DISTANCE) {
 	//alarm[0] = 0; // Start spawning bullets the next step;
 	attack_cooldown += 1;
+	sprite_index = spr_jorgette_scream1
 	if(attack_cooldown >= bulletSpiralInterval){
 		shoot();
 		attack_cooldown = 0;
 	}
 }
 else{
+	sprite_index = spr_jorgette_idle
 	bulletSpiralIterator = 0;
 }
 
@@ -27,12 +29,17 @@ function shoot() {
 
 if(_health <= 0)
 {
+	sprite_index = spr_jorgette_Die
 	die();
 }
 
 function die(){
-	instance_destroy();
+	if image_index >= (sprite_get_number(sprite_index) - 1) {
+		instance_destroy();
+	}
 }
+
+
 /*
 if (turretLives <= 0) {
 	chance = random(100);
