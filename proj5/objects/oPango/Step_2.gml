@@ -4,12 +4,12 @@ var x_movement = x-xprevious;
 
 if(x_movement < 0)
 {
-	image_xscale = -1;
-	image_yscale = 1;
+	image_xscale = -size_scale;
+	image_yscale = size_scale;
 }
 
 if(x_movement > 0)
 {
-	image_xscale = 1;
-	image_yscale = 1;
+	image_xscale = size_scale;
+	image_yscale = size_scale;
 }

@@ -13,6 +13,8 @@ roll_speed = 3;
 
 is_alerted = false;
 
+size_scale = 1;
+
 target_x = 0;
 target_y = 0;
 
@@ -50,4 +52,14 @@ get_new_location = function(_min_dist, _max_dist)
 	show_debug_message("x:"+string(target_x) + ", y:" + string(target_y));
 	
 	//return [target_x, target_y];
+}
+
+look_at_player = function(_player_x)
+{
+	if(x-_player_x >0)
+	{
+		image_xscale = -size_scale;
+	} else {
+		image_xscale = size_scale;
+	}
 }

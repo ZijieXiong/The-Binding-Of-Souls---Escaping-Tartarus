@@ -13,6 +13,7 @@ switch (current_state) {
 			current_state = PANGO_STATE.WALK;
 			idle_timer_flag = false;
 			sprite_index = Spr_Walk;
+			image_index = 0;
 			//var _target_loc = get_new_location(50, 100);
 			//target_x = _target_loc[0];
 			//target_y = _target_loc[1];
@@ -31,12 +32,14 @@ switch (current_state) {
 			{
 				current_state = PANGO_STATE.TRACK;
 				sprite_index = Spr_Track;
+				image_index = 0;
 				speed = 0;
 				alarm[0] = 60 * 2;
 			} else
 			{
 				current_state = PANGO_STATE.IDLE;
 				sprite_index = Spr_Idle;
+				image_index = 0;
 				speed = 0;
 				alarm[0] = 60*random_range(2, 5);
 			}
@@ -51,6 +54,7 @@ switch (current_state) {
 			current_state = PANGO_STATE.IDLE;
 			idle_timer_flag = false;
 			sprite_index = Spr_Idle;
+			image_index = 0;
 			speed = 0;
 			alarm[0] = 60*random_range(2, 5);
 			
@@ -67,7 +71,7 @@ switch (current_state) {
 			speed = roll_speed;
 			alarm[0] = 60 * roll_time;
 			direction = point_direction(x, y, obj_player.x, obj_player.y);
-			//move_bounce_solid(1);
+			
 		}
         
         break;
@@ -95,9 +99,10 @@ switch (current_state) {
 			current_state = PANGO_STATE.STOPROLL;
 			idle_timer_flag = false;
 			sprite_index = Spr_Stop_Roll;
+			image_index = 0;
 			speed = 0;
 			alarm[0] = 60 * stoproll_time;
-			//move_bounce_solid(0);
+			
 		}
         break;
         
@@ -108,13 +113,15 @@ switch (current_state) {
 			current_state = PANGO_STATE.REST;
 			idle_timer_flag = false;
 			sprite_index = Spr_Idle;
+			image_index = 0;
 			speed = 0;
 			alarm[0] = 60 * 2;
+			//look_at_player(obj_player.x);
 			if(x-obj_player.x >0)
 			{
-				image_xscale = -1;
+				image_xscale = -size_scale;
 			} else {
-				image_xscale = 1;
+				image_xscale = size_scale;
 			}
 		}
         break;
@@ -126,6 +133,7 @@ switch (current_state) {
 			current_state = PANGO_STATE.PREROLL;
 			idle_timer_flag = false;
 			sprite_index = spr_preroll;
+			image_index = 0;
 			speed = 0;
 			alarm[0] = 60 * preroll_time;
 			direction = point_direction(x, y, obj_player.x, obj_player.y);
@@ -139,17 +147,18 @@ if (_player_distance < 100 && current_state == PANGO_STATE.IDLE) {
     current_state = PANGO_STATE.PREROLL;
 	idle_timer_flag = false;
 	sprite_index = spr_preroll;
+	image_index = 0;
 	speed = 0;
 	alarm[0] = 60*preroll_time;
 	direction = point_direction(x, y, obj_player.x, obj_player.y);
-	//look_at_player(this, obj_player);
+	
+	//look_at_player(obj_player.x);
 	if(x-obj_player.x >0)
 	{
-		image_xscale = -1;
+		image_xscale = -size_scale;
 	} else {
-		image_xscale = 1;
+		image_xscale = size_scale;
 	}
-	
 }
 
 
