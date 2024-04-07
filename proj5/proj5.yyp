@@ -171,7 +171,6 @@
     {"id":{"name":"Spr_Idle","path":"sprites/Spr_Idle/Spr_Idle.yy",},},
     {"id":{"name":"spr_door_open","path":"sprites/spr_door_open/spr_door_open.yy",},},
     {"id":{"name":"spr_door","path":"sprites/spr_door/spr_door.yy",},},
-    {"id":{"name":"spr_explosion","path":"sprites/spr_explosion/spr_explosion.yy",},},
     {"id":{"name":"spr_label","path":"sprites/spr_label/spr_label.yy",},},
     {"id":{"name":"spr_laser_beam","path":"sprites/spr_laser_beam/spr_laser_beam.yy",},},
     {"id":{"name":"spr_pistol_bullet","path":"sprites/spr_pistol_bullet/spr_pistol_bullet.yy",},},
@@ -245,9 +244,9 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"playerTesting","path":"rooms/playerTesting/playerTesting.yy",},},
     {"roomId":{"name":"rmDungeon","path":"rooms/rmDungeon/rmDungeon.yy",},},
     {"roomId":{"name":"rm_turtorial","path":"rooms/rm_turtorial/rm_turtorial.yy",},},
-    {"roomId":{"name":"playerTesting","path":"rooms/playerTesting/playerTesting.yy",},},
     {"roomId":{"name":"rmGetUpgrade","path":"rooms/rmGetUpgrade/rmGetUpgrade.yy",},},
     {"roomId":{"name":"rmGameOver","path":"rooms/rmGameOver/rmGameOver.yy",},},
   ],

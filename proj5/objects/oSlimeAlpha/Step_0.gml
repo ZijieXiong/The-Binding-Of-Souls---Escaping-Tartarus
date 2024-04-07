@@ -26,8 +26,13 @@ if(_health <= 0){
 	
 	show_debug_message("Mega Slime died!");
 	
-	instance_create_layer(x+20, y, "Instances", oMegaSlime);
-	instance_create_layer(x-20, y, "Instances", oMegaSlime);
+	var _target_loc = get_new_location(10, 30);
+
+	instance_create_layer(_target_loc[0], _target_loc[1], "Instances", oMegaSlime);
+	
+	_target_loc = get_new_location(10, 30);
+	
+	instance_create_layer(_target_loc[0], _target_loc[1], "Instances", oMegaSlime);
 	
 }
 

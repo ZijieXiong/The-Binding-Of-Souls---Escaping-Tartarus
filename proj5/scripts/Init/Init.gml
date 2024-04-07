@@ -117,6 +117,8 @@ function initParas()
 	initUpgradePool();
 }
 
+initParas();
+
 /// @description initUpgradePool();
 /// @param none
 /// @return none

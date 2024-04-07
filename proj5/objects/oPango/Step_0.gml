@@ -67,6 +67,7 @@ switch (current_state) {
 			speed = roll_speed;
 			alarm[0] = 60 * roll_time;
 			direction = point_direction(x, y, obj_player.x, obj_player.y);
+			//move_bounce_solid(1);
 		}
         
         break;
@@ -96,6 +97,7 @@ switch (current_state) {
 			sprite_index = Spr_Stop_Roll;
 			speed = 0;
 			alarm[0] = 60 * stoproll_time;
+			//move_bounce_solid(0);
 		}
         break;
         

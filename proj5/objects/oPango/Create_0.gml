@@ -47,7 +47,7 @@ get_new_location = function(_min_dist, _max_dist)
 	target_x = x + lengthdir_x(_distance, _direction);
 	target_y = y + lengthdir_y(_distance, _direction);
 	} until (!place_meeting(target_x, target_y, obj_wall)) ;
-	
+	show_debug_message("x:"+string(target_x) + ", y:" + string(target_y));
 	
 	//return [target_x, target_y];
 }
