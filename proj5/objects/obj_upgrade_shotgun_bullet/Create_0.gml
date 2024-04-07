@@ -11,6 +11,7 @@ function createUI(_x, _y)
 {
 	var ui = instance_create_layer(_x, _y, "UI_Layer", obj_upgrade_UI);
 	ui.parentUpgrade = id;
-    ui.upgradeDescription = "+1 bullet";
+    ui.upgradeDescription = "bullet \n +1";
+	ui.upgradeIcon = spr_ui_shotgun;
 	show_debug_message("shotgun range ui created");
 }

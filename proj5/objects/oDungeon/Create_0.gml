@@ -21,7 +21,7 @@ hallwayWidthMax = 2;
 currentRoom = noone;
 
 // 1 in n chance of branching from the newly created room
-branchOdds = 4;
+branchOdds = 3;
 
 // The number of failed iterations to create a new room
 iterations = 0;
@@ -47,10 +47,7 @@ GenerateNewDungeon = function() {
 	with(obj_wall){
 		instance_destroy();
 	}
-	with(oTracker){
-		instance_destroy();
-	}
-	with(oTurret){
+	with(oEnemiesParent){
 		instance_destroy();
 	}
 	with(obj_pistol_bullet){
@@ -77,6 +74,18 @@ GenerateNewDungeon = function() {
 	with(obj_upgrade_UI){
 		instance_destroy();
 	}
+	//with(obj_slot_label) {
+	//	instance_destroy();
+	//}
+	//with(obj_slot_ui) {
+	//	instance_destroy();
+	//}
+	//with(obj_revive_label) {
+	//	instance_destroy();
+	//}
+	//with(obj_revive_ui) {
+	//	instance_destroy();
+	//}
 	for(var i = 0; i < ds_list_size(global.upgrade_objs); i++)
 	{
 		var upgrade_obj = ds_list_find_value(global.upgrade_objs, i);
@@ -393,14 +402,23 @@ GenerateNewDungeon = function() {
 	var deadEnd = ds_list_create();
 	for(var i = 1;i < ds_list_size(roomList);i++){
 		var rm = ds_list_find_value(roomList,i);
+		show_debug_message("Room " + string(i) + ": (" + string(rm.x1) + ", " + string(rm.y1) + ") to (" + string(rm.x2) + ", " + string(rm.y2) + ")");
+	    show_debug_message("Width: " + string(rm.width) + ", Height: " + string(rm.height));
+
+	    // 检查并打印关联的走廊信息
+	    for (var j = 0; j < ds_list_size(rm.hallways); j++) {
+	        var hallway = ds_list_find_value(rm.hallways, j);
+	        show_debug_message("  Hallway " + string(j) + ": (" + string(hallway.x1) + ", " + string(hallway.y1) + ") to (" + string(hallway.x2) + ", " + string(hallway.y2) + ")");
+	        show_debug_message("  Width: " + string(hallway.width) + ", Height: " + string(hallway.height) + ", Orientation: " + (hallway.NorthSouth ? "North-South" : "East-West"));
+		}
 		if(ds_list_size(rm.hallways)<=1){
 			ds_list_add(deadEnd,{roomId: rm, roomInd: i});
+			show_debug_message("is deadEnd");
 		}
 	}
 	var reloadRand = irandom(ds_list_size(deadEnd) - 1);
 	var reloadRoom = ds_list_find_value(deadEnd, reloadRand);
 	var reloadRoomInd = reloadRoom.roomInd;
-	
 	
 	if(global.currLevel < 2)
 	{
@@ -410,8 +428,9 @@ GenerateNewDungeon = function() {
 	{
 		chestProb = max(20,  80 - 5 * global.currLevel);
 	}
+	
 	var chestRoomInd = noone;
-	var haveChestRoom = random_range(0,100)<=chestProb;
+	var haveChestRoom = random_range(0,100)<=chestProb && ds_list_size(deadEnd) >= 2;
 	
 	if(haveChestRoom)
 	{
@@ -423,6 +442,21 @@ GenerateNewDungeon = function() {
 			chestRoomInd = chestRoom.roomInd;
 		}
 		
+	}
+	show_debug_message("dead end ammount" + string(ds_list_size(deadEnd)));
+	for (var i = 0; i < ds_list_size(deadEnd); i++) {
+	    var roomInfo = ds_list_find_value(deadEnd, i);
+	    var roomId = roomInfo.roomId;
+	    var roomInd = roomInfo.roomInd;
+
+	    if (roomInd != reloadRoomInd && roomInd != chestRoomInd) {
+	        if (random(1) <= 1) {
+				show_debug_message("elite room");
+	            var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", oEliteTurret);
+				CreateDoors(roomId, true);
+	            roomId.is_elite = true;
+	        }
+	    }
 	}
 	
 	//Generating rooms
@@ -436,7 +470,7 @@ GenerateNewDungeon = function() {
 		var rm = ds_list_find_value(roomList,i);
 		var enemy = [];
 		var hazards = [];
-		if(i!=0 && i!=reloadRoomInd && i!=chestRoomInd){
+		if(i!=0 && i!=reloadRoomInd && i!=chestRoomInd && !rm.is_elite){
 			hazards = CreateHazards(rm);
 			enemy = CreateEnemies(rm.x1,rm.y1,rm.x2,rm.y2, hazards);
 			/*if(richochetRoom==i){
@@ -445,6 +479,11 @@ GenerateNewDungeon = function() {
 			if(random_range(0,1) < healthBoostProb && !isBoostGenerated){
 				CreateHealthBooster(rm, hazards);
 			}
+			CreateDoors(rm, true);
+		}
+		else if(!rm.is_elite)
+		{
+			CreateDoors(rm, false);
 		}
 	}
 	
@@ -530,39 +569,29 @@ CreateRoom = function(_x1, _y1, _x2, _y2) {
 	//CreateHazards(_x1,_y1,_x2,_y2);
 }
 
+
+
 CreateHallway = function(_x1, _y1, _x2, _y2, isNorthSouth) {
 	// Fill the dungeon with a hallway
 	ds_grid_set_region(dungeon, _x1, _y1, _x2, _y2, CELL_TYPES.HALLWAY);
-	/*
-	var wallLayer = layer_tilemap_get_id(layer_get_id("WallTile"));
-    
-    if (isNorthSouth) {
-        for (var temp_y = _y1; temp_y <= _y2; temp_y++) {
-            tilemap_set(wallLayer, wallTileIndex, _x1 - 1, temp_y);
-            tilemap_set(wallLayer, wallTileIndex, _x2 + 1, temp_y);
-        }
-		for (var temp_x = _x1; temp_x <= _x2; temp_x++) {
-            tilemap_set(wallLayer, 0, temp_x, _y1);
-            tilemap_set(wallLayer, 0, temp_x, _y2);
-        }
-    } else {
-        for (var temp_x = _x1; temp_x <= _x2; temp_x++) {
-            tilemap_set(wallLayer, wallTileIndex, temp_x, _y1 - 1);
-            tilemap_set(wallLayer, wallTileIndex, temp_x, _y2 + 1);
-        }
-		for (var temp_y = _y1; temp_y <= _y2; temp_y++) {
-            tilemap_set(wallLayer, 0, _x1 , temp_y);
-            tilemap_set(wallLayer, 0, _x2, temp_y);
-        }
-    }*/
-	
 
     if (isNorthSouth) {
         for (var temp_y = _y1; temp_y <= _y2; temp_y++) {
-            instance_create_layer((_x1 - 1) * CELL_SIZE, temp_y * CELL_SIZE, "Dungeon", obj_wall);
-            instance_create_layer((_x2 + 1) * CELL_SIZE, temp_y * CELL_SIZE, "Dungeon", obj_wall);
+			 if (temp_y == _y1) {
+             instance_create_layer((_x1 - 1) * CELL_SIZE, (temp_y) * CELL_SIZE, "Dungeon", obj_hallway_botleft);
+			 instance_create_layer((_x2 + 1) * CELL_SIZE, (temp_y) * CELL_SIZE, "Dungeon", obj_hallway_botright);
+              }
+             // At the very bottom, place obj_wall_upleft
+             else if (temp_y == _y2) {
+             instance_create_layer((_x1 - 1) * CELL_SIZE, (temp_y) * CELL_SIZE, "Dungeon", obj_hallway_upleft);
+			 instance_create_layer((_x2 + 1) * CELL_SIZE, (temp_y) * CELL_SIZE, "Dungeon", obj_hallway_upright);
+             }
+			 else{instance_create_layer((_x1 - 1) * CELL_SIZE, temp_y * CELL_SIZE, "Dungeon", obj_wall_left);
+            instance_create_layer((_x2 + 1) * CELL_SIZE, temp_y * CELL_SIZE, "Dungeon", obj_wall_right);}
+            
         }
-		for (var temp_x = _x1; temp_x <= _x2; temp_x++) {
+		
+		for (var temp_x = _x1-1; temp_x <= _x2+1; temp_x++) {
 			// Check and remove wall covers or walls at the entrance to the hallway
             var coverInstanceUp = instance_position(temp_x * CELL_SIZE, (_y1 -1) * CELL_SIZE, obj_wall_wallcover);
             if (coverInstanceUp != noone) instance_destroy(coverInstanceUp);
@@ -578,10 +607,22 @@ CreateHallway = function(_x1, _y1, _x2, _y2, isNorthSouth) {
 	        }
     } else {
         for (var temp_x = _x1; temp_x <= _x2; temp_x++) {
-            instance_create_layer(temp_x * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "Dungeon", obj_wall);
-            instance_create_layer(temp_x * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "Dungeon", obj_wall);
+			 if (temp_x == _x1) {
+             instance_create_layer((temp_x) * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "Dungeon", obj_hallway_upright);
+			 instance_create_layer((temp_x) * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "Dungeon", obj_hallway_botright);
+              }
+             // At the very bottom, place obj_wall_upleft
+             else if (temp_x == _x2) {
+             instance_create_layer((temp_x) * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "Dungeon", obj_hallway_upleft);
+			 instance_create_layer((temp_x) * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "Dungeon", obj_hallway_botleft);
+             }
+			 else{
+			 instance_create_layer(temp_x * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "Dungeon", obj_wall_up);
+             instance_create_layer(temp_x * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "Dungeon", obj_wall_down);
+			 }
+            
         }
-		for (var temp_y = _y1; temp_y <= _y2; temp_y++) {
+		for (var temp_y = _y1-1; temp_y <= _y2+1; temp_y++) {
 			var coverInstanceUp = instance_position(temp_x * CELL_SIZE, (_y1-1) * CELL_SIZE, obj_wall_wallcover);
             if (coverInstanceUp != noone) instance_destroy(coverInstanceUp);
 			
@@ -595,10 +636,6 @@ CreateHallway = function(_x1, _y1, _x2, _y2, isNorthSouth) {
 	        if (instanceRight != noone) instance_destroy(instanceRight);
 	    }
     }
-	
-
-
-  // Create corner instances
 
 }
 
@@ -799,6 +836,43 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 		}
 	}
 	return placedEnemies;
+}
+
+CreateDoors = function(eliteRoom, isEnemy){
+    for (var i = 0; i < ds_list_size(eliteRoom.hallways); i++) {
+        var hallway = ds_list_find_value(eliteRoom.hallways, i);
+
+        var doorX, doorY, doorAngle;
+
+        if (hallway.NorthSouth) {
+            doorX = (hallway.x1 + hallway.x2) / 2 * CELL_SIZE + CELL_SIZE / 2;
+            if (eliteRoom.y1 == hallway.y2 + 1) {
+                doorY = hallway.y2 * CELL_SIZE + CELL_SIZE / 2;
+                doorAngle = 0;
+            } else {
+                doorY = hallway.y1 * CELL_SIZE + CELL_SIZE / 2;
+                doorAngle = 180;
+            }
+        } else {
+            doorY = (hallway.y1 + hallway.y2) / 2 * CELL_SIZE + CELL_SIZE / 2;
+            if (eliteRoom.x1 == hallway.x2 + 1) {
+                doorX = hallway.x2 * CELL_SIZE + CELL_SIZE / 2;
+                doorAngle = 270;
+            } else {
+                doorX = hallway.x1 * CELL_SIZE + CELL_SIZE / 2;
+                doorAngle = 90;
+            }
+        }
+
+        var doorInstance = instance_create_layer(doorX, doorY, "Instances", obj_door);
+        doorInstance.image_angle = doorAngle;
+		doorInstance.linked_room = eliteRoom;
+		doorInstance.enemy_cleared = !isEnemy;
+    }
+}
+
+CreateItemUI = function() {
+	var itemSlot = instance_create_layer()
 }
 
 initParas();

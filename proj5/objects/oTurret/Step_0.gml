@@ -17,12 +17,21 @@ function shoot() {
 		_inst.direction = initial_direction;
 	}
 	else{
-		_inst.direction = (360/bulletSpiralCount) * bulletSpiralIterator + initial_direction;
+		_inst.direction = (360/bulletSpiralCount) * bulletSpiralIterator * bulletSpiralClockwise + initial_direction;
 	}
 	_inst.speed = bulletSpiralSpeed;
 
 	//shoot(); // Get ready to (potentially) spawn the next bullet
 	bulletSpiralIterator++; // Increment the iterator
+}
+
+if(_health <= 0)
+{
+	die();
+}
+
+function die(){
+	instance_destroy();
 }
 /*
 if (turretLives <= 0) {

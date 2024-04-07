@@ -1,7 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-_health = 50;
+_health = 50 + global.currLevel * 10;
 
 is_jump = false;
 target_x = 0;

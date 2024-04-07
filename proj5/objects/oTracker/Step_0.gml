@@ -8,6 +8,15 @@ if (point_distance(obj_player.x, obj_player.y, x, y) < ENEM_DISTANCE) {
 else {
 	speed = 0;
 }
+
+if(_health <= 0)
+{
+	die();
+}
+
+function die(){
+	instance_destroy();
+}
 /*
 if (trackerLives <= 0) {
 	chance = random(100);

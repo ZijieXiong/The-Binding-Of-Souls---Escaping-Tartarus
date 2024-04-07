@@ -3,8 +3,8 @@
 
 vx = 0;
 vy = 0;
-self.image_xscale = 1.5;
-self.image_yscale = 1.5;
+self.image_xscale = 1.25;
+self.image_yscale = 1.25;
 #region Inputs
 if(!global.playerFreeze && !global.globalFreeze)
 {
@@ -15,12 +15,12 @@ if(!global.playerFreeze && !global.globalFreeze)
 	}
 	if (keyboard_check(ord("S"))) {
 		vy += moveSpeed;
-		self.image_xscale = -1.5;
+		self.image_xscale = -1.25;
 		sprite_index=spr_player_run;
 	}
 	if (keyboard_check(ord("A"))) {
 		vx -= moveSpeed;
-		self.image_xscale = -1.5;
+		self.image_xscale = -1.25;
 		sprite_index=spr_player_run;
 	}
 	if (keyboard_check(ord("D"))) {
@@ -79,9 +79,9 @@ if(!global.playerFreeze && !global.globalFreeze)
 	//self.image_angle = point_direction(x, y, mouse_x, mouse_y); remove rotate of the player
 	// Flip sprite based on mouse position
 	if (mouse_x < x) {
-	    self.image_xscale = -1.5; // Flip to face left
+	    self.image_xscale = -1.25; // Flip to face left
 	} else {
-	    self.image_xscale = 1.5;  // Face right
+	    self.image_xscale = 1.25;  // Face right
 	}
 	
 	if (playerLives <= 0) {
@@ -91,7 +91,7 @@ if(!global.playerFreeze && !global.globalFreeze)
 			sprite_index = spr_player_death;
 			image_index = 0;
 			image_speed = 0.2;
-			global.playerFreeze = true;
+			global.globalFreeze = true;
 			death_animation_started = true;
 		}
 		//global.graze = false;
@@ -186,7 +186,7 @@ if(death_animation_started && image_index >= sprite_get_number(sprite_index) - 1
 if(revive_animation_started && image_index >= sprite_get_number(sprite_index) - 1)
 {
 	playerLives = 3;
-	global.playerFreeze = false;
+	global.globalFreeze = false;
 	revive_animation_started = false;
 	ChangeWeapon(current_weapon_arg);
 	
@@ -202,4 +202,3 @@ if (global.graze) {
 	doGraze();
 }
 	*/
-	

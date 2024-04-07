@@ -7,3 +7,5 @@ timer = room_speed * 3
 hitEnemies = ds_list_create();
 
 _rifflePenetrate = false
+
+_explosive = false

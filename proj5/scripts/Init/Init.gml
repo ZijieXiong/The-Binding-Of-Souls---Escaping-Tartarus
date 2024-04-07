@@ -35,7 +35,7 @@ global.shotgun_bulletcount = 3
 global.shotgun_split = false;
 //riffle
 global.rifflePenetrate = false;
-global.riffle_bullet_explosive = true;
+global.riffle_bullet_explosive = false
 global.riffleChargingSpeed = 1;
 
 #endregion
@@ -83,6 +83,7 @@ ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_block_attack", 5);
 //riffle upgrade init
 ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_penetrate", 5);
 ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_charging_speed", 5);
+ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_explosive", 5);
 
 global.upgrade_objs = ds_list_create();
 
@@ -104,10 +105,10 @@ function initParas()
 	
 	global.rifflePenetrate = false;
 	global.riffleChargingSpeed = 1;
-	global.riffle_bullet_explosive = true;
-	
-	
-	global.currLevel = 0;
+
+	global.riffle_bullet_explosive = false;
+
+	global.currLevel = 1;
 	global.playerFreeze = false;
 	global.globalFreeze = false;
 	global.bouncesLeft = 0;
