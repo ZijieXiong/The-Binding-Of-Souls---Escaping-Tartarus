@@ -19,3 +19,4 @@ if(!is_hit)
 }
 
 screenshake(30, 5, 0.2);
+show_debug_message("Hit wall!");
