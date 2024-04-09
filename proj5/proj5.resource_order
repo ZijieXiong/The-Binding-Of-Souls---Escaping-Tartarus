@@ -82,6 +82,7 @@
     {"name":"spr_ui_shotgun","order":2,"path":"sprites/spr_ui_shotgun/spr_ui_shotgun.yy",},
     {"name":"spr_ui_weapon","order":1,"path":"sprites/spr_ui_weapon/spr_ui_weapon.yy",},
     {"name":"spr_upgrade_general","order":4,"path":"sprites/spr_upgrade_general/spr_upgrade_general.yy",},
+    {"name":"spr_button_clicked","order":1,"path":"sprites/spr_button_clicked/spr_button_clicked.yy",},
     {"name":"Sprite27","order":42,"path":"sprites/Sprite27/Sprite27.yy",},
     {"name":"Sprite95","order":1,"path":"sprites/Sprite95/Sprite95.yy",},
     {"name":"sTile","order":14,"path":"sprites/sTile/sTile.yy",},

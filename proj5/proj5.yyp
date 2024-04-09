@@ -65,8 +65,8 @@
   "resources":[
     {"id":{"name":"fnt_label","path":"fonts/fnt_label/fnt_label.yy",},},
     {"id":{"name":"fnt_start_button","path":"fonts/fnt_start_button/fnt_start_button.yy",},},
-    {"id":{"name":"fnt_upgrade_ui","path":"fonts/fnt_upgrade_ui/fnt_upgrade_ui.yy",},},
     {"id":{"name":"fnt_title","path":"fonts/fnt_title/fnt_title.yy",},},
+    {"id":{"name":"fnt_upgrade_ui","path":"fonts/fnt_upgrade_ui/fnt_upgrade_ui.yy",},},
     {"id":{"name":"HighScore","path":"fonts/HighScore/HighScore.yy",},},
     {"id":{"name":"oBeeBullet","path":"objects/oBeeBullet/oBeeBullet.yy",},},
     {"id":{"name":"obj_blackout","path":"objects/obj_blackout/obj_blackout.yy",},},
@@ -315,6 +315,7 @@
     {"id":{"name":"spr_ui_weapon","path":"sprites/spr_ui_weapon/spr_ui_weapon.yy",},},
     {"id":{"name":"spr_upgrade_general","path":"sprites/spr_upgrade_general/spr_upgrade_general.yy",},},
     {"id":{"name":"Spr_Walk","path":"sprites/Spr_Walk/Spr_Walk.yy",},},
+    {"id":{"name":"spr_button_clicked","path":"sprites/spr_button_clicked/spr_button_clicked.yy",},},
     {"id":{"name":"Sprite27","path":"sprites/Sprite27/Sprite27.yy",},},
     {"id":{"name":"Sprite95","path":"sprites/Sprite95/Sprite95.yy",},},
     {"id":{"name":"sTile","path":"sprites/sTile/sTile.yy",},},

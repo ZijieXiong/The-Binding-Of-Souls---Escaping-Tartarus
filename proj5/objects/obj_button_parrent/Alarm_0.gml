@@ -1,5 +1,3 @@
 /// @description Insert description here
 // You can write your code in this editor
-sprite_index = spr_button_clicked;
-
-alarm[0] = 3;
+sprite_index = spr_button_normal;
