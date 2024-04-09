@@ -1,9 +1,15 @@
 {
   "FolderOrderSettings":[
+    {"name":"Items","order":2,"path":"folders/Objects/Items.yy",},
     {"name":"Enemy-Bee","order":3,"path":"folders/Sprites/enemy/Enemy-Bee.yy",},
     {"name":"Enemy-Jorgette","order":2,"path":"folders/Sprites/enemy/Enemy-Jorgette.yy",},
     {"name":"Enemy-Tracker","order":4,"path":"folders/Sprites/enemy/Enemy-Tracker.yy",},
     {"name":"slime","order":1,"path":"folders/Sprites/enemy/slime.yy",},
+    {"name":"Items","order":2,"path":"folders/Sprites/Items.yy",},
   ],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"oHeartBooster","order":1,"path":"objects/oHeartBooster/oHeartBooster.yy",},
+    {"name":"oShieldPicker","order":2,"path":"objects/oShieldPicker/oShieldPicker.yy",},
+    {"name":"spr_shield","order":1,"path":"sprites/spr_shield/spr_shield.yy",},
+  ],
 }

@@ -45,6 +45,9 @@ if(!global.playerFreeze && !global.globalFreeze)
 	if (keyboard_check_pressed(ord("3"))) ChangeWeapon(3);
 	if (keyboard_check_pressed(ord("4"))) ChangeWeapon(4);
 	
+	if _hasShield and (keyboard_check_pressed(ord("R"))){
+		var shield = instance_create_layer(x,y,"Instances",obj_shield)
+	}
 	//show_debug_message(obj_pistol.name);
 	collisionTileIndex = 16;
 

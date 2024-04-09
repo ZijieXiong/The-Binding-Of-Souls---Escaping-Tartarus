@@ -20,6 +20,8 @@ death_animation_timer = -1;
 
 revive_animation_started = false;
 
+_hasShield = false;
+
 function ChangeWeapon(arg){
 	if arg == 1 {
 		show_debug_message("pistol")
