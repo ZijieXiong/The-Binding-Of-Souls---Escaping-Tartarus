@@ -1,6 +1,8 @@
 
 draw_sprite_ext(sprite_index,image_index,x,y,_facing,1,0,c_white,1)
-
+if keyboard_check(ord("Q")){
+	draw_path(path,x,y,false)
+}
  
 if( _flash > 0 )
 {

@@ -7,3 +7,4 @@ xp = x
 yp = y
 _facing = 1
 previous_facing = _facing
+previouse_v_dir = 1
