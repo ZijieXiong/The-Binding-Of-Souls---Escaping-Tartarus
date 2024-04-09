@@ -2,6 +2,7 @@ var _dungeonWidth = floor(room_width / CELL_SIZE);
 var _dungeonHeight = floor(room_height / CELL_SIZE);
 dungeon = ds_grid_create(_dungeonWidth, _dungeonHeight);
 
+
 // Keeps track of all room structs
 roomList = ds_list_create();
 
@@ -78,6 +79,18 @@ GenerateNewDungeon = function() {
 	with(obj_upgrade_UI){
 		instance_destroy();
 	}
+	//with(obj_slot_label) {
+	//	instance_destroy();
+	//}
+	//with(obj_slot_ui) {
+	//	instance_destroy();
+	//}
+	//with(obj_revive_label) {
+	//	instance_destroy();
+	//}
+	//with(obj_revive_ui) {
+	//	instance_destroy();
+	//}
 	for(var i = 0; i < ds_list_size(global.upgrade_objs); i++)
 	{
 		var upgrade_obj = ds_list_find_value(global.upgrade_objs, i);
@@ -1056,6 +1069,10 @@ CreateDoors = function(eliteRoom, isEnemy){
 		doorInstance.linked_room = eliteRoom;
 		doorInstance.enemy_cleared = !isEnemy;
     }
+}
+
+CreateItemUI = function() {
+	var itemSlot = instance_create_layer()
 }
 
 initParas();

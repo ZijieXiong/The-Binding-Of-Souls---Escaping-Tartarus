@@ -93,5 +93,10 @@
     {"name":"dungTileset_ground","order":2,"path":"tilesets/dungTileset_ground/dungTileset_ground.yy",},
     {"name":"TileSet6","order":1,"path":"tilesets/TileSet6/TileSet6.yy",},
     {"name":"dungTileset_tech","order":3,"path":"tilesets/dungTileset_tech/dungTileset_tech.yy",},
+    {"name":"Enemy-Bee","order":3,"path":"folders/Sprites/enemy/Enemy-Bee.yy",},
+    {"name":"Enemy-Jorgette","order":2,"path":"folders/Sprites/enemy/Enemy-Jorgette.yy",},
+    {"name":"Enemy-Tracker","order":4,"path":"folders/Sprites/enemy/Enemy-Tracker.yy",},
+    {"name":"slime","order":1,"path":"folders/Sprites/enemy/slime.yy",},
   ],
+  "ResourceOrderSettings":[],
 }
