@@ -16,3 +16,5 @@ is_ground = false;
 
 life_time = 10;
 
+
+
