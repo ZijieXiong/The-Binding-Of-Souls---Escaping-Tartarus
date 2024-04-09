@@ -20,6 +20,9 @@ death_animation_timer = -1;
 
 revive_animation_started = false;
 
+is_vulnerable = true;
+invulnerable_time_after_damage =1;
+
 function ChangeWeapon(arg){
 	if arg == 1 {
 		show_debug_message("pistol")
@@ -55,4 +58,15 @@ function Revive(){
 	show_debug_message("revived");
 	playerLives = 3;
 	global.revive-=1;
+}
+
+
+function TakeDamage(){
+	if(is_vulnerable)
+	{
+		playerLives -= 1;
+		audio_play_sound(hitHurt, 0, false);
+		is_vulnerable = false;
+		alarm[0] = invulnerable_time_after_damage * 60;
+	}
 }
