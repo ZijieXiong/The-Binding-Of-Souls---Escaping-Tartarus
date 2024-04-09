@@ -8,8 +8,8 @@ event_inherited();
 
 
 
-_initial_health = 1000;
-_health =_initial_health;
+_initial_health = _health;
+//_health =_initial_health;
 
 walk_speed = 1;
 roll_speed = 8;
