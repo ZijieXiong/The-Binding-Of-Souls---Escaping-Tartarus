@@ -44,8 +44,8 @@
   },
   "origin":4,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"Spr_pyramid",
+    "path":"folders/Sprites/Spr_pyramid.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
