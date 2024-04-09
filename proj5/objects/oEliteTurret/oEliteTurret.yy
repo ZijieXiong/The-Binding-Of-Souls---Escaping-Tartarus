@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_turret",
-    "path":"sprites/spr_turret/spr_turret.yy",
+    "name":"spr_elite_jorgette_idle",
+    "path":"sprites/spr_elite_jorgette_idle/spr_elite_jorgette_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

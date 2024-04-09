@@ -2,6 +2,7 @@ var _dungeonWidth = floor(room_width / CELL_SIZE);
 var _dungeonHeight = floor(room_height / CELL_SIZE);
 dungeon = ds_grid_create(_dungeonWidth, _dungeonHeight);
 
+
 // Keeps track of all room structs
 roomList = ds_list_create();
 
@@ -43,7 +44,11 @@ GenerateNewDungeon = function() {
 	// Reset dungeon data
 	iterations = 0;
 	ds_list_clear(roomList);
-	tilemap_clear(layer_tilemap_get_id(layer_get_id("Tiles_1_1")), 0);
+	tilemap_clear(layer_tilemap_get_id(layer_get_id("Tiles_pyramid")), 0);
+	tilemap_clear(layer_tilemap_get_id(layer_get_id("Tiles_ground")), 0);
+	tilemap_clear(layer_tilemap_get_id(layer_get_id("Tiles_tech")), 0);
+	tilemap_clear(layer_tilemap_get_id(layer_get_id("WallTile")), 0);
+	tilemap_clear(layer_tilemap_get_id(layer_get_id("Dungeon")), 0);
 	with(obj_wall){
 		instance_destroy();
 	}
@@ -335,14 +340,21 @@ GenerateNewDungeon = function() {
 			
 			var _tileInd = 0;
 		
-			if (_cell = CELL_TYPES.ROOM) {
+			if (_cell == CELL_TYPES.ROOM) {
 				_tileInd = 1;
 			}
 			else if (_cell == CELL_TYPES.HALLWAY) {
 				_tileInd = 1;
 			}
-			
-			tilemap_set(layer_tilemap_get_id(layer_get_id("Tiles_1_1")), _tileInd, xx, yy);
+			if(global.currLevel==1){
+			tilemap_set(layer_tilemap_get_id(layer_get_id("Tiles_ground")), _tileInd, xx, yy);
+			}
+			else if(global.currLevel==2){
+			tilemap_set(layer_tilemap_get_id(layer_get_id("Tiles_pyramid")), _tileInd, xx, yy);
+			}else{
+				tilemap_set(layer_tilemap_get_id(layer_get_id("Tiles_tech")), _tileInd, xx, yy);
+			}
+
 		}
 	}
 
@@ -420,13 +432,13 @@ GenerateNewDungeon = function() {
 	var reloadRoom = ds_list_find_value(deadEnd, reloadRand);
 	var reloadRoomInd = reloadRoom.roomInd;
 	
-	if(global.currLevel < 2)
+	if(global.currLevel <= 2)
 	{
 		chestProb = 100;
 	}
 	else
 	{
-		chestProb = max(20,  80 - 5 * global.currLevel);
+		chestProb = max(30,  100 - 5 * global.currLevel);
 	}
 	
 	var chestRoomInd = noone;
@@ -531,7 +543,38 @@ CreateRoom = function(_x1, _y1, _x2, _y2) {
         instance_create_layer((_x2 + 1) * CELL_SIZE, yy * CELL_SIZE, "WallTile", obj_wall);
     }
 	*/
+
+
+	if(global.currLevel==1){
+	instance_create_layer((_x1 - 1) * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "WallTile", obj_ground_wall_upleft);
+    instance_create_layer((_x2 + 1) * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "WallTile", obj_ground_wall_upright);
+    instance_create_layer((_x1 - 1) * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "WallTile", obj_ground_wall_botleft);
+    instance_create_layer((_x2 + 1) * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "WallTile", obj_ground_wall_botright);
+	for (var yy = _y1 - 1; yy <= _y2 + 1; yy++) {
+    // Left and right walls
+    if (yy == _y1 - 1 || yy == _y2 + 1) {
+        // Corners are handled separately below, so skip them here
+        continue;
+    }
+    instance_create_layer((_x1 - 1) * CELL_SIZE, yy * CELL_SIZE, "WallTile", obj_ground_wall_left);
+    instance_create_layer((_x2 + 1) * CELL_SIZE, yy * CELL_SIZE, "WallTile", obj_ground_wall_right);
+	}
+
+	for (var xx = _x1 - 1; xx <= _x2 + 1; xx++) {
+    // Top and bottom walls
+    if (xx == _x1 - 1 || xx == _x2 + 1) {
+        // Corners are handled separately below, so skip them here
+        continue;
+    }
+    instance_create_layer(xx * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "WallTile", obj_ground_wall_up);
+	var wallCoverYOffset = sprite_get_height(walltile_up); 
+    instance_create_layer(xx * CELL_SIZE, (_y1 - 1) * CELL_SIZE+wallCoverYOffset, "WallTile", obj_ground_wallcover);
+    instance_create_layer(xx * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "WallTile", obj_ground_wall_down);
+	}
 	
+	}
+	//pyramid
+	else if(global.currLevel==2) {
     instance_create_layer((_x1 - 1) * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "WallTile", obj_wall_upleft);
     instance_create_layer((_x2 + 1) * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "WallTile", obj_wall_upright);
     instance_create_layer((_x1 - 1) * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "WallTile", obj_wall_bottomleft);
@@ -557,8 +600,36 @@ CreateRoom = function(_x1, _y1, _x2, _y2) {
     instance_create_layer(xx * CELL_SIZE, (_y1 - 1) * CELL_SIZE+wallCoverYOffset, "WallTile", obj_wall_wallcover);
     instance_create_layer(xx * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "WallTile", obj_wall_down);
 	}
-	
+	}
+//tech
 
+	else  {
+    instance_create_layer((_x1 - 1) * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "WallTile", obj_tech_wall_upleft);
+    instance_create_layer((_x2 + 1) * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "WallTile", obj_tech_wall_upright);
+    instance_create_layer((_x1 - 1) * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "WallTile", obj_tech_wall_botleft);
+    instance_create_layer((_x2 + 1) * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "WallTile", obj_tech_wall_botright);
+	for (var yy = _y1 - 1; yy <= _y2 + 1; yy++) {
+    // Left and right walls
+    if (yy == _y1 - 1 || yy == _y2 + 1) {
+        // Corners are handled separately below, so skip them here
+        continue;
+    }
+    instance_create_layer((_x1 - 1) * CELL_SIZE, yy * CELL_SIZE, "WallTile", obj_tech_wall_left);
+    instance_create_layer((_x2 + 1) * CELL_SIZE, yy * CELL_SIZE, "WallTile", obj_tech_wall_right);
+	}
+
+	for (var xx = _x1 - 1; xx <= _x2 + 1; xx++) {
+    // Top and bottom walls
+    if (xx == _x1 - 1 || xx == _x2 + 1) {
+        // Corners are handled separately below, so skip them here
+        continue;
+    }
+    instance_create_layer(xx * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "WallTile", obj_tech_wall_up);
+	var wallCoverYOffset = sprite_get_height(walltile_up); 
+    instance_create_layer(xx * CELL_SIZE, (_y1 - 1) * CELL_SIZE+wallCoverYOffset, "WallTile", obj_tech_wallcover);
+    instance_create_layer(xx * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "WallTile", obj_tech_wall_down);
+	}
+	}
 
 
     
@@ -573,8 +644,74 @@ CreateRoom = function(_x1, _y1, _x2, _y2) {
 
 CreateHallway = function(_x1, _y1, _x2, _y2, isNorthSouth) {
 	// Fill the dungeon with a hallway
-	ds_grid_set_region(dungeon, _x1, _y1, _x2, _y2, CELL_TYPES.HALLWAY);
 
+
+	ds_grid_set_region(dungeon, _x1, _y1, _x2, _y2, CELL_TYPES.HALLWAY);
+if(global.currLevel==1){
+	    if (isNorthSouth) {
+        for (var temp_y = _y1; temp_y <= _y2; temp_y++) {
+			 if (temp_y == _y1) {
+             instance_create_layer((_x1 - 1) * CELL_SIZE, (temp_y) * CELL_SIZE, "Dungeon", obj_ground_wall_upright);
+			 instance_create_layer((_x2 + 1) * CELL_SIZE, (temp_y) * CELL_SIZE, "Dungeon", obj_ground_wall_upleft);
+              }
+             // At the very bottom, place obj_wall_upleft
+             else if (temp_y == _y2) {
+             instance_create_layer((_x1 - 1) * CELL_SIZE, (temp_y) * CELL_SIZE, "Dungeon", obj_ground_wall_botright);
+			 instance_create_layer((_x2 + 1) * CELL_SIZE, (temp_y) * CELL_SIZE, "Dungeon", obj_ground_wall_botleft);
+             }
+			 else{instance_create_layer((_x1 - 1) * CELL_SIZE, temp_y * CELL_SIZE, "Dungeon", obj_ground_wall_left);
+            instance_create_layer((_x2 + 1) * CELL_SIZE, temp_y * CELL_SIZE, "Dungeon", obj_ground_wall_right);}
+            
+        }
+		
+		for (var temp_x = _x1-1; temp_x <= _x2+1; temp_x++) {
+			// Check and remove wall covers or walls at the entrance to the hallway
+            var coverInstanceUp = instance_position(temp_x * CELL_SIZE, (_y1 -1) * CELL_SIZE, obj_wall);
+            if (coverInstanceUp != noone) instance_destroy(coverInstanceUp);
+			
+			var coverInstanceDown = instance_position(temp_x * CELL_SIZE, (_y2 + 1) * CELL_SIZE, obj_wall);
+            if (coverInstanceDown != noone) instance_destroy(coverInstanceDown);
+			
+            var instanceLeft = instance_position((temp_x) * CELL_SIZE, _y1 * CELL_SIZE, obj_wall);
+	        if (instanceLeft != noone) instance_destroy(instanceLeft);
+
+	        var instanceRight = instance_position((temp_x) * CELL_SIZE, _y2 * CELL_SIZE, obj_wall);
+	        if (instanceRight != noone) instance_destroy(instanceRight);
+	        }
+    } else {
+        for (var temp_x = _x1; temp_x <= _x2; temp_x++) {
+			 if (temp_x == _x1) {
+             instance_create_layer((temp_x) * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "Dungeon", obj_ground_wall_botleft);
+			 instance_create_layer((temp_x) * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "Dungeon", obj_ground_wall_upleft);
+              }
+             // At the very bottom, place obj_wall_upleft
+             else if (temp_x == _x2) {
+             instance_create_layer((temp_x) * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "Dungeon", obj_ground_wall_botright);
+			 instance_create_layer((temp_x) * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "Dungeon", obj_ground_wall_upright);
+             }
+			 else{
+			 instance_create_layer(temp_x * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "Dungeon", obj_ground_wall_up);
+             instance_create_layer(temp_x * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "Dungeon", obj_ground_wall_down);
+			 }
+            
+        }
+		for (var temp_y = _y1-1; temp_y <= _y2+1; temp_y++) {
+			var coverInstanceUp = instance_position(temp_x * CELL_SIZE, (_y1-1) * CELL_SIZE,  obj_wall);
+            if (coverInstanceUp != noone) instance_destroy(coverInstanceUp);
+			
+			var coverInstanceDown = instance_position(temp_x * CELL_SIZE, (_y2 + 1) * CELL_SIZE,  obj_wall);
+            if (coverInstanceDown != noone) instance_destroy(coverInstanceDown);
+			
+	        var instanceLeft = instance_position((_x1) * CELL_SIZE, temp_y * CELL_SIZE, obj_wall);
+	        if (instanceLeft != noone) instance_destroy(instanceLeft);
+
+	        var instanceRight = instance_position((_x2) * CELL_SIZE, temp_y * CELL_SIZE, obj_wall);
+	        if (instanceRight != noone) instance_destroy(instanceRight);
+	    }
+    }
+}
+//pyramid
+else if (global.currLevel==2){
     if (isNorthSouth) {
         for (var temp_y = _y1; temp_y <= _y2; temp_y++) {
 			 if (temp_y == _y1) {
@@ -593,10 +730,10 @@ CreateHallway = function(_x1, _y1, _x2, _y2, isNorthSouth) {
 		
 		for (var temp_x = _x1-1; temp_x <= _x2+1; temp_x++) {
 			// Check and remove wall covers or walls at the entrance to the hallway
-            var coverInstanceUp = instance_position(temp_x * CELL_SIZE, (_y1 -1) * CELL_SIZE, obj_wall_wallcover);
+            var coverInstanceUp = instance_position(temp_x * CELL_SIZE, (_y1 -1) * CELL_SIZE,  obj_wall);
             if (coverInstanceUp != noone) instance_destroy(coverInstanceUp);
 			
-			var coverInstanceDown = instance_position(temp_x * CELL_SIZE, (_y2 + 1) * CELL_SIZE, obj_wall_wallcover);
+			var coverInstanceDown = instance_position(temp_x * CELL_SIZE, (_y2 + 1) * CELL_SIZE, obj_wall);
             if (coverInstanceDown != noone) instance_destroy(coverInstanceDown);
 			
             var instanceLeft = instance_position((temp_x) * CELL_SIZE, _y1 * CELL_SIZE, obj_wall);
@@ -623,10 +760,10 @@ CreateHallway = function(_x1, _y1, _x2, _y2, isNorthSouth) {
             
         }
 		for (var temp_y = _y1-1; temp_y <= _y2+1; temp_y++) {
-			var coverInstanceUp = instance_position(temp_x * CELL_SIZE, (_y1-1) * CELL_SIZE, obj_wall_wallcover);
+			var coverInstanceUp = instance_position(temp_x * CELL_SIZE, (_y1-1) * CELL_SIZE,  obj_wall);
             if (coverInstanceUp != noone) instance_destroy(coverInstanceUp);
 			
-			var coverInstanceDown = instance_position(temp_x * CELL_SIZE, (_y2 + 1) * CELL_SIZE, obj_wall_wallcover);
+			var coverInstanceDown = instance_position(temp_x * CELL_SIZE, (_y2 + 1) * CELL_SIZE,  obj_wall);
             if (coverInstanceDown != noone) instance_destroy(coverInstanceDown);
 			
 	        var instanceLeft = instance_position((_x1) * CELL_SIZE, temp_y * CELL_SIZE, obj_wall);
@@ -636,7 +773,70 @@ CreateHallway = function(_x1, _y1, _x2, _y2, isNorthSouth) {
 	        if (instanceRight != noone) instance_destroy(instanceRight);
 	    }
     }
+}//tech
+else{
+    if (isNorthSouth) {
+        for (var temp_y = _y1; temp_y <= _y2; temp_y++) {
+			 if (temp_y == _y1) {
+             instance_create_layer((_x1 - 1) * CELL_SIZE, (temp_y) * CELL_SIZE, "Dungeon", obj_tech_wall_upright);
+			 instance_create_layer((_x2 + 1) * CELL_SIZE, (temp_y) * CELL_SIZE, "Dungeon", obj_tech_wall_upleft);
+              }
+             // At the very bottom, place obj_wall_upleft
+             else if (temp_y == _y2) {
+             instance_create_layer((_x1 - 1) * CELL_SIZE, (temp_y) * CELL_SIZE, "Dungeon", obj_tech_wall_botright);
+			 instance_create_layer((_x2 + 1) * CELL_SIZE, (temp_y) * CELL_SIZE, "Dungeon", obj_tech_wall_botleft);
+             }
+			 else{instance_create_layer((_x1 - 1) * CELL_SIZE, temp_y * CELL_SIZE, "Dungeon", obj_tech_wall_left);
+            instance_create_layer((_x2 + 1) * CELL_SIZE, temp_y * CELL_SIZE, "Dungeon", obj_tech_wall_right);}
+            
+        }
+		
+		for (var temp_x = _x1-1; temp_x <= _x2+1; temp_x++) {
+			// Check and remove wall covers or walls at the entrance to the hallway
+            var coverInstanceUp = instance_position(temp_x * CELL_SIZE, (_y1 -1) * CELL_SIZE,  obj_wall);
+            if (coverInstanceUp != noone) instance_destroy(coverInstanceUp);
+			
+			var coverInstanceDown = instance_position(temp_x * CELL_SIZE, (_y2 + 1) * CELL_SIZE,  obj_wall);
+            if (coverInstanceDown != noone) instance_destroy(coverInstanceDown);
+			
+            var instanceLeft = instance_position((temp_x) * CELL_SIZE, _y1 * CELL_SIZE, obj_wall);
+	        if (instanceLeft != noone) instance_destroy(instanceLeft);
 
+	        var instanceRight = instance_position((temp_x) * CELL_SIZE, _y2 * CELL_SIZE, obj_wall);
+	        if (instanceRight != noone) instance_destroy(instanceRight);
+	        }
+    } else {
+        for (var temp_x = _x1; temp_x <= _x2; temp_x++) {
+			 if (temp_x == _x1) {
+             instance_create_layer((temp_x) * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "Dungeon", obj_tech_wall_botleft);
+			 instance_create_layer((temp_x) * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "Dungeon", obj_tech_wall_upleft);
+              }
+             // At the very bottom, place obj_wall_upleft
+             else if (temp_x == _x2) {
+             instance_create_layer((temp_x) * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "Dungeon", obj_tech_wall_botright);
+			 instance_create_layer((temp_x) * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "Dungeon", obj_tech_wall_upright);
+             }
+			 else{
+			 instance_create_layer(temp_x * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "Dungeon", obj_tech_wall_up);
+             instance_create_layer(temp_x * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "Dungeon", obj_tech_wall_down);
+			 }
+            
+        }
+		for (var temp_y = _y1-1; temp_y <= _y2+1; temp_y++) {
+			var coverInstanceUp = instance_position(temp_x * CELL_SIZE, (_y1-1) * CELL_SIZE, obj_wall);
+            if (coverInstanceUp != noone) instance_destroy(coverInstanceUp);
+			
+			var coverInstanceDown = instance_position(temp_x * CELL_SIZE, (_y2 + 1) * CELL_SIZE, obj_wall);
+            if (coverInstanceDown != noone) instance_destroy(coverInstanceDown);
+			
+	        var instanceLeft = instance_position((_x1) * CELL_SIZE, temp_y * CELL_SIZE, obj_wall);
+	        if (instanceLeft != noone) instance_destroy(instanceLeft);
+
+	        var instanceRight = instance_position((_x2) * CELL_SIZE, temp_y * CELL_SIZE, obj_wall);
+	        if (instanceRight != noone) instance_destroy(instanceRight);
+	    }
+    }
+}
 }
 
 CreateHealthBooster = function(rm, hazards){
@@ -711,7 +911,7 @@ CreateHazards = function(rm) {
 		var posX, posY;
 		var validPosition = false;
 		var size = random_range(0.8,1.2);
-		hazard = instance_create_layer(0,0,"WallTile", obj_wall);
+		hazard = instance_create_layer(0,0,"WallTile", obj_ground_obstacle);
 		var iter = 0;
 		while(!validPosition && iter < 50){
 			iter++;
@@ -878,4 +1078,5 @@ CreateItemUI = function() {
 initParas();
 
 GenerateNewDungeon();
+
 

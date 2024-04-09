@@ -17,7 +17,7 @@ depth = obj_player.depth-1;
 if (shoot) {
 if(!_reload){
 		_reload = true
-		audio_play_sound(laserShoot, 0, false);
+		audio_play_sound(shotgunShoot, 0, false);
 		sprite_index = spr_shotgun_shooting;
 	    show_debug_message("shotgun attack");
 		for (var _bullet = 0; _bullet < global.shotgun_bulletcount; _bullet++){
@@ -55,6 +55,7 @@ sprite_set_speed(spr_shotgun_reload, _reload_fps, spritespeed_framespersecond)
 if(sprite_index == spr_shotgun_shooting) && (image_index >= (sprite_get_number(sprite_index) - 1))
 {
 	sprite_index = spr_shotgun_reload;
+	reload_sound_id = audio_play_sound(shotgunReload,0,false);
 }
 //	shotgun_cooldown-=1;
 //}
@@ -62,4 +63,6 @@ if(sprite_index == spr_shotgun_shooting) && (image_index >= (sprite_get_number(s
 if(sprite_index == spr_shotgun_reload) && (image_index >= (sprite_get_number(sprite_index) - 1) ){
 	sprite_index = _default_image
 	_reload = false;
+	audio_stop_sound(reload_sound_id);
+	
 }

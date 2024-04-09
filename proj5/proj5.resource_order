@@ -1,7 +1,11 @@
 {
   "FolderOrderSettings":[
-    {"name":"Effects","order":1,"path":"folders/Sprites/Effects.yy",},
-    {"name":"Ice Effect","order":1,"path":"folders/Sprites/Effects/Ice Effect.yy",},
+    {"name":"Groung_tile","order":2,"path":"folders/Objects/Groung_tile.yy",},
+    {"name":"Pyramid_tile","order":1,"path":"folders/Objects/Pyramid_tile.yy",},
+    {"name":"tech_tile","order":3,"path":"folders/Objects/tech_tile.yy",},
+    {"name":"Spr_ground","order":2,"path":"folders/Sprites/Spr_ground.yy",},
+    {"name":"Spr_pyramid","order":1,"path":"folders/Sprites/Spr_pyramid.yy",},
+    {"name":"Spr_tech","order":3,"path":"folders/Sprites/Spr_tech.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"obj_screenshake","order":1,"path":"objects/obj_screenshake/obj_screenshake.yy",},

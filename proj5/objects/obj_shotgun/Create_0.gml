@@ -12,3 +12,5 @@ _reload = false
 
 split_angel = 20
 
+reload_sound_id = noone;
+
