@@ -319,7 +319,6 @@
     {"id":{"name":"wallTile","path":"sprites/wallTile/wallTile.yy",},},
     {"id":{"name":"dungTileset_ground","path":"tilesets/dungTileset_ground/dungTileset_ground.yy",},},
     {"id":{"name":"Wisp","path":"sprites/Wisp/Wisp.yy",},},
-    {"id":{"name":"dungTileset_small","path":"tilesets/dungTileset_small/dungTileset_small.yy",},},
     {"id":{"name":"dungTileset","path":"tilesets/dungTileset/dungTileset.yy",},},
     {"id":{"name":"TileSet5","path":"tilesets/TileSet5/TileSet5.yy",},},
     {"id":{"name":"TileSet6","path":"tilesets/TileSet6/TileSet6.yy",},},
