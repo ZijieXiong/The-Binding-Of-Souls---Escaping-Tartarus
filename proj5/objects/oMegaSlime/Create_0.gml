@@ -1,8 +1,6 @@
 // Inherit the parent event
 event_inherited();
 
-_health = 50;
-
 is_jump = false;
 target_x = 0;
 target_y = 0;
