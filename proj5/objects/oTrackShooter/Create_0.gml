@@ -9,3 +9,4 @@ self.image_yscale = 0.7;
 _health = 50 + global.currLevel * 10;
 
 dm = instance_find(oDungeon, 0);
+
