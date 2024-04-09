@@ -22,6 +22,7 @@ revive_animation_started = false;
 
 is_vulnerable = true;
 invulnerable_time_after_damage =1;
+_hasShield = false;
 
 function ChangeWeapon(arg){
 	if arg == 1 {

@@ -1,7 +1,7 @@
 var _dungeonWidth = floor(room_width / CELL_SIZE);
 var _dungeonHeight = floor(room_height / CELL_SIZE);
 dungeon = ds_grid_create(_dungeonWidth, _dungeonHeight);
-
+global.mp_grid = mp_grid_create(0,0,_dungeonWidth,_dungeonHeight,CELL_SIZE,CELL_SIZE)
 
 // Keeps track of all room structs
 roomList = ds_list_create();
@@ -43,6 +43,7 @@ GenerateNewDungeon = function() {
 	
 	// Reset dungeon data
 	iterations = 0;
+	mp_grid_clear_all(global.mp_grid)
 	ds_list_clear(roomList);
 	tilemap_clear(layer_tilemap_get_id(layer_get_id("Tiles_pyramid")), 0);
 	tilemap_clear(layer_tilemap_get_id(layer_get_id("Tiles_ground")), 0);
@@ -337,6 +338,10 @@ GenerateNewDungeon = function() {
 		for (var yy = 0; yy < _dungeonHeight; yy++) {
 		
 			var _cell = dungeon[# xx, yy];
+			
+			if _cell == CELL_TYPES.WALL{
+				mp_grid_add_cell(global.mp_grid,xx,yy)
+			}
 			
 			var _tileInd = 0;
 		
@@ -973,6 +978,7 @@ CreateHazards = function(rm) {
 			hazard.image_xscale = size;
 	        hazard.image_yscale = size;
 			placedHazards[array_length(placedHazards)] = {x: posX, y: posY};
+			mp_grid_add_instances(global.mp_grid,hazard,false)
 		}
 		else{
 			instance_destroy(hazard);
