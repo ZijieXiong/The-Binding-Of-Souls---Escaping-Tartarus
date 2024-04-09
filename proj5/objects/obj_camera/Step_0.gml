@@ -2,7 +2,8 @@
 // You can write your code in this editor
 
 var cam, playerX, playerY, viewW, viewH;
-
+var camX = 0;
+var camY = 0;
 
 
 player_viewW = 8*60;
@@ -31,18 +32,40 @@ if(camera_mode == 0)
 {
 	playerX = obj_player.x;
 	playerY = obj_player.y;
-	camera_set_view_pos(cam, playerX - player_viewW / 2, playerY - player_viewH / 2);
+	camX = playerX - player_viewW / 2;
+	camY = playerY - player_viewH / 2;
+	camera_set_view_pos(cam, camX, camY);
 
 	camera_set_view_size(cam, player_viewW, player_viewH);
 }
 else
 {
+	camX = 0;
+	camY = 0;
 	camera_set_view_pos(cam, 0, 0);
     camera_set_view_size(cam, global_viewW, global_viewH);
 }
 
-window_set_size(960,960);
 
+if (shake) 
+{ 
+   shake_time -= 1; 
+   var _xval = camX + choose(-shake_magnitude, shake_magnitude); 
+   var _yval = camY + choose(-shake_magnitude, shake_magnitude); 
+   camera_set_view_pos(view_camera[0], _xval, _yval); 
+
+   if (shake_time <= 0) 
+   { 
+      shake_magnitude -= shake_fade; 
+
+      if (shake_magnitude <= 0) 
+      { 
+         camera_set_view_pos(view_camera[0], camX, camY); 
+         shake = false; 
+      } 
+   } 
+}
+window_set_size(960,960);
 
 
 
