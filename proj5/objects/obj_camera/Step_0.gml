@@ -41,7 +41,7 @@ else
     camera_set_view_size(cam, global_viewW, global_viewH);
 }
 
-window_set_size(1080,1080);
+window_set_size(960,960);
 
 
 

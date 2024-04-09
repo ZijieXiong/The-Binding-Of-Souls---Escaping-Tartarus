@@ -27,7 +27,7 @@ if(!enemy_cleared)
 	if(!is_open){
 		var enemy_found = false;
 		with (oEnemiesParent) {
-		    if (x >= other.linked_room.x1 * CELL_SIZE && x <= other.linked_room.x2 * CELL_SIZE && y >= other.linked_room.y1 * CELL_SIZE && y <= other.linked_room.y2 * CELL_SIZE) {
+		    if (x >= other.linked_room.x1 * CELL_SIZE && x <= other.linked_room.x2 * CELL_SIZE + CELL_SIZE && y >= other.linked_room.y1 * CELL_SIZE && y <= other.linked_room.y2 * CELL_SIZE + CELL_SIZE) {
 		        enemy_found = true;
 		        exit;
 		    }
