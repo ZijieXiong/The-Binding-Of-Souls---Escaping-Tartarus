@@ -18,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"dung_tileset_237",
-    "path":"sprites/dung_tileset_237/dung_tileset_237.yy",
+    "name":"dung_tileset_pyramidfloor",
+    "path":"sprites/dung_tileset_pyramidfloor/dung_tileset_pyramidfloor.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{

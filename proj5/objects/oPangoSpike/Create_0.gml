@@ -14,3 +14,5 @@ falling_speed = 50;
 
 is_ground = false;
 
+life_time = 10;
+

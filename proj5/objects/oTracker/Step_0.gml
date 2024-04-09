@@ -19,6 +19,7 @@ if(_health <= 0)
 }
 
 function die(){
+	
 	instance_destroy();
 }
 xp = x

@@ -18,3 +18,5 @@ function screenshake(_time, _magnitude, _fade)
       shake_fade = _fade;
    }
 }
+
+show_debug_message("Shake!");

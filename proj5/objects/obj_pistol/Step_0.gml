@@ -18,7 +18,7 @@ if(!global.playerFreeze)
 
 	if (shoot) {
 		if(pistol_cooldown == 0){
-			audio_play_sound(laserShoot, 0, false);
+			audio_play_sound(pistolShoot, 0, false);
 			sprite_index = spr_pistol_shoot
 			var bullet = instance_create_layer(x+lengthdir_x(5,direction),y+lengthdir_y(5,direction), "Instances", obj_pistol_bullet);
 			bullet.speed = global.bulletSpeed;

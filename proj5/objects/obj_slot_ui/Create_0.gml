@@ -2,3 +2,4 @@
 // You can write your code in this editor
 hovering = false;
 clicked = false;
+item_sprite = No

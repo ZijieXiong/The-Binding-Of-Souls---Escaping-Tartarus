@@ -11,5 +11,5 @@ for (var i = 0; i < global.upgradeNum; i++) {
     upgradeInstance.createUI(midX + (i * 300 - 150), midY);
 	ds_list_add(global.upgrade_objs, upgradeInstance);
 }
-
+audio_play_sound(openChest, 0, false);
 instance_destroy();

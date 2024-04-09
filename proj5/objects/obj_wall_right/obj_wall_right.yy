@@ -6,8 +6,8 @@
   "name":"obj_wall_right",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Pyramid_tile",
+    "path":"folders/Objects/Pyramid_tile.yy",
   },
   "parentObjectId":{
     "name":"obj_wall",

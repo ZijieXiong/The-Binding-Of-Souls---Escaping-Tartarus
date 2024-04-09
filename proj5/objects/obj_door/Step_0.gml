@@ -6,6 +6,10 @@ if(!enemy_cleared)
 
 	if (player_in_room && is_open && !close_delay_active) {
 	    close_delay_active = true;
+		if(linked_room.is_elite)
+		{
+			elite_sound = audio_play_sound(eliteEnemyDetected,0,true);
+		}
 	}
 
 	if (close_delay_active) {
@@ -23,7 +27,7 @@ if(!enemy_cleared)
 	if(!is_open){
 		var enemy_found = false;
 		with (oEnemiesParent) {
-		    if (x >= other.linked_room.x1 * CELL_SIZE && x <= other.linked_room.x2 * CELL_SIZE && y >= other.linked_room.y1 * CELL_SIZE && y <= other.linked_room.y2 * CELL_SIZE) {
+		    if (x >= other.linked_room.x1 * CELL_SIZE && x <= other.linked_room.x2 * CELL_SIZE + CELL_SIZE && y >= other.linked_room.y1 * CELL_SIZE && y <= other.linked_room.y2 * CELL_SIZE + CELL_SIZE) {
 		        enemy_found = true;
 		        exit;
 		    }
@@ -33,6 +37,10 @@ if(!enemy_cleared)
 			is_open = true;
 			enemy_cleared = true;
 			sprite_index = spr_door_open;
+			if(elite_sound)
+			{
+				audio_stop_sound(elite_sound);
+			}
 			show_debug_message("door open");
 		}
 

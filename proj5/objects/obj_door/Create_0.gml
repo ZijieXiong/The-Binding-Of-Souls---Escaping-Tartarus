@@ -5,3 +5,4 @@ linked_room = noone;
 close_timer = 1;
 close_delay_active = false;
 enemy_cleared = true;
+elite_sound = noone;
