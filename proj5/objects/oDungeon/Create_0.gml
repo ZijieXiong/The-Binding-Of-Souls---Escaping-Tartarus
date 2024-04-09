@@ -421,13 +421,13 @@ GenerateNewDungeon = function() {
 	var reloadRoom = ds_list_find_value(deadEnd, reloadRand);
 	var reloadRoomInd = reloadRoom.roomInd;
 	
-	if(global.currLevel < 2)
+	if(global.currLevel <= 2)
 	{
 		chestProb = 100;
 	}
 	else
 	{
-		chestProb = max(20,  80 - 5 * global.currLevel);
+		chestProb = max(30,  100 - 5 * global.currLevel);
 	}
 	
 	var chestRoomInd = noone;

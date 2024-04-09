@@ -5,5 +5,16 @@
     {"name":"Enemy-Tracker","order":4,"path":"folders/Sprites/enemy/Enemy-Tracker.yy",},
     {"name":"slime","order":1,"path":"folders/Sprites/enemy/slime.yy",},
   ],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"enemyDie","order":10,"path":"sounds/enemyDie/enemyDie.yy",},
+    {"name":"eliteEnemyDetected","order":8,"path":"sounds/eliteEnemyDetected/eliteEnemyDetected.yy",},
+    {"name":"gameFail","order":9,"path":"sounds/gameFail/gameFail.yy",},
+    {"name":"openChest","order":7,"path":"sounds/openChest/openChest.yy",},
+    {"name":"pistolShoot","order":3,"path":"sounds/pistolShoot/pistolShoot.yy",},
+    {"name":"rifleChargedShoot","order":6,"path":"sounds/rifleChargedShoot/rifleChargedShoot.yy",},
+    {"name":"rifleContinuousShoot","order":4,"path":"sounds/rifleContinuousShoot/rifleContinuousShoot.yy",},
+    {"name":"rifleContinuousShoot2","order":5,"path":"sounds/rifleContinuousShoot2/rifleContinuousShoot2.yy",},
+    {"name":"shotgunReload","order":2,"path":"sounds/shotgunReload/shotgunReload.yy",},
+    {"name":"shotgunShoot","order":1,"path":"sounds/shotgunShoot/shotgunShoot.yy",},
+  ],
 }

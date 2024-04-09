@@ -59,13 +59,15 @@ if(mouse_check_button_released(mb_right)){
 		bullet_speed = global.bulletSpeed 
 		rifle_timer = 0
 		
+		audio_play_sound(rifleChargedShoot, 0, false);
+		
 	}
 	
 }
 
 if (shoot && !charge) {
 	if(rifle_cooldown == 0 && !_reload){
-		audio_play_sound(laserShoot, 0, false);
+		audio_play_sound(rifleContinuousShoot2, 0, false);
 		sprite_index = spr_rifle_shoot_normal
 		var bullet = instance_create_layer(x+lengthdir_x(24,direction),y+lengthdir_y(24,direction), "Instances", obj_rifle_bullet);
 		bullet.speed = global.bulletSpeed;
