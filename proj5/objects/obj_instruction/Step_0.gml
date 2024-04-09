@@ -1,7 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-// Inherit the parent event
-event_inherited();
-
-room_goto(rmTutorial);
+if (keyboard_check_pressed(vk_anykey)){
+	room_goto(rmDungeon);
+}
