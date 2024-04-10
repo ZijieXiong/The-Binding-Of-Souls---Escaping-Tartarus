@@ -3,5 +3,9 @@
   "ResourceOrderSettings":[
     {"name":"fnt_ui_large","order":1,"path":"fonts/fnt_ui_large/fnt_ui_large.yy",},
     {"name":"fnt_ui_medium","order":2,"path":"fonts/fnt_ui_medium/fnt_ui_medium.yy",},
+    {"name":"obj_number_label_parent","order":1,"path":"objects/obj_number_label_parent/obj_number_label_parent.yy",},
+    {"name":"obj_number_label1","order":2,"path":"objects/obj_number_label1/obj_number_label1.yy",},
+    {"name":"obj_number_label2","order":3,"path":"objects/obj_number_label2/obj_number_label2.yy",},
+    {"name":"obj_number_label3","order":4,"path":"objects/obj_number_label3/obj_number_label3.yy",},
   ],
 }
