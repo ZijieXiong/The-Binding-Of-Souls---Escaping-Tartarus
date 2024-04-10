@@ -3,6 +3,12 @@
   "ResourceOrderSettings":[
     {"name":"fnt_ui_large","order":1,"path":"fonts/fnt_ui_large/fnt_ui_large.yy",},
     {"name":"fnt_ui_medium","order":2,"path":"fonts/fnt_ui_medium/fnt_ui_medium.yy",},
+
+    {"name":"obj_number_label_parent","order":1,"path":"objects/obj_number_label_parent/obj_number_label_parent.yy",},
+    {"name":"obj_number_label1","order":2,"path":"objects/obj_number_label1/obj_number_label1.yy",},
+    {"name":"obj_number_label2","order":3,"path":"objects/obj_number_label2/obj_number_label2.yy",},
+    {"name":"obj_number_label3","order":4,"path":"objects/obj_number_label3/obj_number_label3.yy",},
+
     {"name":"obj_door","order":12,"path":"objects/obj_door/obj_door.yy",},
     {"name":"obj_ground_door","order":10,"path":"objects/obj_ground_door/obj_ground_door.yy",},
     {"name":"obj_ground_obstacle","order":6,"path":"objects/obj_ground_obstacle/obj_ground_obstacle.yy",},
@@ -68,5 +74,6 @@
     {"name":"spr_tech_wall_upleft","order":6,"path":"sprites/spr_tech_wall_upleft/spr_tech_wall_upleft.yy",},
     {"name":"spr_tech_wall_upright","order":8,"path":"sprites/spr_tech_wall_upright/spr_tech_wall_upright.yy",},
     {"name":"spr_tech_wallcover","order":7,"path":"sprites/spr_tech_wallcover/spr_tech_wallcover.yy",},
+
   ],
 }
