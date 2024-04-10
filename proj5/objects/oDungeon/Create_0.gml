@@ -469,7 +469,8 @@ GenerateNewDungeon = function() {
 	    if (roomInd != reloadRoomInd && roomInd != chestRoomInd) {
 	        if (random(1) <= 1) {
 				show_debug_message("elite room");
-	            var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", oElitePango);
+				var elite_type = choose(oElitePango, oEliteTurret, oSlimeAlpha);
+	            var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", elite_type);
 				CreateDoors(roomId, true);
 	            roomId.is_elite = true;
 	        }
@@ -1064,7 +1065,7 @@ CreateDoors = function(eliteRoom, isEnemy){
                 doorAngle = 0;
             } else {
                 doorY = hallway.y1 * CELL_SIZE + CELL_SIZE / 2;
-                doorAngle = 180;
+                doorAngle = 0;
             }
         } else {
             doorY = (hallway.y1 + hallway.y2) / 2 * CELL_SIZE + CELL_SIZE / 2;

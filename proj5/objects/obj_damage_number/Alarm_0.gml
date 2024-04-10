@@ -2,7 +2,7 @@
 // You can write your code in this editor
 if (growing) {
     scale += 0.05;
-	if(scale >= 0.7){
+	if(scale >= max_scale){
 		growing = false;
 	}
 }
