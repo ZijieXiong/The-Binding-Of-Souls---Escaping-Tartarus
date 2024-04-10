@@ -10,7 +10,7 @@
 //#macro RICHOCHET false
 //#macro HEALTH_BOOST false
 
-
+global.load_done = false
 global.graze = false;
 global.richochet = true;
 global.bouncesLeft = 0
@@ -39,6 +39,12 @@ global.riffle_bullet_explosive = false
 global.riffleChargingSpeed = 1;
 
 #endregion
+
+enum MAP_STATES{
+	BLOCKED,
+	CONCEALD,
+	DISCOVERD
+}
 
 enum CELL_TYPES {
 	WALL,

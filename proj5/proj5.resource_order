@@ -3,5 +3,7 @@
   "ResourceOrderSettings":[
     {"name":"fnt_ui_large","order":1,"path":"fonts/fnt_ui_large/fnt_ui_large.yy",},
     {"name":"fnt_ui_medium","order":2,"path":"fonts/fnt_ui_medium/fnt_ui_medium.yy",},
+    {"name":"obj_minimap_draw","order":1,"path":"objects/obj_minimap_draw/obj_minimap_draw.yy",},
+    {"name":"load_mini_map","order":1,"path":"scripts/load_mini_map/load_mini_map.yy",},
   ],
 }

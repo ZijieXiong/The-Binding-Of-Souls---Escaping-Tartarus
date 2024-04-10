@@ -469,8 +469,7 @@ GenerateNewDungeon = function() {
 	    if (roomInd != reloadRoomInd && roomInd != chestRoomInd) {
 	        if (random(1) <= 1) {
 				show_debug_message("elite room");
-				var elite_type = choose(oElitePango, oEliteTurret, oSlimeAlpha);
-	            var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", elite_type);
+	            var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", oElitePango);
 				CreateDoors(roomId, true);
 	            roomId.is_elite = true;
 	        }
@@ -519,8 +518,8 @@ GenerateNewDungeon = function() {
 	}
 
 
-
-	
+load_mini_map(_dungeonWidth,_dungeonHeight);
+instance_create_layer(0,0,"UI_Layer",obj_minimap_draw)
 }
 
 CreateRoom = function(_x1, _y1, _x2, _y2) {
@@ -996,7 +995,7 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 	for(var j = 0; j<enemyCount;j++){
 		var enemyType = choose(oTracker, oTurret);
 		
-		if (global.currLevel >= 2) {
+		if (global.currLevel > 3) {
 			enemyType = choose(oTracker, oTurret, oTrackShooter);
 		}
 		

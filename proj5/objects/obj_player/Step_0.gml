@@ -105,7 +105,6 @@ if(!global.playerFreeze && !global.globalFreeze)
 
 
 
-
 //_shotgun.current_weapon = true
 //var current_weapon =_pistol
 //var current_weapon =_rifle
