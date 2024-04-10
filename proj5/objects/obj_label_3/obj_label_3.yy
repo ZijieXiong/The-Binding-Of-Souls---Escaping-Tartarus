@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_number_label3",
-  "eventList":[],
+  "%Name":"obj_label_3",
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_number_label3",
+  "name":"obj_label_3",
   "overriddenProperties":[],
   "parent":{
     "name":"Slot UI",
     "path":"folders/Objects/Slot UI.yy",
   },
-  "parentObjectId":{
-    "name":"obj_number_label_parent",
-    "path":"objects/obj_number_label_parent/obj_number_label_parent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -26,9 +26,7 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[
-    {"$GMObjectProperty":"","%Name":"slot_number","filters":[],"listItems":[],"multiselect":false,"name":"slot_number","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"Item 3","varType":2,},
-  ],
+  "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
