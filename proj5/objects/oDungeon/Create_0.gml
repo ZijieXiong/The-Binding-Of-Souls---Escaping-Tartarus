@@ -917,7 +917,14 @@ CreateHazards = function(rm) {
 		var posX, posY;
 		var validPosition = false;
 		var size = random_range(0.8,1.2);
-		hazard = instance_create_layer(0,0,"WallTile", obj_ground_obstacle);
+		if(global.currLevel==1){
+		    hazard = instance_create_layer(0,0,"WallTile", obj_ground_obstacle);
+		}else if(global.currLevel==2){
+			hazard = instance_create_layer(0,0,"WallTile", obj_pyramid_obstacle);
+		}
+		else{
+		    hazard = instance_create_layer(0,0,"WallTile", obj_tech_obstacle);
+		}
 		var iter = 0;
 		while(!validPosition && iter < 50){
 			iter++;
@@ -1070,8 +1077,15 @@ CreateDoors = function(eliteRoom, isEnemy){
                 doorAngle = 90;
             }
         }
-
-        var doorInstance = instance_create_layer(doorX, doorY, "Instances", obj_door);
+		var doorInstance;
+        if(global.currLevel==1){
+			doorInstance = instance_create_layer(doorX, doorY, "Instances", obj_ground_door);
+		}else if(global.currLevel==2){
+			doorInstance = instance_create_layer(doorX, doorY, "Instances", obj_door);
+		}else{
+			doorInstance = instance_create_layer(doorX, doorY, "Instances", obj_tech_door);
+		}
+        
         doorInstance.image_angle = doorAngle;
 		doorInstance.linked_room = eliteRoom;
 		doorInstance.enemy_cleared = !isEnemy;
