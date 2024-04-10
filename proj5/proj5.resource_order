@@ -4,6 +4,9 @@
   ],
   "ResourceOrderSettings":[
     {"name":"fnt_dmg_number","order":1,"path":"fonts/fnt_dmg_number/fnt_dmg_number.yy",},
+    {"name":"obj_label_1","order":1,"path":"objects/obj_label_1/obj_label_1.yy",},
+    {"name":"obj_label_2","order":2,"path":"objects/obj_label_2/obj_label_2.yy",},
+    {"name":"obj_label_3","order":3,"path":"objects/obj_label_3/obj_label_3.yy",},
     {"name":"oPangoSpikeShadow","order":1,"path":"objects/oPangoSpikeShadow/oPangoSpikeShadow.yy",},
     {"name":"shd_tonemap","order":1,"path":"shaders/shd_tonemap/shd_tonemap.yy",},
     {"name":"Ice_VFX_1_In_Dirt","order":1,"path":"sprites/Ice_VFX_1_In_Dirt/Ice_VFX_1_In_Dirt.yy",},
