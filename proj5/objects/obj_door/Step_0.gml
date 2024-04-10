@@ -19,7 +19,7 @@ if(!enemy_cleared)
 	        is_open = false;
 	        close_delay_active = false;
 			//change sprite here
-			sprite_index = spr_door;
+			sprite_index = close_sprite;
 			show_debug_message("door closed");
 	    }
 	}
@@ -36,7 +36,7 @@ if(!enemy_cleared)
 		{
 			is_open = true;
 			enemy_cleared = true;
-			sprite_index = spr_door_open;
+			sprite_index = open_sprite;
 			if(elite_sound)
 			{
 				audio_stop_sound(elite_sound);
@@ -46,4 +46,3 @@ if(!enemy_cleared)
 
 	}
 }
-

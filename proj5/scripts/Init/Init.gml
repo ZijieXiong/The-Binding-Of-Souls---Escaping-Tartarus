@@ -10,7 +10,7 @@
 //#macro RICHOCHET false
 //#macro HEALTH_BOOST false
 
-
+global.load_done = false
 global.graze = false;
 global.richochet = true;
 global.bouncesLeft = 0
@@ -40,6 +40,12 @@ global.riffleChargingSpeed = 1;
 
 #endregion
 
+enum MAP_STATES{
+	BLOCKED,
+	CONCEALD,
+	DISCOVERD
+}
+
 enum CELL_TYPES {
 	WALL,
 	ROOM,
@@ -67,9 +73,9 @@ global.upgrade_pool = ds_map_create();
 //common upgrade init
 ds_map_add(global.common_upgrade, "obj_upgrade_damage", 20);
 ds_map_add(global.common_upgrade, "obj_upgrade_plus_one_bounce", 20);
-ds_map_add(global.common_upgrade, "obj_upgrade_shotgun", 5);
+ds_map_add(global.common_upgrade, "obj_upgrade_shotgun", 10);
 //ds_map_add(global.common_upgrade, "obj_upgrade_laser", 5);
-ds_map_add(global.common_upgrade, "obj_upgrade_riffle", 5);
+ds_map_add(global.common_upgrade, "obj_upgrade_riffle", 10);
 ds_map_add(global.common_upgrade, "obj_upgrade_speed", 20);
 ds_map_add(global.common_upgrade, "obj_upgrade_shooting_interval", 20);
 ds_map_add(global.common_upgrade, "obj_upgrade_revive", 1);

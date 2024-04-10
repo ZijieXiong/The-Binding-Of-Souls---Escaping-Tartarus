@@ -469,8 +469,7 @@ GenerateNewDungeon = function() {
 	    if (roomInd != reloadRoomInd && roomInd != chestRoomInd) {
 	        if (random(1) <= 1) {
 				show_debug_message("elite room");
-				var elite_type = choose(oElitePango, oEliteTurret, oSlimeAlpha);
-	            var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", elite_type);
+	            var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", oElitePango);
 				CreateDoors(roomId, true);
 	            roomId.is_elite = true;
 	        }
@@ -519,8 +518,8 @@ GenerateNewDungeon = function() {
 	}
 
 
-
-	
+load_mini_map(_dungeonWidth,_dungeonHeight);
+instance_create_layer(0,0,"UI_Layer",obj_minimap_draw)
 }
 
 CreateRoom = function(_x1, _y1, _x2, _y2) {
@@ -917,7 +916,14 @@ CreateHazards = function(rm) {
 		var posX, posY;
 		var validPosition = false;
 		var size = random_range(0.8,1.2);
-		hazard = instance_create_layer(0,0,"WallTile", obj_ground_obstacle);
+		if(global.currLevel==1){
+		    hazard = instance_create_layer(0,0,"WallTile", obj_ground_obstacle);
+		}else if(global.currLevel==2){
+			hazard = instance_create_layer(0,0,"WallTile", obj_pyramid_obstacle);
+		}
+		else{
+		    hazard = instance_create_layer(0,0,"WallTile", obj_tech_obstacle);
+		}
 		var iter = 0;
 		while(!validPosition && iter < 50){
 			iter++;
@@ -996,7 +1002,7 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 	for(var j = 0; j<enemyCount;j++){
 		var enemyType = choose(oTracker, oTurret);
 		
-		if (global.currLevel >= 2) {
+		if (global.currLevel > 3) {
 			enemyType = choose(oTracker, oTurret, oTrackShooter);
 		}
 		
@@ -1070,8 +1076,15 @@ CreateDoors = function(eliteRoom, isEnemy){
                 doorAngle = 90;
             }
         }
-
-        var doorInstance = instance_create_layer(doorX, doorY, "Instances", obj_door);
+		var doorInstance;
+        if(global.currLevel==1){
+			doorInstance = instance_create_layer(doorX, doorY, "Instances", obj_ground_door);
+		}else if(global.currLevel==2){
+			doorInstance = instance_create_layer(doorX, doorY, "Instances", obj_door);
+		}else{
+			doorInstance = instance_create_layer(doorX, doorY, "Instances", obj_tech_door);
+		}
+        
         doorInstance.image_angle = doorAngle;
 		doorInstance.linked_room = eliteRoom;
 		doorInstance.enemy_cleared = !isEnemy;

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"load_mini_map",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"load_mini_map",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
