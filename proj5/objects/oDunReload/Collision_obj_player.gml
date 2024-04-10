@@ -1,5 +1,5 @@
 dm.richochetProb += 0.05;
-
+instance_destroy(obj_minimap_draw)
 
 /*if (instance_number(oTracker) <= 0 && instance_number(oTurret) <= 0
 	&& instance_number(oTrackShooter) <= 0) {
