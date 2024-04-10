@@ -8,6 +8,8 @@ is_jump = true;
 sprite_index = spr_slime_jump;
 image_index = 0;
 
+screenshake(10, 3, 0.2);
+
 if(_collision_res)
 {
 	target_x = obj_player.x;

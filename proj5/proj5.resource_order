@@ -1,8 +1,12 @@
 {
-  "FolderOrderSettings":[],
+  "FolderOrderSettings":[
+    {"name":"LUT","order":1,"path":"folders/Sprites/LUT.yy",},
+  ],
   "ResourceOrderSettings":[
     {"name":"oPangoSpikeShadow","order":1,"path":"objects/oPangoSpikeShadow/oPangoSpikeShadow.yy",},
+    {"name":"shd_tonemap","order":1,"path":"shaders/shd_tonemap/shd_tonemap.yy",},
     {"name":"Ice_VFX_1_In_Dirt","order":1,"path":"sprites/Ice_VFX_1_In_Dirt/Ice_VFX_1_In_Dirt.yy",},
     {"name":"Ice_VFX_1_Shadow","order":2,"path":"sprites/Ice_VFX_1_Shadow/Ice_VFX_1_Shadow.yy",},
+    {"name":"spr_LUT_identity","order":1,"path":"sprites/spr_LUT_identity/spr_LUT_identity.yy",},
   ],
 }

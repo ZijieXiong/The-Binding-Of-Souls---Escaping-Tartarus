@@ -18,5 +18,5 @@ if(!is_hit)
 	summon_spike(hit_wall_x, hit_wall_y, hit_player_x, hit_player_y);
 }
 
-screenshake(30, 2, 0.2);
+screenshake(30, 5, 0.2);
 show_debug_message("Hit wall!");
