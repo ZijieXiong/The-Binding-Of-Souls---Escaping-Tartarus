@@ -3,7 +3,7 @@
 rifle_timer = 0
 rifle_cooldown = 0
 damage_increase_pre_frame = 90 / room_speed
-max_damage_increase = 90
+max_damage_increase = 50
 
 recoil_push = 20
 
