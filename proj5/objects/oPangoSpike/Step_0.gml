@@ -8,4 +8,5 @@ if(!is_ground && point_distance(x, y, target_x, target_y)<1)
 	image_speed = 0;
 	image_index = 0;
 	alarm[1] = life_time * 60;
+	solid = true;
 }
