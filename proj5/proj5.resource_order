@@ -1,4 +1,7 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"fnt_ui_large","order":1,"path":"fonts/fnt_ui_large/fnt_ui_large.yy",},
+    {"name":"fnt_ui_medium","order":2,"path":"fonts/fnt_ui_medium/fnt_ui_medium.yy",},
+  ],
 }
