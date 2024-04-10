@@ -19,7 +19,9 @@ if(is_jump && point_distance(x, y, target_x, target_y)<5)
 	alarm[0] = 60;
 	sprite_index = spr_slime_idle;
 	image_speed = 1;
-	screenshake(10, 3, 0.2);
+	var _collision_res = collision_rectangle(x + -alert_radius, y + -alert_radius, x + alert_radius, y + alert_radius, obj_player, true, 1);
+	if(_collision_res)
+		screenshake(10, 3, 0.2);
 }
 
 
