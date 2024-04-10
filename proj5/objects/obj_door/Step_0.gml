@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+if(global.currLevel==2){
 if(!enemy_cleared)
 {
 	var player_in_room = point_in_rectangle(obj_player.x, obj_player.y, linked_room.x1  * CELL_SIZE + CELL_SIZE / 2, linked_room.y1 * CELL_SIZE + CELL_SIZE / 2, linked_room.x2 * CELL_SIZE + CELL_SIZE / 2, linked_room.y2 * CELL_SIZE + CELL_SIZE / 2 - 2);
@@ -46,4 +47,4 @@ if(!enemy_cleared)
 
 	}
 }
-
+}

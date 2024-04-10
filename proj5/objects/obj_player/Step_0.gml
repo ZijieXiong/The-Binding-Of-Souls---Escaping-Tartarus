@@ -40,10 +40,10 @@ if(!global.playerFreeze && !global.globalFreeze)
 	shoot = mouse_check_button(mb_left);
 	bombInput = mouse_check_button(mb_right);
 
-	if (keyboard_check_pressed(ord("1"))) ChangeWeapon(1);
-	if (keyboard_check_pressed(ord("2"))) ChangeWeapon(2);
-	if (keyboard_check_pressed(ord("3"))) ChangeWeapon(3);
-	if (keyboard_check_pressed(ord("4"))) ChangeWeapon(4);
+	//if (keyboard_check_pressed(ord("1"))) ChangeWeapon(1);
+	//if (keyboard_check_pressed(ord("2"))) ChangeWeapon(2);
+	//if (keyboard_check_pressed(ord("3"))) ChangeWeapon(3);
+	//if (keyboard_check_pressed(ord("4"))) ChangeWeapon(4);
 	
 	if _hasShield and (keyboard_check_pressed(ord("R"))){
 		var shield = instance_create_layer(x,y,"Instances",obj_shield)
