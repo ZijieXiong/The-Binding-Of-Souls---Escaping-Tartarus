@@ -9,6 +9,15 @@
 ////generated powerup
 //#macro RICHOCHET false
 //#macro HEALTH_BOOST false
+global.max_items = 3
+
+global.spr_inventory[0] = -1
+global.spr_inventory[1] = -1
+global.spr_inventory[2] = -1
+
+global.obj_inventory[0] = -1
+global.obj_inventory[1] = -1
+global.obj_inventory[2] = -1
 
 global.load_done = false
 global.graze = false;
@@ -119,6 +128,16 @@ function initParas()
 	global.globalFreeze = false;
 	global.bouncesLeft = 0;
 	global.richochet = false;
+	
+	global.max_items = 3
+
+	global.spr_inventory[0] = -1
+	global.spr_inventory[1] = -1
+	global.spr_inventory[2] = -1
+
+	global.obj_inventory[0] = -1
+	global.obj_inventory[1] = -1
+	global.obj_inventory[2] = -1
 
 	initUpgradePool();
 }

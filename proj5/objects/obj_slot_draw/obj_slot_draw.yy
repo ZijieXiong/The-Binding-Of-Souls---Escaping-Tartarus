@@ -1,21 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"oShieldPicker",
+  "%Name":"obj_slot_draw",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oShieldPicker",
+  "name":"obj_slot_draw",
   "overriddenProperties":[],
   "parent":{
-    "name":"shield",
-    "path":"folders/Objects/Items/shield.yy",
+    "name":"Slot UI",
+    "path":"folders/Objects/Slot UI.yy",
   },
-  "parentObjectId":{
-    "name":"obj_items_parent",
-    "path":"objects/obj_items_parent/obj_items_parent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_shield_icon",
-    "path":"sprites/spr_shield_icon/spr_shield_icon.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

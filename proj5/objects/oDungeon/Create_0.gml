@@ -80,6 +80,9 @@ GenerateNewDungeon = function() {
 	with(obj_upgrade_UI){
 		instance_destroy();
 	}
+	with(obj_items_parent){
+		instance_destroy();
+	}
 	//with(obj_slot_label) {
 	//	instance_destroy();
 	//}

@@ -12,10 +12,13 @@
   "name":"obj_shield",
   "overriddenProperties":[],
   "parent":{
-    "name":"Items",
-    "path":"folders/Objects/Items.yy",
+    "name":"shield",
+    "path":"folders/Objects/Items/shield.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_items_parent",
+    "path":"objects/obj_items_parent/obj_items_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
