@@ -1,4 +1,11 @@
 {
-  "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "FolderOrderSettings":[
+    {"name":"Portal","order":2,"path":"folders/Sprites/Portal.yy",},
+  ],
+  "ResourceOrderSettings":[
+    {"name":"obj_enemy_portal","order":2,"path":"objects/obj_enemy_portal/obj_enemy_portal.yy",},
+    {"name":"obj_room","order":1,"path":"objects/obj_room/obj_room.yy",},
+    {"name":"spr_enemy_portal_open","order":2,"path":"sprites/spr_enemy_portal_open/spr_enemy_portal_open.yy",},
+    {"name":"spr_enemy_portal_close","order":3,"path":"sprites/spr_enemy_portal_close/spr_enemy_portal_close.yy",},
+  ],
 }

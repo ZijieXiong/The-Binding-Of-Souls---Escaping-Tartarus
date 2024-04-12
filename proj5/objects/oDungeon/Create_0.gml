@@ -473,9 +473,12 @@ GenerateNewDungeon = function() {
 	        if (random(1) <= 1) {
 				show_debug_message("elite room");
 				var elite_type = choose(oElitePango, oEliteTurret, oSlimeAlpha);
-	            var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", elite_type);
+	            var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", obj_enemy_portal);
 				CreateDoors(roomId, true);
-	            roomId.is_elite = true;
+	            roomId.room_obj.is_elite = true;
+				roomId.room_obj.enemy_cleared = false;
+				roomId.room_obj.enemies[0] = eliteEnemy;
+				eliteEnemy.enemy_type = elite_type;
 	        }
 	    }
 	}
@@ -491,9 +494,11 @@ GenerateNewDungeon = function() {
 		var rm = ds_list_find_value(roomList,i);
 		var enemy = [];
 		var hazards = [];
-		if(i!=0 && i!=reloadRoomInd && i!=chestRoomInd && !rm.is_elite){
+		if(i!=0 && i!=reloadRoomInd && i!=chestRoomInd && !rm.room_obj.is_elite){
 			hazards = CreateHazards(rm);
 			enemy = CreateEnemies(rm.x1,rm.y1,rm.x2,rm.y2, hazards);
+			rm.room_obj.debug();
+			rm.room_obj.enemies = enemy;
 			/*if(richochetRoom==i){
 				CreateRichochet(rm, hazards);
 			}*/
@@ -501,8 +506,9 @@ GenerateNewDungeon = function() {
 				CreateHealthBooster(rm, hazards);
 			}
 			CreateDoors(rm, true);
+			rm.room_obj.enemy_cleared = false;
 		}
-		else if(!rm.is_elite)
+		else
 		{
 			CreateDoors(rm, false);
 		}
@@ -1013,15 +1019,16 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 		var enemy;
 		var posX, posY;
 		var validPosition = false;
-		enemy = instance_create_layer(0,0,"Dungeon", enemyType);
+		enemy = instance_create_layer((_x1+_x2)/2 * CELL_SIZE,(_y1+_y2)/2 * CELL_SIZE,"Dungeon", obj_enemy_portal);
+		enemy.enemy_type = enemyType;
 		var iter = 0;
 		
 		while(!validPosition && iter < 100){
 			iter++;
 			var adjusted_x1 = _x1 * CELL_SIZE + wallDistance;
 	        var adjusted_y1 = _y1 * CELL_SIZE + wallDistance;
-	        var adjusted_x2 = _x2 * CELL_SIZE - sprite_get_width(enemy.sprite_index) - wallDistance;
-	        var adjusted_y2 = _y2 * CELL_SIZE - sprite_get_height(enemy.sprite_index) - wallDistance;
+	        var adjusted_x2 = _x2 * CELL_SIZE - wallDistance;
+	        var adjusted_y2 = _y2 * CELL_SIZE - wallDistance;
 		
 			var posX = random_range(adjusted_x1, adjusted_x2);
 			var posY = random_range(adjusted_y1, adjusted_y2);
@@ -1042,13 +1049,13 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 			}
 			
 		}
-		if(validPosition)
-		{
+		if(validPosition){
 			enemy.x = posX;
 			enemy.y = posY;
-			placedEnemies[array_length(placedEnemies)] = {x: posX, y: posY};
+			placedEnemies[array_length(placedEnemies)] = enemy;
 		}
-		else{
+		else
+		{
 			instance_destroy(enemy);
 		}
 	}
@@ -1056,6 +1063,7 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 }
 
 CreateDoors = function(eliteRoom, isEnemy){
+	var doors = [];
     for (var i = 0; i < ds_list_size(eliteRoom.hallways); i++) {
         var hallway = ds_list_find_value(eliteRoom.hallways, i);
 
@@ -1092,7 +1100,9 @@ CreateDoors = function(eliteRoom, isEnemy){
         doorInstance.image_angle = doorAngle;
 		doorInstance.linked_room = eliteRoom;
 		doorInstance.enemy_cleared = !isEnemy;
+		doors[array_length(doors)] = doorInstance;
     }
+	eliteRoom.room_obj.doors = doors;
 }
 
 CreateItemUI = function() {

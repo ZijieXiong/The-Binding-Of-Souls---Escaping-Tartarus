@@ -13,6 +13,11 @@ function DungeonRoom(_x1, _y1, _x2, _y2) constructor {
 	
 	hallways = ds_list_create();
 	is_elite = false;
+	room_obj = instance_create_layer((_x1 + _x2)/2*CELL_SIZE, (_y1 + _y2)/2*CELL_SIZE, "Dungeon", obj_room);
+	room_obj.x1 = x1;
+	room_obj.x2 = x2;
+	room_obj.y1 = y1;
+	room_obj.y2 = y2;
 }
 
 function DungeonHallway(_x1, _y1, _x2, _y2, isNorthSouth) constructor{
