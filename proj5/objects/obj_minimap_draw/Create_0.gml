@@ -44,8 +44,13 @@ function draw_map(){
 					draw_rectangle(xx,yy,xx+spacing,yy+spacing,false)
 					break;
 			}
+			
 		}
 	}
+	var px = (gwidth - (max_size_x / 2)) + (location_x * spacing);
+	var py = (gheight - (max_size_y / 2)) + (location_y * spacing);
+	draw_set_color(c_red)
+	draw_rectangle(px,py,px+spacing,py+spacing,false)
 }
 
 //draw_map()
