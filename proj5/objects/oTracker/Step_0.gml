@@ -24,7 +24,7 @@ if(_health <= 0)
 }
 
 function die(){
-	instance_create_layer(x,y,"Instances",oShieldPicker)
+	dropItem();
 	instance_destroy();
 }
 xp = x

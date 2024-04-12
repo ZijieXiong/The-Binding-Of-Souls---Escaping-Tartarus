@@ -19,6 +19,7 @@ if(_health <= 0)
 }
 
 function die(){
+	dropItem();
 	instance_destroy();
 }
 
