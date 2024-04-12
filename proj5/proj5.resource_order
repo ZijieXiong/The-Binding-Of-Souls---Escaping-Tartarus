@@ -1,11 +1,18 @@
 {
   "FolderOrderSettings":[
+    {"name":"missile","order":1,"path":"folders/Objects/Items/missile.yy",},
+    {"name":"missile","order":2,"path":"folders/Sprites/Items/missile.yy",},
+    {"name":"shield","order":1,"path":"folders/Sprites/Items/shield.yy",},
     {"name":"Portal","order":2,"path":"folders/Sprites/Portal.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"obj_enemy_portal","order":2,"path":"objects/obj_enemy_portal/obj_enemy_portal.yy",},
     {"name":"obj_room","order":1,"path":"objects/obj_room/obj_room.yy",},
-    {"name":"spr_enemy_portal_open","order":2,"path":"sprites/spr_enemy_portal_open/spr_enemy_portal_open.yy",},
+    {"name":"obj_missile","order":1,"path":"objects/obj_missile/obj_missile.yy",},
     {"name":"spr_enemy_portal_close","order":3,"path":"sprites/spr_enemy_portal_close/spr_enemy_portal_close.yy",},
+    {"name":"spr_enemy_portal_open","order":2,"path":"sprites/spr_enemy_portal_open/spr_enemy_portal_open.yy",},
+    {"name":"spr_missile_hit","order":1,"path":"sprites/spr_missile_hit/spr_missile_hit.yy",},
+    {"name":"spr_missle_pickup","order":2,"path":"sprites/spr_missle_pickup/spr_missle_pickup.yy",},
+    {"name":"spr_shield_icon","order":1,"path":"sprites/spr_shield_icon/spr_shield_icon.yy",},
   ],
 }
