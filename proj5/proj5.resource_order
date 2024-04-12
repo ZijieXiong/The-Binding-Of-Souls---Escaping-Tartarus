@@ -1,21 +1,4 @@
 {
-  "FolderOrderSettings":[
-    {"name":"shield","order":1,"path":"folders/Objects/Items/shield.yy",},
-    {"name":"LUT","order":1,"path":"folders/Sprites/LUT.yy",},
-  ],
-  "ResourceOrderSettings":[
-    {"name":"fnt_dmg_number","order":1,"path":"fonts/fnt_dmg_number/fnt_dmg_number.yy",},
-    {"name":"obj_label_1","order":1,"path":"objects/obj_label_1/obj_label_1.yy",},
-    {"name":"obj_label_2","order":2,"path":"objects/obj_label_2/obj_label_2.yy",},
-    {"name":"obj_label_3","order":3,"path":"objects/obj_label_3/obj_label_3.yy",},
-    {"name":"obj_slot_draw","order":4,"path":"objects/obj_slot_draw/obj_slot_draw.yy",},
-    {"name":"obj_items_parent","order":2,"path":"objects/obj_items_parent/obj_items_parent.yy",},
-    {"name":"oPangoSpikeShadow","order":1,"path":"objects/oPangoSpikeShadow/oPangoSpikeShadow.yy",},
-    {"name":"oShieldPicker","order":1,"path":"objects/oShieldPicker/oShieldPicker.yy",},
-    {"name":"items_function","order":1,"path":"scripts/items_function/items_function.yy",},
-    {"name":"shd_tonemap","order":1,"path":"shaders/shd_tonemap/shd_tonemap.yy",},
-    {"name":"Ice_VFX_1_In_Dirt","order":1,"path":"sprites/Ice_VFX_1_In_Dirt/Ice_VFX_1_In_Dirt.yy",},
-    {"name":"Ice_VFX_1_Shadow","order":2,"path":"sprites/Ice_VFX_1_Shadow/Ice_VFX_1_Shadow.yy",},
-    {"name":"spr_LUT_identity","order":1,"path":"sprites/spr_LUT_identity/spr_LUT_identity.yy",},
-  ],
+  "FolderOrderSettings":[],
+  "ResourceOrderSettings":[],
 }
