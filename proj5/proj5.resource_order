@@ -1,5 +1,7 @@
 {
   "FolderOrderSettings":[
+    {"name":"anubis","order":2,"path":"folders/Sprites/enemy/anubis.yy",},
+    {"name":"mummy","order":1,"path":"folders/Sprites/enemy/mummy.yy",},
     {"name":"LUT","order":1,"path":"folders/Sprites/LUT.yy",},
   ],
   "ResourceOrderSettings":[
@@ -7,10 +9,22 @@
     {"name":"obj_label_1","order":1,"path":"objects/obj_label_1/obj_label_1.yy",},
     {"name":"obj_label_2","order":2,"path":"objects/obj_label_2/obj_label_2.yy",},
     {"name":"obj_label_3","order":3,"path":"objects/obj_label_3/obj_label_3.yy",},
+    {"name":"oMummy","order":2,"path":"objects/oMummy/oMummy.yy",},
+    {"name":"oAnubis","order":3,"path":"objects/oAnubis/oAnubis.yy",},
     {"name":"oPangoSpikeShadow","order":1,"path":"objects/oPangoSpikeShadow/oPangoSpikeShadow.yy",},
     {"name":"shd_tonemap","order":1,"path":"shaders/shd_tonemap/shd_tonemap.yy",},
     {"name":"Ice_VFX_1_In_Dirt","order":1,"path":"sprites/Ice_VFX_1_In_Dirt/Ice_VFX_1_In_Dirt.yy",},
     {"name":"Ice_VFX_1_Shadow","order":2,"path":"sprites/Ice_VFX_1_Shadow/Ice_VFX_1_Shadow.yy",},
+    {"name":"spr_anubis_cast","order":3,"path":"sprites/spr_anubis_cast/spr_anubis_cast.yy",},
+    {"name":"spr_anubis_death","order":4,"path":"sprites/spr_anubis_death/spr_anubis_death.yy",},
+    {"name":"spr_anubis_idle","order":1,"path":"sprites/spr_anubis_idle/spr_anubis_idle.yy",},
+    {"name":"spr_anubis_walk","order":2,"path":"sprites/spr_anubis_walk/spr_anubis_walk.yy",},
     {"name":"spr_LUT_identity","order":1,"path":"sprites/spr_LUT_identity/spr_LUT_identity.yy",},
+    {"name":"spr_mummy_attack","order":4,"path":"sprites/spr_mummy_attack/spr_mummy_attack.yy",},
+    {"name":"spr_mummy_death","order":5,"path":"sprites/spr_mummy_death/spr_mummy_death.yy",},
+    {"name":"spr_mummy_idle","order":1,"path":"sprites/spr_mummy_idle/spr_mummy_idle.yy",},
+    {"name":"spr_mummy_reborn","order":6,"path":"sprites/spr_mummy_reborn/spr_mummy_reborn.yy",},
+    {"name":"spr_mummy_walk","order":3,"path":"sprites/spr_mummy_walk/spr_mummy_walk.yy",},
+    {"name":"spr_mummy","order":2,"path":"sprites/spr_mummy/spr_mummy.yy",},
   ],
 }
