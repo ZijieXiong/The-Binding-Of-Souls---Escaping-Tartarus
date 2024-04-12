@@ -3,7 +3,10 @@
 //if (dm.currLevel mod 5 == 0) {
 
 //}
-obj_player._hasShield = true
-instance_destroy();
+var picked = pickup_item(spr_shield_icon,obj_shield)
+if picked == 1{
+	instance_destroy();
+}
+
 
 
