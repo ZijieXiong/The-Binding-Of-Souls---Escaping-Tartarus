@@ -59,6 +59,7 @@ function Revive(){
 	show_debug_message("revived");
 	playerLives = 3;
 	global.revive-=1;
+	ds_map_replace(global.upgrade_pool, "obj_upgrade_revive", 5);
 }
 
 

@@ -3,6 +3,7 @@
 function applyUpgrade()
 {
 	global.revive += 1;
+	ds_map_replace(global.upgrade_pool, "obj_upgrade_revive", 1);
 	show_debug_message("Upgrade applied: Revive");
 }
 
