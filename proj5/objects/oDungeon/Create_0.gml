@@ -83,6 +83,14 @@ GenerateNewDungeon = function() {
 	with(obj_items_parent){
 		instance_destroy();
 	}
+	with(obj_room)
+	{
+		instance_destroy();
+	}
+	with(obj_enemy_portal)
+	{
+		instance_destroy();
+	}
 	//with(obj_slot_label) {
 	//	instance_destroy();
 	//}
@@ -994,8 +1002,8 @@ CreateHazards = function(rm) {
 			hazard.y = posY;
 			hazard.image_xscale = size;
 	        hazard.image_yscale = size;
-			placedHazards[array_length(placedHazards)] = {x: posX, y: posY};
-			mp_grid_add_instances(global.mp_grid,hazard,false)
+			placedHazards[array_length(placedHazards)] = hazard;
+			mp_grid_add_instances(global.mp_grid,hazard,true)
 		}
 		else{
 			instance_destroy(hazard);
@@ -1008,7 +1016,7 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 	var enemyCount = irandom_range(2 + global.currLevel div 3,3 + global.currLevel div 3);
 	var placedEnemies = [];
 	var enemyDistance = 60;
-	var wallDistance = 80;
+	var wallDistance = 96;
 	for(var j = 0; j<enemyCount;j++){
 		var enemyType = choose(oTracker, oTurret);
 		
@@ -1042,7 +1050,9 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 				}
 			}
 			for (var i = 0; i < array_length(hazards); i++) {
-				if (point_distance(posX, posY, hazards[i].x, hazards[i].y) < wallDistance) {
+				var hazard = hazards[i];
+				var offset = sprite_get_width(hazard.sprite_index) * hazard.image_xscale / 2;
+				if (point_distance(posX, posY, hazards[i].x + offset , hazards[i].y + offset) < wallDistance) {
 					validPosition = false;
 					break;
 				}

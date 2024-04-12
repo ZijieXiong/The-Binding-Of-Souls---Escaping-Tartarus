@@ -8,7 +8,7 @@ if(!enemy_cleared && is_open)
 		doorClose();
 	}
 }
-else if(battle_started)
+else if(!enemy_cleared && battle_started)
 {
 	var enemy_found = false;
 	with (oEnemiesParent) {
