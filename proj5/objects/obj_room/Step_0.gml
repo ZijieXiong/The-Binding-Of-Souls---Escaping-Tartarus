@@ -56,4 +56,5 @@ function doorOpen()
 	{
 		doors[i].open();
 	}
+	dropItem();
 }

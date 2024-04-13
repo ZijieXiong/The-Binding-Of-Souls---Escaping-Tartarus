@@ -1,4 +1,5 @@
-playerLives = 3;
+healthLimit = 5;
+playerLives = 5;
 attack_cooldown = 0;
 moveSpeed = 3;
 grazeMeter = 0;
@@ -70,5 +71,13 @@ function TakeDamage(){
 		audio_play_sound(hitHurt, 0, false);
 		is_vulnerable = false;
 		alarm[0] = invulnerable_time_after_damage * 60;
+	}
+}
+
+function Heal(healthHealed)
+{
+	playerLives += healthHealed;
+	if(playerLives >= healthLimit){
+		playerLives = healthLimit;
 	}
 }

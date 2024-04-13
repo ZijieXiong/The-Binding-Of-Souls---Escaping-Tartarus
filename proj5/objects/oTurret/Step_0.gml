@@ -35,8 +35,6 @@ if(_health <= 0)
 
 function die(){
 	if image_index >= (sprite_get_number(sprite_index) - 1) {
-		dropItem();
-		instance_create_layer(x,y,"Instances",oShieldPicker)
 		instance_destroy();
 	}
 }

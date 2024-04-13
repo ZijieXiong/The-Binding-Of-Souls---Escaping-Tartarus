@@ -504,8 +504,8 @@ GenerateNewDungeon = function() {
 		var hazards = [];
 		if(i!=0 && i!=reloadRoomInd && i!=chestRoomInd && !rm.room_obj.is_elite){
 			hazards = CreateHazards(rm);
+			rm.room_obj.hazards = hazards;
 			enemy = CreateEnemies(rm.x1,rm.y1,rm.x2,rm.y2, hazards);
-			rm.room_obj.debug();
 			rm.room_obj.enemies = enemy;
 			/*if(richochetRoom==i){
 				CreateRichochet(rm, hazards);
@@ -1016,7 +1016,7 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 	var enemyCount = irandom_range(2 + global.currLevel div 3,3 + global.currLevel div 3);
 	var placedEnemies = [];
 	var enemyDistance = 60;
-	var wallDistance = 96;
+	var wallDistance = 70;
 	for(var j = 0; j<enemyCount;j++){
 		var enemyType = choose(oTracker, oTurret);
 		
