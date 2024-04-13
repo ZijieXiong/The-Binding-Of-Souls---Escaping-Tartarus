@@ -21,7 +21,11 @@ target_y = 0;
 idle_timer_flag = false;
 
 attack_time = 0.5;
+attack_prepare_time = 0.5;
 attack_speed = 5;
+attack_cooldown = 5;
+attack_ready = true;
+attack_range = 100;
 
 alarm[0]= 60;
 image_speed = 0.3;

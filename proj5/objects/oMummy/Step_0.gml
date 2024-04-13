@@ -39,10 +39,24 @@ switch (current_state) {
 	case MUMMY_STATE.CHASE:
 		show_debug_message("Mummy chase");
 		direction = point_direction(x, y, obj_player.x, obj_player.y);
-		//var _found_player = mp_grid_path(global.mp_grid,path,x,y,obj_player.x,obj_player.y,choose(0,1))
-		//if _found_player{
-		//	path_start(path,chase_speed,path_action_stop,false)
-		//}
+		var _found_player = mp_grid_path(global.mp_grid,path,x,y,obj_player.x,obj_player.y,choose(0,1))
+		if _found_player{
+			path_start(path,chase_speed,path_action_stop,false);
+		}
+		var _player_distance = point_distance(x, y, obj_player.x, obj_player.y);
+		if(attack_ready && _player_distance<attack_range )
+		{
+			current_state = MUMMY_STATE.PREATTACK;
+			idle_timer_flag = false;
+			sprite_index = spr_mummy_attack;
+			image_index = 0;
+			image_speed = 0;
+			speed = 0;
+			alarm[0] = 60*attack_prepare_time;
+			alarm[2] = 60 * attack_cooldown;
+			attack_ready = false;
+		}
+		
 		break;
 		
 	case MUMMY_STATE.REBORN:
@@ -64,6 +78,8 @@ switch (current_state) {
 			idle_timer_flag = false;
 			sprite_index = spr_mummy_attack;
 			speed = attack_speed;
+			image_index = 0;
+			image_speed = 0.3;
 
 			alarm[0] = 60 * attack_time;
 			direction = point_direction(x, y, obj_player.x, obj_player.y);
@@ -77,12 +93,12 @@ switch (current_state) {
 		
 		if(idle_timer_flag)
 		{
-			current_state = MUMMY_STATE.IDLE;
+			current_state = MUMMY_STATE.CHASE;
 			idle_timer_flag = false;
-			sprite_index = spr_mummy_idle;
+			sprite_index = spr_mummy_walk;
 			image_index = 0;
-			speed = 0;
-			alarm[0] = 60 * 1;
+			speed = chase_speed;
+			//alarm[0] = 60 * 1;
 			
 		}
         break;
