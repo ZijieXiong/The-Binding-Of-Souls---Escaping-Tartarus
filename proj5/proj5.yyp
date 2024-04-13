@@ -3,6 +3,8 @@
   "%Name":"proj5",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"","%Name":"Music","name":"Music","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"","%Name":"SFX","name":"SFX","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
@@ -123,6 +125,7 @@
     {"id":{"name":"obj_laser","path":"objects/obj_laser/obj_laser.yy",},},
     {"id":{"name":"obj_minimap_draw","path":"objects/obj_minimap_draw/obj_minimap_draw.yy",},},
     {"id":{"name":"obj_missile_pickup","path":"objects/obj_missile_pickup/obj_missile_pickup.yy",},},
+    {"id":{"name":"obj_missile","path":"objects/obj_missile/obj_missile.yy",},},
     {"id":{"name":"obj_music","path":"objects/obj_music/obj_music.yy",},},
     {"id":{"name":"obj_pistol_bullet","path":"objects/obj_pistol_bullet/obj_pistol_bullet.yy",},},
     {"id":{"name":"obj_pistol","path":"objects/obj_pistol/obj_pistol.yy",},},
@@ -181,7 +184,6 @@
     {"id":{"name":"obj_wall_upright","path":"objects/obj_wall_upright/obj_wall_upright.yy",},},
     {"id":{"name":"obj_wall_wallcover","path":"objects/obj_wall_wallcover/obj_wall_wallcover.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
-    {"id":{"name":"obj_missile","path":"objects/obj_missile/obj_missile.yy",},},
     {"id":{"name":"oBomb","path":"objects/oBomb/oBomb.yy",},},
     {"id":{"name":"oDungeon","path":"objects/oDungeon/oDungeon.yy",},},
     {"id":{"name":"oDunReload","path":"objects/oDunReload/oDunReload.yy",},},
@@ -236,6 +238,7 @@
     {"id":{"name":"shotgunReload","path":"sounds/shotgunReload/shotgunReload.yy",},},
     {"id":{"name":"shotgunShoot","path":"sounds/shotgunShoot/shotgunShoot.yy",},},
     {"id":{"name":"snd_background","path":"sounds/snd_background/snd_background.yy",},},
+    {"id":{"name":"snd_pyramid_bgm","path":"sounds/snd_pyramid_bgm/snd_pyramid_bgm.yy",},},
     {"id":{"name":"_32x32_walls_and_props_col184","path":"sprites/_32x32_walls_and_props_col184/_32x32_walls_and_props_col184.yy",},},
     {"id":{"name":"dung_ground_floor","path":"sprites/dung_ground_floor/dung_ground_floor.yy",},},
     {"id":{"name":"dung_tileset_pyramid","path":"sprites/dung_tileset_pyramid/dung_tileset_pyramid.yy",},},
