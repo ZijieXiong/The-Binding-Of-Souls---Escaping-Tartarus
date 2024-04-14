@@ -39,6 +39,7 @@ switch (global.currLevel) {
 	break;
 	
 	case 2:
+	audio_sound_gain(snd_jungle, 0, 2000);
 	audio_stop_sound(snd_jungle);
 	if (!audio_is_playing(snd_pyramid_bgm)) {
 		audio_play_sound(snd_pyramid_bgm, 0, true);
@@ -46,6 +47,7 @@ switch (global.currLevel) {
 	break;
 	
 	case 3:
+	audio_sound_gain(snd_pyramid_bgm, 0, 2000);
 	audio_stop_sound(snd_pyramid_bgm);
 	if (!audio_is_playing(snd_scifi)) {
 		audio_play_sound(snd_scifi, 0, true);

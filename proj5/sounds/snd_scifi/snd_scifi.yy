@@ -21,5 +21,5 @@
   "sampleRate":48000,
   "soundFile":"snd_scifi.ogg",
   "type":1,
-  "volume":0.63,
+  "volume":0.49,
 }
