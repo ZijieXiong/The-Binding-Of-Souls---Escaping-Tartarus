@@ -8,13 +8,13 @@
   "instanceCreationOrder":[
     {"name":"inst_3FDA5648","path":"rooms/rmDungeon/rmDungeon.yy",},
     {"name":"inst_60378A24","path":"rooms/rmDungeon/rmDungeon.yy",},
-    {"name":"inst_15DA0C5","path":"rooms/rmDungeon/rmDungeon.yy",},
     {"name":"inst_743F99E","path":"rooms/rmDungeon/rmDungeon.yy",},
     {"name":"inst_76BE2227","path":"rooms/rmDungeon/rmDungeon.yy",},
     {"name":"inst_23EB7EEE","path":"rooms/rmDungeon/rmDungeon.yy",},
     {"name":"inst_4A0DE5C5","path":"rooms/rmDungeon/rmDungeon.yy",},
     {"name":"inst_787A1498","path":"rooms/rmDungeon/rmDungeon.yy",},
     {"name":"inst_24E208BA","path":"rooms/rmDungeon/rmDungeon.yy",},
+    {"name":"inst_254ED94C","path":"rooms/rmDungeon/rmDungeon.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -29,7 +29,7 @@
         {"$GMRInstance":"","%Name":"inst_743F99E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_743F99E","objectId":{"name":"obj_screenshake","path":"objects/obj_screenshake/obj_screenshake.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":288.0,"y":160.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Music","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"","%Name":"inst_15DA0C5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_15DA0C5","objectId":{"name":"obj_music","path":"objects/obj_music/obj_music.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":128.0,},
+        {"$GMRInstance":"","%Name":"inst_254ED94C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_254ED94C","objectId":{"name":"obj_music","path":"objects/obj_music/obj_music.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":288.0,"y":320.0,},
       ],"layers":[],"name":"Music","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Dungeon","depth":300,"effectEnabled":true,"effectType":null,"gridX":64,"gridY":64,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_3FDA5648","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3FDA5648","objectId":{"name":"oDungeon","path":"objects/oDungeon/oDungeon.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},
