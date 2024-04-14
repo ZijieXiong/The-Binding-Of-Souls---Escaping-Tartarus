@@ -43,11 +43,11 @@ function dropItem()
 		var adjusted_x2 = x2 * CELL_SIZE;
 		
 		var validPos = false;
-		var iter = 50;
+		var iter = 0;
 		while(!validPos && iter < 50)
-		{
-			if(checkDistance(posX,posY))
-			{
+		{	
+			if(check_distance(posX,posY))
+			{	
 				validPos = true;
 			}
 			else
@@ -59,26 +59,29 @@ function dropItem()
 			}
 		}
 
-		instance_create_layer(x,y,"Dungeon", asset_get_index(item[0]));
+		instance_create_layer(posX,posY,"Dungeon", asset_get_index(item[0]));
 	}
 }
 
-function checkDistance(posX,posY)
+function check_distance(posX,posY)
 {
+	show_debug_message("hazard num: " + string(array_length(hazards)));
 	for (var i = 0; i < array_length(hazards); i++) {
 		var hazard = hazards[i];
 		var offset = sprite_get_width(hazard.sprite_index) * hazard.image_xscale / 2;
-		if (point_distance(posX, posY, hazard.x + offset, hazard.y + offset) < 64) {
+		show_debug_message("posX: "+ string(posX) + " posY: " + string(posY));
+		show_debug_message(hazard.y);
+		if (place_meeting(posX,posY,hazard)) {
 				return false;
 		}
-		}
+	}
 	return true;
 }
 
 function healthBoosterProb()
 {
 	var prob = 100;
-	if(obj_player.playerLives == obj_player.healthLimit)
+	if(obj_player.playerLives >= obj_player.healthLimit)
 	{
 		prob = 0;
 	}
