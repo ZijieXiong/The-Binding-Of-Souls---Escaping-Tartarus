@@ -16,7 +16,15 @@ else{
 		timer--;
 		if(timer==0)
 		{
-			var bgm = audio_play_sound(snd_background, 0, true);
+			if (global.currLevel == 1) {
+				var bgm = audio_play_sound(snd_jungle, 0, true);
+			}
+			else if (global.currLevel == 2) {
+				var bgm = audio_play_sound(snd_pyramid_bgm, 0, true);
+			}
+			else if (global.currLevel > 2) {
+				var bgm = audio_play_sound(snd_scifi, 0, true);
+			}
 			audio_sound_gain(bgm, 0.2, 0);
 			timer = -1;
 		}

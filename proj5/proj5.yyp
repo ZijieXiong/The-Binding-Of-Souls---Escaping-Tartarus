@@ -3,8 +3,6 @@
   "%Name":"proj5",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
-    {"$GMAudioGroup":"","%Name":"Music","name":"Music","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
-    {"$GMAudioGroup":"","%Name":"SFX","name":"SFX","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
@@ -238,7 +236,11 @@
     {"id":{"name":"shotgunReload","path":"sounds/shotgunReload/shotgunReload.yy",},},
     {"id":{"name":"shotgunShoot","path":"sounds/shotgunShoot/shotgunShoot.yy",},},
     {"id":{"name":"snd_background","path":"sounds/snd_background/snd_background.yy",},},
+    {"id":{"name":"snd_elite","path":"sounds/snd_elite/snd_elite.yy",},},
+    {"id":{"name":"snd_jungle","path":"sounds/snd_jungle/snd_jungle.yy",},},
     {"id":{"name":"snd_pyramid_bgm","path":"sounds/snd_pyramid_bgm/snd_pyramid_bgm.yy",},},
+    {"id":{"name":"snd_scifi","path":"sounds/snd_scifi/snd_scifi.yy",},},
+    {"id":{"name":"snd_tutorial","path":"sounds/snd_tutorial/snd_tutorial.yy",},},
     {"id":{"name":"_32x32_walls_and_props_col184","path":"sprites/_32x32_walls_and_props_col184/_32x32_walls_and_props_col184.yy",},},
     {"id":{"name":"dung_ground_floor","path":"sprites/dung_ground_floor/dung_ground_floor.yy",},},
     {"id":{"name":"dung_tileset_pyramid","path":"sprites/dung_tileset_pyramid/dung_tileset_pyramid.yy",},},
