@@ -91,17 +91,12 @@ GenerateNewDungeon = function() {
 	{
 		instance_destroy();
 	}
-	//with(obj_slot_label) {
-	//	instance_destroy();
-	//}
-	//with(obj_slot_ui) {
-	//	instance_destroy();
-	//}
-	//with(obj_revive_label) {
-	//	instance_destroy();
-	//}
-	//with(obj_revive_ui) {
-	//	instance_destroy();
+	//if (global.currLevel <= 3) 
+	//{
+	//	with(obj_music)
+	//	{
+	//		instance_destroy();
+	//	}
 	//}
 	for(var i = 0; i < ds_list_size(global.upgrade_objs); i++)
 	{
@@ -538,6 +533,8 @@ GenerateNewDungeon = function() {
 		centerY = (chestRoom.roomId.y1 + chestRoom.roomId.y2) / 2;
 		var chestInstance = instance_create_layer(centerX * CELL_SIZE, centerY * CELL_SIZE, "Dungeon", obj_chest);
 	}
+	
+	//PlayMusic();
 
 
 load_mini_map(_dungeonWidth,_dungeonHeight);
@@ -1022,10 +1019,14 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards,_room_obj){
 	var enemyDistance = 60;
 	var wallDistance = 70;
 	for(var j = 0; j<enemyCount;j++){
-		var enemyType = choose(oTeleportRobot, oTracker);
+		var enemyType = choose(oSlime, oPango, oTrackShooter,oTeleportRobot);
+		
+		if (global.currLevel == 2) {
+			enemyType = choose(oAnubis, oMummy);
+		}
 		
 		if (global.currLevel > 3) {
-			enemyType = choose(oTracker, oTurret, oTrackShooter);
+			enemyType = choose(oTracker, oTurret, oTeleportRobot);
 		}
 		
 		var enemy;
@@ -1121,11 +1122,15 @@ CreateDoors = function(eliteRoom, isEnemy){
 }
 
 CreateItemUI = function() {
-	var itemSlot = instance_create_layer()
+	var itemSlot = instance_create_layer();
 }
+
+//PlayMusic = function() {
+//	if (global.currLevel <= 3) {
+//		instance_create_layer(x, y, "Music", obj_music);
+//	}
+//}
 
 initParas();
 
 GenerateNewDungeon();
-
-
