@@ -30,7 +30,6 @@ function shoot() {
 if(_health <= 0)
 {
 	sprite_index = spr_jorgette_Die
-	image_index =0 
 	die();
 }
 
