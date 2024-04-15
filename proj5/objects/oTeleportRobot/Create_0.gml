@@ -3,13 +3,12 @@ event_inherited()
 _health = 50
 _flash = 0
 
-teleport_timer = room_speed * 2
+teleport_timer = irandom_range(room_speed*2, room_speed*4)
 
 start_positionX = x
 start_positionY = y
 new_location_x = x
 new_location_y = y
-
 wall_there = noone
 rangeTeleport = 150
 teleport_radialBuffer = 20

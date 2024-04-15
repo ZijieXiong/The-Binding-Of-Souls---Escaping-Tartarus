@@ -397,7 +397,7 @@ GenerateNewDungeon = function() {
 	else{
 		playerInstance = instance_create_layer(centerX * CELL_SIZE + (CELL_SIZE / 2), centerY * CELL_SIZE + (CELL_SIZE / 2), "Dungeon", obj_player);
 	}
-	/*
+	
 	//set healthBoost prob
 	if(playerInstance){
 		playerLives = playerInstance.playerLives;
@@ -417,9 +417,9 @@ GenerateNewDungeon = function() {
 	}
 	else{
 		healthBoostProb = 0.15;
-	}*/
+	}
 	var isBoostGenerated = false;
-	//show_debug_message(string(playerLives));
+	show_debug_message(string(playerLives));
 	
 	//Select exit room
 	var deadEnd = ds_list_create();
@@ -509,9 +509,9 @@ GenerateNewDungeon = function() {
 			/*if(richochetRoom==i){
 				CreateRichochet(rm, hazards);
 			}*/
-			/*if(random_range(0,1) < healthBoostProb && !isBoostGenerated){
+			if(random_range(0,1) < healthBoostProb && !isBoostGenerated){
 				CreateHealthBooster(rm, hazards);
-			}*/
+			}
 			CreateDoors(rm, true);
 			rm.room_obj.enemy_cleared = false;
 		}
@@ -1019,7 +1019,7 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards,_room_obj){
 	var enemyDistance = 60;
 	var wallDistance = 70;
 	for(var j = 0; j<enemyCount;j++){
-		var enemyType = choose(oSlime, oPango, oTrackShooter,oTeleportRobot);
+		var enemyType = choose(oTeleportRobot);
 		
 		if (global.currLevel == 2) {
 			enemyType = choose(oAnubis, oMummy);
