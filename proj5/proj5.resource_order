@@ -1,7 +1,8 @@
 {
   "FolderOrderSettings":[
-    {"name":"missile","order":2,"path":"folders/Objects/Items/missile.yy",},
-    {"name":"shield","order":1,"path":"folders/Objects/Items/shield.yy",},
+    {"name":"missile","order":1,"path":"folders/Objects/Items/missile.yy",},
+    {"name":"Teleport","order":2,"path":"folders/Sprites/Effects/Teleport.yy",},
+    {"name":"Teleport_robot","order":1,"path":"folders/Sprites/enemy/Teleport_robot.yy",},
     {"name":"missile","order":2,"path":"folders/Sprites/Items/missile.yy",},
     {"name":"shield","order":1,"path":"folders/Sprites/Items/shield.yy",},
     {"name":"Portal","order":2,"path":"folders/Sprites/Portal.yy",},
@@ -12,6 +13,8 @@
     {"name":"obj_missile","order":1,"path":"objects/obj_missile/obj_missile.yy",},
     {"name":"obj_room","order":1,"path":"objects/obj_room/obj_room.yy",},
     {"name":"oHeartBooster","order":3,"path":"objects/oHeartBooster/oHeartBooster.yy",},
+    {"name":"oTeleportRobot","order":1,"path":"objects/oTeleportRobot/oTeleportRobot.yy",},
+    {"name":"oRobotBullet1","order":2,"path":"objects/oRobotBullet1/oRobotBullet1.yy",},
     {"name":"snd_elite","order":2,"path":"sounds/snd_elite/snd_elite.yy",},
     {"name":"snd_jungle","order":4,"path":"sounds/snd_jungle/snd_jungle.yy",},
     {"name":"snd_pyramid_bgm","order":1,"path":"sounds/snd_pyramid_bgm/snd_pyramid_bgm.yy",},
@@ -21,6 +24,10 @@
     {"name":"spr_enemy_portal_open","order":2,"path":"sprites/spr_enemy_portal_open/spr_enemy_portal_open.yy",},
     {"name":"spr_missile_hit","order":1,"path":"sprites/spr_missile_hit/spr_missile_hit.yy",},
     {"name":"spr_missle_pickup","order":2,"path":"sprites/spr_missle_pickup/spr_missle_pickup.yy",},
+    {"name":"spr_robot_bullet1","order":3,"path":"sprites/spr_robot_bullet1/spr_robot_bullet1.yy",},
     {"name":"spr_shield_icon","order":1,"path":"sprites/spr_shield_icon/spr_shield_icon.yy",},
+    {"name":"spr_teleport_attack","order":1,"path":"sprites/spr_teleport_attack/spr_teleport_attack.yy",},
+    {"name":"spr_teleport_dead","order":2,"path":"sprites/spr_teleport_dead/spr_teleport_dead.yy",},
+    {"name":"spr_teleport_in","order":1,"path":"sprites/spr_teleport_in/spr_teleport_in.yy",},
   ],
 }
