@@ -9,11 +9,12 @@
     {"name":"Portal","order":2,"path":"folders/Sprites/Portal.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_enemy_effects_nor","order":2,"path":"objects/obj_enemy_effects_nor/obj_enemy_effects_nor.yy",},
     {"name":"obj_enemy_portal","order":2,"path":"objects/obj_enemy_portal/obj_enemy_portal.yy",},
     {"name":"obj_missile","order":1,"path":"objects/obj_missile/obj_missile.yy",},
     {"name":"obj_room","order":1,"path":"objects/obj_room/obj_room.yy",},
     {"name":"obj_teleport_in","order":1,"path":"objects/obj_teleport_in/obj_teleport_in.yy",},
-    {"name":"obj_enemy_effects_nor","order":2,"path":"objects/obj_enemy_effects_nor/obj_enemy_effects_nor.yy",},
+    {"name":"obj_elite_health_bar","order":4,"path":"objects/obj_elite_health_bar/obj_elite_health_bar.yy",},
     {"name":"oRobotBullet1","order":2,"path":"objects/oRobotBullet1/oRobotBullet1.yy",},
     {"name":"oTeleportRobot","order":1,"path":"objects/oTeleportRobot/oTeleportRobot.yy",},
     {"name":"snd_elite","order":2,"path":"sounds/snd_elite/snd_elite.yy",},

@@ -419,7 +419,6 @@ GenerateNewDungeon = function() {
 		healthBoostProb = 0.15;
 	}
 	var isBoostGenerated = false;
-	show_debug_message(string(playerLives));
 	
 	//Select exit room
 	var deadEnd = ds_list_create();
@@ -509,9 +508,9 @@ GenerateNewDungeon = function() {
 			/*if(richochetRoom==i){
 				CreateRichochet(rm, hazards);
 			}*/
-			if(random_range(0,1) < healthBoostProb && !isBoostGenerated){
+			/*if(random_range(0,1) < healthBoostProb && !isBoostGenerated){
 				CreateHealthBooster(rm, hazards);
-			}
+			}*/
 			CreateDoors(rm, true);
 			rm.room_obj.enemy_cleared = false;
 		}

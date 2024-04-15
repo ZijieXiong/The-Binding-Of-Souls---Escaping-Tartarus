@@ -118,7 +118,7 @@ function initParas()
 	global.shotgunBlockPenetrate = false;
 	global.shotgun_bulletcount = 3;
 	
-	global.rifflePenetrate = true;
+	global.rifflePenetrate = false;
 	global.riffleChargingSpeed = 1;
 
 	global.riffle_bullet_explosive = false;
