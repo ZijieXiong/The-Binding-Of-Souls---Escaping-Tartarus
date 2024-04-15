@@ -97,7 +97,7 @@ ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_bullet_split", 5);
 ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_block_attack", 5);
 //riffle upgrade init
 ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_penetrate", 5);
-ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_charging_speed", 5);
+ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_charging_speed", 10);
 ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_explosive", 5);
 
 global.upgrade_objs = ds_list_create();
@@ -118,7 +118,7 @@ function initParas()
 	global.shotgunBlockPenetrate = false;
 	global.shotgun_bulletcount = 3;
 	
-	global.rifflePenetrate = false;
+	global.rifflePenetrate = true;
 	global.riffleChargingSpeed = 1;
 
 	global.riffle_bullet_explosive = false;
@@ -130,6 +130,7 @@ function initParas()
 	global.richochet = false;
 	
 	global.max_items = 3
+	global.item_amount = 0;
 
 	global.spr_inventory[0] = -1
 	global.spr_inventory[1] = -1

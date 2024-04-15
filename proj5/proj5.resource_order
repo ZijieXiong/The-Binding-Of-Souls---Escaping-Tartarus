@@ -1,14 +1,17 @@
 {
   "FolderOrderSettings":[
-    {"name":"missile","order":1,"path":"folders/Objects/Items/missile.yy",},
+    {"name":"missile","order":2,"path":"folders/Objects/Items/missile.yy",},
+    {"name":"shield","order":1,"path":"folders/Objects/Items/shield.yy",},
     {"name":"missile","order":2,"path":"folders/Sprites/Items/missile.yy",},
     {"name":"shield","order":1,"path":"folders/Sprites/Items/shield.yy",},
     {"name":"Portal","order":2,"path":"folders/Sprites/Portal.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_chest","order":4,"path":"objects/obj_chest/obj_chest.yy",},
     {"name":"obj_enemy_portal","order":2,"path":"objects/obj_enemy_portal/obj_enemy_portal.yy",},
     {"name":"obj_missile","order":1,"path":"objects/obj_missile/obj_missile.yy",},
     {"name":"obj_room","order":1,"path":"objects/obj_room/obj_room.yy",},
+    {"name":"oHeartBooster","order":3,"path":"objects/oHeartBooster/oHeartBooster.yy",},
     {"name":"snd_elite","order":2,"path":"sounds/snd_elite/snd_elite.yy",},
     {"name":"snd_jungle","order":4,"path":"sounds/snd_jungle/snd_jungle.yy",},
     {"name":"snd_pyramid_bgm","order":1,"path":"sounds/snd_pyramid_bgm/snd_pyramid_bgm.yy",},
