@@ -505,8 +505,12 @@ GenerateNewDungeon = function() {
 		if(i!=0 && i!=reloadRoomInd && i!=chestRoomInd && !rm.room_obj.is_elite){
 			hazards = CreateHazards(rm);
 			rm.room_obj.hazards = hazards;
-			enemy = CreateEnemies(rm.x1,rm.y1,rm.x2,rm.y2, hazards);
+			enemy = CreateEnemies(rm.x1,rm.y1,rm.x2,rm.y2, hazards,rm.room_obj);
+//			for(var i=0;i<array_length(enemy);i++){
+//				enemy[i]._current_room = rm.room_obj
+//			}
 			rm.room_obj.enemies = enemy;
+			
 			/*if(richochetRoom==i){
 				CreateRichochet(rm, hazards);
 			}*/
@@ -1012,13 +1016,13 @@ CreateHazards = function(rm) {
 	return placedHazards;
 }
 
-CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
+CreateEnemies = function(_x1,_y1,_x2,_y2, hazards,_room_obj){
 	var enemyCount = irandom_range(2 + global.currLevel div 3,3 + global.currLevel div 3);
 	var placedEnemies = [];
 	var enemyDistance = 60;
 	var wallDistance = 70;
 	for(var j = 0; j<enemyCount;j++){
-		var enemyType = choose(oTracker, oTurret);
+		var enemyType = choose(oTeleportRobot, oTracker);
 		
 		if (global.currLevel > 3) {
 			enemyType = choose(oTracker, oTurret, oTrackShooter);
@@ -1062,6 +1066,7 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 		if(validPosition){
 			enemy.x = posX;
 			enemy.y = posY;
+			enemy._current_room = _room_obj
 			placedEnemies[array_length(placedEnemies)] = enemy;
 		}
 		else
