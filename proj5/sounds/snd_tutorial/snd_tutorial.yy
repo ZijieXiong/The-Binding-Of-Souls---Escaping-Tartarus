@@ -21,5 +21,5 @@
   "sampleRate":48000,
   "soundFile":"snd_tutorial.ogg",
   "type":1,
-  "volume":0.62,
+  "volume":0.48,
 }
