@@ -21,6 +21,7 @@
     {"name":"oRobotBullet1","order":2,"path":"objects/oRobotBullet1/oRobotBullet1.yy",},
     {"name":"oSkullShooter","order":3,"path":"objects/oSkullShooter/oSkullShooter.yy",},
     {"name":"oTeleportRobot","order":1,"path":"objects/oTeleportRobot/oTeleportRobot.yy",},
+    {"name":"oEliteTeleportRobot","order":5,"path":"objects/oEliteTeleportRobot/oEliteTeleportRobot.yy",},
     {"name":"snd_elite","order":2,"path":"sounds/snd_elite/snd_elite.yy",},
     {"name":"snd_jungle","order":4,"path":"sounds/snd_jungle/snd_jungle.yy",},
     {"name":"snd_pyramid_bgm","order":1,"path":"sounds/snd_pyramid_bgm/snd_pyramid_bgm.yy",},
@@ -39,6 +40,7 @@
     {"name":"spr_skull_idle","order":1,"path":"sprites/spr_skull_idle/spr_skull_idle.yy",},
     {"name":"spr_teleport_attack","order":1,"path":"sprites/spr_teleport_attack/spr_teleport_attack.yy",},
     {"name":"spr_teleport_dead","order":2,"path":"sprites/spr_teleport_dead/spr_teleport_dead.yy",},
+    {"name":"spr_teleport_idle179","order":4,"path":"sprites/spr_teleport_idle179/spr_teleport_idle179.yy",},
     {"name":"spr_teleport_in","order":1,"path":"sprites/spr_teleport_in/spr_teleport_in.yy",},
   ],
 }
