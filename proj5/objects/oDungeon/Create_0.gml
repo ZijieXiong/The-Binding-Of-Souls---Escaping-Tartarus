@@ -1018,7 +1018,8 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 	var enemyDistance = 60;
 	var wallDistance = 70;
 	for(var j = 0; j<enemyCount;j++){
-		var enemyType = choose(oSlime, oPango, oTrackShooter);
+		//var enemyType = choose(oSlime, oPango, oTrackShooter);
+		var enemyType = oBTtester;
 		
 		if (global.currLevel == 2) {
 			enemyType = choose(oAnubis, oMummy);
