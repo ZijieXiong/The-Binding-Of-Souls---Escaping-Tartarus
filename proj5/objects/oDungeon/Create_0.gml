@@ -1018,13 +1018,12 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards,_room_obj){
 	var enemyDistance = 60;
 	var wallDistance = 70;
 	for(var j = 0; j<enemyCount;j++){
-		var enemyType = choose(oSkullShooter);
-		
+		var enemyType = choose(oSlime, oPango, oTrackShooter);
+		//var enemyType = choose(oSkullShooter);
 		if (global.currLevel == 2) {
-			enemyType = choose(oAnubis, oMummy);
+			enemyType = choose(oAnubis, oMummy, oSkullShooter);
 		}
-		
-		if (global.currLevel > 3) {
+		else if (global.currLevel >= 3) {
 			enemyType = choose(oTracker, oTurret, oTeleportRobot);
 		}
 		
