@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_explosive",
+    "path":"sprites/spr_explosive/spr_explosive.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

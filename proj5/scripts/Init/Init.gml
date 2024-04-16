@@ -85,9 +85,9 @@ ds_map_add(global.common_upgrade, "obj_upgrade_plus_one_bounce", 20);
 ds_map_add(global.common_upgrade, "obj_upgrade_shotgun", 10);
 //ds_map_add(global.common_upgrade, "obj_upgrade_laser", 5);
 ds_map_add(global.common_upgrade, "obj_upgrade_riffle", 10);
-ds_map_add(global.common_upgrade, "obj_upgrade_speed", 20);
+ds_map_add(global.common_upgrade, "obj_upgrade_speed", 10);
 ds_map_add(global.common_upgrade, "obj_upgrade_shooting_interval", 20);
-ds_map_add(global.common_upgrade, "obj_upgrade_revive", 1000);
+ds_map_add(global.common_upgrade, "obj_upgrade_revive", 5);
 ds_map_add(global.common_upgrade, "obj_upgrade_add_upgrade_option", 5);
 
 //shotgun upgrade init 
@@ -97,7 +97,7 @@ ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_bullet_split", 5);
 ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_block_attack", 5);
 //riffle upgrade init
 ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_penetrate", 5);
-ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_charging_speed", 5);
+ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_charging_speed", 10);
 ds_map_add(global.riffle_upgrade, "obj_upgrade_riffle_explosive", 5);
 
 global.upgrade_objs = ds_list_create();
@@ -130,6 +130,7 @@ function initParas()
 	global.richochet = false;
 	
 	global.max_items = 3
+	global.item_amount = 0;
 
 	global.spr_inventory[0] = -1
 	global.spr_inventory[1] = -1

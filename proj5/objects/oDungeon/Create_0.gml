@@ -91,17 +91,12 @@ GenerateNewDungeon = function() {
 	{
 		instance_destroy();
 	}
-	//with(obj_slot_label) {
-	//	instance_destroy();
-	//}
-	//with(obj_slot_ui) {
-	//	instance_destroy();
-	//}
-	//with(obj_revive_label) {
-	//	instance_destroy();
-	//}
-	//with(obj_revive_ui) {
-	//	instance_destroy();
+	//if (global.currLevel <= 3) 
+	//{
+	//	with(obj_music)
+	//	{
+	//		instance_destroy();
+	//	}
 	//}
 	for(var i = 0; i < ds_list_size(global.upgrade_objs); i++)
 	{
@@ -424,7 +419,6 @@ GenerateNewDungeon = function() {
 		healthBoostProb = 0.15;
 	}
 	var isBoostGenerated = false;
-	show_debug_message(string(playerLives));
 	
 	//Select exit room
 	var deadEnd = ds_list_create();
@@ -480,13 +474,14 @@ GenerateNewDungeon = function() {
 	    if (roomInd != reloadRoomInd && roomInd != chestRoomInd) {
 	        if (random(1) <= 1) {
 				show_debug_message("elite room");
-				var elite_type = choose(oElitePango, oEliteTurret, oSlimeAlpha);
+				var elite_type = choose(oElitePango, oEliteTurret, oSlimeAlpha,oEliteTeleportRobot);
 	            var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", obj_enemy_portal);
 				CreateDoors(roomId, true);
 	            roomId.room_obj.is_elite = true;
 				roomId.room_obj.enemy_cleared = false;
 				roomId.room_obj.enemies[0] = eliteEnemy;
 				eliteEnemy.enemy_type = elite_type;
+				eliteEnemy._current_room = roomId.room_obj
 	        }
 	    }
 	}
@@ -505,14 +500,18 @@ GenerateNewDungeon = function() {
 		if(i!=0 && i!=reloadRoomInd && i!=chestRoomInd && !rm.room_obj.is_elite){
 			hazards = CreateHazards(rm);
 			rm.room_obj.hazards = hazards;
-			enemy = CreateEnemies(rm.x1,rm.y1,rm.x2,rm.y2, hazards);
+			enemy = CreateEnemies(rm.x1,rm.y1,rm.x2,rm.y2, hazards,rm.room_obj);
+//			for(var i=0;i<array_length(enemy);i++){
+//				enemy[i]._current_room = rm.room_obj
+//			}
 			rm.room_obj.enemies = enemy;
+			
 			/*if(richochetRoom==i){
 				CreateRichochet(rm, hazards);
 			}*/
-			if(random_range(0,1) < healthBoostProb && !isBoostGenerated){
+			/*if(random_range(0,1) < healthBoostProb && !isBoostGenerated){
 				CreateHealthBooster(rm, hazards);
-			}
+			}*/
 			CreateDoors(rm, true);
 			rm.room_obj.enemy_cleared = false;
 		}
@@ -534,6 +533,8 @@ GenerateNewDungeon = function() {
 		centerY = (chestRoom.roomId.y1 + chestRoom.roomId.y2) / 2;
 		var chestInstance = instance_create_layer(centerX * CELL_SIZE, centerY * CELL_SIZE, "Dungeon", obj_chest);
 	}
+	
+	//PlayMusic();
 
 
 load_mini_map(_dungeonWidth,_dungeonHeight);
@@ -1012,21 +1013,18 @@ CreateHazards = function(rm) {
 	return placedHazards;
 }
 
-CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
+CreateEnemies = function(_x1,_y1,_x2,_y2, hazards,_room_obj){
 	var enemyCount = irandom_range(2 + global.currLevel div 3,3 + global.currLevel div 3);
 	var placedEnemies = [];
 	var enemyDistance = 60;
 	var wallDistance = 70;
 	for(var j = 0; j<enemyCount;j++){
-		//var enemyType = choose(oSlime, oPango, oTrackShooter);
-		var enemyType = oBTtester;
-		
+		var enemyType = choose(oSlime, oPango, oTrackShooter);
 		if (global.currLevel == 2) {
-			enemyType = choose(oAnubis, oMummy);
+			enemyType = choose(oAnubis, oMummy, oSkullShooter);
 		}
-		
-		if (global.currLevel > 3) {
-			enemyType = choose(oTracker, oTurret, oTrackShooter);
+		else if (global.currLevel >= 3) {
+			enemyType = choose(oGarbageBot, oTurret, oTeleportRobot);
 		}
 		
 		var enemy;
@@ -1067,6 +1065,7 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards){
 		if(validPosition){
 			enemy.x = posX;
 			enemy.y = posY;
+			enemy._current_room = _room_obj
 			placedEnemies[array_length(placedEnemies)] = enemy;
 		}
 		else
@@ -1121,11 +1120,15 @@ CreateDoors = function(eliteRoom, isEnemy){
 }
 
 CreateItemUI = function() {
-	var itemSlot = instance_create_layer()
+	var itemSlot = instance_create_layer();
 }
+
+//PlayMusic = function() {
+//	if (global.currLevel <= 3) {
+//		instance_create_layer(x, y, "Music", obj_music);
+//	}
+//}
 
 initParas();
 
 GenerateNewDungeon();
-
-

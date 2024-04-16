@@ -21,6 +21,11 @@ else if(!enemy_cleared && battle_started)
 		    enemy_found = true;
 		    exit;
 		}
+	}with (obj_enemy_effects_nor) {
+		if (x >= other.x1 * CELL_SIZE && x <= other.x2 * CELL_SIZE + CELL_SIZE && y >= other.y1 * CELL_SIZE && y <= other.y2 * CELL_SIZE + CELL_SIZE) {
+		    enemy_found = true;
+		    exit;
+		}
 	}
 	if(!enemy_found)
 	{

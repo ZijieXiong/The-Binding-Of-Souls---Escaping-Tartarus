@@ -1,4 +1,4 @@
-if (point_distance(obj_player.x, obj_player.y, x, y) < ENEM_DISTANCE) {
+if (point_distance(obj_player.x, obj_player.y, x, y) > _attack_dis) {
 	self.image_angle = point_direction(x, y, obj_player.x, obj_player.y);
 	sprite_index = spr_bee_attack
 	//move_towards_point(obj_player.x, obj_player.y, trackShooterSpeed);
@@ -8,7 +8,9 @@ if (point_distance(obj_player.x, obj_player.y, x, y) < ENEM_DISTANCE) {
 	}
 	shoot();
 }else{
-	sprite_index = spr_bee_idle
+	path_end();
+	self.image_angle = point_direction(x, y, obj_player.x, obj_player.y);
+	shoot();
 }
 
 

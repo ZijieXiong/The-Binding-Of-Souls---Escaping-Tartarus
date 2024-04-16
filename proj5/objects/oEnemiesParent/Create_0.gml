@@ -1,7 +1,7 @@
 _health = 0
 _flash = 0
 invincible = false
-
+_currentRoom = noone
 path = path_add()
 
 item_prob = 50;

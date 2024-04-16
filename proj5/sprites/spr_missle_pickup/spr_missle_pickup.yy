@@ -23,7 +23,7 @@
   ],
   "name":"spr_missle_pickup",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"missile",
     "path":"folders/Sprites/Items/missile.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":32,
+    "xorigin":35,
     "yorigin":32,
   },
   "swatchColours":null,

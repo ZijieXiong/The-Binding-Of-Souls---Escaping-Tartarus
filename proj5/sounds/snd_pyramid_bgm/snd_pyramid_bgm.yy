@@ -2,8 +2,8 @@
   "$GMSound":"",
   "%Name":"snd_pyramid_bgm",
   "audioGroupId":{
-    "name":"Music",
-    "path":"audiogroups/Music",
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
   "bitRate":320,
@@ -21,5 +21,5 @@
   "sampleRate":48000,
   "soundFile":"snd_pyramid_bgm.ogg",
   "type":1,
-  "volume":1.0,
+  "volume":0.26,
 }
