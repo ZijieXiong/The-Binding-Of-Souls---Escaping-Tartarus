@@ -41,7 +41,7 @@ if(mouse_check_button_released(mb_right)){
 	    bullet.image_angle = bullet.direction;
 		bullet.damage += increase_damage;
 		sprite_index = spr_rifle_shoot_max
-		if(rifle_timer >= room_speed){
+		if(increase_damage == max_damage_increase){
 			bullet.sprite_index = spr_rifle_bullet_max
 			bullet._rifflePenetrate = global.rifflePenetrate
 			bullet._explosive = global.riffle_bullet_explosive
