@@ -406,6 +406,7 @@
     {"id":{"name":"spr_ui_weapon","path":"sprites/spr_ui_weapon/spr_ui_weapon.yy",},},
     {"id":{"name":"spr_upgrade_general","path":"sprites/spr_upgrade_general/spr_upgrade_general.yy",},},
     {"id":{"name":"Spr_Walk","path":"sprites/Spr_Walk/Spr_Walk.yy",},},
+    {"id":{"name":"spr_explosive","path":"sprites/spr_explosive/spr_explosive.yy",},},
     {"id":{"name":"Sprite27","path":"sprites/Sprite27/Sprite27.yy",},},
     {"id":{"name":"Sprite95","path":"sprites/Sprite95/Sprite95.yy",},},
     {"id":{"name":"sTile","path":"sprites/sTile/sTile.yy",},},
