@@ -32,6 +32,7 @@
 //	}
 //}
 if (global.currLevel == 1) {
+	audio_sound_gain(snd_jungle, 0.2, 0);
 	if (!audio_is_playing(snd_jungle)) {
 	audio_play_sound(snd_jungle, 0, true);
 	}

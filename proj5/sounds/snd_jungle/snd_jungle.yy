@@ -21,5 +21,5 @@
   "sampleRate":48000,
   "soundFile":"snd_jungle.ogg",
   "type":1,
-  "volume":0.46,
+  "volume":0.05,
 }
