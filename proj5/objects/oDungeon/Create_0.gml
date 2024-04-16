@@ -1024,7 +1024,7 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards,_room_obj){
 			enemyType = choose(oAnubis, oMummy, oSkullShooter);
 		}
 		else if (global.currLevel >= 3) {
-			enemyType = choose(oTracker, oTurret, oTeleportRobot);
+			enemyType = choose(oGarbageBot, oTurret, oTeleportRobot);
 		}
 		
 		var enemy;
