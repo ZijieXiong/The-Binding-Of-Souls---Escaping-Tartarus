@@ -21,5 +21,5 @@
   "sampleRate":48000,
   "soundFile":"snd_pyramid_bgm.ogg",
   "type":1,
-  "volume":0.06,
+  "volume":0.26,
 }

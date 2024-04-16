@@ -21,5 +21,5 @@
   "sampleRate":48000,
   "soundFile":"snd_elite.mp3",
   "type":1,
-  "volume":0.05,
+  "volume":0.15,
 }
