@@ -17,6 +17,7 @@
     {"name":"obj_enemy_portal","order":2,"path":"objects/obj_enemy_portal/obj_enemy_portal.yy",},
     {"name":"obj_missile","order":1,"path":"objects/obj_missile/obj_missile.yy",},
     {"name":"obj_room","order":1,"path":"objects/obj_room/obj_room.yy",},
+    {"name":"obj_screenshake","order":5,"path":"objects/obj_screenshake/obj_screenshake.yy",},
     {"name":"oBTtester","order":1,"path":"objects/oBTtester/oBTtester.yy",},
     {"name":"oEliteSlime","order":2,"path":"objects/oEliteSlime/oEliteSlime.yy",},
     {"name":"oSlimeBullet","order":3,"path":"objects/oSlimeBullet/oSlimeBullet.yy",},

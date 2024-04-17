@@ -205,3 +205,8 @@ if (global.graze) {
 	doGraze();
 }
 	*/
+	
+//This is to test poison effect
+if (keyboard_check(ord("P"))) {
+		get_poisoned(3*60, 1, 0.01);
+	}

@@ -19,4 +19,14 @@ function screenshake(_time, _magnitude, _fade)
    }
 }
 
-show_debug_message("Shake!");
+function get_poisoned(_time, _magnitude, _fade)
+{
+	show_debug_message("Get poisoned!");
+	with (obj_screenpoison)
+	{
+		is_poisoned = true;
+		poison_time = _time;
+		poison_magnitude = _magnitude;
+		poison_fade = _fade;
+	}
+}
