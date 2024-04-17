@@ -474,8 +474,8 @@ GenerateNewDungeon = function() {
 	    if (roomInd != reloadRoomInd && roomInd != chestRoomInd) {
 	        if (random(1) <= 1) {
 				show_debug_message("elite room");
-				//var elite_type = choose(oElitePango, oEliteTurret, oEliteSlime,oEliteTeleportRobot);
-				var elite_type = oEliteSlime;
+				var elite_type = choose(oElitePango, oEliteTurret, oEliteSlime,oEliteTeleportRobot);
+				//var elite_type = oEliteSlime;
 	            var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", obj_enemy_portal);
 				CreateDoors(roomId, true);
 	            roomId.room_obj.is_elite = true;
