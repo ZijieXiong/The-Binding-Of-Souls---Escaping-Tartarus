@@ -8,7 +8,11 @@ target_x = 0;
 target_y = 0;
 jump_speed = 3;
 
-max_jump_dist =100;
+normal_max_jump_dist =100;
+attack_max_jump_dist = 50;
+max_jump_dist = normal_max_jump_dist;
+
+jump_count = 0;
 
 alert_radius = 300;
 alarm[0]=120;
@@ -44,6 +48,19 @@ shoot = function(_is_cross) {
 		_bullet.speed = 3  ;
 		
 		_bullet.direction= _is_cross ? _dir+45 : _dir;
+		_bullet.image_angle = _bullet.direction;
+	}
+	
+}
+
+shoot_8_dir = function() {
+	
+	for(var _dir = 0; _dir < 360; _dir += 45;)
+	{
+		var _bullet = instance_create_layer(x, y, "Instances", oSlimeBullet);
+		_bullet.speed = 3  ;
+		
+		_bullet.direction= _dir;
 		_bullet.image_angle = _bullet.direction;
 	}
 	
