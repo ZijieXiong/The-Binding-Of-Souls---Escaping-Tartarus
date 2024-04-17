@@ -7,7 +7,7 @@ _trolling = [spr_garbage_disposal_troll1,spr_garbage_disposal_troll2]
 
 _choice = 0
 
-_player_distance = 35
+_player_distance = 45
 _facing = 1
 
 calc_path_timer = irandom(60)

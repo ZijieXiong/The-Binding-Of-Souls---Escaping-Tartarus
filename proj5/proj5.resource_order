@@ -17,6 +17,9 @@
     {"name":"obj_enemy_portal","order":2,"path":"objects/obj_enemy_portal/obj_enemy_portal.yy",},
     {"name":"obj_missile","order":1,"path":"objects/obj_missile/obj_missile.yy",},
     {"name":"obj_room","order":1,"path":"objects/obj_room/obj_room.yy",},
+    {"name":"oBTtester","order":1,"path":"objects/oBTtester/oBTtester.yy",},
+    {"name":"BehaviorChase","order":2,"path":"scripts/BehaviorChase/BehaviorChase.yy",},
+    {"name":"BehaviorTree","order":1,"path":"scripts/BehaviorTree/BehaviorTree.yy",},
     {"name":"obj_teleport_in","order":1,"path":"objects/obj_teleport_in/obj_teleport_in.yy",},
     {"name":"oEliteMummy","order":5,"path":"objects/oEliteMummy/oEliteMummy.yy",},
     {"name":"oGarbageBot","order":4,"path":"objects/oGarbageBot/oGarbageBot.yy",},
@@ -42,6 +45,7 @@
     {"name":"spr_skull_idle","order":1,"path":"sprites/spr_skull_idle/spr_skull_idle.yy",},
     {"name":"spr_teleport_attack","order":1,"path":"sprites/spr_teleport_attack/spr_teleport_attack.yy",},
     {"name":"spr_teleport_dead","order":2,"path":"sprites/spr_teleport_dead/spr_teleport_dead.yy",},
+    {"name":"spr_teleport_idle179","order":4,"path":"sprites/spr_teleport_idle179/spr_teleport_idle179.yy",},
     {"name":"spr_teleport_in","order":1,"path":"sprites/spr_teleport_in/spr_teleport_in.yy",},
   ],
 }
