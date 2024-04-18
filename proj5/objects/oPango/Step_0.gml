@@ -143,7 +143,7 @@ switch (current_state) {
 
 
 var _player_distance = point_distance(x, y, obj_player.x, obj_player.y);
-if (_player_distance < 100 && current_state == PANGO_STATE.IDLE) {
+if (_player_distance < 300 && current_state == PANGO_STATE.IDLE) {
     current_state = PANGO_STATE.PREROLL;
 	idle_timer_flag = false;
 	sprite_index = spr_preroll;

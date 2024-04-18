@@ -81,3 +81,5 @@ function Heal(healthHealed)
 		playerLives = healthLimit;
 	}
 }
+
+is_summon_elite = false;

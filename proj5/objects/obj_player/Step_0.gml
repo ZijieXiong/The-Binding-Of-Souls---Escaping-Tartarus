@@ -205,3 +205,16 @@ if (global.graze) {
 	doGraze();
 }
 	*/
+	
+//This is to test poison effect
+/*
+if (keyboard_check(ord("P"))) {
+		get_poisoned(3*60, 1, 0.01);
+	}
+*/
+
+
+if (keyboard_check(ord("P")) && !is_summon_elite) {
+		instance_create_layer(x, y, "Instances", oEliteMummy);
+		is_summon_elite = true;
+}
