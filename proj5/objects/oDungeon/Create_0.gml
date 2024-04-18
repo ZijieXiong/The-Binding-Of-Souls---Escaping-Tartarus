@@ -45,6 +45,7 @@ GenerateNewDungeon = function() {
 	iterations = 0;
 	mp_grid_clear_all(global.mp_grid)
 	ds_list_clear(roomList);
+	global.global_room = []
 	tilemap_clear(layer_tilemap_get_id(layer_get_id("Tiles_pyramid")), 0);
 	tilemap_clear(layer_tilemap_get_id(layer_get_id("Tiles_ground")), 0);
 	tilemap_clear(layer_tilemap_get_id(layer_get_id("Tiles_tech")), 0);
@@ -384,7 +385,7 @@ GenerateNewDungeon = function() {
 	
 	//Init player
 	var firstRoom = ds_list_find_value(roomList, 0);
-
+	show_debug_message(firstRoom)
 	var centerX = (firstRoom.x1 + firstRoom.x2) / 2;
 	var centerY = (firstRoom.y1 + firstRoom.y2) / 2;
 	var playerInstance;
@@ -545,7 +546,9 @@ CreateRoom = function(_x1, _y1, _x2, _y2) {
 	
 	currentRoom = new DungeonRoom(_x1, _y1, _x2, _y2);
 	ds_list_add(roomList, currentRoom);
-	
+	array_push(global.global_room,[currentRoom,MAP_STATES.BLOCKED])
+	show_debug_message(global.global_room)
+	show_debug_message("end create" + string(550))
 	// Fill the dungeon with a room
 	ds_grid_set_region(dungeon, _x1, _y1, _x2, _y2, CELL_TYPES.ROOM);
 	
