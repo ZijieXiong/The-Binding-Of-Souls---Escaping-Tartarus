@@ -2,7 +2,7 @@
 // You can write your code in this editor
 event_inherited();
 
-_health = 200;
+//_health = 200;
 
 size_scale = 1;
 

@@ -476,7 +476,7 @@ GenerateNewDungeon = function() {
 	        if (random(1) <= 1) {
 				show_debug_message("elite room");
 				var elite_type = choose(oElitePango, oEliteTurret, oEliteSlime,oEliteTeleportRobot, oEliteMummyWithLaser, oEliteMummy);
-	            //var elite_type = oEliteMummy;
+	          //  var elite_type = oEliteTeleportRobot;
 				var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", obj_enemy_portal);
 				CreateDoors(roomId, true);
 	            roomId.room_obj.is_elite = true;

@@ -1,18 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_slot_draw",
+  "%Name":"obj_aim",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_slot_draw",
+  "name":"obj_aim",
   "overriddenProperties":[],
   "parent":{
-    "name":"Slot UI",
-    "path":"folders/Objects/Slot UI.yy",
+    "name":"missile",
+    "path":"folders/Objects/Items/missile.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_missle_aim",
+    "path":"sprites/spr_missle_aim/spr_missle_aim.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
