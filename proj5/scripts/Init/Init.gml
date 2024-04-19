@@ -10,7 +10,7 @@
 //#macro RICHOCHET false
 //#macro HEALTH_BOOST false
 global.max_items = 3
-global._draw_map = false
+global._draw_map = true
 
 global.spr_inventory[0] = -1
 global.spr_inventory[1] = -1

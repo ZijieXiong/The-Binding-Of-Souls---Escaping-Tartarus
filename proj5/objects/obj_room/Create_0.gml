@@ -74,8 +74,12 @@ function check_distance(posX,posY)
 		show_debug_message("posX: "+ string(posX) + " posY: " + string(posY));
 		show_debug_message("hazard y: " + string(hazard.y) + " hazard x: " + string(hazard.x));
 		show_debug_message(place_meeting(posX,posY, hazard));
-		if (place_meeting(posX,posY,hazard)) {
+		/*if (place_meeting(posX,posY,hazard)) {
 				return false;
+		}*/
+		if(collision_circle(posX,posY,8,[obj_wall], true, 0))
+		{
+			return false;
 		}
 	}
 	return true;

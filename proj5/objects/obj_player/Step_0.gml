@@ -188,7 +188,7 @@ if(death_animation_started && image_index >= sprite_get_number(sprite_index) - 1
 
 if(revive_animation_started && image_index >= sprite_get_number(sprite_index) - 1)
 {
-	playerLives = 3;
+	playerLives = healthLimit;
 	global.globalFreeze = false;
 	revive_animation_started = false;
 	ChangeWeapon(current_weapon_arg);
