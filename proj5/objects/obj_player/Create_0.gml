@@ -58,7 +58,7 @@ _rifle = instance_create_layer(x,y,"Instances",obj_rifle)
 */
 function Revive(){
 	show_debug_message("revived");
-	playerLives = 3;
+	playerLives = healthLimit;
 	global.revive-=1;
 	ds_map_replace(global.upgrade_pool, "obj_upgrade_revive", 5);
 }
