@@ -7,6 +7,11 @@ event_inherited();
 
 
 
+_facing = 1
+xp = x
+previous_facing = _facing
+
+
 //_health = 50;
 walk_speed = 1;
 roll_speed = 3.5;

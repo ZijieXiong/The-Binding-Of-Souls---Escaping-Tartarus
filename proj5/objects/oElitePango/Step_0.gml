@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
+
+
 switch (current_state) {
     case EPANGO_STATE.IDLE:
         //Idle
@@ -156,5 +158,10 @@ if(is_enraged && !is_alerted)
 	is_alerted = true;	
 }
 
+_facing = sign(x-xp)
+if _facing == 0 _facing = previous_facing
+
+xp = x
+previous_facing = _facing
 
 
