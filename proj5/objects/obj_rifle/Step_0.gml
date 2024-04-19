@@ -16,7 +16,7 @@ depth = obj_player.depth-1;
 
 
 
-if (charge && !shoot){
+if (shoot){
 	rifle_timer += 1
 	if(!_reload && increase_damage < max_damage_increase){
 	increase_damage += damage_increase_pre_frame * global.riffleChargingSpeed
@@ -32,21 +32,24 @@ if(increase_damage > max_damage_increase){
 	increase_damage = max_damage_increase
 }
 
-if(mouse_check_button_released(mb_right)){
-	if(!_reload){
+if(mouse_check_button_released(mb_left)){
+	if(!_reload || rifle_cooldown == 0){
 		show_debug_message("fires")
 		var bullet = instance_create_layer(x+lengthdir_x(24,direction),y+lengthdir_y(24,direction), "Instances", obj_rifle_bullet);
 	    bullet.speed = bullet_speed;
 	    bullet.direction= point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y);
 	    bullet.image_angle = bullet.direction;
 		bullet.damage += increase_damage;
-		sprite_index = spr_rifle_shoot_max
+		
 		if(increase_damage == max_damage_increase){
+			sprite_index = spr_rifle_shoot_max
 			bullet.sprite_index = spr_rifle_bullet_max
 			bullet._rifflePenetrate = global.rifflePenetrate
 			bullet._explosive = global.riffle_bullet_explosive
+		}else{
+			sprite_index = spr_rifle_shoot_normal
 		}
-		//rifle_cooldown = room_speed * (interval+increase_cooldown);
+		rifle_cooldown = max(0.3,(interval+increase_cooldown))*global.shootingIntervalMultiplier
 		
 		var _reload_total_frames = sprite_get_number(spr_rifle_reload)
 		var _reload_fps = _reload_total_frames / (max(0.3,(interval+increase_cooldown)*global.shootingIntervalMultiplier))
@@ -64,7 +67,7 @@ if(mouse_check_button_released(mb_right)){
 	}
 	
 }
-
+/*
 if (shoot && !charge) {
 	if(rifle_cooldown == 0 && !_reload){
 		audio_play_sound(rifleContinuousShoot2, 0, false);
@@ -77,9 +80,10 @@ if (shoot && !charge) {
 		rifle_cooldown = room_speed * interval;
 	}
 }
+*/
 
 //if(shotgun_cooldown != 0){
-if(sprite_index == spr_rifle_shoot_max) 
+if(sprite_index == spr_rifle_shoot_max || sprite_index == spr_rifle_shoot_normal) 
          && (image_index >= (sprite_get_number(sprite_index) - 1))
 {
 	sprite_index = spr_rifle_reload;
