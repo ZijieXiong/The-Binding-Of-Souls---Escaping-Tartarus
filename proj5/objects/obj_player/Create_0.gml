@@ -66,10 +66,11 @@ function Revive(){
 _last_sprite = sprite_index
 _hurting = false
 function TakeDamage(){
-	if(is_vulnerable)
+	if(is_vulnerable && !global.globalFreeze)
 	{
 		if(!_hasShield){
 			sprite_index = spr_player_hurt
+			image_speed = 1;
 			if _last_sprite != spr_player_hurt{
 				image_index = 0
 			}
