@@ -45,6 +45,7 @@ function doorClose()
 	{
 		elite_sound = audio_play_sound(eliteEnemyDetected,0,false);
 	}
+	audio_play_sound(enemy_portal_open, 0, false);
 	for(var i = 0; i < array_length(doors);i++)
 	{
 		doors[i].close();
@@ -62,4 +63,5 @@ function doorOpen()
 		doors[i].open();
 	}
 	dropItem();
+	instance_create_layer(x,y,"UI_Layer", obj_stage_clear_message);
 }

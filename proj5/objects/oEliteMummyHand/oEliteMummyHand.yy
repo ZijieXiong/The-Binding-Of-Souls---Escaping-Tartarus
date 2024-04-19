@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Elite Mummy Laser",
-    "path":"folders/Objects/Enemies/Elite Mummy Laser.yy",
+    "path":"folders/Objects/Enemies/Elites/Elite Mummy Laser.yy",
   },
   "parentObjectId":null,
   "persistent":false,

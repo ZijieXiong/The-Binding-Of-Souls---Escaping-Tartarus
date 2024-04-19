@@ -7,9 +7,9 @@ event_inherited();
 
 
 
-_health = 50;
+//_health = 50;
 walk_speed = 1;
-roll_speed = 4;
+roll_speed = 3.5;
 
 is_alerted = false;
 
@@ -21,9 +21,9 @@ target_y = 0;
 idle_timer_flag = false;
 
 preroll_time = 1.2;
-roll_time = 8;
+roll_time = 5;
 stoproll_time = 1.1;
-rest_time = 3.5;
+rest_time = 3;
 
 alarm[0]= 60;
 

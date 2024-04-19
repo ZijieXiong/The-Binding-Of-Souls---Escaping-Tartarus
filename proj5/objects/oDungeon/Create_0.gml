@@ -358,10 +358,10 @@ GenerateNewDungeon = function() {
 			else if (_cell == CELL_TYPES.HALLWAY) {
 				_tileInd = 1;
 			}
-			if(global.currLevel==1){
+			if(global.currLevel < global.pyramid_layer){
 			tilemap_set(layer_tilemap_get_id(layer_get_id("Tiles_ground")), _tileInd, xx, yy);
 			}
-			else if(global.currLevel==2){
+			else if(global.currLevel < global.tech_layer){
 			tilemap_set(layer_tilemap_get_id(layer_get_id("Tiles_pyramid")), _tileInd, xx, yy);
 			}else{
 				tilemap_set(layer_tilemap_get_id(layer_get_id("Tiles_tech")), _tileInd, xx, yy);
@@ -476,8 +476,19 @@ GenerateNewDungeon = function() {
 	        if (random(1) <= 1) {
 				show_debug_message("elite room");
 				var elite_type = choose(oElitePango, oEliteTurret, oEliteSlime,oEliteTeleportRobotX, oEliteMummyWithLaser, oEliteMummy);
+				if(global.currLevel < global.pyramid_layer)
+				{
+					elite_type = choose(oElitePango, oEliteSlime);
+				}
+				//var enemyType = oEliteMummy;
+				else if (global.currLevel < global.tech_layer) {
+					elite_type = choose(oEliteMummy, oEliteMummyWithLaser);
+				}
+				else{
+					enemyType = choose(oEliteTeleportRobot, oEliteTurret, oEliteTeleportRobotX);
+				}
 	            //var elite_type = oEliteTeleportRobotX;
-				var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", obj_enemy_portal);
+				var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2 + 1) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2 + 1) / 2 * CELL_SIZE, "Dungeon", obj_enemy_portal);
 				CreateDoors(roomId, true);
 	            roomId.room_obj.is_elite = true;
 				roomId.room_obj.enemy_cleared = false;
@@ -573,7 +584,7 @@ CreateRoom = function(_x1, _y1, _x2, _y2) {
 	*/
 
 
-	if(global.currLevel==1){
+	if(global.currLevel < global.pyramid_layer){
 	instance_create_layer((_x1 - 1) * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "WallTile", obj_ground_wall_upleft);
     instance_create_layer((_x2 + 1) * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "WallTile", obj_ground_wall_upright);
     instance_create_layer((_x1 - 1) * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "WallTile", obj_ground_wall_botleft);
@@ -602,7 +613,7 @@ CreateRoom = function(_x1, _y1, _x2, _y2) {
 	
 	}
 	//pyramid
-	else if(global.currLevel==2) {
+else if(global.currLevel < global.tech_layer) {
     instance_create_layer((_x1 - 1) * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "WallTile", obj_wall_upleft);
     instance_create_layer((_x2 + 1) * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "WallTile", obj_wall_upright);
     instance_create_layer((_x1 - 1) * CELL_SIZE, (_y2 + 1) * CELL_SIZE, "WallTile", obj_wall_bottomleft);
@@ -675,7 +686,7 @@ CreateHallway = function(_x1, _y1, _x2, _y2, isNorthSouth) {
 
 
 	ds_grid_set_region(dungeon, _x1, _y1, _x2, _y2, CELL_TYPES.HALLWAY);
-if(global.currLevel==1){
+if(global.currLevel<global.pyramid_layer){
 	    if (isNorthSouth) {
         for (var temp_y = _y1; temp_y <= _y2; temp_y++) {
 			 if (temp_y == _y1) {
@@ -739,7 +750,7 @@ if(global.currLevel==1){
     }
 }
 //pyramid
-else if (global.currLevel==2){
+else if (global.currLevel < global.tech_layer){
     if (isNorthSouth) {
         for (var temp_y = _y1; temp_y <= _y2; temp_y++) {
 			 if (temp_y == _y1) {
@@ -939,9 +950,12 @@ CreateHazards = function(rm) {
 		var posX, posY;
 		var validPosition = false;
 		var size = random_range(0.8,1.2);
-		if(global.currLevel==1){
+		if(global.currLevel < global.pyramid_layer)
+		{
 		    hazard = instance_create_layer(0,0,"WallTile", obj_ground_obstacle);
-		}else if(global.currLevel==2){
+		}
+		else if(global.currLevel < global.tech_layer)
+		{
 			hazard = instance_create_layer(0,0,"WallTile", obj_pyramid_obstacle);
 		}
 		else{
@@ -1023,12 +1037,16 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards,_room_obj){
 	var enemyDistance = 60;
 	var wallDistance = 70;
 	for(var j = 0; j<enemyCount;j++){
-		var enemyType = choose(oSlime, oPango, oTrackShooter);
+		var enemyType;
+		if(global.currLevel < global.pyramid_layer)
+		{
+			enemyType = choose(oSlime, oPango, oTrackShooter);
+		}
 		//var enemyType = oEliteMummy;
-		if (global.currLevel == 2) {
+		else if (global.currLevel < global.tech_layer) {
 			enemyType = choose(oAnubis, oMummy, oSkullShooter);
 		}
-		else if (global.currLevel >= 3) {
+		else{
 			enemyType = choose(oGarbageBot, oTurret, oTeleportRobot);
 		}
 		
@@ -1108,9 +1126,9 @@ CreateDoors = function(eliteRoom, isEnemy){
             }
         }
 		var doorInstance;
-        if(global.currLevel==1){
+        if(global.currLevel < global.pyramid_layer){
 			doorInstance = instance_create_layer(doorX, doorY, "Instances", obj_ground_door);
-		}else if(global.currLevel==2){
+		}else if(global.currLevel < global.tech_layer){
 			doorInstance = instance_create_layer(doorX, doorY, "Instances", obj_door);
 		}else{
 			doorInstance = instance_create_layer(doorX, doorY, "Instances", obj_tech_door);

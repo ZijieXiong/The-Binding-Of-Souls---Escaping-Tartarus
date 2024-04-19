@@ -7,7 +7,7 @@ if(!shooting && _health>0){
 	}
 	else{
 		shooting = true;
-		shoot_timer = shoot_countdown + random_range(-5,5);
+		shoot_timer = shoot_countdown + random_range(-10,10);
 		sprite_index = spr_skull_shoot;
 		current_frame = 0;
 		image_index = 0;
@@ -21,7 +21,7 @@ if(shooting && sprite_index == spr_skull_shoot)
 	if(floor(image_index) == 9)
 	{
 		var dir = point_direction(x,y,obj_player.x,obj_player.y);
-		var bullet_speed = 5;
+		var bullet_speed = 4;
 		var bullet_spread = 30;
 		
 		 for (var i = -1; i <= 1; i++) {

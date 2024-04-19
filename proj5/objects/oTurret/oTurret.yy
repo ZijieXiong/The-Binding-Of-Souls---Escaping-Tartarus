@@ -10,8 +10,8 @@
   "name":"oTurret",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemies",
-    "path":"folders/Objects/Enemies.yy",
+    "name":"Tech",
+    "path":"folders/Objects/Enemies/Tech.yy",
   },
   "parentObjectId":{
     "name":"oEnemiesParent",

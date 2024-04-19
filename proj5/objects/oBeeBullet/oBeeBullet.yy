@@ -11,8 +11,8 @@
   "name":"oBeeBullet",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemies",
-    "path":"folders/Objects/Enemies.yy",
+    "name":"Ground",
+    "path":"folders/Objects/Enemies/Ground.yy",
   },
   "parentObjectId":null,
   "persistent":false,

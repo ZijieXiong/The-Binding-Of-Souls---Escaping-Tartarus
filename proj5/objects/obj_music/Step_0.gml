@@ -37,14 +37,14 @@ if (global.currLevel == 1) {
 	audio_play_sound(snd_jungle, 0, true);
 	}
 }
-if (global.currLevel == 2) {
+if (global.currLevel == global.pyramid_layer) {
 	audio_sound_gain(snd_jungle, 0, 2000);
 	audio_stop_sound(snd_jungle);
     if (!audio_is_playing(snd_pyramid_bgm)) {
 		audio_play_sound(snd_pyramid_bgm, 0, true);
 	}
 }
-if (global.currLevel == 3) {
+if (global.currLevel == global.tech_layer) {
 	audio_sound_gain(snd_pyramid_bgm, 0, 2000);
 	audio_stop_sound(snd_pyramid_bgm);
 	if (!audio_is_playing(snd_scifi)) {

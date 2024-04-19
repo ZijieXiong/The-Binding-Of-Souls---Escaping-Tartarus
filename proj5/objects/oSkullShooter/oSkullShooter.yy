@@ -9,8 +9,8 @@
   "name":"oSkullShooter",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemies",
-    "path":"folders/Objects/Enemies.yy",
+    "name":"Pyramid",
+    "path":"folders/Objects/Enemies/Pyramid.yy",
   },
   "parentObjectId":{
     "name":"oEnemiesParent",

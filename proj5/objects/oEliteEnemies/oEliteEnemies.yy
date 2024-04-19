@@ -9,8 +9,8 @@
   "name":"oEliteEnemies",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemies",
-    "path":"folders/Objects/Enemies.yy",
+    "name":"Elites",
+    "path":"folders/Objects/Enemies/Elites.yy",
   },
   "parentObjectId":{
     "name":"oEnemiesParent",

@@ -1,16 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"oPangoSpikeEnd",
+  "%Name":"obj_stage_clear_message",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oPangoSpikeEnd",
+  "name":"obj_stage_clear_message",
   "overriddenProperties":[],
   "parent":{
-    "name":"Ground",
-    "path":"folders/Objects/Enemies/Ground.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"Ice_VFX_1_Hit",
-    "path":"sprites/Ice_VFX_1_Hit/Ice_VFX_1_Hit.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

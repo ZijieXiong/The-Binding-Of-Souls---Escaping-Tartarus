@@ -12,8 +12,8 @@
   "name":"oSlime",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemies",
-    "path":"folders/Objects/Enemies.yy",
+    "name":"Ground",
+    "path":"folders/Objects/Enemies/Ground.yy",
   },
   "parentObjectId":{
     "name":"oEnemiesParent",

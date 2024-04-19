@@ -1,4 +1,4 @@
-_health = 0
+_health = 50 + (global.currLevel -1) * 10;
 _flash = 0
 invincible = false
 _currentRoom = noone

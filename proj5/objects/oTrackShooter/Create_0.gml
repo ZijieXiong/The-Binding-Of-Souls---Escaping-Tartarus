@@ -6,7 +6,7 @@ trackerShooterLives = 3;
 self.image_xscale = 0.7;
 self.image_yscale = 0.7;
 
-_health = 50 + global.currLevel * 10;
+//_health = 50 + global.currLevel * 10;
 _attack_dis = 100
 dm = instance_find(oDungeon, 0);
 

@@ -1,6 +1,6 @@
 event_inherited()
 
-_health = 50
+//_health = 50
 _flash = 0
 
 teleport_timer = irandom_range(room_speed*2, room_speed*4)

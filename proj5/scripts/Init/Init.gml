@@ -19,6 +19,10 @@ global.obj_inventory[0] = -1
 global.obj_inventory[1] = -1
 global.obj_inventory[2] = -1
 
+global.pyramid_layer = 4;
+global.tech_layer = 7;
+
+global.draw_map = true;
 global.load_done = false
 global.graze = false;
 global.richochet = true;

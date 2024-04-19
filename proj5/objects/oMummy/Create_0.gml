@@ -7,7 +7,7 @@ event_inherited();
 
 
 
-_health = 50;
+_health = 25+global.currLevel * 10;
 walk_speed = 1;
 chase_speed = 2;
 
