@@ -1,6 +1,6 @@
-gwidth = display_get_gui_width() / 2
-gheight = display_get_gui_height() / 2
-spacing = 16
+gwidth = display_get_gui_width() -  display_get_gui_width() / 10
+gheight = display_get_gui_height() -  display_get_gui_height() /1.1
+spacing = 4
 _draw_map = false
 
 minimap = global.minimap
@@ -17,6 +17,7 @@ location_x = obj_player.x
 location_y = obj_player.y
 global.minimap[location_x,location_y] = MAP_STATES.DISCOVERD
 global.minimap = minimap
+room_size = array_height_2d(global.global_room);
 
 function draw_map(){
 

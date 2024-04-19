@@ -139,6 +139,8 @@ function initParas()
 	global.obj_inventory[0] = -1
 	global.obj_inventory[1] = -1
 	global.obj_inventory[2] = -1
+	
+	global.global_room = []
 
 	initUpgradePool();
 }
