@@ -158,10 +158,5 @@ if(is_enraged && !is_alerted)
 	is_alerted = true;	
 }
 
-_facing = sign(x-xp)
-if _facing == 0 _facing = previous_facing
-
-xp = x
-previous_facing = _facing
 
 

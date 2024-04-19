@@ -4,9 +4,6 @@
 // Inherit the parent event
 event_inherited();
 
-_facing = 1
-xp = x
-previous_facing = _facing
 
 
 _initial_health = _health;
