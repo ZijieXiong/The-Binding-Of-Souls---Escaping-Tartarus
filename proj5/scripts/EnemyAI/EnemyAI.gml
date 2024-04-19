@@ -92,3 +92,32 @@ function TaskSpell2(instance_target, secs_preparation) : BTreeLeaf() constructor
 			return BTStates.Running;
 	}
 }
+
+function TaskSpellTornado(instance_target, secs_preparation) : BTreeLeaf() constructor{
+	name = "Task Cast big magic ball toward player";
+	
+	target_hit = instance_target;
+	time_preparation_max = secs_preparation;
+	time_preparation = 0;
+	
+	
+	
+	
+	/// @override
+	static Process = function(){
+		if(!instance_exists(target_hit)) return BTStates.Failure;
+		if(++time_preparation >= time_preparation_max){
+			time_preparation = 0;
+			var _dir = point_direction(black_board_ref.user.x, black_board_ref.user.y, target_hit.x, target_hit.y);
+			var _bullet = instance_create_layer(black_board_ref.user.x, black_board_ref.user.y, "Instances", oMummyTornado);
+			_bullet.speed = 2.5  ;
+			_bullet.direction= _dir;
+			
+			
+			//target_hit.TakeDamage();
+			return BTStates.Success;
+		}
+		else 
+			return BTStates.Running;
+	}
+}
