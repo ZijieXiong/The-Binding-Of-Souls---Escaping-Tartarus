@@ -4,8 +4,6 @@
 // Inherit the parent event
 event_inherited();
 
-_facing = sign(x-xp)
-if _facing == 0 _facing = previous_facing
 
 switch (current_state) {
     case PANGO_STATE.IDLE:
@@ -163,6 +161,5 @@ if (_player_distance < 300 && current_state == PANGO_STATE.IDLE) {
 		image_xscale = size_scale;
 	}
 }
-xp = x
-previous_facing = _facing
+
 
