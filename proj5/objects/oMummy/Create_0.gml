@@ -28,7 +28,7 @@ attack_ready = true;
 attack_range = 100;
 
 alarm[0]= 60;
-image_speed = 0.3;
+image_speed = 0.15;
 
 
 
