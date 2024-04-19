@@ -1,3 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-event_inherited();
+instance_destroy(left_hand);
+instance_destroy(right_hand);
+instance_destroy(laser);

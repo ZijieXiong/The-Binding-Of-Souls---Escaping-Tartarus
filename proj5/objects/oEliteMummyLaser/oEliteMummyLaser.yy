@@ -1,20 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"oEliteMummy",
+  "%Name":"oEliteMummyLaser",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oEliteMummy",
+  "name":"oEliteMummyLaser",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemies",
-    "path":"folders/Objects/Enemies.yy",
+    "name":"Elite Mummy Laser",
+    "path":"folders/Objects/Enemies/Elite Mummy Laser.yy",
   },
-  "parentObjectId":{
-    "name":"oEliteEnemies",
-    "path":"objects/oEliteEnemies/oEliteEnemies.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_elite_mummy_idle",
-    "path":"sprites/spr_elite_mummy_idle/spr_elite_mummy_idle.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
