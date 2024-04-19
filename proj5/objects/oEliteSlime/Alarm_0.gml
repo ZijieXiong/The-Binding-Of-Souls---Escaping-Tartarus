@@ -42,7 +42,7 @@ var _estimed_time = point_distance(x, y, target_x, target_y)/jump_speed;
 var _jump_duration = 60*_estimed_time; // The total duration of the jump in steps
 var _sprite_frame_count = sprite_get_number(spr_slime_jump); // Number of frames in the jump sprite
 
-show_debug_message(_estimed_time);
+//show_debug_message(_estimed_time);
 
 // Calculate image_speed
 //image_speed = _jump_duration/ _sprite_frame_count;
