@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_green_explosion",
-    "path":"sprites/spr_green_explosion/spr_green_explosion.yy",
+    "name":"spr_purple_explosion",
+    "path":"sprites/spr_purple_explosion/spr_purple_explosion.yy",
   },
   "spriteMaskId":null,
   "visible":true,

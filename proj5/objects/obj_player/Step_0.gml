@@ -215,6 +215,6 @@ if (keyboard_check(ord("P"))) {
 
 
 if (keyboard_check(ord("P")) && !is_summon_elite) {
-		instance_create_layer(x, y, "Instances", oEliteMummy);
+		instance_create_layer(x, y, "Instances", oEliteSlime);
 		is_summon_elite = true;
 }
