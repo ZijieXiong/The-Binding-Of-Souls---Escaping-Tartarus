@@ -475,9 +475,9 @@ GenerateNewDungeon = function() {
 	    if (roomInd != reloadRoomInd && roomInd != chestRoomInd) {
 	        if (random(1) <= 1) {
 				show_debug_message("elite room");
-				var elite_type = choose(oElitePango, oEliteTurret, oEliteSlime,oEliteTeleportRobot, oEliteMummy);
-				//var elite_type = oEliteMummy;
-	            var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", obj_enemy_portal);
+				var elite_type = choose(oElitePango, oEliteTurret, oEliteSlime,oEliteTeleportRobot, oEliteMummyWithLaser, oEliteMummy);
+	            //var elite_type = oEliteMummy;
+				var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2) / 2 * CELL_SIZE, "Dungeon", obj_enemy_portal);
 				CreateDoors(roomId, true);
 	            roomId.room_obj.is_elite = true;
 				roomId.room_obj.enemy_cleared = false;
@@ -1024,6 +1024,7 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards,_room_obj){
 	var wallDistance = 70;
 	for(var j = 0; j<enemyCount;j++){
 		var enemyType = choose(oSlime, oPango, oTrackShooter);
+		//var enemyType = oEliteMummy;
 		if (global.currLevel == 2) {
 			enemyType = choose(oAnubis, oMummy, oSkullShooter);
 		}
