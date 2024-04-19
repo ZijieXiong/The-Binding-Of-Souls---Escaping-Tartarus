@@ -18,7 +18,7 @@ var _player_y = obj_player.y;
 switch (current_state) {
     case SKULL_STATE.IDLE:
         //Idle
-		show_debug_message("Skull Idle");
+		//show_debug_message("Skull Idle");
 		if(idle_timer_flag)
 		{
 			current_state = SKULL_STATE.PRECHASE;
@@ -60,7 +60,7 @@ switch (current_state) {
         break;
 		
 	case SKULL_STATE.PRECHASE:
-		show_debug_message("Skull PRECHASE");
+		//show_debug_message("Skull PRECHASE");
 		//reach one hand first
 		
 		if(is_left_dom && point_distance(left_frail.x, left_frail.y, target_x, target_y)<10)

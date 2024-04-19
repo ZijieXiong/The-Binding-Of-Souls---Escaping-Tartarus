@@ -26,11 +26,6 @@ function draw_map(){
 		for(var cy = 0; cy<= colls;cy++){
 			var xx = (gwidth - (max_size_x / 2)) + (rx * spacing);
 			var yy = (gheight - (max_size_y / 2)) + (cy * spacing);
-//			show_debug_message("map x" + string(location_x))
-//			show_debug_message("map y " + string(location_y))
-//			show_debug_message("rx" + string(rx))
-//			show_debug_message("cy " + string(cy))
-//			if(minimap[rx,cy] == MAP_STATES.DISCOVERD) show_debug_message("dis")
 			switch(global.minimap[rx,cy]){
 				case MAP_STATES.CONCEALD:
 					draw_set_color(c_gray);
@@ -51,7 +46,7 @@ function draw_map(){
 	var px = (gwidth - (max_size_x / 2)) + (location_x * spacing);
 	var py = (gheight - (max_size_y / 2)) + (location_y * spacing);
 	draw_set_color(c_red)
-	draw_rectangle(px,py,px+spacing,py+spacing,false)
+	draw_rectangle(px,py,px+spacing*2,py+spacing*2,false)
 }
 
 //draw_map()

@@ -39,6 +39,22 @@ function drop_item(_spr){
 	return(0);
 }
 
+function move_item(){
+	if global.spr_inventory[1] != -1 {
+		global.spr_inventory[0] = global.spr_inventory[1]
+		global.obj_inventory[0] = global.obj_inventory[1]
+		global.spr_inventory[1] = -1
+		global.obj_inventory[1] = -1
+	}
+	if global.spr_inventory[2] != -1 {
+		global.spr_inventory[1] = global.spr_inventory[2]
+		global.obj_inventory[1] = global.obj_inventory[2]
+		global.spr_inventory[2] = -1
+		global.obj_inventory[2] = -1
+	}
+
+}
+
 function set_item_prob(pool, prob){
 	for(var i = 0; i < array_length(global.items); i++){
 		ds_map_replace(pool, global.items[i], prob);

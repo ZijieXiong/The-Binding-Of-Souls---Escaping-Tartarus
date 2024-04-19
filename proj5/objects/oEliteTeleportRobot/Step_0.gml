@@ -5,6 +5,8 @@ if(_health <= 0){
 	}
 }
 
+
+
 if(sprite_index == spr_teleport_attack || sprite_index == spr_teleport_in) && (image_index >= (sprite_get_number(sprite_index) - 1)){
 	sprite_index = spr_teleport_idle
 }

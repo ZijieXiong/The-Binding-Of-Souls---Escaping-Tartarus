@@ -48,7 +48,7 @@ switch (current_state) {
         break;
 	
 	case PANGO_STATE.TRACK:
-		show_debug_message("Pango Track");
+		//show_debug_message("Pango Track");
 		if(idle_timer_flag)
 		{
 			current_state = PANGO_STATE.IDLE;

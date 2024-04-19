@@ -22,7 +22,6 @@ if (shoot){
 	increase_damage += damage_increase_pre_frame * global.riffleChargingSpeed
 	increase_cooldown += cooldown_increase_pre_frame * global.riffleChargingSpeed
 	bullet_speed = max_bullet_speed
-	show_debug_message(increase_damage)
 	pressed = true
 	}
 	
@@ -34,7 +33,6 @@ if(increase_damage > max_damage_increase){
 
 if(mouse_check_button_released(mb_left)){
 	if(!_reload || rifle_cooldown == 0){
-		show_debug_message("fires")
 		var bullet = instance_create_layer(x+lengthdir_x(24,direction),y+lengthdir_y(24,direction), "Instances", obj_rifle_bullet);
 	    bullet.speed = bullet_speed;
 	    bullet.direction= point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y);

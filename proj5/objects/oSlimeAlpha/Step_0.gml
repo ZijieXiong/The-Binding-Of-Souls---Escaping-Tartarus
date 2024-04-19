@@ -27,7 +27,7 @@ if(is_jump && point_distance(x, y, target_x, target_y)<5)
 
 if(_health <= 0){
 	
-	show_debug_message("Mega Slime died!");
+	//show_debug_message("Mega Slime died!");
 	
 	var _target_loc = get_new_location(10, 30);
 
