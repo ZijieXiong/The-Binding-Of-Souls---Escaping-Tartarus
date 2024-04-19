@@ -7,7 +7,7 @@ event_inherited();
 switch (current_state) {
     case MUMMY_STATE.IDLE:
         //Idle
-		show_debug_message("Mummy Idle");
+		//show_debug_message("Mummy Idle");
 		if(idle_timer_flag)
 		{
 			current_state = MUMMY_STATE.WALK;
@@ -22,7 +22,7 @@ switch (current_state) {
         
     case MUMMY_STATE.WALK:
         // Handle walk behavior, including transitions to IDLE or PREROLL
-		show_debug_message("Mummy Walk");
+		//show_debug_message("Mummy Walk");
 		if(point_distance(x, y, target_x, target_y)<15)
 		{
 			
@@ -37,7 +37,7 @@ switch (current_state) {
         break;
 		
 	case MUMMY_STATE.CHASE:
-		show_debug_message("Mummy chase");
+		//show_debug_message("Mummy chase");
 		direction = point_direction(x, y, obj_player.x, obj_player.y);
 		var _found_player = mp_grid_path(global.mp_grid,path,x,y,obj_player.x,obj_player.y,choose(0,1))
 		if _found_player{
@@ -60,7 +60,7 @@ switch (current_state) {
 		break;
 		
 	case MUMMY_STATE.REBORN:
-		show_debug_message("Mummy reborn");
+		//show_debug_message("Mummy reborn");
 		if(idle_timer_flag)
 		{
 			start_chase_player();

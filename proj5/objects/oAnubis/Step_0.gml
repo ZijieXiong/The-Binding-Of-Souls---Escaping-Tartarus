@@ -7,7 +7,7 @@ event_inherited();
 switch (current_state) {
     case ANUBIS_STATE.IDLE:
         //Idle
-		show_debug_message("Anubis Idle");
+		//show_debug_message("Anubis Idle");
 		
 		if(!is_alerted)
 		{
@@ -59,7 +59,7 @@ switch (current_state) {
         
     case ANUBIS_STATE.WALK:
         // Handle walk behavior, including transitions to IDLE or PREROLL
-		show_debug_message("Anubis Walk");
+		//show_debug_message("Anubis Walk");
 		if(point_distance(x, y, target_x, target_y)<15)
 		{
 			
@@ -73,7 +73,7 @@ switch (current_state) {
         break;
 		
 	case ANUBIS_STATE.CHASE:
-		show_debug_message("Anubis chase");
+		//show_debug_message("Anubis chase");
 		direction = point_direction(x, y, obj_player.x, obj_player.y);
 		
 		var _collision_res = collision_rectangle(x -fight_radius, y -fight_radius, x + fight_radius, y + fight_radius, obj_player, true, 1);
@@ -94,7 +94,7 @@ switch (current_state) {
 		
 		
 	case ANUBIS_STATE.CAST:
-		show_debug_message("Anubis cast");
+		//show_debug_message("Anubis cast");
 		if(idle_timer_flag)
 			{
 				current_state = ANUBIS_STATE.IDLE;
@@ -109,7 +109,7 @@ switch (current_state) {
 		break;
 		
 	case ANUBIS_STATE.RANGED_ATTACK:
-		show_debug_message("Anubis cast");
+		//show_debug_message("Anubis cast");
 		if(idle_timer_flag)
 			{
 				current_state = ANUBIS_STATE.IDLE;

@@ -15,7 +15,6 @@ if(global.spr_inventory[0] != -1){
 	if keyboard_check(ord("Q")){
 		if !_usingItem{
 			_usingItem = true
-			show_debug_message(_usingItem)
 			alarm[0] = room_speed * 0.3
 	//		var _spr =  global.spr_inventory[0]
 	//		var _obj =  global.obj_inventory[0]

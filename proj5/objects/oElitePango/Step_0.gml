@@ -7,7 +7,7 @@ event_inherited();
 switch (current_state) {
     case EPANGO_STATE.IDLE:
         //Idle
-		show_debug_message("Pango Idle");
+		//show_debug_message("Pango Idle");
 		if(idle_timer_flag)
 		{
 			current_state = EPANGO_STATE.WALK;
@@ -25,7 +25,7 @@ switch (current_state) {
         
     case EPANGO_STATE.WALK:
         // Handle walk behavior, including transitions to IDLE or PREROLL
-		show_debug_message("Pango Walk");
+		//show_debug_message("Pango Walk");
 		if(point_distance(x, y, target_x, target_y)<15)
 		{
 			if(random(10) >= 5)
@@ -48,7 +48,7 @@ switch (current_state) {
         break;
 	
 	case EPANGO_STATE.TRACK:
-		show_debug_message("Pango Track");
+		//show_debug_message("Pango Track");
 		if(idle_timer_flag)
 		{
 			current_state = EPANGO_STATE.IDLE;

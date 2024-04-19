@@ -19,7 +19,6 @@ if(!_reload){
 		_reload = true
 		audio_play_sound(shotgunShoot, 0, false);
 		sprite_index = spr_shotgun_shooting;
-	    show_debug_message("shotgun attack");
 		for (var _bullet = 0; _bullet < global.shotgun_bulletcount; _bullet++){
 		   var _shotgun_shell = instance_create_layer(x+lengthdir_x(20,direction),y+lengthdir_y(20,direction),"Instances",obj_shotgun_bullet);
 		   with (_shotgun_shell)
