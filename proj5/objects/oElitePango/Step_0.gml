@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
+
+
 switch (current_state) {
     case EPANGO_STATE.IDLE:
         //Idle

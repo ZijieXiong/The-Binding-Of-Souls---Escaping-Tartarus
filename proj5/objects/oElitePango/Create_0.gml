@@ -6,8 +6,6 @@ event_inherited();
 
 
 
-
-
 _initial_health = _health;
 //_health =_initial_health;
 

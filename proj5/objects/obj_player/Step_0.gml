@@ -6,26 +6,32 @@ vy = 0;
 self.image_xscale = 1.25;
 self.image_yscale = 1.25;
 #region Inputs
+
+if(sprite_index == spr_player_hurt) && (image_index >= (sprite_get_number(sprite_index) - 1)){
+	_hurting = false
+}
+
 if(!global.playerFreeze && !global.globalFreeze)
 {
-	sprite_index=spr_player_idle;
+	
+	if !_hurting sprite_index=spr_player_idle;
 	if (keyboard_check(ord("W"))) {
 		vy -= moveSpeed;
-		sprite_index=spr_player_run;
+		if !_hurting sprite_index=spr_player_run;
 	}
 	if (keyboard_check(ord("S"))) {
 		vy += moveSpeed;
 		self.image_xscale = -1.25;
-		sprite_index=spr_player_run;
+		if !_hurting sprite_index=spr_player_run;
 	}
 	if (keyboard_check(ord("A"))) {
 		vx -= moveSpeed;
 		self.image_xscale = -1.25;
-		sprite_index=spr_player_run;
+		if !_hurting sprite_index=spr_player_run;
 	}
 	if (keyboard_check(ord("D"))) {
 		vx += moveSpeed;
-		sprite_index=spr_player_run;
+		if !_hurting sprite_index=spr_player_run;
 	}
 
 	var totalSpeed = point_distance(0, 0, vx, vy);
@@ -188,7 +194,7 @@ if(death_animation_started && image_index >= sprite_get_number(sprite_index) - 1
 
 if(revive_animation_started && image_index >= sprite_get_number(sprite_index) - 1)
 {
-	playerLives = 3;
+	playerLives = healthLimit;
 	global.globalFreeze = false;
 	revive_animation_started = false;
 	ChangeWeapon(current_weapon_arg);
@@ -218,3 +224,5 @@ if (keyboard_check(ord("P")) && !is_summon_elite) {
 		instance_create_layer(x, y, "Instances", oEliteTeleportRobotX);
 		is_summon_elite = true;
 }
+
+_last_sprite = sprite_index

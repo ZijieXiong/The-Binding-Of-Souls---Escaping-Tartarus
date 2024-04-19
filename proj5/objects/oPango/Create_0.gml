@@ -6,7 +6,6 @@ event_inherited();
 
 
 
-
 //_health = 50;
 walk_speed = 1;
 roll_speed = 3.5;
