@@ -5,9 +5,9 @@ if _target > 0{
 	if(_takedameage == false){
 		_takedameage  = true
 		for(var i = 0; i < _target;++i;){
+			var dmg = damage+40;
 			_target_list[| i]._flash = 1;
-			_target_list[| i]._health -= damage;
-			var dmg = damage;
+			_target_list[| i]._health -= dmg;
 			var _instance = instance_create_layer(_target_list[| i].x,_target_list[| i].y,"UI_Layer", obj_damage_number);
 			_instance.damage = dmg;
 		}
