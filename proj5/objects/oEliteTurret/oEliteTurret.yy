@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_elite_jorgette_idle",
-    "path":"sprites/spr_elite_jorgette_idle/spr_elite_jorgette_idle.yy",
+    "name":"spr_elite_oturrent_nor",
+    "path":"sprites/spr_elite_oturrent_nor/spr_elite_oturrent_nor.yy",
   },
   "spriteMaskId":null,
   "visible":true,

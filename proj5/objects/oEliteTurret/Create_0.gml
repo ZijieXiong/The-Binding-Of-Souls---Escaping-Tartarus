@@ -15,3 +15,6 @@ bulletDirectInterval = max(12, 20 - global.currLevel);
 dm = instance_find(oDungeon, 0);
 
 playerInRange = false;
+
+
+last_sprite = sprite_index

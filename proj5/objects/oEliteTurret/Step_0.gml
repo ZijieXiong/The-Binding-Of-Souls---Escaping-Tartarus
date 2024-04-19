@@ -5,7 +5,7 @@ if (point_distance(obj_player.x, obj_player.y, x, y) < ENEM_DISTANCE) {
 if (playerInRange) {
 	//alarm[0] = 0; // Start spawning bullets the next step;
 	attack_cooldown += 1;
-	sprite_index = spr_elite_jorgette_scream1
+//	sprite_index = spr_elite_jorgette_scream1
 	if(attack_cooldown >= bulletSpiralInterval){
 		shoot();
 		//shoot(-1);
@@ -50,7 +50,11 @@ function shootAtPlayer()
 
 if(_health <= 0)
 {
-	sprite_index = spr_elite_jorgette_die
+	sprite_index = spr_elite_oturrent_dead
+	if(last_sprite != spr_elite_oturrent_dead){
+		image_index = 0
+		last_sprite = spr_elite_oturrent_dead
+	}
 	die();
 }
 

@@ -67,8 +67,11 @@ function Revive(){
 function TakeDamage(){
 	if(is_vulnerable)
 	{
-		playerLives -= 1;
-		audio_play_sound(hitHurt, 0, false);
+		if(!_hasShield){
+			playerLives -= 1;
+			audio_play_sound(hitHurt, 0, false);
+		}
+
 		is_vulnerable = false;
 		alarm[0] = invulnerable_time_after_damage * 60;
 	}

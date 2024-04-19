@@ -6,3 +6,6 @@ for(var i = 0; i<global.max_items; i+=1){
 		draw_sprite(global.spr_inventory[i],0,x+i*16*8,y)
 	}
 }
+
+
+pickup_item(spr_shield_icon,obj_shield)

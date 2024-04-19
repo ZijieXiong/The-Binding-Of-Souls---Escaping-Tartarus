@@ -1,6 +1,6 @@
-gwidth = display_get_gui_width() -  display_get_gui_width() / 10
-gheight = display_get_gui_height() -  display_get_gui_height() /1.1
-spacing = 4
+gwidth = display_get_gui_width() - 60 //- display_get_gui_width()  
+gheight = display_get_gui_height() -  display_get_gui_height() - 45
+spacing = 2
 _draw_map = false
 
 minimap = global.minimap

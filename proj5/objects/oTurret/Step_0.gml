@@ -1,16 +1,13 @@
-if (point_distance(obj_player.x, obj_player.y, x, y) < ENEM_DISTANCE) {
+//if (point_distance(obj_player.x, obj_player.y, x, y) < ENEM_DISTANCE) {
 	//alarm[0] = 0; // Start spawning bullets the next step;
 	attack_cooldown += 1;
-	sprite_index = spr_jorgette_scream1
+	//sprite_index = spr_jorgette_scream1
 	if(attack_cooldown >= bulletSpiralInterval){
 		shoot();
 		attack_cooldown = 0;
 	}
-}
-else{
-	sprite_index = spr_jorgette_idle
-	bulletSpiralIterator = 0;
-}
+//}
+
 
 function shoot() {
 	var _inst = instance_create_layer(x,y,"Instances", oEnemBullet);
@@ -29,7 +26,11 @@ function shoot() {
 
 if(_health <= 0)
 {
-	sprite_index = spr_jorgette_Die
+	sprite_index = spr_oturrent_dead
+	if(last_sprite != spr_oturrent_dead){
+		image_index = 0
+		last_sprite = spr_oturrent_dead
+	}
 	die();
 }
 
