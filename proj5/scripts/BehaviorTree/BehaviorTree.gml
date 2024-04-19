@@ -169,3 +169,4 @@ function BTreeSucceeder() : BTreeDecorator() constructor{
 		return BTStates.Success;
 	}
 }
+

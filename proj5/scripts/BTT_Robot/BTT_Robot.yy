@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"EnemyAI",
+  "%Name":"BTT_Robot",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"EnemyAI",
+  "name":"BTT_Robot",
   "parent":{
     "name":"AI",
     "path":"folders/Scripts/AI.yy",

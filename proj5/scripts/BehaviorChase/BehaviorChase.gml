@@ -143,6 +143,46 @@ function TaskChaseInstance(instance_chase, speed_chase, distance_max, distance_m
 	
 }
 
+/// @param instance_chase
+/// @param speed_chase 
+/// @param distance_max
+/// @param distance_min
+function TaskChaseInstanceNoPathfind(instance_chase, speed_chase, distance_max, distance_min) : BTreeLeaf() constructor{
+	name = "Task Chase Instance";
+	
+	chase_speed = speed_chase;
+	instance_to_chase = instance_chase;
+	distance_maximun_to_stop_chase = distance_max;
+	distance_minimun_to_stop_chase = distance_min;
+	
+	///@override
+	static Process = function(){
+		if(instance_exists(instance_to_chase)){
+			
+			// Check Stop chasing
+			var _dist = point_distance(black_board_ref.user.x, black_board_ref.user.y, instance_to_chase.x, instance_to_chase.y);
+			if(_dist <= distance_minimun_to_stop_chase)
+				return BTStates.Success;
+			else if (_dist >= distance_maximun_to_stop_chase)
+				return BTStates.Failure;
+			else {
+				 //Moving towards chasing
+				var _dir = point_direction(black_board_ref.user.x, black_board_ref.user.y, instance_to_chase.x, instance_to_chase.y);
+				black_board_ref.user.x += lengthdir_x(chase_speed, _dir);
+				black_board_ref.user.y += lengthdir_y(chase_speed, _dir);	
+				
+				
+		
+				return BTStates.Running;
+			}
+		}
+		else 
+			return BTStates.Failure
+
+	}
+	
+}
+
 /// @param instance_target
 /// @param secs_between_hits 
 function TaskMeleeHitTarget(instance_target, secs_preparation) : BTreeLeaf() constructor{

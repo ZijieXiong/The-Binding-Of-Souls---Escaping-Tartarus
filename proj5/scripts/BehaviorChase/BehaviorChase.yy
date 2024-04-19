@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"BehaviorChase",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"AI",
+    "path":"folders/Scripts/AI.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

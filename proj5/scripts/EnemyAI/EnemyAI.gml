@@ -121,3 +121,4 @@ function TaskSpellTornado(instance_target, secs_preparation) : BTreeLeaf() const
 			return BTStates.Running;
 	}
 }
+
