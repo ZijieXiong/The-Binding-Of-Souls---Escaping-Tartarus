@@ -23,7 +23,19 @@ switch (current_state) {
 			}
 		} else {
 			var _collision_res = collision_rectangle(x -fight_radius, y -fight_radius, x + fight_radius, y + fight_radius, obj_player, true, 1);
-		
+			
+			if(fireball_spell_ready)
+			{
+				idle_timer_flag = false;
+				current_state = ANUBIS_STATE.RANGED_ATTACK;
+				sprite_index = spr_anubis_cast;
+				image_index = 0;
+				alarm[0] = 0.5*60;
+				fireball_spell_ready = false;
+				alarm[2] = fireball_spell_cooldown * 60;
+				image_speed = 0.3;
+			}
+			
 			if(!_collision_res)
 			{	
 				current_state = ANUBIS_STATE.CHASE;
@@ -40,6 +52,7 @@ switch (current_state) {
 				alarm[0] = 1*60;
 				summon_spell_ready = false;
 				alarm[1] = summon_spell_cooldown * 60;
+				image_speed = 0.15;
 			}
 		}
         break;
@@ -90,7 +103,23 @@ switch (current_state) {
 				image_index = 0;
 				speed = 0;
 				//summon_mummy(x, y);
-				summon_mummies(random_range(1,2));
+				summon_mummies(choose(1,1,1,2,2,3));
+				image_speed = 0.3;
+			}
+		break;
+		
+	case ANUBIS_STATE.RANGED_ATTACK:
+		show_debug_message("Anubis cast");
+		if(idle_timer_flag)
+			{
+				current_state = ANUBIS_STATE.IDLE;
+				idle_timer_flag = false;
+				sprite_index = spr_anubis_idle;
+				image_index = 0;
+				speed = 0;
+				image_speed = 0.3;
+				
+				fireball_attack();
 			}
 		break;
         

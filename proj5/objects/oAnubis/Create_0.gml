@@ -11,21 +11,24 @@ _health = 50;
 walk_speed = 1;
 chase_speed = 1;
 
-is_alerted = false;
+is_alerted = true;
 
-size_scale = 1;
+size_scale = 1.5;
 
 target_x = 0;
 target_y = 0;
 
 idle_timer_flag = false;
 
-fight_radius = 60;
+fight_radius = 100;
 alert_radius = 100;
 radius_delta = 50;
 
 summon_spell_ready = true;
-summon_spell_cooldown = 3;
+summon_spell_cooldown = 5;
+
+fireball_spell_ready = true;
+fireball_spell_cooldown = 3;
 
 
 image_speed = 0.3;
@@ -37,7 +40,8 @@ enum ANUBIS_STATE {
     WALK,
 	IDLE_FIGHT,
 	CHASE,
-	CAST
+	CAST,
+	RANGED_ATTACK
 	
 }
 
@@ -87,6 +91,15 @@ summon_mummies = function(_num)
 		
 		summon_mummy(_spawn_loc[0], _spawn_loc[1]);
 	}
+}
+
+fireball_attack = function()
+{
+	var _bullet = instance_create_layer(x, y, "Instances", oMummyLightning);
+	_bullet.speed = 3  ;
+		
+	_bullet.direction= point_direction(x, y, obj_player.x, obj_player.y);
+	_bullet.image_angle = _bullet.direction;
 }
 
 get_new_spawn_location = function(_min_dist, _max_dist)

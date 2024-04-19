@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"BTT_Robot",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"BTT_Robot",
+  "parent":{
+    "name":"AI",
+    "path":"folders/Scripts/AI.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

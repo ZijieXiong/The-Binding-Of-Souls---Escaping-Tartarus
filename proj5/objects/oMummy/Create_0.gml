@@ -13,7 +13,7 @@ chase_speed = 2;
 
 is_alerted = false;
 
-size_scale = 1;
+size_scale = 1.5;
 
 target_x = 0;
 target_y = 0;
@@ -28,7 +28,7 @@ attack_ready = true;
 attack_range = 100;
 
 alarm[0]= 60;
-image_speed = 0.3;
+image_speed = 0.15;
 
 
 

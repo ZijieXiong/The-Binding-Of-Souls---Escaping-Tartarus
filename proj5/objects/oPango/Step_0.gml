@@ -115,7 +115,7 @@ switch (current_state) {
 			sprite_index = Spr_Idle;
 			image_index = 0;
 			speed = 0;
-			alarm[0] = 60 * 2;
+			alarm[0] = 60 * rest_time;
 			//look_at_player(obj_player.x);
 			if(x-obj_player.x >0)
 			{

@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_green_bullet",
-    "path":"sprites/spr_green_bullet/spr_green_bullet.yy",
+    "name":"spr_purple_bullet",
+    "path":"sprites/spr_purple_bullet/spr_purple_bullet.yy",
   },
   "spriteMaskId":null,
   "visible":true,
