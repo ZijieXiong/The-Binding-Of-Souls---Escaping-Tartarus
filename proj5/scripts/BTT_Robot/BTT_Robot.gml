@@ -78,6 +78,7 @@ function TaskShootLaser(instance_target, _laser_preparetion, _laser_duration, _l
 			laser_source.life_time =time_laser_duration; 
 			laser_body.life_time =time_laser_duration; 
 			laser_flame.life_time =time_laser_duration; 
+			screenshake(time_laser_duration, 1.5, 0.2);
 			
 		}
 		
