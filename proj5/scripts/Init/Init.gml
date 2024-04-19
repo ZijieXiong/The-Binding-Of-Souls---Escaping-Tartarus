@@ -146,7 +146,6 @@ function initParas()
 	global.obj_inventory[2] = -1
 	
 	global.global_room = []
-	global._draw_map = false
 
 	initUpgradePool();
 }
