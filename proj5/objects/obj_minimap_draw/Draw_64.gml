@@ -29,6 +29,7 @@ for(var i = 0; i < room_size; i++){
 if keyboard_check_pressed(vk_tab){
 	global._draw_map = !global._draw_map
 }
+draw_set_font(fnt_label);
 if global._draw_map{
 draw_map()
 draw_set_halign(fa_right);
