@@ -34,6 +34,12 @@ switch (current_state) {
 		break;
 		
 	case TELE_STATE.LASER:
+		break;
+	
+	case TELE_STATE.TELE:
+		if(sprite_index == spr_teleport_attack || sprite_index == spr_teleport_in) && (image_index >= (sprite_get_number(sprite_index) - 1)){
+		sprite_index = spr_teleport_idle
+}
 		
 		
 		break;

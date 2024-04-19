@@ -1054,7 +1054,8 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards,_room_obj){
 		var posX, posY;
 		var validPosition = false;
 		enemy = instance_create_layer((_x1+_x2)/2 * CELL_SIZE,(_y1+_y2)/2 * CELL_SIZE,"Dungeon", obj_enemy_portal);
-		enemy.enemy_type = enemyType;
+		//enemy.enemy_type = enemyType;
+		enemy.enemy_type = oEliteTeleportRobotX;
 		var iter = 0;
 		
 		while(!validPosition && iter < 100){
