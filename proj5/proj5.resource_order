@@ -20,6 +20,7 @@
     {"name":"Portal","order":2,"path":"folders/Sprites/Portal.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_aim","order":2,"path":"objects/obj_aim/obj_aim.yy",},
     {"name":"obj_elite_health_bar","order":4,"path":"objects/obj_elite_health_bar/obj_elite_health_bar.yy",},
     {"name":"obj_enemy_effects_nor","order":2,"path":"objects/obj_enemy_effects_nor/obj_enemy_effects_nor.yy",},
     {"name":"obj_enemy_portal","order":2,"path":"objects/obj_enemy_portal/obj_enemy_portal.yy",},
@@ -28,7 +29,6 @@
     {"name":"obj_screenshake","order":5,"path":"objects/obj_screenshake/obj_screenshake.yy",},
     {"name":"obj_stage_clear_message","order":6,"path":"objects/obj_stage_clear_message/obj_stage_clear_message.yy",},
     {"name":"obj_teleport_in","order":1,"path":"objects/obj_teleport_in/obj_teleport_in.yy",},
-    {"name":"obj_aim","order":2,"path":"objects/obj_aim/obj_aim.yy",},
     {"name":"oBTtester","order":20,"path":"objects/oBTtester/oBTtester.yy",},
     {"name":"oEliteEnemies","order":5,"path":"objects/oEliteEnemies/oEliteEnemies.yy",},
     {"name":"oEliteMummy","order":28,"path":"objects/oEliteMummy/oEliteMummy.yy",},
@@ -77,6 +77,7 @@
     {"name":"snd_scifi","order":3,"path":"sounds/snd_scifi/snd_scifi.yy",},
     {"name":"snd_tutorial","order":5,"path":"sounds/snd_tutorial/snd_tutorial.yy",},
     {"name":"BlueEffect","order":3,"path":"sprites/BlueEffect/BlueEffect.yy",},
+    {"name":"spr_player_hurt","order":1,"path":"sprites/spr_player_hurt/spr_player_hurt.yy",},
     {"name":"PurpleEffect","order":6,"path":"sprites/PurpleEffect/PurpleEffect.yy",},
     {"name":"spr_blue_explosion","order":10,"path":"sprites/spr_blue_explosion/spr_blue_explosion.yy",},
     {"name":"spr_blue_light_ball","order":4,"path":"sprites/spr_blue_light_ball/spr_blue_light_ball.yy",},
