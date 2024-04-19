@@ -291,7 +291,6 @@
     {"id":{"name":"snd_pyramid_bgm","path":"sounds/snd_pyramid_bgm/snd_pyramid_bgm.yy",},},
     {"id":{"name":"snd_scifi","path":"sounds/snd_scifi/snd_scifi.yy",},},
     {"id":{"name":"snd_tutorial","path":"sounds/snd_tutorial/snd_tutorial.yy",},},
-    {"id":{"name":"Sound21","path":"sounds/Sound21/Sound21.yy",},},
     {"id":{"name":"_32x32_walls_and_props_col184","path":"sprites/_32x32_walls_and_props_col184/_32x32_walls_and_props_col184.yy",},},
     {"id":{"name":"BlueEffect","path":"sprites/BlueEffect/BlueEffect.yy",},},
     {"id":{"name":"dung_ground_floor","path":"sprites/dung_ground_floor/dung_ground_floor.yy",},},

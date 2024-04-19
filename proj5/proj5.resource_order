@@ -75,7 +75,6 @@
     {"name":"snd_pyramid_bgm","order":1,"path":"sounds/snd_pyramid_bgm/snd_pyramid_bgm.yy",},
     {"name":"snd_scifi","order":3,"path":"sounds/snd_scifi/snd_scifi.yy",},
     {"name":"snd_tutorial","order":5,"path":"sounds/snd_tutorial/snd_tutorial.yy",},
-    {"name":"Sound21","order":7,"path":"sounds/Sound21/Sound21.yy",},
     {"name":"BlueEffect","order":3,"path":"sprites/BlueEffect/BlueEffect.yy",},
     {"name":"PurpleEffect","order":6,"path":"sprites/PurpleEffect/PurpleEffect.yy",},
     {"name":"spr_blue_explosion","order":10,"path":"sprites/spr_blue_explosion/spr_blue_explosion.yy",},
