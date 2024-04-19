@@ -6,7 +6,9 @@ target_x = 0;
 target_y = 0;
 jump_speed = 3;
 
-alert_radius = 150;
+max_jump_length = 150;
+
+alert_radius = 500;
 alarm[0]=120;
 
 size_scale = 1.5;

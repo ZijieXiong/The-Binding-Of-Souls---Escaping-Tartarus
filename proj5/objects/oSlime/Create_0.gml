@@ -6,9 +6,10 @@ event_inherited();
 is_jump = false;
 target_x = 0;
 target_y = 0;
-jump_speed = 3;
+jump_speed = 4.5;
 
-alert_radius = 150;
+alert_radius = 500;
+max_jump_length = 200;
 alarm[0]=120;
 
 get_new_location = function(_min_dist, _max_dist)

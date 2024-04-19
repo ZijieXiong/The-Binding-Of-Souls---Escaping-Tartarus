@@ -1040,7 +1040,7 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards,_room_obj){
 		var enemyType;
 		if(global.currLevel < global.pyramid_layer)
 		{
-			enemyType = choose(oSlime, oPango, oTrackShooter);
+			enemyType = choose(oMegaSlime, oPango, oTrackShooter);
 		}
 		//var enemyType = oEliteMummy;
 		else if (global.currLevel < global.tech_layer) {
