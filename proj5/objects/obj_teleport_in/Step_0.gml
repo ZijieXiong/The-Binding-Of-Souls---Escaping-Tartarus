@@ -1,6 +1,6 @@
 if (image_index >= (sprite_get_number(sprite_index) - 1)){
 	
-	if(instance_exists(_obj)){
+	if(_obj != noone){
 	var rob = instance_create_layer(x,y,"Instances",_obj)
 	
 	rob._health = _health

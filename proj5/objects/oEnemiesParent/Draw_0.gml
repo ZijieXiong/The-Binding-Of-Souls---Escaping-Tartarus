@@ -1,10 +1,6 @@
 
 draw_self();
 
-if keyboard_check(ord("Q")){
-	draw_path(path,x,y,false)
-}
-
  
 if( _flash > 0 )
 {
