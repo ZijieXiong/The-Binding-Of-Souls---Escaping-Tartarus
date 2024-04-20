@@ -2,7 +2,16 @@
 // You can write your code in this editor
 
 // Inherit the parent event
-event_inherited();
+//event_inherited();
+
+if(current_state != MUMMY_STATE.DEATH && _health <= 0){
+	sprite_index = spr_mummy_death;
+	image_index = 0;
+	current_state = MUMMY_STATE.DEATH;
+	speed = 0;
+	image_speed = 0.1;
+}
+
 
 switch (current_state) {
     case MUMMY_STATE.IDLE:
@@ -103,7 +112,11 @@ switch (current_state) {
 		}
         break;
         
-    
+    case MUMMY_STATE.DEATH:
+		if(image_index >= (sprite_get_number(sprite_index) - 1)){
+			instance_destroy();
+		}
+		break;
 }
 
 

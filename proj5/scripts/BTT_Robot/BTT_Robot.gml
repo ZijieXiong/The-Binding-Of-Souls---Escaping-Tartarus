@@ -72,12 +72,16 @@ function TaskShootLaser(instance_target, _laser_preparetion, _laser_duration, _l
 		if(is_loading && !is_shooting && ++time_preparation >= time_preparation_max )
 		{
 			is_shooting = true;
+			var _curr_depth = black_board_ref.user.depth;
 			laser_source = instance_create_layer(black_board_ref.user.x, black_board_ref.user.y, "Instances", oRobotLaserSouce);
 			laser_body = instance_create_layer(black_board_ref.user.x, black_board_ref.user.y, "Instances", oRobotLaserBody);
 			laser_flame = instance_create_layer(black_board_ref.user.x, black_board_ref.user.y, "Instances", oRobotLaserFlame);
 			laser_source.life_time =time_laser_duration; 
+			laser_source.depth = _curr_depth-1;
 			laser_body.life_time =time_laser_duration; 
+			laser_body.depth = _curr_depth-1;
 			laser_flame.life_time =time_laser_duration; 
+			laser_flame.depth = _curr_depth-2;
 			screenshake(time_laser_duration, 1.5, 0.2);
 			
 		}

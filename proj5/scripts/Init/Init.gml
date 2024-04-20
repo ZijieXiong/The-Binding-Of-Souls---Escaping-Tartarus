@@ -36,7 +36,7 @@ global.bulletSpeed = 13
 global.spawns = [oHeartBooster, oRichochet, oBomb];
 global.dropRate = 20;
 
-global.currLevel = 0;
+global.currLevel = 1;
 
 global.dmgMultiplier = 1;
 global.playerSpeedMultiplier = 1;
@@ -128,7 +128,7 @@ function initParas()
 
 	global.riffle_bullet_explosive = false;
 
-	global.currLevel = 1;
+	global.currLevel = 7;
 	global.playerFreeze = false;
 	global.globalFreeze = false;
 	global.bouncesLeft = 0;
