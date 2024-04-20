@@ -1047,8 +1047,8 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards,_room_obj){
 			enemyType = choose(oAnubis, oMummy, oSkullShooter);
 		}
 		else{
-			//enemyType = choose(oGarbageBot, oTurret, oTeleportRobot);
-			enemyType = oEliteTeleportRobotX;
+			enemyType = choose(oGarbageBot, oTurret, oTeleportRobot);
+			//enemyType = oEliteTeleportRobotX;
 		}
 		
 		var enemy;
