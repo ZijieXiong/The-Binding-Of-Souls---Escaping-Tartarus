@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"sfx_slime_small",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":320,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.336,
+  "name":"sfx_slime_small",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":48000,
+  "soundFile":"sfx_slime_small.mp3",
+  "type":0,
+  "volume":1.0,
+}

@@ -71,6 +71,8 @@
     {"name":"BTT_Robot","order":3,"path":"scripts/BTT_Robot/BTT_Robot.yy",},
     {"name":"EnemyAI","order":2,"path":"scripts/EnemyAI/EnemyAI.yy",},
     {"name":"enemy_portal_open","order":6,"path":"sounds/enemy_portal_open/enemy_portal_open.yy",},
+    {"name":"sfx_slime_big","order":7,"path":"sounds/sfx_slime_big/sfx_slime_big.yy",},
+    {"name":"sfx_slime_small","order":8,"path":"sounds/sfx_slime_small/sfx_slime_small.yy",},
     {"name":"snd_elite","order":2,"path":"sounds/snd_elite/snd_elite.yy",},
     {"name":"snd_jungle","order":4,"path":"sounds/snd_jungle/snd_jungle.yy",},
     {"name":"snd_pyramid_bgm","order":1,"path":"sounds/snd_pyramid_bgm/snd_pyramid_bgm.yy",},
