@@ -485,7 +485,7 @@ GenerateNewDungeon = function() {
 					elite_type = choose(oEliteMummy, oEliteMummyWithLaser);
 				}
 				else{
-					enemyType = choose(oEliteTeleportRobot, oEliteTurret, oEliteTeleportRobotX);
+					elite_type = choose(oEliteTeleportRobot, oEliteTurret, oEliteTeleportRobotX);
 				}
 	            //var elite_type = oEliteTeleportRobotX;
 				var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2 + 1) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2 + 1) / 2 * CELL_SIZE, "Dungeon", obj_enemy_portal);
