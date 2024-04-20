@@ -10,6 +10,7 @@ if(current_state != MUMMY_STATE.DEATH && _health <= 0){
 	current_state = MUMMY_STATE.DEATH;
 	speed = 0;
 	image_speed = 0.1;
+	path_end();
 }
 
 
