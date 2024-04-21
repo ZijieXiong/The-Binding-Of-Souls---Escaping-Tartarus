@@ -78,6 +78,7 @@
     {"name":"snd_pyramid_bgm","order":1,"path":"sounds/snd_pyramid_bgm/snd_pyramid_bgm.yy",},
     {"name":"snd_scifi","order":3,"path":"sounds/snd_scifi/snd_scifi.yy",},
     {"name":"snd_tutorial","order":5,"path":"sounds/snd_tutorial/snd_tutorial.yy",},
+    {"name":"sfx_enemy_hit","order":9,"path":"sounds/sfx_enemy_hit/sfx_enemy_hit.yy",},
     {"name":"BlueEffect","order":3,"path":"sprites/BlueEffect/BlueEffect.yy",},
     {"name":"PurpleEffect","order":6,"path":"sprites/PurpleEffect/PurpleEffect.yy",},
     {"name":"spr_blue_explosion","order":10,"path":"sprites/spr_blue_explosion/spr_blue_explosion.yy",},
@@ -121,6 +122,5 @@
     {"name":"spr_teleport_dead","order":2,"path":"sprites/spr_teleport_dead/spr_teleport_dead.yy",},
     {"name":"spr_teleport_idle179","order":4,"path":"sprites/spr_teleport_idle179/spr_teleport_idle179.yy",},
     {"name":"spr_teleport_in","order":1,"path":"sprites/spr_teleport_in/spr_teleport_in.yy",},
-    {"name":"Sprite184","order":2,"path":"sprites/Sprite184/Sprite184.yy",},
   ],
 }
