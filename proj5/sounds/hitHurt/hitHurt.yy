@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.084059,
+  "duration":0.163741,
   "name":"hitHurt",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"hitHurt.wav",
+  "soundFile":"hitHurt.ogg",
   "type":0,
   "volume":1.0,
 }

@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"enemyDie",
+  "%Name":"sfx_enemy_hit",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":320,
   "compression":0,
   "conversionMode":0,
-  "duration":1.508141,
-  "name":"enemyDie",
+  "duration":0.210862,
+  "name":"sfx_enemy_hit",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":48000,
-  "soundFile":"enemyDie.wav",
-  "type":1,
-  "volume":1.0,
+  "soundFile":"sfx_enemy_hit.ogg",
+  "type":0,
+  "volume":0.78,
 }
