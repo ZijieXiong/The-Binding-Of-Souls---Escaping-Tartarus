@@ -52,6 +52,10 @@ global.rifflePenetrate = false;
 global.riffle_bullet_explosive = false
 global.riffleChargingSpeed = 1;
 
+//variable for turtorial stage
+global.tutorial_started_1 = false;
+global.tutorial_started_2 = false;
+global.tutorial_finished=false;
 #endregion
 
 enum MAP_STATES{

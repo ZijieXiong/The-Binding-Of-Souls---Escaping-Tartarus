@@ -549,9 +549,19 @@ GenerateNewDungeon = function() {
 	
 	//PlayMusic();
 
-
 load_mini_map(_dungeonWidth,_dungeonHeight);
 instance_create_layer(0,0,"UI_Layer",obj_minimap_draw)
+/* // comment out for now not tested 
+if(instance_exists(oDunReload)) and (instance_exists(obj_player)){
+		var _tamppath = path_add()
+		var _findDoor = mp_grid_path(global.mp_grid,_tamppath,obj_player.x,obj_player.y,oDunReload.x,oDunReload.y,0);
+		if !_findDoor {
+			show_debug_message("cannot reach door")
+			GenerateNewDungeon();
+		}
+		path_delete(_tamppath)
+}
+*/
 }
 
 CreateRoom = function(_x1, _y1, _x2, _y2) {
@@ -559,7 +569,6 @@ CreateRoom = function(_x1, _y1, _x2, _y2) {
 	currentRoom = new DungeonRoom(_x1, _y1, _x2, _y2);
 	ds_list_add(roomList, currentRoom);
 	array_push(global.global_room,[currentRoom,MAP_STATES.BLOCKED])
-	show_debug_message(global.global_room)
 	show_debug_message("end create" + string(550))
 	// Fill the dungeon with a room
 	ds_grid_set_region(dungeon, _x1, _y1, _x2, _y2, CELL_TYPES.ROOM);
@@ -1157,3 +1166,4 @@ CreateItemUI = function() {
 initParas();
 
 GenerateNewDungeon();
+

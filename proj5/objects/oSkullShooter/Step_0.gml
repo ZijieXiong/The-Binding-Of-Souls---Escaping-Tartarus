@@ -18,11 +18,12 @@ if(!shooting && _health>0){
 
 if(shooting && sprite_index == spr_skull_shoot)
 {
-	if(floor(image_index) == 9)
+	if(floor(image_index) == 9 && !has_shoot)
 	{
 		var dir = point_direction(x,y,obj_player.x,obj_player.y);
 		var bullet_speed = 4;
 		var bullet_spread = 30;
+		has_shoot = true;
 		
 		 for (var i = -1; i <= 1; i++) {
             var bullet = instance_create_layer(x, y, "Instances", oEnemBullet);
@@ -36,7 +37,7 @@ if(shooting && sprite_index == spr_skull_shoot)
 		image_speed = 0.5;
 		image_index = 0;
 		shooting = false;
-		
+		has_shoot = false;
 	}
 }
 

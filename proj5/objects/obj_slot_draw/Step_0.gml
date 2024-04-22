@@ -14,6 +14,7 @@ if(global.spr_inventory[0] != -1){
 	}
 	if keyboard_check(ord("Q")){
 		if !_usingItem{
+			global.item_amount -= 1
 			_usingItem = true
 			alarm[0] = room_speed * 0.3
 	//		var _spr =  global.spr_inventory[0]

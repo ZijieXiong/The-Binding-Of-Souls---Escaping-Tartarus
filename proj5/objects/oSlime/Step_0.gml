@@ -21,3 +21,4 @@ if(is_jump && point_distance(x, y, target_x, target_y)<5)
 	sprite_index = spr_slime_idle;
 	image_speed = 1;
 }
+

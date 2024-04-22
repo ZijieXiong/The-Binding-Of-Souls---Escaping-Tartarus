@@ -226,3 +226,18 @@ if (keyboard_check(ord("P")) && !is_summon_elite) {
 }*/
 
 _last_sprite = sprite_index
+
+if (place_meeting(x, y, obj_shotgun_justforview)) {
+    // Code to pick up the weapon in the turtorial stage
+    ChangeWeapon(2);
+    global.tutorial_started_1 = true;
+
+}
+
+if (place_meeting(x, y, obj_rifle_justforview)) {
+    // Code to pick up the weapon in the turtorial stage
+    ChangeWeapon(3);
+	global.tutorial_started_2 = true;
+}
+
+
