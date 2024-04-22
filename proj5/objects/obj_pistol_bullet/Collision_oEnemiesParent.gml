@@ -6,6 +6,7 @@ with(other){
 	_flash = 1;
 	show_debug_message(_health)
 	_health -= other.damage * global.dmgMultiplier;
+	audio_play_sound(sfx_enemy_hit, 0, false);
 	
 }
 instance_destroy();
