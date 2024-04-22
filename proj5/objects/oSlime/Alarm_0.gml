@@ -10,16 +10,15 @@ image_index = 0;
 
 if(_collision_res)
 {
-	//target_x = obj_player.x;
-	//target_y = obj_player.y;
-	var _distance = random_range(-10, 30);
+	var _dist_offset = random_range(-10, 50);
 
-	// Generate a random direction (0 to 360 degrees)
+
+
+	var _distance =_dist_offset+ min(max_jump_length, point_distance(x, y, obj_player.x, obj_player.y));
+
 	var _direction = point_direction(x, y, obj_player.x, obj_player.y);
-
-	// Calculate the new position
-	target_x = obj_player.x + lengthdir_x(_distance, _direction);
-	target_y =obj_player.y + lengthdir_y(_distance, _direction);
+	target_x = x + lengthdir_x(_distance, _direction);
+	target_y = y + lengthdir_y(_distance, _direction);
 	
 } else
 {

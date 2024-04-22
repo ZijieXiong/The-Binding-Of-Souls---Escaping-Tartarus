@@ -7,7 +7,7 @@ event_inherited();
 switch (current_state) {
     case ANUBIS_STATE.IDLE:
         //Idle
-		//show_debug_message("Anubis Idle");
+		show_debug_message("Anubis Idle");
 		
 		if(!is_alerted)
 		{
@@ -38,10 +38,11 @@ switch (current_state) {
 			
 			if(!_collision_res)
 			{	
-				current_state = ANUBIS_STATE.CHASE;
-				sprite_index = spr_anubis_walk;
-				image_index = 0;
-				speed = chase_speed;
+				//current_state = ANUBIS_STATE.CHASE;
+				//sprite_index = spr_anubis_walk;
+				//image_index = 0;
+				//speed = chase_speed;
+				start_chase_player();
 			}
 			if(summon_spell_ready)
 			{
@@ -59,7 +60,7 @@ switch (current_state) {
         
     case ANUBIS_STATE.WALK:
         // Handle walk behavior, including transitions to IDLE or PREROLL
-		//show_debug_message("Anubis Walk");
+		show_debug_message("Anubis Walk");
 		if(point_distance(x, y, target_x, target_y)<15)
 		{
 			
@@ -73,23 +74,26 @@ switch (current_state) {
         break;
 		
 	case ANUBIS_STATE.CHASE:
-		//show_debug_message("Anubis chase");
-		direction = point_direction(x, y, obj_player.x, obj_player.y);
+		show_debug_message("Anubis chase");
+		//direction = point_direction(x, y, obj_player.x, obj_player.y);
+		
+		var _found_player = mp_grid_path(global.mp_grid,path,x,y,obj_player.x,obj_player.y,choose(0,1))
+		if _found_player{
+			path_start(path,chase_speed,path_action_stop,false)
+		}
 		
 		var _collision_res = collision_rectangle(x -fight_radius, y -fight_radius, x + fight_radius, y + fight_radius, obj_player, true, 1);
 		
 		if(_collision_res)
 		{	
+			path_end();
 			current_state = ANUBIS_STATE.IDLE;
 			sprite_index = spr_anubis_idle;
 			image_index = 0;
 			speed = 0;
 		}
 		
-		//var _found_player = mp_grid_path(global.mp_grid,path,x,y,obj_player.x,obj_player.y,choose(0,1))
-		//if _found_player{
-		//	path_start(path,chase_speed,path_action_stop,false)
-		//}
+		
 		break;
 		
 		

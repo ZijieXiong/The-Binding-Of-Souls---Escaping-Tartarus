@@ -34,7 +34,10 @@ switch (current_state) {
 		break;
 		
 	case TELE_STATE.LASER:
-		
-		
+		break;
+	
+	case TELE_STATE.TELE:
 		break;
 }
+		
+		

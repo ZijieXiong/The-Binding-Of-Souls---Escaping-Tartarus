@@ -4,7 +4,7 @@ turretLives = 3;
 
 bulletSpiralCount = 18; // Amount of bullets to be spawned
 bulletSpiralIterator = 0; // Iterator used for spawning bullets
-bulletSpiralInterval = max(2, 12 - global.currLevel div 2); // Spawn 4 bullets/sec
+bulletSpiralInterval = max(2, 14- global.currLevel div 2); // Spawn 4 bullets/sec
 bulletSpiralSpeed = 2.5  + 0.2 * global.currLevel;; // Speed of the bullet
 bulletSpiralClockwise = choose(-1,1);
 initial_direction = 0;

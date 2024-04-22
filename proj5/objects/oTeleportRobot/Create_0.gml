@@ -20,7 +20,7 @@ function shoot() {
 		sprite_index = spr_teleport_attack
 		image_index = 0
 	    bullet = instance_create_layer(x, y, "Instances", oRobotBullet1);
-	    bullet.speed = 5  + 0.1 * global.currLevel;
+	    bullet.speed = 4  + 0.1 * global.currLevel;
 	    bullet.direction= point_direction(x, y, obj_player.x, obj_player.y);
 	    bullet.image_angle = bullet.direction;
 	    attack_cooldown = 0;

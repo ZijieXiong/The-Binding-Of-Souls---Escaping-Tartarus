@@ -72,9 +72,17 @@ function TaskShootLaser(instance_target, _laser_preparetion, _laser_duration, _l
 		if(is_loading && !is_shooting && ++time_preparation >= time_preparation_max )
 		{
 			is_shooting = true;
+			var _curr_depth = black_board_ref.user.depth;
 			laser_source = instance_create_layer(black_board_ref.user.x, black_board_ref.user.y, "Instances", oRobotLaserSouce);
 			laser_body = instance_create_layer(black_board_ref.user.x, black_board_ref.user.y, "Instances", oRobotLaserBody);
 			laser_flame = instance_create_layer(black_board_ref.user.x, black_board_ref.user.y, "Instances", oRobotLaserFlame);
+			laser_source.life_time =time_laser_duration; 
+			laser_source.depth = _curr_depth-1;
+			laser_body.life_time =time_laser_duration; 
+			laser_body.depth = _curr_depth-1;
+			laser_flame.life_time =time_laser_duration; 
+			laser_flame.depth = _curr_depth-2;
+			screenshake(time_laser_duration, 1.5, 0.2);
 			
 		}
 		
@@ -145,3 +153,43 @@ function TaskLaunchMissile(_num, secs_preparation) : BTreeLeaf() constructor{
 			return BTStates.Running;
 	}
 }
+
+function TaskTeleport(secs_preparation) : BTreeLeaf() constructor{
+	name = "Task teleport";
+	
+	time_preparation_max = secs_preparation;
+	time_preparation = 0;
+	
+	is_begin = false;
+	tele_target_x = 0;
+	tele_target_y = 0;
+	
+	/// @override
+	static Process = function(){
+		//if(!instance_exists(target_hit)) return BTStates.Failure;
+		
+		if(!is_begin)
+		{
+			is_begin = true;
+			var tele_target = black_board_ref.user.get_new_location();
+			tele_target_x = tele_target[0];
+			tele_target_y = tele_target[1];
+			black_board_ref.user.create_tele_effect(tele_target_x, tele_target_y);
+			black_board_ref.user.teleport_to_(0, 0);
+		}
+		
+		if(++time_preparation >= time_preparation_max){
+			time_preparation = 0;
+			
+			black_board_ref.user.teleport_to_(tele_target_x, tele_target_y);
+			is_begin = false;
+			tele_target_x = 0;
+			tele_target_y = 0;
+			
+			return BTStates.Success;
+		}
+		else 
+			return BTStates.Running;
+	}
+}
+

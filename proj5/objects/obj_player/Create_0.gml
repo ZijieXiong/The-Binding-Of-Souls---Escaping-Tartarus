@@ -58,7 +58,7 @@ _rifle = instance_create_layer(x,y,"Instances",obj_rifle)
 */
 function Revive(){
 	show_debug_message("revived");
-	playerLives = 3;
+	playerLives = healthLimit;
 	global.revive-=1;
 	ds_map_replace(global.upgrade_pool, "obj_upgrade_revive", 5);
 }
@@ -66,10 +66,11 @@ function Revive(){
 _last_sprite = sprite_index
 _hurting = false
 function TakeDamage(){
-	if(is_vulnerable)
+	if(is_vulnerable && !global.globalFreeze)
 	{
 		if(!_hasShield){
 			sprite_index = spr_player_hurt
+			image_speed = 1;
 			if _last_sprite != spr_player_hurt{
 				image_index = 0
 			}

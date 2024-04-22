@@ -28,6 +28,7 @@ if(is_jump && point_distance(x, y, target_x, target_y)<5)
 	var _collision_res = collision_rectangle(x + -alert_radius, y + -alert_radius, x + alert_radius, y + alert_radius, obj_player, true, 1);
 	if(_collision_res)
 		screenshake(10, 3, 0.2);
+		audio_play_sound(sfx_slime_big, 0, false);
 		
 	if(jump_count<7)
 	{

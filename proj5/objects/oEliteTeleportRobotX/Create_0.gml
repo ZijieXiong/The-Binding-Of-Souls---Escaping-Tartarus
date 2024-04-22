@@ -9,6 +9,9 @@ size_scale = 1.5;
 shoot_target_x = 0;
 shoot_target_y = 0;
 
+teleport_radialBuffer = 20;
+
+
 
 b_tree = new BTreeRoot(id);
 
@@ -60,8 +63,19 @@ _sequence_missile.ChildAdd(_check_missile);
 _sequence_missile.ChildAdd(_launch_missile);
 
 
+var _sequence_teleport = new BTreeSequence();
+var _check_teleport = new TaskCheckSpell(obj_player, 10);
+//var _load_laser = new TaskLoadLaser(obj_player, 1*60);
+var _teleport = new TaskTeleport(1.5*60);
+
+_sequence_teleport.ChildAdd(_check_teleport);
+_sequence_teleport.ChildAdd(_teleport);
+
+
+
 //_selector_spell.ChildAdd(_sequence_spell_3);
 //_selector_spell.ChildAdd(_sequence_spell_2);
+_selector_spell.ChildAdd(_sequence_teleport);
 _selector_spell.ChildAdd(_sequence_laser);
 _selector_spell.ChildAdd(_sequence_missile);
 //_selector_spell.ChildAdd(_spell_1);
@@ -83,25 +97,31 @@ enum TELE_STATE {
     IDLE,
     WALK,
 	SHOOT,
-	LASER
+	LASER,
+	TELE
 }
 
 // Initial state
 current_state = TELE_STATE.IDLE;
 
-_current_room = ds_list_find_value(oDungeon.roomList, 0);
+//_current_room = ds_list_find_value(oDungeon.roomList, 0);
 
 launch_missile = function ()
 {
 		var _height = 600;
 		var _speed = 5;
 		var _time = _height/_speed;
+		
 		//var _x = random_range(_current_room.x1 * CELL_SIZE,_current_room.x2 * CELL_SIZE);
 		//var _y = random_range(_current_room.y1 * CELL_SIZE,_current_room.y2 * CELL_SIZE);
 		
+		var _x = random_range(_currentRoom.x1 * CELL_SIZE,_currentRoom.x2 * CELL_SIZE)
+		var _y = random_range(_currentRoom.y1 * CELL_SIZE,_currentRoom.y2 * CELL_SIZE)
+	
+		
 		var bomb_radius = 200;
-		var _x = x  + random_range(-bomb_radius, bomb_radius);
-		var _y = y + random_range(-bomb_radius, bomb_radius);
+		//var _x = x  + random_range(-bomb_radius, bomb_radius);
+		//var _y = y + random_range(-bomb_radius, bomb_radius);
 		//var _y = random_range(_current_room.y1 * CELL_SIZE,_current_room.y2 * CELL_SIZE);
 		
 		var _o_target = instance_create_layer(_x, _y, "Instances", oRobotMissileTarget);
@@ -116,3 +136,32 @@ launch_missile = function ()
 		
 }
 
+
+get_new_location = function()
+{
+	var _x = 0;
+	var _y = 0;
+	
+	do {
+		_x = random_range(_currentRoom.x1 * CELL_SIZE,_currentRoom.x2 * CELL_SIZE)
+		_y = random_range(_currentRoom.y1 * CELL_SIZE,_currentRoom.y2 * CELL_SIZE)
+		
+		var col_info = collision_circle(_x, _y, teleport_radialBuffer, [obj_wall],true,0);
+		
+	
+	} until (col_info==noone) ;
+	return [_x, _y];
+}
+
+teleport_to_ = function(_x, _y)
+{
+	x = _x;
+	y = _y;
+}
+
+create_tele_effect = function(_x, _y)
+{
+	var tel_out = instance_create_layer(x,y,"Instances",obj_teleport_out);
+	tel_out.target_x = _x;
+	tel_out.target_y = _y;
+}

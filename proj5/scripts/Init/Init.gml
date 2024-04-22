@@ -10,7 +10,7 @@
 //#macro RICHOCHET false
 //#macro HEALTH_BOOST false
 global.max_items = 3
-global._draw_map = false
+global._draw_map = true
 
 global.spr_inventory[0] = -1
 global.spr_inventory[1] = -1
@@ -36,7 +36,7 @@ global.bulletSpeed = 13
 global.spawns = [oHeartBooster, oRichochet, oBomb];
 global.dropRate = 20;
 
-global.currLevel = 0;
+global.currLevel = 1;
 
 global.dmgMultiplier = 1;
 global.playerSpeedMultiplier = 1;
@@ -150,7 +150,6 @@ function initParas()
 	global.obj_inventory[2] = -1
 	
 	global.global_room = []
-	global._draw_map = false
 
 	initUpgradePool();
 }
