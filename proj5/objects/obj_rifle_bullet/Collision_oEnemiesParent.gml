@@ -15,7 +15,7 @@ if(ds_list_find_index(hitEnemies, enemyInstance) == -1){
 		with(other){
 			_flash = 1;
 			_health -= dmg;
-			audio_play_sound(sfx_enemy_hit, 0, false);
+			audio_play_sound(enemyHurt, 0, false);
 		}
 	}
 
