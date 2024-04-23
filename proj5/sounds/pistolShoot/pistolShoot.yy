@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"pistolShoot.mp3",
   "type":0,
-  "volume":0.2,
+  "volume":0.08,
 }
