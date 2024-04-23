@@ -8,7 +8,7 @@ if _target > 0{
 			var dmg = damage+40;
 			_target_list[| i]._flash = 1;
 			_target_list[| i]._health -= dmg;
-			audio_play_sound(sfx_enemy_hit, 0, false);
+			audio_play_sound(enemyHurt, 0, false);
 			var _instance = instance_create_layer(_target_list[| i].x,_target_list[| i].y,"UI_Layer", obj_damage_number);
 			_instance.damage = dmg;
 		}
