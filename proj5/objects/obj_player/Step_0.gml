@@ -219,11 +219,11 @@ if (keyboard_check(ord("P"))) {
 	}
 */
 
-/*
+
 if (keyboard_check(ord("P")) && !is_summon_elite) {
-		instance_create_layer(x, y, "Instances", oEliteTeleportRobotX);
+		instance_create_layer(x, y, "Instances", oEliteMummy);
 		is_summon_elite = true;
-}*/
+}
 
 _last_sprite = sprite_index
 
