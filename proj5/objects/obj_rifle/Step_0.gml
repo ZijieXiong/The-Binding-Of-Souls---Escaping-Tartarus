@@ -20,7 +20,7 @@ if (shoot){
 	rifle_timer += 1
 	if(!_reload && increase_damage < max_damage_increase){
 	increase_damage += damage_increase_pre_frame * global.riffleChargingSpeed
-	increase_cooldown += cooldown_increase_pre_frame * global.riffleChargingSpeed
+	//increase_cooldown += cooldown_increase_pre_frame * global.riffleChargingSpeed
 	bullet_speed = max_bullet_speed
 	pressed = true
 	}
@@ -47,10 +47,10 @@ if(mouse_check_button_released(mb_left)){
 		}else{
 			sprite_index = spr_rifle_shoot_normal
 		}
-		rifle_cooldown = max(0.3,(interval+increase_cooldown))*global.shootingIntervalMultiplier
+		rifle_cooldown = cooldown
 		
 		var _reload_total_frames = sprite_get_number(spr_rifle_reload)
-		var _reload_fps = _reload_total_frames / (max(0.3,(interval+increase_cooldown)*global.shootingIntervalMultiplier))
+		var _reload_fps = _reload_total_frames / (cooldown*global.shootingIntervalMultiplier)
 		sprite_set_speed(spr_rifle_reload, _reload_fps, spritespeed_framespersecond)
 		
 		_reload = true
@@ -91,7 +91,7 @@ if(sprite_index == spr_rifle_shoot_normal || sprite_index == spr_rifle_reload) &
 	sprite_index = spr_rifle
 	_reload = false;
 }
-
+/*
 if(rifle_cooldown > 0){
 	rifle_cooldown = max(0,rifle_cooldown-1);
 }
