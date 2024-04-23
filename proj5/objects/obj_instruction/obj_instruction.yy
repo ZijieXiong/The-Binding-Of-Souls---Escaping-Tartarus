@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_instruction",
-    "path":"sprites/spr_instruction/spr_instruction.yy",
+    "name":"tur_bg",
+    "path":"sprites/tur_bg/tur_bg.yy",
   },
   "spriteMaskId":null,
   "visible":true,
