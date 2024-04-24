@@ -1,6 +1,9 @@
 {
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
+    {"name":"itemPick","order":1,"path":"sounds/itemPick/itemPick.yy",},
+    {"name":"itemUse","order":2,"path":"sounds/itemUse/itemUse.yy",},
+    {"name":"itemDrop","order":3,"path":"sounds/itemDrop/itemDrop.yy",},
     {"name":"tur_bg","order":2,"path":"sprites/tur_bg/tur_bg.yy",},
   ],
 }
