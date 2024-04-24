@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"gameFail",
+  "%Name":"itemDrop",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":10.08,
-  "name":"gameFail",
+  "duration":1.079116,
+  "name":"itemDrop",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"gameFail.mp3",
+  "soundFile":"itemDrop.wav",
   "type":0,
-  "volume":0.71,
+  "volume":1.0,
 }
