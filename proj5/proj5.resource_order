@@ -13,6 +13,8 @@
     {"name":"oSlime_tur","order":1,"path":"objects/oSlime_tur/oSlime_tur.yy",},
     {"name":"oSlime_tur2","order":2,"path":"objects/oSlime_tur2/oSlime_tur2.yy",},
     {"name":"enemyHurt","order":1,"path":"sounds/enemyHurt/enemyHurt.yy",},
+    {"name":"slimeElite","order":2,"path":"sounds/slimeElite/slimeElite.yy",},
+    {"name":"laserElite","order":3,"path":"sounds/laserElite/laserElite.yy",},
     {"name":"space_background_2","order":2,"path":"sprites/space_background_2/space_background_2.yy",},
     {"name":"space_background","order":1,"path":"sprites/space_background/space_background.yy",},
     {"name":"spr_rifle_mov","order":1,"path":"sprites/spr_rifle_mov/spr_rifle_mov.yy",},
