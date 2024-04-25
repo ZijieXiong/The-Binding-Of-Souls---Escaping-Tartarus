@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":64,
+  "height":48,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"6ac17a7e-9c64-4a59-a463-00cca4110459","blendMode":0,"displayName":"default","isLocked":false,"name":"6ac17a7e-9c64-4a59-a463-00cca4110459","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":48,
-    "yorigin":32,
+    "yorigin":24,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

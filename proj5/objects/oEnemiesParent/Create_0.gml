@@ -14,6 +14,7 @@ function dropItem()
 	{
 		var item_ind = irandom(array_length(item_types) - 1);
 		instance_create_layer(x,y,"Instances",item_types[item_ind]);
+		audio_play_sound(itemDrop, 0, false);
 	}
 }
 

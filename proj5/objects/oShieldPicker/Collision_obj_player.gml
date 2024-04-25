@@ -6,6 +6,7 @@
 var picked = pickup_item(spr_shield_icon,obj_shield)
 if picked == 1{
 	instance_destroy();
+	audio_play_sound(itemPick, 0, false);
 }
 
 

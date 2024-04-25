@@ -1,8 +1,5 @@
 {
-  "FolderOrderSettings":[
-    {"name":"Turtorial","order":1,"path":"folders/Objects/Enemies/Turtorial.yy",},
-    {"name":"Enemy_tur","order":1,"path":"folders/Sprites/enemy/Enemy_tur.yy",},
-  ],
+  "FolderOrderSettings":[],
   "ResourceOrderSettings":[
     {"name":"obj_rifle_justforview","order":2,"path":"objects/obj_rifle_justforview/obj_rifle_justforview.yy",},
     {"name":"obj_screen_zoomblur","order":6,"path":"objects/obj_screen_zoomblur/obj_screen_zoomblur.yy",},
