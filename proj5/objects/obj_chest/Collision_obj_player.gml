@@ -11,5 +11,8 @@ for (var i = 0; i < global.upgradeNum; i++) {
     upgradeInstance.createUI(midX + (i * 300 - 150), midY);
 	ds_list_add(global.upgrade_objs, upgradeInstance);
 }
+var healthLimitUpgrade = instance_create_layer(midX + global.upgradeNum * 300 - 150, midY, "Instances", obj_upgrade_health_limit);
+healthLimitUpgrade.createUI(midX +  global.upgradeNum * 300 - 150, midY);
+ds_list_add(global.upgrade_objs, healthLimitUpgrade);
 audio_play_sound(openChest, 0, false);
 instance_destroy();

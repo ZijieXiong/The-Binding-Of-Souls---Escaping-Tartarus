@@ -91,8 +91,11 @@ function TakeDamage(){
 function Heal(healthHealed)
 {
 	playerLives += healthHealed;
-	if(playerLives >= healthLimit){
+	if(playerLives > healthLimit){
 		playerLives = healthLimit;
+	}
+	else{
+		audio_play_sound(powerUp, 0, false);
 	}
 }
 
