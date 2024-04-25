@@ -47,11 +47,14 @@ if(_health <= 0){
 	
 	var _target_loc = get_new_location(10, 30);
 
-	instance_create_layer(_target_loc[0], _target_loc[1], "Instances", oMegaSlime);
+	var mega_slime_1 = instance_create_layer(_target_loc[0], _target_loc[1], "Instances", oMegaSlime);
+	mega_slime_1._currentRoom = _currentRoom;
 	
 	_target_loc = get_new_location(10, 30);
 	
-	instance_create_layer(_target_loc[0], _target_loc[1], "Instances", oMegaSlime);
+	var mega_slime_2 = instance_create_layer(_target_loc[0], _target_loc[1], "Instances", oMegaSlime);
+	mega_slime_2._currentRoom = _currentRoom;
+	
 	
 }
 

@@ -122,7 +122,7 @@ function initParas()
 	global.dmgMultiplier = 1;
 	global.playerSpeedMultiplier = 1;
 	global.shootingIntervalMultiplier = 1;
-	global.revive = 1;
+	global.revive = 0;
 	
 	global.shotgunRange = 1;
 	global.shotgun_split = false;
