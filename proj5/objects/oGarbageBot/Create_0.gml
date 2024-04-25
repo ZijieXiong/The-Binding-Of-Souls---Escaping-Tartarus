@@ -21,4 +21,5 @@ function die(){
 	if((sprite_index == spr_garbage_disposal_die) && (image_index >= (sprite_get_number(sprite_index) - 1))){
 		instance_destroy()
 	}
+	audio_play_sound(enemyDie, 0, false);
 }

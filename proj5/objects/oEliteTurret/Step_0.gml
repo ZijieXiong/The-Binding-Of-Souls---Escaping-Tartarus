@@ -60,6 +60,7 @@ if(_health <= 0)
 
 function die(){
 	if image_index >= (sprite_get_number(sprite_index) - 1) {
+		audio_play_sound(enemyDie, 0, false);
 		instance_destroy();
 	}
 }
