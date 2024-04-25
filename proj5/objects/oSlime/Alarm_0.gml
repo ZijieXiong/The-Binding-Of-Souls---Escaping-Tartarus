@@ -8,6 +8,7 @@ is_jump = true;
 sprite_index = spr_slime_jump;
 image_index = 0;
 
+var _index = 0;
 do{
 	if(_collision_res)
 	{
@@ -39,6 +40,7 @@ do{
 		target_x = _target_loc[0];
 		target_y = _target_loc[1];
 	}
+	if(++_index>=10) break;
 } until(is_in_room(target_x, target_y));
 
 var _estimed_time = point_distance(x, y, target_x, target_y)/jump_speed;
