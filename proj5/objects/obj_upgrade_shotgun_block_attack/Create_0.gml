@@ -6,6 +6,8 @@ function applyUpgrade()
 	ds_map_delete(global.upgrade_pool, "obj_upgrade_shotgun_block_attack");
 	ds_map_add(global.upgrade_pool, "obj_upgrade_shotgun_block_penetrate", 5);
 	show_debug_message("Upgrade applied: Shotgun block attack");
+	record_upgrade_once("Bullet can block bullet");
+	
 }
 
 function createUI(_x, _y)

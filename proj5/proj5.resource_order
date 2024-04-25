@@ -7,6 +7,8 @@
     {"name":"obj_turtorial_controller","order":4,"path":"objects/obj_turtorial_controller/obj_turtorial_controller.yy",},
     {"name":"obj_turtorial_door_2","order":5,"path":"objects/obj_turtorial_door_2/obj_turtorial_door_2.yy",},
     {"name":"obj_turtorial_door","order":3,"path":"objects/obj_turtorial_door/obj_turtorial_door.yy",},
+    {"name":"obj_upgrade","order":1,"path":"objects/obj_upgrade/obj_upgrade.yy",},
+    {"name":"obj_upgrade_record_UI","order":2,"path":"objects/obj_upgrade_record_UI/obj_upgrade_record_UI.yy",},
     {"name":"oSlime_tur","order":1,"path":"objects/oSlime_tur/oSlime_tur.yy",},
     {"name":"oSlime_tur2","order":2,"path":"objects/oSlime_tur2/oSlime_tur2.yy",},
     {"name":"enemyHurt","order":1,"path":"sounds/enemyHurt/enemyHurt.yy",},

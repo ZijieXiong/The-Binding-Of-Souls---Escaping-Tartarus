@@ -5,6 +5,7 @@ function applyUpgrade()
 {
 	global.playerSpeedMultiplier += 0.1;
 	show_debug_message("Upgrade applied: Speed");
+	record_upgrade_accum("Player Speed +", 0.1);
 }
 
 function createUI(_x, _y)

@@ -5,6 +5,7 @@ function applyUpgrade()
 {
 	global.dmgMultiplier += 0.25;
 	show_debug_message("Upgrade applied: Increases Damage");
+	record_upgrade_accum("Damage +", 0.25);
 }
 
 function createUI(_x, _y)

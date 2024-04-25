@@ -5,6 +5,7 @@ function applyUpgrade()
 	global.rifflePenetrate = true;
 	ds_map_delete(global.upgrade_pool, "obj_upgrade_riffle_penetrate");
 	show_debug_message("Upgrade applied: Riffle Penetrate");
+	record_upgrade_once("Bullet Penetrate Enemy");
 }
 
 function createUI(_x, _y)

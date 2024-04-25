@@ -4,6 +4,7 @@ function applyUpgrade()
 {
 	selectRoute(2);
 	show_debug_message("Upgrade applied: Shotgun");
+	record_upgrade_once("Upgrade to Shotgun");
 }
 
 function createUI(_x, _y)

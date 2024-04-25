@@ -3,6 +3,7 @@ function applyUpgrade()
 	global.riffle_bullet_explosive = true;
 	ds_map_delete(global.upgrade_pool, "obj_upgrade_riffle_explosive");
 	show_debug_message("Upgrade applied: Riffle explosive");
+	record_upgrade_once("Bullet Explosive at Max Charge");
 }
 
 function createUI(_x, _y)
