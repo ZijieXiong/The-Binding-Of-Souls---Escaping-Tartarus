@@ -9,21 +9,23 @@ sprite_index = spr_slime_jump;
 image_index = 0;
 
 
+do{
 
-if(_collision_res)
-{
-	target_x = obj_player.x;
-	target_y = obj_player.y;
-	screenshake(10, 3, 0.2);
-} else
-{
+	if(_collision_res)
+	{
+		target_x = obj_player.x;
+		target_y = obj_player.y;
+		screenshake(10, 3, 0.2);
+	} else
+	{
 		
-	var _target_loc = get_new_location(30, 60);
+		var _target_loc = get_new_location(30, 60);
 	
-	target_x = _target_loc[0];
-	target_y = _target_loc[1];
+		target_x = _target_loc[0];
+		target_y = _target_loc[1];
 	
-}
+	}
+} until(is_in_room(target_x, target_y));
 
 var _estimed_time = point_distance(x, y, target_x, target_y)/jump_speed;
 // Assuming these values are known or calculated

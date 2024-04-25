@@ -219,11 +219,17 @@ if (keyboard_check(ord("P"))) {
 	}
 */
 
-
+/*
 if (keyboard_check(ord("P")) && !is_summon_elite) {
 		instance_create_layer(x, y, "Instances", oEliteMummy);
 		is_summon_elite = true;
+}*/
+
+/*
+if (keyboard_check(ord("P"))) {
+	get_radius_blur(3*60, obj_player, 0.1,  50, 0.01);
 }
+*/
 
 _last_sprite = sprite_index
 

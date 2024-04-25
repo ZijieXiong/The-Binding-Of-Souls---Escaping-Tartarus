@@ -30,3 +30,18 @@ function get_poisoned(_time, _magnitude, _fade)
 		poison_fade = _fade;
 	}
 }
+
+function get_radius_blur(_time, _obj,  _magnitude, _radius,  _fade)
+{
+	show_debug_message("Zoom-in blur!");
+	with (obj_screen_zoomblur)
+	{
+		is_effected = true;
+		effect_time = max(effect_time,_time);
+		effect_mag = _magnitude;
+		effect_fade = _fade;
+		effect_radius = _radius;
+		effect_target_obj = _obj;
+		set_params();
+	}
+}

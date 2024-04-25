@@ -10,6 +10,7 @@ image_index = 0;
 
 if(_collision_res)
 {
+	do{
 	var _dist_offset = random_range(-10, 30);
 
 
@@ -19,14 +20,16 @@ if(_collision_res)
 	var _direction = point_direction(x, y, obj_player.x, obj_player.y);
 	target_x = x + lengthdir_x(_distance, _direction);
 	target_y = y + lengthdir_y(_distance, _direction);
+	} until (is_in_room(target_x, target_y));
 } else
 {
-		
+	
+	do{
 	var _target_loc = get_new_location(30, 60);
 	
 	target_x = _target_loc[0];
 	target_y = _target_loc[1];
-	
+	} until (is_in_room(target_x, target_y));
 }
 
 var _estimed_time = point_distance(x, y, target_x, target_y)/jump_speed;

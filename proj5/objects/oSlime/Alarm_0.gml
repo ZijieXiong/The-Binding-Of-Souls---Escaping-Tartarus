@@ -8,39 +8,38 @@ is_jump = true;
 sprite_index = spr_slime_jump;
 image_index = 0;
 
-if(_collision_res)
-{
-	var _dist_offset = random_range(-10, 50);
+do{
+	if(_collision_res)
+	{
+		var _dist_offset = random_range(-10, 50);
 
 
 
-	var _distance =_dist_offset+ min(max_jump_length, point_distance(x, y, obj_player.x, obj_player.y));
+		var _distance =_dist_offset+ min(max_jump_length, point_distance(x, y, obj_player.x, obj_player.y));
 
-	var _direction = point_direction(x, y, obj_player.x, obj_player.y);
-	target_x = x + lengthdir_x(_distance, _direction);
-	target_y = y + lengthdir_y(_distance, _direction);
+		var _direction = point_direction(x, y, obj_player.x, obj_player.y);
+		target_x = x + lengthdir_x(_distance, _direction);
+		target_y = y + lengthdir_y(_distance, _direction);
 	
-} else
-{
+	} else
+	{
 		
-	// Generate a random distance within the specified range
-	//var _distance = random_range(30, 60);
+		// Generate a random distance within the specified range
+		//var _distance = random_range(30, 60);
 
-	// Generate a random direction (0 to 360 degrees)
-	//var _direction = random(360);
+		// Generate a random direction (0 to 360 degrees)
+		//var _direction = random(360);
 
-	// Calculate the new position
-	//target_x = x + lengthdir_x(_distance, _direction);
-	//target_y = y + lengthdir_y(_distance, _direction);
+		// Calculate the new position
+		//target_x = x + lengthdir_x(_distance, _direction);
+		//target_y = y + lengthdir_y(_distance, _direction);
 	
-	var _target_loc = get_new_location(30, 60);
+		var _target_loc = get_new_location(30, 60);
 	
-	target_x = _target_loc[0];
-	target_y = _target_loc[1];
-	
-	
-	
-}
+		target_x = _target_loc[0];
+		target_y = _target_loc[1];
+	}
+} until(is_in_room(target_x, target_y));
 
 var _estimed_time = point_distance(x, y, target_x, target_y)/jump_speed;
 // Assuming these values are known or calculated

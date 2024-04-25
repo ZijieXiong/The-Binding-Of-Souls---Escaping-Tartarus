@@ -5,6 +5,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"obj_rifle_justforview","order":2,"path":"objects/obj_rifle_justforview/obj_rifle_justforview.yy",},
+    {"name":"obj_screen_zoomblur","order":6,"path":"objects/obj_screen_zoomblur/obj_screen_zoomblur.yy",},
     {"name":"obj_shotgun_justforview","order":1,"path":"objects/obj_shotgun_justforview/obj_shotgun_justforview.yy",},
     {"name":"obj_turtorial_controller","order":4,"path":"objects/obj_turtorial_controller/obj_turtorial_controller.yy",},
     {"name":"obj_turtorial_door_2","order":5,"path":"objects/obj_turtorial_door_2/obj_turtorial_door_2.yy",},

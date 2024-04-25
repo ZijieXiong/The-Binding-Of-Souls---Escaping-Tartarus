@@ -112,12 +112,12 @@ launch_missile = function ()
 		var _speed = 5;
 		var _time = _height/_speed;
 		
-		//var _x = random_range(_current_room.x1 * CELL_SIZE,_current_room.x2 * CELL_SIZE);
-		//var _y = random_range(_current_room.y1 * CELL_SIZE,_current_room.y2 * CELL_SIZE);
-		
-		var _x = random_range(_currentRoom.x1 * CELL_SIZE,_currentRoom.x2 * CELL_SIZE)
-		var _y = random_range(_currentRoom.y1 * CELL_SIZE,_currentRoom.y2 * CELL_SIZE)
+		//var _x = random_range(_currentRoom.x1 * CELL_SIZE,_currentRoom.x2 * CELL_SIZE)
+		//var _y = random_range(_currentRoom.y1 * CELL_SIZE,_currentRoom.y2 * CELL_SIZE)
 	
+		var _loc = get_random_point_in_room();
+		var _x = _loc[0];
+		var _y = _loc[1];
 		
 		var bomb_radius = 200;
 		//var _x = x  + random_range(-bomb_radius, bomb_radius);
