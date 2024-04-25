@@ -478,7 +478,8 @@ GenerateNewDungeon = function() {
 				var elite_type = choose(oElitePango, oEliteTurret, oEliteSlime,oEliteTeleportRobotX, oEliteMummyWithLaser, oEliteMummy);
 				if(global.currLevel < global.pyramid_layer)
 				{
-					elite_type = choose(oElitePango, oEliteSlime);
+					elite_type = oElitePango;
+					///elite_type = choose(oElitePango, oEliteSlime);
 				}
 				//var enemyType = oEliteMummy;
 				else if (global.currLevel < global.tech_layer) {
@@ -1054,7 +1055,8 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards,_room_obj){
 		}
 		//var enemyType = oEliteMummy;
 		else if (global.currLevel < global.tech_layer) {
-			enemyType = choose(oAnubis, oMummy, oSkullShooter);
+			enemyType = choose(oMummy, oSkullShooter);
+			//enemyType = choose(oAnubis, oMummy, oSkullShooter);
 		}
 		else{
 			enemyType = choose(oGarbageBot, oTurret, oTeleportRobot);

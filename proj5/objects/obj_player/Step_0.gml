@@ -197,7 +197,11 @@ if(revive_animation_started && image_index >= sprite_get_number(sprite_index) - 
 	playerLives = healthLimit;
 	global.globalFreeze = false;
 	revive_animation_started = false;
+	_hurting = false;
 	ChangeWeapon(current_weapon_arg);
+	sprite_index = spr_player_idle;
+	image_index = 0;
+	image_speed = 1;
 	
 }
 
