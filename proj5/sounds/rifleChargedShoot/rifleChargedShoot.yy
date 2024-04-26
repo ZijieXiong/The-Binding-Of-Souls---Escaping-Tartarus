@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.616,
+  "duration":2.664,
   "name":"rifleChargedShoot",
   "parent":{
     "name":"Sounds",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"rifleChargedShoot.mp3",
   "type":0,
-  "volume":0.65,
+  "volume":0.28,
 }
