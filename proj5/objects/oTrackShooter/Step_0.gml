@@ -4,7 +4,7 @@ if (point_distance(obj_player.x, obj_player.y, x, y) > _attack_dis) {
 	//move_towards_point(obj_player.x, obj_player.y, trackShooterSpeed);
 	var _found_player = mp_grid_path(global.mp_grid,path,x,y,obj_player.x,obj_player.y,choose(0,1))
 	if _found_player{
-		path_start(path,trackShooterSpeed,path_action_stop,false)
+		path_start(path,_moveSpeed,path_action_stop,false)
 	}
 	shoot();
 }else{

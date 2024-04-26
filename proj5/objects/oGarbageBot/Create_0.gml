@@ -1,7 +1,8 @@
 event_inherited()
 
 _health = 100 + global.currLevel * 10;
-_moveSpeed = 3;
+_actual_move_speed = 3
+_moveSpeed = 0;
 last_sprite = sprite_index
 _trolling = [spr_garbage_disposal_troll1,spr_garbage_disposal_troll2]
 
