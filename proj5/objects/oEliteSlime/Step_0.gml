@@ -28,7 +28,7 @@ if(is_jump && point_distance(x, y, target_x, target_y)<5)
 	var _collision_res = collision_rectangle(x + -alert_radius, y + -alert_radius, x + alert_radius, y + alert_radius, obj_player, true, 1);
 	if(_collision_res)
 		screenshake(10, 3, 0.2);
-		audio_play_sound(sfx_slime_big, 0, false);
+		audio_play_sound(slimeElite, 0, false);
 		
 	if(jump_count<7)
 	{
@@ -47,11 +47,14 @@ if(_health <= 0){
 	
 	var _target_loc = get_new_location(10, 30);
 
-	instance_create_layer(_target_loc[0], _target_loc[1], "Instances", oMegaSlime);
+	var mega_slime_1 = instance_create_layer(_target_loc[0], _target_loc[1], "Instances", oMegaSlime);
+	mega_slime_1._currentRoom = _currentRoom;
 	
 	_target_loc = get_new_location(10, 30);
 	
-	instance_create_layer(_target_loc[0], _target_loc[1], "Instances", oMegaSlime);
+	var mega_slime_2 = instance_create_layer(_target_loc[0], _target_loc[1], "Instances", oMegaSlime);
+	mega_slime_2._currentRoom = _currentRoom;
+	
 	
 }
 

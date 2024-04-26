@@ -4,6 +4,7 @@ function applyUpgrade()
 {
 	selectRoute(3);
 	show_debug_message("Upgrade applied: Riffle");
+	record_upgrade_once("Upgrade to Riffle");
 }
 
 function createUI(_x, _y)

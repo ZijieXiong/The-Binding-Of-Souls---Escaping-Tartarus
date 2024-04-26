@@ -82,6 +82,7 @@ function TaskShootLaser(instance_target, _laser_preparetion, _laser_duration, _l
 			laser_body.depth = _curr_depth-1;
 			laser_flame.life_time =time_laser_duration; 
 			laser_flame.depth = _curr_depth-2;
+			get_radius_blur(time_laser_duration, laser_flame, 0.1,  400, 0.01);
 			screenshake(time_laser_duration, 1.5, 0.2);
 			
 		}

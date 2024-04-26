@@ -51,6 +51,7 @@ if(_health <= 0 && sprite_index != spr_skull_death)
 }
 
 if (sprite_index == spr_skull_death && image_index >= sprite_get_number(spr_skull_death) - 1) {
-    instance_destroy();
+    audio_play_sound(enemyDie, 0, false);
+	instance_destroy();
     exit;
 }

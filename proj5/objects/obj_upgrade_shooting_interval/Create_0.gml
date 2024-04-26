@@ -8,6 +8,7 @@ function applyUpgrade()
 		ds_map_delete(global.upgrade_pool, "obj_upgrade_shooting_interval");
 	}
 	show_debug_message("Upgrade applied: Shooting interval");
+	record_upgrade_accum("Riffle Shooting Interval -", 0.1);
 }
 
 function createUI(_x, _y)

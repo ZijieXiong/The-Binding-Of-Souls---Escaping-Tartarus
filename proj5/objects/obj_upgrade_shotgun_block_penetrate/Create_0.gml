@@ -5,6 +5,7 @@ function applyUpgrade()
 	global.shotgunBlockPenetrate = true;
 	ds_map_delete(global.upgrade_pool, "obj_upgrade_shotgun_block_penetrate");
 	show_debug_message("Upgrade applied: Shotgun block penetrate");
+	record_upgrade_once("Bullet can block and penetrate attacks");
 }
 
 function createUI(_x, _y)

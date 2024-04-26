@@ -22,3 +22,6 @@ if(is_jump && point_distance(x, y, target_x, target_y)<5)
 	image_speed = 1;
 }
 
+if(_health <= 0){
+	alarm[0]=-1;
+}

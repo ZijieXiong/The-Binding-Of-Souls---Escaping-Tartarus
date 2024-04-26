@@ -114,10 +114,14 @@ function TaskChaseInstance(instance_chase, speed_chase, distance_max, distance_m
 			
 			// Check Stop chasing
 			var _dist = point_distance(black_board_ref.user.x, black_board_ref.user.y, instance_to_chase.x, instance_to_chase.y);
-			if(_dist <= distance_minimun_to_stop_chase)
+			if(_dist <= distance_minimun_to_stop_chase){
+				with(black_board_ref.user) {path_end();}
 				return BTStates.Success;
-			else if (_dist >= distance_maximun_to_stop_chase)
+			}
+			else if (_dist >= distance_maximun_to_stop_chase){
+				with(black_board_ref.user) {path_end();}
 				return BTStates.Failure;
+			}
 			else {
 				// Moving towards chasing
 				//var _dir = point_direction(black_board_ref.user.x, black_board_ref.user.y, instance_to_chase.x, instance_to_chase.y);

@@ -12,30 +12,33 @@ image_index = 0;
 if(jump_count>=7) jump_count=0;
 jump_count++;
 
-if(_collision_res)
-{
-	
-	screenshake(10, 3, 0.2);
-	
-	
-	
-	var _distance = min(normal_max_jump_dist, point_distance(x, y, obj_player.x, obj_player.y));
-	if(jump_count>=3)
+do {
+	if(_collision_res)
 	{
-		_distance = min(attack_max_jump_dist, point_distance(x, y, obj_player.x, obj_player.y));
-	}
-	var _direction = point_direction(x, y, obj_player.x, obj_player.y);
-	target_x = x + lengthdir_x(_distance, _direction);
-	target_y = y + lengthdir_y(_distance, _direction);
-} else
-{
+	
+		screenshake(10, 3, 0.2);
+	
+	
+	
+		var _distance = min(normal_max_jump_dist, point_distance(x, y, obj_player.x, obj_player.y));
+		if(jump_count>=3)
+		{
+			_distance = min(attack_max_jump_dist, point_distance(x, y, obj_player.x, obj_player.y));
+		}
+		var _direction = point_direction(x, y, obj_player.x, obj_player.y);
+		target_x = x + lengthdir_x(_distance, _direction);
+		target_y = y + lengthdir_y(_distance, _direction);
+	} else
+	{
 		
-	var _target_loc = get_new_location(30, 60);
+		var _target_loc = get_new_location(30, 60);
 	
-	target_x = _target_loc[0];
-	target_y = _target_loc[1];
+		target_x = _target_loc[0];
+		target_y = _target_loc[1];
 	
-}
+	}
+
+} until(is_in_room(target_x, target_y));
 
 var _estimed_time = point_distance(x, y, target_x, target_y)/jump_speed;
 // Assuming these values are known or calculated

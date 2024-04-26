@@ -8,27 +8,33 @@ is_jump = true;
 sprite_index = spr_slime_jump;
 image_index = 0;
 
-if(_collision_res)
-{
-	var _dist_offset = random_range(-10, 30);
-
-
-
-	var _distance =_dist_offset+ min(max_jump_length, point_distance(x, y, obj_player.x, obj_player.y));
-
-	var _direction = point_direction(x, y, obj_player.x, obj_player.y);
-	target_x = x + lengthdir_x(_distance, _direction);
-	target_y = y + lengthdir_y(_distance, _direction);
-} else
-{
-		
-	var _target_loc = get_new_location(30, 60);
+var _index = 0;
+do{
+	if(_collision_res)
+	{
 	
-	target_x = _target_loc[0];
-	target_y = _target_loc[1];
-	
-}
+		var _dist_offset = random_range(-10, 30);
 
+
+
+		var _distance =_dist_offset+ min(max_jump_length, point_distance(x, y, obj_player.x, obj_player.y));
+
+		var _direction = point_direction(x, y, obj_player.x, obj_player.y);
+		target_x = x + lengthdir_x(_distance, _direction);
+		target_y = y + lengthdir_y(_distance, _direction);
+	
+	} else
+	{
+	
+	
+		var _target_loc = get_new_location(30, 60);
+	
+		target_x = _target_loc[0];
+		target_y = _target_loc[1];
+	
+	}
+	if(++_index>=10) break;
+} until (is_in_room(target_x, target_y));
 var _estimed_time = point_distance(x, y, target_x, target_y)/jump_speed;
 // Assuming these values are known or calculated
 var _jump_duration = 60*_estimed_time; // The total duration of the jump in steps

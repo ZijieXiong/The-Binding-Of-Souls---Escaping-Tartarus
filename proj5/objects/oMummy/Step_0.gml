@@ -115,6 +115,7 @@ switch (current_state) {
         
     case MUMMY_STATE.DEATH:
 		if(image_index >= (sprite_get_number(sprite_index) - 1)){
+			audio_play_sound(enemyDie, 0, false);
 			instance_destroy();
 		}
 		break;

@@ -17,3 +17,17 @@ function dropItem()
 		audio_play_sound(itemDrop, 0, false);
 	}
 }
+
+get_random_point_in_room = function()
+{
+	var _x = random_range(_currentRoom.x1 * CELL_SIZE,(_currentRoom.x2+1) * CELL_SIZE);
+	var _y = random_range((_currentRoom.y1+1) * CELL_SIZE,(_currentRoom.y2+1) * CELL_SIZE);
+	return [_x, _y];
+}
+
+is_in_room = function(_x, _y)
+{
+	var _bX = (_currentRoom.x1 * CELL_SIZE<= _x) && (_x <=(_currentRoom.x2+1) * CELL_SIZE);
+	var _bY = ((_currentRoom.y1+1) * CELL_SIZE<= _y) &&  (_y<=(_currentRoom.y2+1) * CELL_SIZE);
+	return _bX && _bY;
+}

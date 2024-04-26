@@ -5,6 +5,7 @@ function applyUpgrade()
 	global.upgradeNum += 1;
 	ds_map_delete(global.upgrade_pool, "obj_upgrade_add_upgrade_option");
 	show_debug_message("Upgrade applied: Upgrade +1");
+	record_upgrade_once("Upgrade Option +1");
 }
 
 function createUI(_x, _y)

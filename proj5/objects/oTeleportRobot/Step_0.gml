@@ -1,5 +1,6 @@
 if(_health <= 0){
 	sprite_index = spr_teleport_dead
+	audio_play_sound(enemyDie, 0, false);
 	if((sprite_index == spr_teleport_dead) && (image_index >= (sprite_get_number(sprite_index) - 1))){
 		instance_destroy()
 	}

@@ -197,7 +197,11 @@ if(revive_animation_started && image_index >= sprite_get_number(sprite_index) - 
 	playerLives = healthLimit;
 	global.globalFreeze = false;
 	revive_animation_started = false;
+	_hurting = false;
 	ChangeWeapon(current_weapon_arg);
+	sprite_index = spr_player_idle;
+	image_index = 0;
+	image_speed = 1;
 	
 }
 
@@ -221,9 +225,15 @@ if (keyboard_check(ord("P"))) {
 
 /*
 if (keyboard_check(ord("P")) && !is_summon_elite) {
-		instance_create_layer(x, y, "Instances", oEliteTeleportRobotX);
+		instance_create_layer(x, y, "Instances", oEliteMummy);
 		is_summon_elite = true;
 }*/
+
+/*
+if (keyboard_check(ord("P"))) {
+	get_radius_blur(3*60, obj_player, 0.1,  50, 0.01);
+}
+*/
 
 _last_sprite = sprite_index
 

@@ -5,6 +5,7 @@ function applyUpgrade()
 	var shotgun = instance_find(obj_shotgun, 0);
 	global.shotgun_bulletcount += 1;
 	show_debug_message("Upgrade applied: Shotgun Bullet Count");
+	record_upgrade_accum("Shotgun Bullet +", 1);
 }
 
 function createUI(_x, _y)

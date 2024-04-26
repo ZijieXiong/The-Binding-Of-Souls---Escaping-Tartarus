@@ -5,6 +5,7 @@ function applyUpgrade()
 	global.revive += 1;
 	ds_map_replace(global.upgrade_pool, "obj_upgrade_revive", 1);
 	show_debug_message("Upgrade applied: Revive");
+	record_upgrade_accum("Revive Chance +", 1);
 }
 
 function createUI(_x, _y)

@@ -4,6 +4,7 @@ function applyUpgrade()
 {
 	global.shotgunRange += 0.1;
 	show_debug_message("Upgrade applied: Shotgun Range");
+	record_upgrade_accum("Shotgun Range +", 0.1);
 }
 
 function createUI(_x, _y)

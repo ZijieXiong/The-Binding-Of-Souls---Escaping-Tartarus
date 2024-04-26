@@ -3,6 +3,7 @@ function applyUpgrade()
 {
 	global.bouncesLeft += 1;
 	global.richochet = true;
+	record_upgrade_accum("Bullet Bounce +", 1);
 	/*
 	var _prob = ds_map_find_value(global.upgrade_pool,"obj_upgrade_plus_one_bounce");
 	_prob -= 3;
