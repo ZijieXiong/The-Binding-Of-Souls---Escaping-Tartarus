@@ -1,8 +1,11 @@
 {
-  "FolderOrderSettings":[],
+  "FolderOrderSettings":[
+    {"name":"Shop","order":7,"path":"folders/Objects/Shop.yy",},
+  ],
   "ResourceOrderSettings":[
     {"name":"obj_rifle_justforview","order":2,"path":"objects/obj_rifle_justforview/obj_rifle_justforview.yy",},
     {"name":"obj_screen_zoomblur","order":6,"path":"objects/obj_screen_zoomblur/obj_screen_zoomblur.yy",},
+    {"name":"obj_shop_upgrade_button","order":1,"path":"objects/obj_shop_upgrade_button/obj_shop_upgrade_button.yy",},
     {"name":"obj_shotgun_justforview","order":1,"path":"objects/obj_shotgun_justforview/obj_shotgun_justforview.yy",},
     {"name":"obj_turtorial_controller","order":4,"path":"objects/obj_turtorial_controller/obj_turtorial_controller.yy",},
     {"name":"obj_turtorial_door_2","order":5,"path":"objects/obj_turtorial_door_2/obj_turtorial_door_2.yy",},
@@ -11,6 +14,7 @@
     {"name":"obj_upgrade_record_UI","order":2,"path":"objects/obj_upgrade_record_UI/obj_upgrade_record_UI.yy",},
     {"name":"obj_upgrade","order":1,"path":"objects/obj_upgrade/obj_upgrade.yy",},
     {"name":"oElectrictHit","order":1,"path":"objects/oElectrictHit/oElectrictHit.yy",},
+    {"name":"obj_shop_damage_upgrade","order":2,"path":"objects/obj_shop_damage_upgrade/obj_shop_damage_upgrade.yy",},
     {"name":"oSlime_tur","order":1,"path":"objects/oSlime_tur/oSlime_tur.yy",},
     {"name":"oSlime_tur2","order":2,"path":"objects/oSlime_tur2/oSlime_tur2.yy",},
     {"name":"electricHit","order":1,"path":"particles/electricHit/electricHit.yy",},
