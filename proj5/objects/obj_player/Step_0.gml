@@ -240,4 +240,9 @@ if (place_meeting(x, y, obj_rifle_justforview)) {
 	global.tutorial_started_2 = true;
 }
 
-
+/*
+if instance_exists(oEnemiesParent){
+	if keyboard_check(ord("P")){
+		instance_destroy(oEnemiesParent)
+	}
+}

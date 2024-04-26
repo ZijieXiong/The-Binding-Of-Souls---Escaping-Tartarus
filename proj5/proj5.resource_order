@@ -1,9 +1,11 @@
 {
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
+    {"name":"electricHit","order":1,"path":"particles/electricHit/electricHit.yy",},
+    {"name":"itemDrop","order":3,"path":"sounds/itemDrop/itemDrop.yy",},
     {"name":"itemPick","order":1,"path":"sounds/itemPick/itemPick.yy",},
     {"name":"itemUse","order":2,"path":"sounds/itemUse/itemUse.yy",},
-    {"name":"itemDrop","order":3,"path":"sounds/itemDrop/itemDrop.yy",},
+    {"name":"GM_Electricity_spr_Electricity1","order":2,"path":"sprites/GM_Electricity_spr_Electricity1/GM_Electricity_spr_Electricity1.yy",},
     {"name":"tur_bg","order":2,"path":"sprites/tur_bg/tur_bg.yy",},
   ],
 }
