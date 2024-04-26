@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.816,
+  "duration":0.864,
   "name":"openChest",
   "parent":{
     "name":"Sounds",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"openChest.mp3",
   "type":0,
-  "volume":0.41,
+  "volume":0.35,
 }
