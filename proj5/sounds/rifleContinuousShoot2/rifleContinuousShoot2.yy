@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.496,
+  "duration":2.52,
   "name":"rifleContinuousShoot2",
   "parent":{
     "name":"Sounds",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"rifleContinuousShoot2.mp3",
   "type":0,
-  "volume":0.4,
+  "volume":0.44,
 }
