@@ -2,7 +2,7 @@
 // You can write your code in this editor
 price = 15;
 text = "";
-button = instance_create_layer(x,y+50,"Instances", obj_shop_upgrade_button);
+button = instance_create_layer(x,y+80,"Instances", obj_shop_upgrade_button);
 button.parent = self;
 
 function upgrade()

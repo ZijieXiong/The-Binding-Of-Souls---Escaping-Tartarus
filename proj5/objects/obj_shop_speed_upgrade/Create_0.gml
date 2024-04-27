@@ -3,8 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
-text = "damage +25%";
-price = 15 + global.permanent_damage_upgrade * 5;
+text = "Speed +10%";
+price = 20 + global.permanent_speed_upgrade * 10;
 
 function upgrade()
 {
@@ -12,10 +12,10 @@ function upgrade()
 	if(global.soul >= price)
 	{
 		global.soul -= price;
-		global.permanent_damage_upgrade += 1;
-		record_upgrade_permanent_accum("Damage +", 0.25);
+		global.permanent_speed_upgrade += 1;
+		record_upgrade_permanent_accum("Player Speed +", 0.1);
 		show_debug_message("purchase success");
-		price += 5;
+		price += 10;
 	}
 	else
 	{
