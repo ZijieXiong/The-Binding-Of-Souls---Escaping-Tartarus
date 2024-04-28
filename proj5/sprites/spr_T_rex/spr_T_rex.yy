@@ -50,8 +50,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"enemy",
-    "path":"folders/Sprites/enemy.yy",
+    "name":"boss",
+    "path":"folders/Sprites/enemy/boss.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
