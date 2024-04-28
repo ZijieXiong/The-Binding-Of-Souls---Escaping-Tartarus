@@ -7,6 +7,6 @@ with(other){
 	show_debug_message(_health)
 	_health -= other.damage * global.dmgMultiplier;
 	audio_play_sound(enemyHurt, 0, false);
-	
+	hit_effect();
 }
 instance_destroy();

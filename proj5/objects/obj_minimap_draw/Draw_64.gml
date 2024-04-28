@@ -35,9 +35,11 @@ draw_map()
 draw_set_halign(fa_right);
 draw_set_color(c_white);
 draw_text(display_get_gui_width()-10, 110, "Current Level: " + string(global.currLevel));
+draw_text(display_get_gui_width()-10, 130, "Soul: " + string(global.soul));
 }else{
 draw_set_halign(fa_right);
 draw_set_color(c_white);
 draw_text(display_get_gui_width()-10, 20, "Current Level: " + string(global.currLevel));
+draw_text(display_get_gui_width()-10, 40, "Soul: " + string(global.soul));
 }
 

@@ -37,6 +37,7 @@ global.spawns = [oHeartBooster, oRichochet, oBomb];
 global.dropRate = 20;
 
 global.currLevel = 1;
+global.soul = 0;
 
 global.dmgMultiplier = 1;
 global.playerSpeedMultiplier = 1;
@@ -113,14 +114,19 @@ global.upgrade_objs = ds_list_create();
 
 global.upgrade_picked_accum = ds_map_create();
 global.upgrade_picked_once = ds_list_create();
+global.upgrade_permanent_accum = ds_map_create();
+global.upgrade_permanent_once = ds_list_create();
+
+global.permanent_damage_upgrade = 0;
+global.permanent_speed_upgrade = 0;
 
 /// @description reset all parameters to original value
 function initParas()
 {
 	global.upgradeNum = 2;
 	
-	global.dmgMultiplier = 1;
-	global.playerSpeedMultiplier = 1;
+	global.dmgMultiplier = 1 + global.permanent_damage_upgrade * 0.25;
+	global.playerSpeedMultiplier = 1 + global.permanent_speed_upgrade * 0.1;
 	global.shootingIntervalMultiplier = 1;
 	global.revive = 0;
 	
@@ -155,8 +161,8 @@ function initParas()
 	global.global_room = []
 
 	initUpgradePool();
-	ds_map_clear(global.upgrade_picked_accum);
-	ds_list_clear(global.upgrade_picked_once);
+	ds_map_copy(global.upgrade_picked_accum, global.upgrade_permanent_accum);
+	ds_list_copy(global.upgrade_picked_once, global.upgrade_permanent_once);
 }
 
 initParas();
@@ -342,4 +348,21 @@ function record_upgrade_accum(_upgrade_name, increase)
 function record_upgrade_once(_upgrade_name)
 {
 	ds_list_add(global.upgrade_picked_once, _upgrade_name);
+}
+
+function record_upgrade_permanent_accum(_upgrade_name, increase)
+{
+	if(ds_map_exists(global.upgrade_permanent_accum, _upgrade_name))
+	{
+		ds_map_replace(global.upgrade_permanent_accum, _upgrade_name, ds_map_find_value(global.upgrade_permanent_accum, _upgrade_name)+increase);
+	}
+	else
+	{
+		ds_map_add(global.upgrade_permanent_accum, _upgrade_name, increase);
+	}
+}
+
+function record_upgrade_permanent_once(_upgrade_name)
+{
+	ds_list_add(global.upgrade_permanent_once, _upgrade_name);
 }
