@@ -19,12 +19,12 @@ var guiWidth = display_get_gui_width();
 var guiHeight = display_get_gui_height();
 
 var upgradeWidth = 130;
-var spacing = 130;
-
+var spacing = 130 
+if global.upgradeNum == 2 spacing = floor(guiWidth / 3) - 120;
 var totalUpgradeWidth = upgradeWidth * global.upgradeNum + spacing * (global.upgradeNum - 1);
 
 var startX = 120;
-
+if global.upgradeNum == 2 starX = 140;
 for (var i = 0; i < global.upgradeNum; i++) {
     var posX = startX + (spacing + upgradeWidth) * i;  // Position each upgrade evenly
     var upgradeInstance = instance_create_layer(posX, guiHeight / 2, "Instances", asset_get_index(chosenUpgrades[i]));

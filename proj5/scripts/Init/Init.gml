@@ -141,7 +141,7 @@ function initParas()
 
 	global.riffle_bullet_explosive = false;
 
-	global.currLevel = 1;
+	global.currLevel = 7;
 	global.playerFreeze = false;
 	global.globalFreeze = false;
 	global.bouncesLeft = 0;

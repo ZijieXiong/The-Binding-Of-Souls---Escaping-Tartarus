@@ -43,11 +43,14 @@ function hit_effect(_x,_y,_dmg,_dir){
 		hit_effect_par(spr_smoke_hit,_dir,make_color_rgb(158,136,98),make_color_rgb(158,136,98),50,90,20)
 	}
 	else if global.currLevel >= 7 and global.currLevel <= 9{
+		//hit_effect_par(spr_electric,_dir,c_white,c_white,150,180,1)
+
 		var _hit = instance_create_layer(_x,_y, "Instances",oElectrictHit);
 		_hit._enemy = self
 		_hit._xDiff  = self.x - _x
 		_hit._yDiff = self.y - _y
 		_hit.image_angle = _dir
+		
 	}
 
 }

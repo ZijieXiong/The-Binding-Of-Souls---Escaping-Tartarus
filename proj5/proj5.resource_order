@@ -13,11 +13,13 @@
     {"name":"spikeFall","order":4,"path":"sounds/spikeFall/spikeFall.yy",},
     {"name":"spikeHit","order":2,"path":"sounds/spikeHit/spikeHit.yy",},
     {"name":"spr_blood2","order":1,"path":"sprites/spr_blood2/spr_blood2.yy",},
+    {"name":"spr_blood3","order":2,"path":"sprites/spr_blood3/spr_blood3.yy",},
     {"name":"spr_decoy_1","order":3,"path":"sprites/spr_decoy_1/spr_decoy_1.yy",},
     {"name":"spr_decoy_2","order":2,"path":"sprites/spr_decoy_2/spr_decoy_2.yy",},
     {"name":"spr_decoy_4","order":1,"path":"sprites/spr_decoy_4/spr_decoy_4.yy",},
     {"name":"spr_decoy_5","order":4,"path":"sprites/spr_decoy_5/spr_decoy_5.yy",},
     {"name":"spr_fake_player_idle","order":5,"path":"sprites/spr_fake_player_idle/spr_fake_player_idle.yy",},
     {"name":"spr_fake_player_pickup","order":6,"path":"sprites/spr_fake_player_pickup/spr_fake_player_pickup.yy",},
+    {"name":"spr_electric","order":1,"path":"sprites/spr_electric/spr_electric.yy",},
   ],
 }

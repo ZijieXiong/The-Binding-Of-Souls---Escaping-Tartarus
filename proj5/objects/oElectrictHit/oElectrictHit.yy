@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_self_electricity",
-    "path":"sprites/spr_self_electricity/spr_self_electricity.yy",
+    "name":"spr_electric",
+    "path":"sprites/spr_electric/spr_electric.yy",
   },
   "spriteMaskId":null,
   "visible":true,

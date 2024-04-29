@@ -3,7 +3,7 @@
 
 function hit_effect_par(_spr,_dir,_color1,_color2,_life1,_life2, _burst){
 	var instance_effect = instance_create_depth(x,y,depth,obj_particle);
-	
+	show_debug_message("e;ect")
 	instance_effect.set_size(0.05,0.1);
 	instance_effect.set_sprite(_spr,false,false,true);
 	instance_effect.set_orientation(0,360);
