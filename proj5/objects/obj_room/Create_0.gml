@@ -119,3 +119,18 @@ function elite_item_prob()
 	}
 	set_item_prob(global.elite_item_pool, prob);
 }
+
+function is_player_near_door()
+{
+	var safe_distance = 60;
+	for(var i = 0; i < array_length(doors); i++)
+	{
+		var distance = point_distance(_obj_player.x, _obj_player.y, doors[i].x, doors[i].y);
+		if(distance <= safe_distance)
+		{
+			show_debug_message("Distance to door " + string(i) + ": " + string(distance));
+			return(true);
+		}
+	}
+	return(false)
+}

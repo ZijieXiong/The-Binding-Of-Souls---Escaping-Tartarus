@@ -2,9 +2,9 @@
 // You can write your code in this editor
 if(!enemy_cleared && is_open)
 {
-	var player_in_room = point_in_rectangle(_obj_player.x, _obj_player.y, x1  * CELL_SIZE + CELL_SIZE / 2, y1 * CELL_SIZE + CELL_SIZE / 2, x2 * CELL_SIZE + CELL_SIZE / 2, y2 * CELL_SIZE + CELL_SIZE / 2 - 2);
+	var player_in_room = point_in_rectangle(_obj_player.x, _obj_player.y, x1  * CELL_SIZE, y1 * CELL_SIZE, x2 * CELL_SIZE + CELL_SIZE, y2 * CELL_SIZE + CELL_SIZE);
 
-	if (player_in_room) {
+	if (player_in_room && !is_player_near_door()) {
 		doorClose();
 	}
 }
