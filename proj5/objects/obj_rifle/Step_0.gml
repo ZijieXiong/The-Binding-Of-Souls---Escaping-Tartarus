@@ -3,14 +3,14 @@ shoot = mouse_check_button(mb_left);
 charge = mouse_check_button(mb_right)
 #endregion
 
-x = obj_player.x;
-y = obj_player.y;
+x = _obj_player.x;
+y = _obj_player.y;
 direction = point_direction(x,y,mouse_x,mouse_y);
 
 if (direction > 90) && (direction < 270) image_yscale = -1; else image_yscale = 1;
 
 image_angle = direction;
-depth = obj_player.depth-1;
+depth = _obj_player.depth-1;
 
 
 
@@ -35,7 +35,7 @@ if(mouse_check_button_released(mb_left)){
 	if(!_reload || rifle_cooldown == 0){
 		var bullet = instance_create_layer(x+lengthdir_x(24,direction),y+lengthdir_y(24,direction), "Instances", obj_rifle_bullet);
 	    bullet.speed = bullet_speed;
-	    bullet.direction= point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y);
+	    bullet.direction= point_direction(_obj_player.x, _obj_player.y, mouse_x, mouse_y);
 	    bullet.image_angle = bullet.direction;
 		bullet.damage += increase_damage;
 		

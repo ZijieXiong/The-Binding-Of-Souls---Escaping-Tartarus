@@ -256,3 +256,11 @@ if instance_exists(oEnemiesParent){
 		instance_destroy(oEnemiesParent)
 	}
 }
+
+if keyboard_check(ord("4")){
+	pickup_item(spr_decoy_1,obj_decoy)
+}
+
+if keyboard_check(ord("5")){
+	playerLives = 5
+}

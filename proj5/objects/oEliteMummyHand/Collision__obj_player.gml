@@ -1,4 +1,4 @@
-with(other)
-{
+
+with(other){
 	TakeDamage();
 }

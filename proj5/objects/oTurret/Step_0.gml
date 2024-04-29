@@ -12,7 +12,7 @@
 function shoot() {
 	var _inst = instance_create_layer(x,y,"Instances", oEnemBullet);
 	if(bulletSpiralIterator == 0){
-		initial_direction = point_direction(x,y,obj_player.x, obj_player.y);
+		initial_direction = point_direction(x,y,obj_player_main.x, obj_player_main.y);
 		_inst.direction = initial_direction;
 	}
 	else{

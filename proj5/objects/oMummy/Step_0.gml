@@ -48,12 +48,12 @@ switch (current_state) {
 		
 	case MUMMY_STATE.CHASE:
 		//show_debug_message("Mummy chase");
-		direction = point_direction(x, y, obj_player.x, obj_player.y);
-		var _found_player = mp_grid_path(global.mp_grid,path,x,y,obj_player.x,obj_player.y,choose(0,1))
+		direction = point_direction(x, y, obj_player_main.x, obj_player_main.y);
+		var _found_player = mp_grid_path(global.mp_grid,path,x,y,obj_player_main.x,obj_player_main.y,choose(0,1))
 		if _found_player{
 			path_start(path,chase_speed,path_action_stop,false);
 		}
-		var _player_distance = point_distance(x, y, obj_player.x, obj_player.y);
+		var _player_distance = point_distance(x, y, obj_player_main.x, obj_player_main.y);
 		if(attack_ready && _player_distance<attack_range )
 		{
 			current_state = MUMMY_STATE.PREATTACK;
@@ -92,7 +92,7 @@ switch (current_state) {
 			image_speed = 0.3;
 
 			alarm[0] = 60 * attack_time;
-			direction = point_direction(x, y, obj_player.x, obj_player.y);
+			direction = point_direction(x, y, obj_player_main.x, obj_player_main.y);
 			
 		}
         
@@ -122,7 +122,7 @@ switch (current_state) {
 }
 
 
-var _player_distance = point_distance(x, y, obj_player.x, obj_player.y);
+var _player_distance = point_distance(x, y, obj_player_main.x, obj_player_main.y);
 if (_player_distance < 100 && !is_alerted) {
 	start_chase_player();
 	//alarm[0] = 60*preroll_time;

@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 
-var _collision_res = collision_rectangle(x + -alert_radius, y + -alert_radius, x + alert_radius, y + alert_radius, obj_player, true, 1);
+var _collision_res = collision_rectangle(x + -alert_radius, y + -alert_radius, x + alert_radius, y + alert_radius, obj_player_main, true, 1);
 
 is_jump = true;
 sprite_index = spr_slime_jump;
@@ -13,8 +13,8 @@ do{
 
 	if(_collision_res)
 	{
-		target_x = obj_player.x;
-		target_y = obj_player.y;
+		target_x = obj_player_main.x;
+		target_y = obj_player_main.y;
 		screenshake(10, 3, 0.2);
 	} else
 	{

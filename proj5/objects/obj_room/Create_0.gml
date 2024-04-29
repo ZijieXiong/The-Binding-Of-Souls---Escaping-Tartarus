@@ -88,11 +88,11 @@ function check_distance(posX,posY)
 function healthBoosterProb()
 {
 	var prob = 100;
-	if(obj_player.playerLives >= obj_player.healthLimit)
+	if(_obj_player.playerLives >= _obj_player.healthLimit)
 	{
 		prob = 0;
 	}
-	else if(obj_player.playerLives >=2)
+	else if(_obj_player.playerLives >=2)
 	{
 		prob = 20;
 	}

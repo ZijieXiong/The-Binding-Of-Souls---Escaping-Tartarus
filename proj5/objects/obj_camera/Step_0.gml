@@ -30,8 +30,8 @@ else if(!keyboard_check(ord("O"))){
 
 if(camera_mode == 0)
 {
-	playerX = obj_player.x;
-	playerY = obj_player.y;
+	playerX = _obj_player.x;
+	playerY = _obj_player.y;
 	camX = playerX - player_viewW / 2;
 	camY = playerY - player_viewH / 2;
 	camera_set_view_pos(cam, camX, camY);

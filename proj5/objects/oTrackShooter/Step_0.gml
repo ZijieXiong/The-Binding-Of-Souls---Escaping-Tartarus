@@ -1,15 +1,15 @@
-if (point_distance(obj_player.x, obj_player.y, x, y) > _attack_dis) {
-	self.image_angle = point_direction(x, y, obj_player.x, obj_player.y);
+if (point_distance(obj_player_main.x, obj_player_main.y, x, y) > _attack_dis) {
+	self.image_angle = point_direction(x, y, obj_player_main.x, obj_player_main.y);
 	sprite_index = spr_bee_attack
 	//move_towards_point(obj_player.x, obj_player.y, trackShooterSpeed);
-	var _found_player = mp_grid_path(global.mp_grid,path,x,y,obj_player.x,obj_player.y,choose(0,1))
+	var _found_player = mp_grid_path(global.mp_grid,path,x,y,obj_player_main.x,obj_player_main.y,choose(0,1))
 	if _found_player{
 		path_start(path,_moveSpeed,path_action_stop,false)
 	}
 	shoot();
 }else{
 	path_end();
-	self.image_angle = point_direction(x, y, obj_player.x, obj_player.y);
+	self.image_angle = point_direction(x, y, obj_player_main.x, obj_player_main.y);
 	shoot();
 }
 

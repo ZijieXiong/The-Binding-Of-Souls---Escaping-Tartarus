@@ -6,7 +6,7 @@ if(sprite_index == spr_missile_hit) && (image_index >= (sprite_get_number(sprite
 if(sprite_index = spr_missile_nor){
 if !closest_enemy {
 	if !_setDir{
-		direction = point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y)
+		direction = point_direction(_obj_player.x,_obj_player.y,mouse_x,mouse_y)
 		self.image_angle = direction
 		speed = _speed
 		_setDir = true
