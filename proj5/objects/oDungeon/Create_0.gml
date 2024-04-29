@@ -180,7 +180,6 @@ GenerateNewDungeon = function() {
 						isNorthSouth = false;
 						_hallwayX1 = _roomX2 + 1;
 						_hallwayX2 = _hallwayX1 + _hallwayLength - 1;
-                 
 						if (_roomY1 < currentRoom.y1) {
 							_minRange = currentRoom.y1 + 1;
 						}
@@ -202,7 +201,6 @@ GenerateNewDungeon = function() {
 						isNorthSouth = false;
 						_hallwayX1 = _roomX1 - _hallwayLength;
 						_hallwayX2 = _hallwayX1 + _hallwayLength - 1;
-                 
 						if (_roomY1 < currentRoom.y1) {
 							_minRange = currentRoom.y1 + 1;
 						}
