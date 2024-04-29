@@ -14,7 +14,7 @@ if(sprite_index == spr_player_hurt) && (image_index >= (sprite_get_number(sprite
 if(!global.playerFreeze && !global.globalFreeze)
 {
 	
-	if !_hurting sprite_index=spr_fake_player_idle;
+	if !_hurting sprite_index=spr_player_idle;
 	if (keyboard_check(ord("W"))) {
 		vy -= moveSpeed;
 		if !_hurting sprite_index=spr_player_run;
