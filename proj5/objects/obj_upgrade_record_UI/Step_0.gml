@@ -1,3 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-is_drawing = false;
+if keyboard_check_pressed(vk_tab)
+{
+	is_drawing = !is_drawing;
+}

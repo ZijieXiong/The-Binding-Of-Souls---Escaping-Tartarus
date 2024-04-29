@@ -123,7 +123,7 @@ global.permanent_speed_upgrade = 0;
 /// @description reset all parameters to original value
 function initParas()
 {
-	global.upgradeNum = 2;
+	global.upgradeNum = 3;
 	
 	global.dmgMultiplier = 1 + global.permanent_damage_upgrade * 0.25;
 	global.playerSpeedMultiplier = 1 + global.permanent_speed_upgrade * 0.1;
