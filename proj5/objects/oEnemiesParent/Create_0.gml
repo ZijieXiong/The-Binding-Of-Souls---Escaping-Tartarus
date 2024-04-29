@@ -37,10 +37,12 @@ is_in_room = function(_x, _y)
 function hit_effect(_x,_y,_dmg,_dir){
 	
 	if global.currLevel >=1 and global.currLevel <=3 {
-		hit_effect_par(spr_blood,_dir)
+		hit_effect_par(spr_blood,_dir,c_red,make_color_rgb(128,0,0),150,180,10)
+	}else if global.currLevel >=4 and global.currLevel <=6{
+		show_debug_message("smoke")
+		hit_effect_par(spr_smoke_hit,_dir,make_color_rgb(158,136,98),make_color_rgb(158,136,98),50,90,20)
 	}
-	
-	if global.currLevel >= 7 and global.currLevel <= 9{
+	else if global.currLevel >= 7 and global.currLevel <= 9{
 		var _hit = instance_create_layer(_x,_y, "Instances",oElectrictHit);
 		_hit._enemy = self
 		_hit._xDiff  = self.x - _x
