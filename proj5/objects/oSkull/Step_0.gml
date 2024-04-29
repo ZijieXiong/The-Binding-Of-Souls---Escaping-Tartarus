@@ -319,4 +319,5 @@ function die(){
 	//instance_destroy(left_frail);
 	//instance_destroy(right_frail);
 	instance_destroy();
+	audio_play_sound(enemyDie, 0, false);
 }

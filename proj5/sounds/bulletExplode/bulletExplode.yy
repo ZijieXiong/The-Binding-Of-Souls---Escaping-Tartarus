@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"pistolShoot",
+  "%Name":"bulletExplode",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.632,
-  "name":"pistolShoot",
+  "duration":1.062971,
+  "name":"bulletExplode",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"pistolShoot.mp3",
+  "soundFile":"bulletExplode.ogg",
   "type":0,
-  "volume":0.42,
+  "volume":0.63,
 }
