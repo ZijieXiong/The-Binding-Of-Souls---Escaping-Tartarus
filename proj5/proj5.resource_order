@@ -1,6 +1,10 @@
 {
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
+    {"name":"fireBurst","order":1,"path":"sounds/fireBurst/fireBurst.yy",},
+    {"name":"spikeHit","order":2,"path":"sounds/spikeHit/spikeHit.yy",},
+    {"name":"pangoRoll","order":3,"path":"sounds/pangoRoll/pangoRoll.yy",},
+    {"name":"spikeFall","order":4,"path":"sounds/spikeFall/spikeFall.yy",},
     {"name":"spr_decoy_1","order":3,"path":"sprites/spr_decoy_1/spr_decoy_1.yy",},
     {"name":"spr_decoy_2","order":2,"path":"sprites/spr_decoy_2/spr_decoy_2.yy",},
     {"name":"spr_decoy_4","order":1,"path":"sprites/spr_decoy_4/spr_decoy_4.yy",},

@@ -107,6 +107,7 @@ summon_spike = function(_hit_x, _hit_y, _ply_x, _ply_y)
 			target_x = _tar_x;
 			target_y = _tar_y;
 			direction = point_direction(_tar_x,  _tar_y-_height, _tar_x,_tar_y );
+			//audio_play_sound(spikeFall, 0, false);
 		}
 		
 		var _spike_shadow = instance_create_layer(_tar_x, _tar_y, "Instances", oPangoSpikeShadow);
