@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (place_meeting(x, y, [obj_player])) {
+if (place_meeting(x, y, [obj_player_main])) {
 	instance_destroy();
 }
 
@@ -10,7 +10,7 @@ if (place_meeting(x, y, [obj_wall])) {
 
 explosion_radius = 50;
 
-var _collision_res = collision_circle(x , y,  explosion_radius, obj_player, true, 1);
+var _collision_res = collision_circle(x , y,  explosion_radius, obj_player_main, true, 1);
 
 if(is_swelling && _collision_res) explode();
 

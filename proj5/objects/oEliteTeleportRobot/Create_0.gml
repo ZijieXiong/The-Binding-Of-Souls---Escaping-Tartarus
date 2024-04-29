@@ -27,7 +27,7 @@ function shoot() {
 		repeat(4){
 			bullet = instance_create_layer(x, y, "Instances", oRobotBullet1);
 		    bullet.speed = 5  + 0.1 * global.currLevel;
-		    bullet.direction= point_direction(x, y, obj_player.x, obj_player.y) + irandom_range(-60,60);
+		    bullet.direction= point_direction(x, y, obj_player_main.x, obj_player_main.y) + irandom_range(-60,60);
 		    bullet.image_angle = bullet.direction;
 		}
 		attack_cooldown = 0;

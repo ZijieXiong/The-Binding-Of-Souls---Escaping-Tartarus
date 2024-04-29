@@ -11,8 +11,8 @@ if(!is_hit)
 {
 	hit_wall_x = x;
 	hit_wall_y = y;
-	hit_player_x = obj_player.x;
-	hit_player_y = obj_player.y;
+	hit_player_x = obj_player_main.x;
+	hit_player_y = obj_player_main.y;
 	is_hit = true;
 	
 	summon_spike(hit_wall_x, hit_wall_y, hit_player_x, hit_player_y);

@@ -1,4 +1,4 @@
-if (point_distance(obj_player.x, obj_player.y, x, y) < ENEM_DISTANCE) {
+if (point_distance(obj_player_main.x, obj_player_main.y, x, y) < ENEM_DISTANCE) {
 	playerInRange = true;
 }
 
@@ -25,7 +25,7 @@ else{
 shoot = function() {
 	var _inst = instance_create_layer(x,y,"Instances", oEnemBullet);
 	if(bulletSpiralIterator == 0){
-		initial_direction = point_direction(x,y,obj_player.x, obj_player.y);
+		initial_direction = point_direction(x,y,obj_player_main.x, obj_player_main.y);
 		_inst.direction = initial_direction;
 	}
 	else{
@@ -45,7 +45,7 @@ function shootAtPlayer()
 {
 	var _inst = instance_create_layer(x,y,"Instances", oEnemBullet);
 	_inst.speed = bulletSpiralSpeed;
-	_inst.direction = point_direction(x,y,obj_player.x, obj_player.y);
+	_inst.direction = point_direction(x,y,obj_player_main.x, obj_player_main.y);
 }
 
 if(_health <= 0)

@@ -10,8 +10,8 @@
 //	speed = 0;
 //}
 
-var _player_x = obj_player.x;
-var _player_y = obj_player.y;
+var _player_x = obj_player_main.x;
+var _player_y = obj_player_main.y;
 
 
 
@@ -160,7 +160,7 @@ switch (current_state) {
 		break;
 		
 		case SKULL_STATE.TURN:
-			var _target_dir = point_direction(x, y, obj_player.x, obj_player.y);
+			var _target_dir = point_direction(x, y, obj_player_main.x, obj_player_main.y);
 		
 			var _angle_difference = angle_difference(_target_dir, image_angle);
 			
@@ -192,7 +192,7 @@ switch (current_state) {
 		break;
 		
 		case SKULL_STATE.SPIN:
-			direction = point_direction(x ,y, obj_player.x, obj_player.y);
+			direction = point_direction(x ,y, obj_player_main.x, obj_player_main.y);
 			image_angle += spin_angular_speed;
 			
 			var _x, _y;

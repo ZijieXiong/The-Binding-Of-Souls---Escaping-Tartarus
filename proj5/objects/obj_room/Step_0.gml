@@ -2,7 +2,7 @@
 // You can write your code in this editor
 if(!enemy_cleared && is_open)
 {
-	var player_in_room = point_in_rectangle(obj_player.x, obj_player.y, x1  * CELL_SIZE + CELL_SIZE / 2, y1 * CELL_SIZE + CELL_SIZE / 2, x2 * CELL_SIZE + CELL_SIZE / 2, y2 * CELL_SIZE + CELL_SIZE / 2 - 2);
+	var player_in_room = point_in_rectangle(_obj_player.x, _obj_player.y, x1  * CELL_SIZE + CELL_SIZE / 2, y1 * CELL_SIZE + CELL_SIZE / 2, x2 * CELL_SIZE + CELL_SIZE / 2, y2 * CELL_SIZE + CELL_SIZE / 2 - 2);
 
 	if (player_in_room) {
 		doorClose();
@@ -35,6 +35,9 @@ else if(!enemy_cleared && battle_started)
 
 function doorClose()
 {
+	if instance_exists(obj_decoy){
+		instance_destroy(obj_decoy)
+	}
 	is_open = false;
 	for(var i = 0; i < array_length(enemies); i++)
 	{
@@ -64,4 +67,7 @@ function doorOpen()
 	}
 	dropItem();
 	instance_create_layer(x,y,"UI_Layer", obj_stage_clear_message);
+	if instance_exists(obj_decoy){
+		instance_destroy(obj_decoy)
+	}
 }

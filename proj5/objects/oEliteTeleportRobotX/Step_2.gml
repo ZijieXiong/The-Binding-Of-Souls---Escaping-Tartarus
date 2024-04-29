@@ -3,13 +3,13 @@
 var x_movement = x-xprevious;
 var y_movement = y-yprevious;
 
-if(obj_player.x < x)
+if(obj_player_main.x < x)
 {
 	image_xscale = -size_scale;
 	image_yscale = size_scale;
 }
 
-if(obj_player.x > x)
+if(obj_player_main.x > x)
 {
 	image_xscale = size_scale;
 	image_yscale = size_scale;

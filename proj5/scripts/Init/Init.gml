@@ -300,7 +300,7 @@ function dropUpgradeRoutes(){
 /// @description select a certain upgrade route
 /// @param route: integer
 function selectRoute(route){
-	var player = instance_find(obj_player, 0);
+	var player = instance_find(_obj_player, 0);
 	switch(route)
 	{
 		case 2:

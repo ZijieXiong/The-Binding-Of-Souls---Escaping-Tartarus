@@ -1,9 +1,9 @@
-if (place_meeting(x, y, [obj_player, obj_wall])) {
+if (place_meeting(x, y, [obj_player_main, obj_wall])) {
 	instance_destroy();
 }
 
 
-var _target_dir = point_direction(x, y, obj_player.x, obj_player.y);
+var _target_dir = point_direction(x, y, obj_player_main.x, obj_player_main.y);
 		
 var _angle_difference = angle_difference(_target_dir, direction);
 if (abs(_angle_difference) < 1) {

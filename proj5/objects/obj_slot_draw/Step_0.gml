@@ -2,7 +2,7 @@ if(global.spr_inventory[0] != -1){
 	var _spr =  global.spr_inventory[0]
 	var _obj =  global.obj_inventory[0]
 	if _spr == spr_missle_pickup{
-		var closest_enemy = instance_nearest(obj_player.x,obj_player.y,oEnemiesParent)
+		var closest_enemy = instance_nearest(_obj_player.x,_obj_player.y,oEnemiesParent)
 		if closest_enemy{
 			var enemy_width = closest_enemy.sprite_width
 			var ememy_hight = closest_enemy.sprite_height
@@ -19,7 +19,10 @@ if(global.spr_inventory[0] != -1){
 			alarm[0] = room_speed * 0.3
 	//		var _spr =  global.spr_inventory[0]
 	//		var _obj =  global.obj_inventory[0]
-			instance_create_layer(obj_player.x,obj_player.y,"Instances",_obj)
+			if _obj == obj_decoy and instance_exists(obj_decoy){
+				instance_destroy(obj_decoy)
+			}
+			instance_create_layer(_obj_player.x,_obj_player.y,"Instances",_obj)
 			global.spr_inventory[0] = -1
 			global.obj_inventory[0] = -1
 			audio_play_sound(itemUse, 0, false);

@@ -19,12 +19,12 @@ b_tree = new BTreeRoot(id);
 // --- 
 var _selector_root = new BTreeSelector();
 var _sequence_chase = new BTreeSequence();
-var _chase_in_range = new TaskInstanceInRange(obj_player, 500);
+var _chase_in_range = new TaskInstanceInRange(obj_player_main, 500);
 //var _chase_behave = new TaskChaseInstance(obj_player, 1.8, 400, 250);
 
-var _chase_behave = new TaskChaseInstanceNoPathfind(obj_player, 1.8, 400, 250);
+var _chase_behave = new TaskChaseInstanceNoPathfind(obj_player_main, 1.8, 400, 250);
 var _succeder = new BTreeSucceeder();
-var _spell_1 = new TaskSpell1(obj_player, 0.2*60);
+var _spell_1 = new TaskSpell1(obj_player_main, 0.2*60);
 
 
 
@@ -46,16 +46,16 @@ b_tree.ChildAdd(_selector_root);
 //_sequence_spell_2.ChildAdd(_spell_2);
 
 var _sequence_laser = new BTreeSequence();
-var _check_laser = new TaskCheckSpell(obj_player, 10);
+var _check_laser = new TaskCheckSpell(obj_player_main, 10);
 //var _load_laser = new TaskLoadLaser(obj_player, 1*60);
-var _shoot_laser = new TaskShootLaser(obj_player, 1*60, 5*60, 2, 0.2);
+var _shoot_laser = new TaskShootLaser(obj_player_main, 1*60, 5*60, 2, 0.2);
 
 _sequence_laser.ChildAdd(_check_laser);
 //_sequence_laser.ChildAdd(_load_laser);
 _sequence_laser.ChildAdd(_shoot_laser);
 
 var _sequence_missile = new BTreeSequence();
-var _check_missile = new TaskCheckSpell(obj_player, 3);
+var _check_missile = new TaskCheckSpell(obj_player_main, 3);
 //var _load_laser = new TaskLoadLaser(obj_player, 1*60);
 var _launch_missile = new TaskLaunchMissile(1, 1*60);
 
@@ -64,7 +64,7 @@ _sequence_missile.ChildAdd(_launch_missile);
 
 
 var _sequence_teleport = new BTreeSequence();
-var _check_teleport = new TaskCheckSpell(obj_player, 10);
+var _check_teleport = new TaskCheckSpell(obj_player_main, 10);
 //var _load_laser = new TaskLoadLaser(obj_player, 1*60);
 var _teleport = new TaskTeleport(1.5*60);
 

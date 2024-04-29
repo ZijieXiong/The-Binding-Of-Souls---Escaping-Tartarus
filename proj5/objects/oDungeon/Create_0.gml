@@ -390,13 +390,19 @@ GenerateNewDungeon = function() {
 	var centerY = (firstRoom.y1 + firstRoom.y2) / 2;
 	var playerInstance;
 	var playerLives;
-	if(instance_exists(obj_player)){
-		playerInstance = instance_find(obj_player, 0);
+	if(instance_exists(_obj_player)){
+		playerInstance = instance_find(_obj_player, 0);
 		playerInstance.x = centerX * CELL_SIZE;
 		playerInstance.y = centerY * CELL_SIZE;
 	}
 	else{
-		playerInstance = instance_create_layer(centerX * CELL_SIZE + (CELL_SIZE / 2), centerY * CELL_SIZE + (CELL_SIZE / 2), "Dungeon", obj_player);
+		playerInstance = instance_create_layer(centerX * CELL_SIZE + (CELL_SIZE / 2), centerY * CELL_SIZE + (CELL_SIZE / 2), "Dungeon", _obj_player);
+	}
+	var global_player;
+	if(instance_exists(obj_player_main)){
+		global_player = instance_find(obj_player_main,0)
+	}else{
+		global_player = instance_create_layer(centerX * CELL_SIZE + (CELL_SIZE / 2), centerY * CELL_SIZE + (CELL_SIZE / 2), "Dungeon", obj_player_main);
 	}
 	
 	//set healthBoost prob

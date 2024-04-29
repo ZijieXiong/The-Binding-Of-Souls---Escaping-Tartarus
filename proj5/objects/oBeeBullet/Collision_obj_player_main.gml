@@ -4,3 +4,4 @@ if(!global.playerFreeze)
 		TakeDamage();
 	}
 }
+instance_destroy()

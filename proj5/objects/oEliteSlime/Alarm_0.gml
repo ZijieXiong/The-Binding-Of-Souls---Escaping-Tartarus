@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 
-var _collision_res = collision_rectangle(x + -alert_radius, y + -alert_radius, x + alert_radius, y + alert_radius, obj_player, true, 1);
+var _collision_res = collision_rectangle(x + -alert_radius, y + -alert_radius, x + alert_radius, y + alert_radius, obj_player_main, true, 1);
 
 is_jump = true;
 sprite_index = spr_slime_jump;
@@ -20,12 +20,12 @@ do {
 	
 	
 	
-		var _distance = min(normal_max_jump_dist, point_distance(x, y, obj_player.x, obj_player.y));
+		var _distance = min(normal_max_jump_dist, point_distance(x, y, obj_player_main.x, obj_player_main.y));
 		if(jump_count>=3)
 		{
-			_distance = min(attack_max_jump_dist, point_distance(x, y, obj_player.x, obj_player.y));
+			_distance = min(attack_max_jump_dist, point_distance(x, y, obj_player_main.x, obj_player_main.y));
 		}
-		var _direction = point_direction(x, y, obj_player.x, obj_player.y);
+		var _direction = point_direction(x, y, obj_player_main.x, obj_player_main.y);
 		target_x = x + lengthdir_x(_distance, _direction);
 		target_y = y + lengthdir_y(_distance, _direction);
 	} else

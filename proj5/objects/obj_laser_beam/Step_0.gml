@@ -1,8 +1,8 @@
-x = obj_player.x + lengthdir_x(26, direction)
-y = obj_player.y + lengthdir_y(26, direction);
+x = obj_player_main.x + lengthdir_x(26, direction)
+y = obj_player_main.y + lengthdir_y(26, direction);
 
 
-direction = point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y)
+direction = point_direction(obj_player_main.x,obj_player_main.y,mouse_x,mouse_y)
 
 var max_length = 200
 
