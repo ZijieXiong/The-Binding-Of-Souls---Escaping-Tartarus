@@ -383,7 +383,7 @@ GenerateNewDungeon = function() {
 	
 	//Init player
 	var firstRoom = ds_list_find_value(roomList, 0);
-	show_debug_message(firstRoom)
+	//show_debug_message(firstRoom)
 	var centerX = (firstRoom.x1 + firstRoom.x2) / 2;
 	var centerY = (firstRoom.y1 + firstRoom.y2) / 2;
 	var playerInstance;
@@ -574,7 +574,7 @@ CreateRoom = function(_x1, _y1, _x2, _y2) {
 	currentRoom = new DungeonRoom(_x1, _y1, _x2, _y2);
 	ds_list_add(roomList, currentRoom);
 	array_push(global.global_room,[currentRoom,MAP_STATES.BLOCKED])
-	show_debug_message("end create" + string(550))
+	//show_debug_message("end create" + string(550))
 	// Fill the dungeon with a room
 	ds_grid_set_region(dungeon, _x1, _y1, _x2, _y2, CELL_TYPES.ROOM);
 	
@@ -698,7 +698,7 @@ else if(global.currLevel < global.tech_layer) {
 CreateHallway = function(_x1, _y1, _x2, _y2, isNorthSouth) {
 	// Fill the dungeon with a hallway
 
-
+	
 	ds_grid_set_region(dungeon, _x1, _y1, _x2, _y2, CELL_TYPES.HALLWAY);
 if(global.currLevel<global.pyramid_layer){
 	    if (isNorthSouth) {
@@ -732,6 +732,7 @@ if(global.currLevel<global.pyramid_layer){
 	        if (instanceRight != noone) instance_destroy(instanceRight);
 	        }
     } else {
+		//show_debug_message(_x1, _x2, _y1, _y2);
         for (var temp_x = _x1; temp_x <= _x2; temp_x++) {
 			 if (temp_x == _x1) {
              instance_create_layer((temp_x) * CELL_SIZE, (_y1 - 1) * CELL_SIZE, "Dungeon", obj_ground_wall_botleft);
@@ -749,18 +750,49 @@ if(global.currLevel<global.pyramid_layer){
             
         }
 		for (var temp_y = _y1; temp_y < _y2+1; temp_y++) {
-			var coverInstanceUp = instance_position(temp_x * CELL_SIZE, (_y1-1) * CELL_SIZE,  obj_wall);
+			/*
+			var coverInstanceUp = instance_position((_x1 - 1) * CELL_SIZE, temp_y * CELL_SIZE,  obj_wall);
             if (coverInstanceUp != noone) instance_destroy(coverInstanceUp);
 			
-			var coverInstanceDown = instance_position(temp_x * CELL_SIZE, (_y2 + 1) * CELL_SIZE,  obj_wall);
+			var coverInstanceDown = instance_position((_x2 + 1) * CELL_SIZE, temp_y * CELL_SIZE,  obj_wall);
             if (coverInstanceDown != noone) instance_destroy(coverInstanceDown);
-			
+			*/
 	        var instanceLeft = instance_position((_x1) * CELL_SIZE, temp_y * CELL_SIZE, obj_wall);
 	        if (instanceLeft != noone) instance_destroy(instanceLeft);
 
 	        var instanceRight = instance_position((_x2) * CELL_SIZE, temp_y * CELL_SIZE, obj_wall);
 	        if (instanceRight != noone) instance_destroy(instanceRight);
 	    }
+		var coverInstanceLeftUp = instance_position((_x1 - 1) * CELL_SIZE, _y1 * CELL_SIZE,  obj_wall);
+		var coverInstanceLeftDown = instance_position((_x1 - 1) * CELL_SIZE, _y2 * CELL_SIZE,  obj_wall);
+		show_debug_message(coverInstanceLeftDown)
+		show_debug_message(coverInstanceLeftUp);
+		if(coverInstanceLeftDown && !coverInstanceLeftUp)
+		{
+			show_debug_message("Left down touch wall")
+			instance_destroy(coverInstanceLeftDown);
+			instance_create_layer((_x1 - 1) * CELL_SIZE, (_y2) * CELL_SIZE, "Dungeon", obj_ground_wall_upright);
+			instance_create_layer((_x1 - 1) * CELL_SIZE, (_y2+1) * CELL_SIZE, "Dungeon", obj_ground_wall_botleft);
+		}
+		if(coverInstanceLeftUp && !coverInstanceLeftDown)
+		{
+			show_debug_message("Left up touch wall");
+		}
+		var coverInstanceRightUp = instance_position((_x2 + 1) * CELL_SIZE, _y1 * CELL_SIZE,  obj_wall);
+		var coverInstanceRightDown = instance_position((_x2 + 1) * CELL_SIZE, _y2 * CELL_SIZE,  obj_wall);
+		show_debug_message(coverInstanceRightDown)
+		show_debug_message(coverInstanceRightUp);
+		if(coverInstanceRightDown && !coverInstanceRightUp)
+		{
+			show_debug_message("Right down touch wall")
+			instance_destroy(coverInstanceRightDown);
+			instance_create_layer((_x2 + 1) * CELL_SIZE, (_y2) * CELL_SIZE, "Dungeon", obj_ground_wall_upleft);
+			instance_create_layer((_x2 + 1) * CELL_SIZE, (_y2+1) * CELL_SIZE, "Dungeon", obj_ground_wall_botright);
+		}
+		if(coverInstanceRightUp && !coverInstanceRightDown)
+		{
+			show_debug_message("Right up touch wall");
+		}
     }
 }
 //pyramid
@@ -813,11 +845,11 @@ else if (global.currLevel < global.tech_layer){
             
         }
 		for (var temp_y = _y1; temp_y < _y2+1; temp_y++) {
-			var coverInstanceUp = instance_position(temp_x * CELL_SIZE, (_y1-1) * CELL_SIZE,  obj_wall);
+			/*var coverInstanceUp = instance_position((_x1-1) * CELL_SIZE, temp_y * CELL_SIZE,  obj_wall);
             if (coverInstanceUp != noone) instance_destroy(coverInstanceUp);
 			
-			var coverInstanceDown = instance_position(temp_x * CELL_SIZE, (_y2 + 1) * CELL_SIZE,  obj_wall);
-            if (coverInstanceDown != noone) instance_destroy(coverInstanceDown);
+			var coverInstanceDown = instance_position((_x2+1) * CELL_SIZE, temp_y * CELL_SIZE,  obj_wall);
+            if (coverInstanceDown != noone) instance_destroy(coverInstanceDown);*/
 			
 	        var instanceLeft = instance_position((_x1) * CELL_SIZE, temp_y * CELL_SIZE, obj_wall);
 	        if (instanceLeft != noone) instance_destroy(instanceLeft);
@@ -825,6 +857,36 @@ else if (global.currLevel < global.tech_layer){
 	        var instanceRight = instance_position((_x2) * CELL_SIZE, temp_y * CELL_SIZE, obj_wall);
 	        if (instanceRight != noone) instance_destroy(instanceRight);
 	    }
+		var coverInstanceLeftUp = instance_position((_x1 - 1) * CELL_SIZE, _y1 * CELL_SIZE,  obj_wall);
+		var coverInstanceLeftDown = instance_position((_x1 - 1) * CELL_SIZE, _y2 * CELL_SIZE,  obj_wall);
+		show_debug_message(coverInstanceLeftDown)
+		show_debug_message(coverInstanceLeftUp);
+		if(coverInstanceLeftDown && !coverInstanceLeftUp)
+		{
+			show_debug_message("Left down touch wall")
+			instance_destroy(coverInstanceLeftDown);
+			instance_create_layer((_x1 - 1) * CELL_SIZE, (_y2) * CELL_SIZE, "Dungeon", obj_hallway_botleft);
+			//instance_create_layer((_x1 - 1) * CELL_SIZE, (_y2+1) * CELL_SIZE, "Dungeon", obj_wall_bottomleft);
+		}
+		if(coverInstanceLeftUp && !coverInstanceLeftDown)
+		{
+			show_debug_message("Left up touch wall");
+		}
+		var coverInstanceRightUp = instance_position((_x2 + 1) * CELL_SIZE, _y1 * CELL_SIZE,  obj_wall);
+		var coverInstanceRightDown = instance_position((_x2 + 1) * CELL_SIZE, _y2 * CELL_SIZE,  obj_wall);
+		show_debug_message(coverInstanceRightDown)
+		show_debug_message(coverInstanceRightUp);
+		if(coverInstanceRightDown && !coverInstanceRightUp)
+		{
+			show_debug_message("Right down touch wall")
+			instance_destroy(coverInstanceRightDown);
+			instance_create_layer((_x2 + 1) * CELL_SIZE, (_y2) * CELL_SIZE, "Dungeon", obj_hallway_botright);
+			//instance_create_layer((_x2 + 1) * CELL_SIZE, (_y2+1) * CELL_SIZE, "Dungeon", obj_wall_bottomright);
+		}
+		if(coverInstanceRightUp && !coverInstanceRightDown)
+		{
+			show_debug_message("Right up touch wall");
+		}
     }
 }//tech
 else{
@@ -876,18 +938,48 @@ else{
             
         }
 		for (var temp_y = _y1; temp_y < _y2+1; temp_y++) {
-			var coverInstanceUp = instance_position(temp_x * CELL_SIZE, (_y1-1) * CELL_SIZE, obj_wall);
+			/*var coverInstanceUp = instance_position(temp_x * CELL_SIZE, (_y1-1) * CELL_SIZE, obj_wall);
             if (coverInstanceUp != noone) instance_destroy(coverInstanceUp);
 			
 			var coverInstanceDown = instance_position(temp_x * CELL_SIZE, (_y2 + 1) * CELL_SIZE, obj_wall);
             if (coverInstanceDown != noone) instance_destroy(coverInstanceDown);
-			
+			*/
 	        var instanceLeft = instance_position((_x1) * CELL_SIZE, temp_y * CELL_SIZE, obj_wall);
 	        if (instanceLeft != noone) instance_destroy(instanceLeft);
 
 	        var instanceRight = instance_position((_x2) * CELL_SIZE, temp_y * CELL_SIZE, obj_wall);
 	        if (instanceRight != noone) instance_destroy(instanceRight);
 	    }
+		var coverInstanceLeftUp = instance_position((_x1 - 1) * CELL_SIZE, _y1 * CELL_SIZE,  obj_wall);
+		var coverInstanceLeftDown = instance_position((_x1 - 1) * CELL_SIZE, _y2 * CELL_SIZE,  obj_wall);
+		show_debug_message(coverInstanceLeftDown)
+		show_debug_message(coverInstanceLeftUp);
+		if(coverInstanceLeftDown && !coverInstanceLeftUp)
+		{
+			show_debug_message("Left down touch wall")
+			instance_destroy(coverInstanceLeftDown);
+			instance_create_layer((_x1 - 1) * CELL_SIZE, (_y2) * CELL_SIZE, "Dungeon", obj_tech_wall_upright);
+			//instance_create_layer((_x1 - 1) * CELL_SIZE, (_y2+1) * CELL_SIZE, "Dungeon", obj_tech_wall_botleft);
+		}
+		if(coverInstanceLeftUp && !coverInstanceLeftDown)
+		{
+			show_debug_message("Left up touch wall");
+		}
+		var coverInstanceRightUp = instance_position((_x2 + 1) * CELL_SIZE, _y1 * CELL_SIZE,  obj_wall);
+		var coverInstanceRightDown = instance_position((_x2 + 1) * CELL_SIZE, _y2 * CELL_SIZE,  obj_wall);
+		show_debug_message(coverInstanceRightDown)
+		show_debug_message(coverInstanceRightUp);
+		if(coverInstanceRightDown && !coverInstanceRightUp)
+		{
+			show_debug_message("Right down touch wall")
+			instance_destroy(coverInstanceRightDown);
+			instance_create_layer((_x2 + 1) * CELL_SIZE, (_y2) * CELL_SIZE, "Dungeon", obj_tech_wall_upleft);
+			//instance_create_layer((_x2 + 1) * CELL_SIZE, (_y2+1) * CELL_SIZE, "Dungeon", obj_tech_wall_botright);
+		}
+		if(coverInstanceRightUp && !coverInstanceRightDown)
+		{
+			show_debug_message("Right up touch wall");
+		}
     }
 }
 }
