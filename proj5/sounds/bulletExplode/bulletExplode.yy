@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"lightExplode",
+  "%Name":"bulletExplode",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,7 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":1.062971,
-  "name":"lightExplode",
+  "name":"bulletExplode",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"lightExplode.ogg",
+  "soundFile":"bulletExplode.ogg",
   "type":0,
   "volume":0.63,
 }
