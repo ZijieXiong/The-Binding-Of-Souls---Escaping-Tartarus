@@ -199,7 +199,7 @@ if(revive_animation_started && image_index >= sprite_get_number(sprite_index) - 
 	revive_animation_started = false;
 	_hurting = false;
 	ChangeWeapon(current_weapon_arg);
-	sprite_index = spr_fake_player_idle;
+	sprite_index = spr_player_idle;
 	image_index = 0;
 	image_speed = 1;
 	
@@ -258,7 +258,7 @@ if instance_exists(oEnemiesParent){
 }
 
 if keyboard_check(ord("4")){
-	pickup_item(spr_decoy_1,obj_decoy)
+	pickup_item(spr_fake_player_pickup,obj_decoy)
 }
 
 if keyboard_check(ord("5")){

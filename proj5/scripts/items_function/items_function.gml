@@ -5,7 +5,7 @@ ds_map_add(global.item_pool, "obj_chest", 1);
 ds_map_add(global.item_pool, "noone", 20);
 ds_map_add(global.item_pool, "oHeartBooster", 50);
 ds_map_add(global.item_pool, "oShieldPicker", 10);
-ds_map_add(global.item_pool, "o_decoy_pickup", 10);
+ds_map_add(global.item_pool, "o_decoy_pickup", 10000);
 ds_map_add(global.item_pool, "obj_missile_pickup", 10);
 
 global.items = ["oShieldPicker", "obj_missile_pickup","o_decoy_pickup"];
