@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_decoy_1",
-    "path":"sprites/spr_decoy_1/spr_decoy_1.yy",
+    "name":"spr_fake_player_pickup",
+    "path":"sprites/spr_fake_player_pickup/spr_fake_player_pickup.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -7,4 +7,4 @@ draw_set_valign(fa_middle);
 
 
 //draw_text(x,(y-20), "Missile");
-draw_text_transformed(x,(y-15), "Decoy",0.5,0.5,image_angle);
+draw_text_transformed(x,(y-20), "Decoy",0.5,0.5,image_angle);
