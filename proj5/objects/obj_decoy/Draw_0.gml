@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-draw_sprite_ext(sprite_index,0,x,y,0.8,0.8,0,c_white,1)
+draw_self()
 
 
 if( _flash > 0 )
@@ -11,7 +11,7 @@ if( _flash > 0 )
 	var shd_alpha = shader_get_uniform(shd_flash,"_alpha");
 	shader_set_uniform_f(shd_alpha, _flash);
 	
-	draw_sprite_ext(sprite_index,0,x,y,0.8,0.8,0,c_white,1)
+	draw_self()
 	
 	
 	shader_reset();
