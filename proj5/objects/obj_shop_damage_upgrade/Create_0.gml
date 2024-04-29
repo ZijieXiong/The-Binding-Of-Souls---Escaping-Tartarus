@@ -15,6 +15,7 @@ function upgrade()
 		global.permanent_damage_upgrade += 1;
 		record_upgrade_permanent_accum("Damage +", 0.25);
 		show_debug_message("purchase success");
+		price += 5;
 	}
 	else
 	{

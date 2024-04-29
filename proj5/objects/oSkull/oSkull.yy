@@ -12,10 +12,13 @@
   "name":"oSkull",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemies",
-    "path":"folders/Objects/Enemies.yy",
+    "name":"Boss",
+    "path":"folders/Objects/Enemies/Boss.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oEliteEnemies",
+    "path":"objects/oEliteEnemies/oEliteEnemies.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

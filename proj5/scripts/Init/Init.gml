@@ -118,6 +118,7 @@ global.upgrade_permanent_accum = ds_map_create();
 global.upgrade_permanent_once = ds_list_create();
 
 global.permanent_damage_upgrade = 0;
+global.permanent_speed_upgrade = 0;
 
 /// @description reset all parameters to original value
 function initParas()
@@ -125,7 +126,7 @@ function initParas()
 	global.upgradeNum = 2;
 	
 	global.dmgMultiplier = 1 + global.permanent_damage_upgrade * 0.25;
-	global.playerSpeedMultiplier = 1;
+	global.playerSpeedMultiplier = 1 + global.permanent_speed_upgrade * 0.1;
 	global.shootingIntervalMultiplier = 1;
 	global.revive = 0;
 	

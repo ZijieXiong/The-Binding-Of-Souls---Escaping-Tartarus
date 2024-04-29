@@ -41,6 +41,7 @@ switch (current_state) {
 				{
 					begin_first_walk(x,y, _player_x, _player_y);
 				}
+				image_angle = 90+point_direction(x, y, obj_player.x, obj_player.y);
 			} else
 			{
 				//_distance = point_distance(x+right_pos_x, y+right_pos_y, _player_x, _player_y);
@@ -49,6 +50,7 @@ switch (current_state) {
 				{
 					begin_first_walk(x,y, _player_x, _player_y);
 				}
+				image_angle = -90+point_direction(x, y, obj_player.x, obj_player.y);
 			}
 			
 			//alarm[0] = first_walk_time;
@@ -174,6 +176,19 @@ switch (current_state) {
 			
 			if (abs(_angle_difference) < 1) {
 			    // Close enough to directly set the direction
+				
+				/*
+				if(just_spinned) //after spinning, turn before cast spell 
+				{
+					just_spinned = false;
+					speed = 0;
+					current_state = SKULL_STATE.PRESPELL_A;
+					idle_timer_flag = false;
+					alarm[0] = 1 * 60;
+					break;
+				}
+				*/
+				
 			    image_angle = _target_dir;
 				current_state = SKULL_STATE.POSTCHASE;
 				idle_timer_flag = false;
@@ -186,6 +201,14 @@ switch (current_state) {
 					idle_timer_flag = false;
 					alarm[0] = 5 * 60;
 					speed = spin_speed;
+					with(left_frail)
+					{	
+						begin_bounces(0.6*60, 1.2*60);
+					}
+					with(right_frail)
+					{	
+						begin_bounces(1,1.2*60);
+					}
 				}
 				
 			} 
@@ -201,18 +224,65 @@ switch (current_state) {
 			_y = _coord[1];
 			with(left_frail)
 			{
-				x = _x;
-				y = _y;
+				logic_x = _x;
+				logic_y = _y;
 			}
 			_coord = frail_reset(false);
 			_x = _coord[0];
 			_y = _coord[1];
 			with(right_frail)
 			{
-				x = _x;
-				y = _y;
+				logic_x = _x;
+				logic_y = _y;
 			}
 			
+			
+			if(idle_timer_flag)
+			{
+				
+				left_frail.stop_bounce = true;
+				right_frail.stop_bounce = true;
+				
+				/*
+				current_state = SKULL_STATE.TURN;
+				idle_timer_flag = false;
+				just_spinned = true;
+				alarm[0]=-1;*/
+				//cast_spell_A(2*60, 0.5*60);
+				/*
+				speed = 0;
+				current_state = SKULL_STATE.IDLE;
+				idle_timer_flag = false;
+				alarm[0] = 1 * 60;
+				*/
+				speed = 0;
+				current_state = SKULL_STATE.PRESPELL_A;
+				idle_timer_flag = false;
+				alarm[0] = 1 * 60;
+			}
+		break;
+		
+		case SKULL_STATE.PRESPELL_A:
+			var _target_dir = point_direction(x, y, obj_player.x, obj_player.y);
+		
+			var _angle_difference = angle_difference(_target_dir, image_angle);
+			
+			// Rotate towards the target_direction by turn_speed
+			if (_angle_difference > 0) {
+				image_angle += 5;
+			} else {
+				image_angle -= 5;
+			}
+			
+			
+			if (abs(_angle_difference) < 1 && idle_timer_flag) {
+				cast_spell_A(2*60, 0.5*60);
+			}
+			
+		break;
+			
+		
+		case SKULL_STATE.SPELL_A:
 			
 			if(idle_timer_flag)
 			{
@@ -244,8 +314,9 @@ if(_health <= 0)
 }
 
 function die(){
-	instance_destroy(left_frail);
-	instance_destroy(right_frail);
+	with(left_frail){die();}
+	with(right_frail){die();}
+	//instance_destroy(left_frail);
+	//instance_destroy(right_frail);
 	instance_destroy();
 }
-
