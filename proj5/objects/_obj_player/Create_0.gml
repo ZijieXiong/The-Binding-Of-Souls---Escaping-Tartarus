@@ -76,8 +76,8 @@ function TakeDamage(){
 			}
 			var _hurt_total_frames = sprite_get_number(spr_player_hurt)
 			var _hurt_fps = _hurt_total_frames / (invulnerable_time_after_damage);
-			show_debug_message(_hurt_fps)
-			sprite_set_speed(spr_player_hurt, _hurt_fps, spritespeed_framespersecond)
+			//hit_effect_par(spr_blood2,90)
+			instance_create_depth(x,y,depth-1,obj_blood)
 			_hurting = true
 			playerLives -= 1;
 			audio_play_sound(hitHurt, 0, false);

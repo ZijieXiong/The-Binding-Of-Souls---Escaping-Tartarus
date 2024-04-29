@@ -15,7 +15,8 @@ if(ds_list_find_index(hitEnemies, enemyInstance) == -1){
 			_flash = 1;
 			_health -= dmg;
 			audio_play_sound(enemyHurt, 0, false);
-			hit_effect(x-lengthdir_x(5,other.direction),y-lengthdir_y(5,other.direction),other.damage);
+			var _dir = point_direction(x,y,other.x,other.y)
+			hit_effect(x,y,other.damage,_dir);
 		}
 	}
 
