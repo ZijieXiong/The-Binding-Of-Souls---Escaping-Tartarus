@@ -14,7 +14,7 @@ if(sprite_index == spr_player_hurt) && (image_index >= (sprite_get_number(sprite
 if(!global.playerFreeze && !global.globalFreeze)
 {
 	
-	if !_hurting sprite_index=spr_player_idle;
+	if !_hurting sprite_index=spr_fake_player_idle;
 	if (keyboard_check(ord("W"))) {
 		vy -= moveSpeed;
 		if !_hurting sprite_index=spr_player_run;
@@ -199,7 +199,7 @@ if(revive_animation_started && image_index >= sprite_get_number(sprite_index) - 
 	revive_animation_started = false;
 	_hurting = false;
 	ChangeWeapon(current_weapon_arg);
-	sprite_index = spr_player_idle;
+	sprite_index = spr_fake_player_idle;
 	image_index = 0;
 	image_speed = 1;
 	

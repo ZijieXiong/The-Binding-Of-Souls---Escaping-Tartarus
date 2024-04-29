@@ -783,7 +783,7 @@ else if (global.currLevel < global.tech_layer){
             
         }
 		
-		for (var temp_x = _x1-1; temp_x < _x2+1; temp_x++) {
+		for (var temp_x = _x1; temp_x < _x2+1; temp_x++) {
 			// Check and remove wall covers or walls at the entrance to the hallway
             var coverInstanceUp = instance_position(temp_x * CELL_SIZE, (_y1 -1) * CELL_SIZE,  obj_wall);
             if (coverInstanceUp != noone) instance_destroy(coverInstanceUp);
@@ -846,7 +846,7 @@ else{
             
         }
 		
-		for (var temp_x = _x1-1; temp_x < _x2+1; temp_x++) {
+		for (var temp_x = _x1; temp_x < _x2+1; temp_x++) {
 			// Check and remove wall covers or walls at the entrance to the hallway
             var coverInstanceUp = instance_position(temp_x * CELL_SIZE, (_y1 -1) * CELL_SIZE,  obj_wall);
             if (coverInstanceUp != noone) instance_destroy(coverInstanceUp);
