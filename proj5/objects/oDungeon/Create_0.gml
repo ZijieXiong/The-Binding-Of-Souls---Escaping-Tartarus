@@ -1055,8 +1055,8 @@ CreateEnemies = function(_x1,_y1,_x2,_y2, hazards,_room_obj){
 		}
 		//var enemyType = oEliteMummy;
 		else if (global.currLevel < global.tech_layer) {
-			enemyType = choose(oMummy, oSkullShooter);
-			//enemyType = choose(oAnubis, oMummy, oSkullShooter);
+			//enemyType = choose(oMummy, oSkullShooter);
+			enemyType = choose(oAnubis, oMummy, oSkullShooter);
 		}
 		else{
 			enemyType = choose(oGarbageBot, oTurret, oTeleportRobot);
