@@ -14,3 +14,4 @@ function hit_effect_par(_spr,_dir,_color1,_color2,_life1,_life2, _burst){
 	instance_effect.set_timer(120);
 	instance_effect.burst(_burst);
 }
+

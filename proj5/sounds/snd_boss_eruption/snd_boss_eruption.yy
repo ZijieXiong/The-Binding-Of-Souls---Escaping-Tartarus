@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_boss_eruption",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":4.125896,
+  "name":"snd_boss_eruption",
+  "parent":{
+    "name":"SFX_boss",
+    "path":"folders/Sounds/SFX_boss.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_boss_eruption.ogg",
+  "type":0,
+  "volume":0.8,
+}

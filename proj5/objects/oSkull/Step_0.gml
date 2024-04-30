@@ -41,7 +41,7 @@ switch (current_state) {
 				{
 					begin_first_walk(x,y, _player_x, _player_y);
 				}
-				image_angle = 90+point_direction(x, y, obj_player.x, obj_player.y);
+				image_angle = 90+point_direction(x, y, _player_x, _player_y);
 			} else
 			{
 				//_distance = point_distance(x+right_pos_x, y+right_pos_y, _player_x, _player_y);
@@ -50,7 +50,7 @@ switch (current_state) {
 				{
 					begin_first_walk(x,y, _player_x, _player_y);
 				}
-				image_angle = -90+point_direction(x, y, obj_player.x, obj_player.y);
+				image_angle = -90+point_direction(x, y, _player_x, _player_y);
 			}
 			
 			//alarm[0] = first_walk_time;
@@ -263,7 +263,7 @@ switch (current_state) {
 		break;
 		
 		case SKULL_STATE.PRESPELL_A:
-			var _target_dir = point_direction(x, y, obj_player.x, obj_player.y);
+			var _target_dir = point_direction(x, y, _player_x, _player_y);
 		
 			var _angle_difference = angle_difference(_target_dir, image_angle);
 			

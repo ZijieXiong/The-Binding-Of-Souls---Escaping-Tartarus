@@ -44,6 +44,9 @@ fire_pit_radius = 150;
 
 stop_bounce = false;
 
+fire_pit_erruption_delay_time = 60;
+
+
 begin_first_walk = function(_sx, _sy, _tx, _ty)
 {
 		start_x = _sx;
@@ -64,6 +67,7 @@ begin_second_walk = function(_sx, _sy, _tx, _ty)
 		
 		count = 0;
 		current_state = FRAIL_STATE.SECOND_WALK;
+		audio_play_sound(snd_boss_movement, 0, false);
 }
 
 begin_bounce = function(_bounce_time=2*60)
@@ -127,4 +131,31 @@ activate_all_firepit = function() {
 	    }
 	}
 	ds_list_destroy(_list);
+}
+
+shoot = function(_is_cross) {
+	
+	for(var _dir = 0; _dir <= 360; _dir += 90;)
+	{
+		var _bullet = instance_create_layer(x, y, "Instances", oBossFire);
+		_bullet.speed = 3  ;
+		
+		_bullet.direction= _is_cross ? _dir+45 : _dir;
+		_bullet.image_angle = _bullet.direction;
+	}
+	
+}
+
+function play_hit_part_effect(_spr,_dir,_color1,_color2,_life1,_life2, _burst){
+	var instance_effect = instance_create_depth(x,y,depth,obj_particle);
+	instance_effect.set_size(0.5,1);
+	instance_effect.set_sprite(_spr,false,false,true);
+	instance_effect.set_orientation(0,360);
+	if _color1 	instance_effect.set_color_mix(_color1,_color2);
+	instance_effect.set_alpha(random_range(0.6,1),0);
+	instance_effect.set_direction(_dir-90,_dir+90);
+	instance_effect.set_speed(5,10,-1);
+	instance_effect.set_life(_life1,_life2);
+	instance_effect.set_timer(120);
+	instance_effect.burst(_burst);
 }

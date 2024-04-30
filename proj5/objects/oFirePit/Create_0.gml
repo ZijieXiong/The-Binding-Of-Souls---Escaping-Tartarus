@@ -7,7 +7,7 @@ enum PIT_STATE {
 	BURST
 }
 
-//depth = obj_player.depth+1;
+depth = _obj_player.depth+1;
 
 current_state = PIT_STATE.IDLE;
 
@@ -23,6 +23,8 @@ fire_particle = part_system_create(firePitParticle);
 radius_x = 10;
 radius_y = 6;
 
+is_mute = true;
+
 part_emitter_region(ember_particle, 0,  x - radius_x, x +radius_x, y - radius_y, y + radius_y, ps_shape_ellipse, ps_distr_invgaussian);
 part_emitter_enable(ember_particle, 0, true);
 
@@ -36,10 +38,12 @@ soft_burst = function() {
 	if(current_state == PIT_STATE.IDLE) {
 		current_state = PIT_STATE.PREBURST;
 		alarm[0] = preburst_time;
+		is_mute = false;
 	}
 }
 
 hard_burst = function() {
 	current_state = PIT_STATE.PREBURST;
 	alarm[0] = preburst_time;
+	is_mute = true;
 }
