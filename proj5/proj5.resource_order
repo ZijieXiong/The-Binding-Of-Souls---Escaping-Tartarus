@@ -1,8 +1,8 @@
 {
   "FolderOrderSettings":[
     {"name":"Boss","order":1,"path":"folders/Objects/Enemies/Boss.yy",},
-    {"name":"boss","order":2,"path":"folders/Sprites/enemy/boss.yy",},
     {"name":"Shop","order":7,"path":"folders/Objects/Shop.yy",},
+    {"name":"boss","order":2,"path":"folders/Sprites/enemy/boss.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"obj_rifle_justforview","order":2,"path":"objects/obj_rifle_justforview/obj_rifle_justforview.yy",},
