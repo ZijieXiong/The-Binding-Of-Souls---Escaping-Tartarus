@@ -1,5 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-explode();
-audio_play_sound(bulletExplode, 0, false);
+audio_sound_gain(snd_boss, 0, 2000);
+audio_stop_all();

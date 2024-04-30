@@ -17,6 +17,7 @@ if _found_player{
 if(_health <= 0)
 {
 	die();
+	audio_play_sound(enemyDie, 0, false);
 }
 
 function die(){
