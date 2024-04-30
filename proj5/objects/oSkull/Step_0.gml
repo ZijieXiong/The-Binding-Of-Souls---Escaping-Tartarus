@@ -318,6 +318,10 @@ function die(){
 	with(right_frail){die();}
 	//instance_destroy(left_frail);
 	//instance_destroy(right_frail);
-	instance_destroy();
+	global.game_pass = true;
 	audio_play_sound(enemyDie, 0, false);
+	show_debug_message("boss die")
+	room_goto(rmGameOver)
+	instance_destroy();
+
 }

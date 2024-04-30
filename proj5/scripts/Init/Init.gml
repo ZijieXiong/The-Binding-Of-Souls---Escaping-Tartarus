@@ -160,6 +160,8 @@ function initParas()
 	
 	global.global_room = []
 
+	global.game_pass = false
+
 	initUpgradePool();
 	ds_map_copy(global.upgrade_picked_accum, global.upgrade_permanent_accum);
 	ds_list_copy(global.upgrade_picked_once, global.upgrade_permanent_once);
