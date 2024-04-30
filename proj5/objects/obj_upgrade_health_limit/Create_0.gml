@@ -2,8 +2,8 @@
 // You can write your code in this editor
 function applyUpgrade()
 {
-	obj_player.healthLimit += 1;
-	obj_player.Heal(1);
+	_obj_player.healthLimit += 1;
+	_obj_player.Heal(1);
 	show_debug_message("Upgrade applied: Increases Health Limit");
 	record_upgrade_accum("Health Limit +", 1);
 }

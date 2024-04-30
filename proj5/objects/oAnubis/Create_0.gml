@@ -73,7 +73,7 @@ start_chase_player = function()
 	sprite_index = spr_anubis_walk;
 	image_index = 0;
 	//speed = chase_speed;
-	var _found_player = mp_grid_path(global.mp_grid,path,x,y,obj_player.x,obj_player.y,choose(0,1));
+	var _found_player = mp_grid_path(global.mp_grid,path,x,y,obj_player_main.x,obj_player_main.y,choose(0,1));
 	if _found_player{
 		path_start(path,chase_speed,path_action_stop,false);
 	}
@@ -105,7 +105,7 @@ fireball_attack = function()
 	var _bullet = instance_create_layer(x, y, "Instances", oMummyLightning);
 	_bullet.speed = 3  ;
 		
-	_bullet.direction= point_direction(x, y, obj_player.x, obj_player.y);
+	_bullet.direction= point_direction(x, y, obj_player_main.x, obj_player_main.y);
 	_bullet.image_angle = _bullet.direction;
 }
 
@@ -115,7 +115,7 @@ get_new_spawn_location = function(_min_dist, _max_dist)
 	var _y = 0;
 	do {
 	var _distance = random_range(_min_dist, _max_dist);
-	var _direction = point_direction(x, y, obj_player.x, obj_player.y) + random(180);
+	var _direction = point_direction(x, y, obj_player_main.x, obj_player_main.y) + random(180);
 	_x = x + lengthdir_x(_distance, _direction);
 	_y = y + lengthdir_y(_distance, _direction);
 	} until (!place_meeting(_x, _y, obj_wall)) ;

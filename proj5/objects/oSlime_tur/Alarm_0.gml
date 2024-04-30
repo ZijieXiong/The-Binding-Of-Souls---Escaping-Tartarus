@@ -1,7 +1,7 @@
 /// @description Alarm to jump
 // You can write your code in this editor
 
-var _collision_res = collision_rectangle(x + -alert_radius, y + -alert_radius, x + alert_radius, y + alert_radius, obj_player, true, 1);
+var _collision_res = collision_rectangle(x + -alert_radius, y + -alert_radius, x + alert_radius, y + alert_radius, obj_player_main, true, 1);
 /*
 if (!global.tutorial_started_1) {
     // If the tutorial hasn't started, prevent any further code execution in this event
@@ -19,11 +19,11 @@ if(_collision_res)
 	var _distance = random_range(-5, 15);
 
 	// Generate a random direction (0 to 360 degrees)
-	var _direction = point_direction(x, y, obj_player.x, obj_player.y);
+	var _direction = point_direction(x, y, obj_player_main.x, obj_player_main.y);
 
 	// Calculate the new position
-	target_x = obj_player.x + lengthdir_x(_distance, _direction);
-	target_y =obj_player.y + lengthdir_y(_distance, _direction);
+	target_x = obj_player_main.x + lengthdir_x(_distance, _direction);
+	target_y =obj_player_main.y + lengthdir_y(_distance, _direction);
 	
 } else
 {

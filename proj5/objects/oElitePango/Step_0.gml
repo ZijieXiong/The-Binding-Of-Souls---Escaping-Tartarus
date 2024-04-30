@@ -71,8 +71,9 @@ switch (current_state) {
 			idle_timer_flag = false;
 			sprite_index = spr_rolling;
 			speed = roll_speed;
-			direction = point_direction(x, y, obj_player.x, obj_player.y);
+			direction = point_direction(x, y, obj_player_main.x, obj_player_main.y);
 			is_hit = false;
+			audio_play_sound(pangoRoll, 0, true);
 		}
         
         break;
@@ -90,6 +91,7 @@ switch (current_state) {
 			image_index = 0;
 			speed = 0;
 			alarm[0] = 60 * stoproll_time;
+			audio_stop_sound(pangoRoll);
 			
 		}
         break;
@@ -105,7 +107,7 @@ switch (current_state) {
 			speed = 0;
 			alarm[0] = 10;
 			//look_at_player(obj_player.x);
-			if(x-obj_player.x >0)
+			if(x-obj_player_main.x >0)
 			{
 				image_xscale = -size_scale;
 			} else {
@@ -124,13 +126,13 @@ switch (current_state) {
 			image_index = 0;
 			speed = 0;
 			alarm[0] = 60 * preroll_time;
-			direction = point_direction(x, y, obj_player.x, obj_player.y);
+			direction = point_direction(x, y, obj_player_main.x, obj_player_main.y);
 		}
 		break;
 }
 
 
-var _player_distance = point_distance(x, y, obj_player.x, obj_player.y);
+var _player_distance = point_distance(x, y, obj_player_main.x, obj_player_main.y);
 if (_player_distance < 200 && current_state == EPANGO_STATE.IDLE) {
 	is_enraged = true;
 }
@@ -146,10 +148,10 @@ if(is_enraged && !is_alerted)
 	image_index = 0;
 	speed = 0;
 	alarm[0] = 60*preroll_time;
-	direction = point_direction(x, y, obj_player.x, obj_player.y);
+	direction = point_direction(x, y, obj_player_main.x, obj_player_main.y);
 	
 	//look_at_player(obj_player.x);
-	if(x-obj_player.x >0)
+	if(x-obj_player_main.x >0)
 	{
 		image_xscale = -size_scale;
 	} else {

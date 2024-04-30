@@ -10,8 +10,8 @@ b_tree = new BTreeRoot(id);
 // --- 
 var _selector_root = new BTreeSelector();
 var _sequence_chase = new BTreeSequence();
-var _chase_in_range = new TaskInstanceInRange(obj_player, 100);
-var _chase_behave = new TaskChaseInstance(obj_player, 2.5, 400, 64);
+var _chase_in_range = new TaskInstanceInRange(obj_player_main, 100);
+var _chase_behave = new TaskChaseInstance(obj_player_main, 2.5, 400, 64);
 //var _succeder = new BTreeSucceeder();
 //var _hit = new TaskMeleeHitTarget(o_mouse_follower, 1.5);
 var _patrol = new TaskPatrolSimple(1, 2);

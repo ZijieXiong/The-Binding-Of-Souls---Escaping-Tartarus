@@ -7,6 +7,7 @@ with(other){
 	show_debug_message(_health)
 	_health -= other.damage * global.dmgMultiplier;
 	audio_play_sound(enemyHurt, 0, false);
-	hit_effect();
+	var _dir = point_direction(x,y,other.x,other.y)
+	hit_effect(x,y,other.damage,_dir);
 }
 instance_destroy();

@@ -22,7 +22,7 @@ switch (current_state) {
 				direction = point_direction(x, y, target_x, target_y);
 			}
 		} else {
-			var _collision_res = collision_rectangle(x -fight_radius, y -fight_radius, x + fight_radius, y + fight_radius, obj_player, true, 1);
+			var _collision_res = collision_rectangle(x -fight_radius, y -fight_radius, x + fight_radius, y + fight_radius, obj_player_main, true, 1);
 			
 			if(fireball_spell_ready)
 			{
@@ -77,12 +77,12 @@ switch (current_state) {
 		show_debug_message("Anubis chase");
 		//direction = point_direction(x, y, obj_player.x, obj_player.y);
 		
-		var _found_player = mp_grid_path(global.mp_grid,path,x,y,obj_player.x,obj_player.y,choose(0,1))
+		var _found_player = mp_grid_path(global.mp_grid,path,x,y,obj_player_main.x,obj_player_main.y,choose(0,1))
 		if _found_player{
 			path_start(path,chase_speed,path_action_stop,false)
 		}
 		
-		var _collision_res = collision_rectangle(x -fight_radius, y -fight_radius, x + fight_radius, y + fight_radius, obj_player, true, 1);
+		var _collision_res = collision_rectangle(x -fight_radius, y -fight_radius, x + fight_radius, y + fight_radius, obj_player_main, true, 1);
 		
 		if(_collision_res)
 		{	
@@ -131,7 +131,7 @@ switch (current_state) {
 }
 
 
-var _player_distance = point_distance(x, y, obj_player.x, obj_player.y);
+var _player_distance = point_distance(x, y, obj_player_main.x, obj_player_main.y);
 if (_player_distance < alert_radius && !is_alerted) {
 	start_chase_player();
 	//alarm[0] = 60*preroll_time;

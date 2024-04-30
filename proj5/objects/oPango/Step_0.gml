@@ -71,7 +71,7 @@ switch (current_state) {
 			sprite_index = spr_rolling;
 			speed = roll_speed;
 			alarm[0] = 60 * roll_time;
-			direction = point_direction(x, y, obj_player.x, obj_player.y);
+			direction = point_direction(x, y, obj_player_main.x, obj_player_main.y);
 			
 		}
         
@@ -80,7 +80,7 @@ switch (current_state) {
     case PANGO_STATE.ROLL:
         // Execute rolling behavior towards the player
         
-		var _target_dir = point_direction(x, y, obj_player.x, obj_player.y);
+		var _target_dir = point_direction(x, y, obj_player_main.x, obj_player_main.y);
 		
 		var _angle_difference = angle_difference(_target_dir, direction);
 		if (abs(_angle_difference) < 1) {
@@ -118,7 +118,7 @@ switch (current_state) {
 			speed = 0;
 			alarm[0] = 60 * rest_time;
 			//look_at_player(obj_player.x);
-			if(x-obj_player.x >0)
+			if(x-obj_player_main.x >0)
 			{
 				image_xscale = -size_scale;
 			} else {
@@ -137,13 +137,13 @@ switch (current_state) {
 			image_index = 0;
 			speed = 0;
 			alarm[0] = 60 * preroll_time;
-			direction = point_direction(x, y, obj_player.x, obj_player.y);
+			direction = point_direction(x, y, obj_player_main.x, obj_player_main.y);
 		}
 		break;
 }
 
 
-var _player_distance = point_distance(x, y, obj_player.x, obj_player.y);
+var _player_distance = point_distance(x, y, obj_player_main.x, obj_player_main.y);
 if (_player_distance < 300 && current_state == PANGO_STATE.IDLE) {
     current_state = PANGO_STATE.PREROLL;
 	idle_timer_flag = false;
@@ -151,10 +151,10 @@ if (_player_distance < 300 && current_state == PANGO_STATE.IDLE) {
 	image_index = 0;
 	speed = 0;
 	alarm[0] = 60*preroll_time;
-	direction = point_direction(x, y, obj_player.x, obj_player.y);
+	direction = point_direction(x, y, obj_player_main.x, obj_player_main.y);
 	
 	//look_at_player(obj_player.x);
-	if(x-obj_player.x >0)
+	if(x-obj_player_main.x >0)
 	{
 		image_xscale = -size_scale;
 	} else {

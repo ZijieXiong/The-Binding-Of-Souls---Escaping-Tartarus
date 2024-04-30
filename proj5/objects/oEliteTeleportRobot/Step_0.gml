@@ -12,7 +12,7 @@ if(sprite_index == spr_teleport_attack || sprite_index == spr_teleport_in) && (i
 	sprite_index = spr_teleport_idle
 }
 teleport_timer --
-var dir = sign(obj_player.x - x)
+var dir = sign(obj_player_main.x - x)
 _facing = dir
 
 if (teleport_timer <= 0 and (sprite_index == spr_teleport_idle or sprite_index == spr_teleport_attack)){

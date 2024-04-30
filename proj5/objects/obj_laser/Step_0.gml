@@ -1,11 +1,11 @@
-x = obj_player.x;
-y = obj_player.y;
+x = obj_player_main.x;
+y = obj_player_main.y;
 direction = point_direction(x,y,mouse_x,mouse_y);
 
 if (direction > 90) && (direction < 270) image_yscale = -1; else image_yscale = 1;
 
 image_angle = direction;
-depth = obj_player.depth-1;
+depth = obj_player_main.depth-1;
 
 if mouse_check_button(mb_left){
 	if (current_duration < max_duration) && (current_overheat == -1) {

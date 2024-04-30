@@ -3,7 +3,6 @@
   "%Name":"oSlimeBullet",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
@@ -16,7 +15,10 @@
     "name":"Ground",
     "path":"folders/Objects/Enemies/Ground.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oEnemBullet",
+    "path":"objects/oEnemBullet/oEnemBullet.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

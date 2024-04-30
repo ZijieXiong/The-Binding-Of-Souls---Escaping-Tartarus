@@ -14,5 +14,7 @@ if(ds_list_find_index(hitEnemies, enemyInstance) == -1){
 	with(other){
 		_flash = 1;
 		_health -= dmg;
+		var _dir = point_direction(x,y,other.x,other.y)
+		hit_effect(x,y,other.damage,_dir);
 	}
 }

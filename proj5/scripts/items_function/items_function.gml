@@ -5,20 +5,23 @@ ds_map_add(global.item_pool, "obj_chest", 1);
 ds_map_add(global.item_pool, "noone", 20);
 ds_map_add(global.item_pool, "oHeartBooster", 50);
 ds_map_add(global.item_pool, "oShieldPicker", 10);
+ds_map_add(global.item_pool, "o_decoy_pickup", 10000);
 ds_map_add(global.item_pool, "obj_missile_pickup", 10);
 
-global.items = ["oShieldPicker", "obj_missile_pickup"];
+global.items = ["oShieldPicker", "obj_missile_pickup","o_decoy_pickup"];
 
 global.elite_item_pool = ds_map_create();
 ds_map_add(global.elite_item_pool, "obj_chest", 20);
 ds_map_add(global.elite_item_pool, "oShieldPicker", 10);
 ds_map_add(global.elite_item_pool, "obj_missile_pickup", 10);
+ds_map_add(global.elite_item_pool, "o_decoy_pickup", 10);
 
 
 function pickup_item(_spr,_obj){
-	global.item_amount += 1;
+
 	for(i = 0;i < global.max_items;i++){
 		if(global.spr_inventory[i] == -1){
+			global.item_amount += 1;
 			global.spr_inventory[i] = _spr
 			global.obj_inventory[i] = _obj
 			return(1);

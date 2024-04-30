@@ -13,8 +13,8 @@ gwidth = lerp(gwidth,display_get_gui_width() - max_size_x,0.1)
 gheight = lerp(gheight,display_get_gui_height() - max_size_y,0.1)
 spacing = lerp(spacing,4,0.1)
 
-location_x = obj_player.x
-location_y = obj_player.y
+location_x = obj_player_main.x
+location_y = obj_player_main.y
 global.minimap[location_x,location_y] = MAP_STATES.DISCOVERD
 global.minimap = minimap
 room_size = array_height_2d(global.global_room);

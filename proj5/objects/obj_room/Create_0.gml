@@ -88,11 +88,11 @@ function check_distance(posX,posY)
 function healthBoosterProb()
 {
 	var prob = 100;
-	if(obj_player.playerLives >= obj_player.healthLimit)
+	if(_obj_player.playerLives >= _obj_player.healthLimit)
 	{
 		prob = 0;
 	}
-	else if(obj_player.playerLives >=2)
+	else if(_obj_player.playerLives >=2)
 	{
 		prob = 20;
 	}
@@ -118,4 +118,19 @@ function elite_item_prob()
 		prob = 0;
 	}
 	set_item_prob(global.elite_item_pool, prob);
+}
+
+function is_player_near_door()
+{
+	var safe_distance = 60;
+	for(var i = 0; i < array_length(doors); i++)
+	{
+		var distance = point_distance(_obj_player.x, _obj_player.y, doors[i].x, doors[i].y);
+		if(distance <= safe_distance)
+		{
+			show_debug_message("Distance to door " + string(i) + ": " + string(distance));
+			return(true);
+		}
+	}
+	return(false)
 }

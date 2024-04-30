@@ -9,14 +9,14 @@ var camY = 0;
 player_viewW = 8*60;
 player_viewH = 8*60;
 
-global_viewW = 2048;
-global_viewH = 2048;
+global_viewW = 2160;
+global_viewH = 2160;
 
 window_set_size(player_viewW, player_viewH);
 
 
 cam = view_camera[0];
-/*
+
 if(keyboard_check_pressed(ord("O"))){
 	camera_mode = 1 - camera_mode;
 	
@@ -25,13 +25,13 @@ if(keyboard_check_pressed(ord("O"))){
 }
 else if(!keyboard_check(ord("O"))){
 	canToggleCameraMode = true;
-}*/
+}
 
 
 if(camera_mode == 0)
 {
-	playerX = obj_player.x;
-	playerY = obj_player.y;
+	playerX = _obj_player.x;
+	playerY = _obj_player.y;
 	camX = playerX - player_viewW / 2;
 	camY = playerY - player_viewH / 2;
 	camera_set_view_pos(cam, camX, camY);

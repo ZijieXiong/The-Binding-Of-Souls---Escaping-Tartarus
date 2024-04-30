@@ -34,33 +34,23 @@ is_in_room = function(_x, _y)
 	return _bX && _bY;
 }
 
-function hit_effect(_x,_y,_dmg){
+function hit_effect(_x,_y,_dmg,_dir){
 	
-	if global.currLevel >= 7{
+	if global.currLevel >=1 and global.currLevel <=3 {
+		hit_effect_par(spr_blood,_dir,c_red,make_color_rgb(128,0,0),150,180,10)
+	}else if global.currLevel >=4 and global.currLevel <=6{
+		show_debug_message("smoke")
+		hit_effect_par(spr_smoke_hit,_dir,make_color_rgb(158,136,98),make_color_rgb(158,136,98),50,90,20)
+	}
+	else if global.currLevel >= 7 and global.currLevel <= 9{
+		//hit_effect_par(spr_electric,_dir,c_white,c_white,150,180,1)
+
 		var _hit = instance_create_layer(_x,_y, "Instances",oElectrictHit);
 		_hit._enemy = self
 		_hit._xDiff  = self.x - _x
 		_hit._yDiff = self.y - _y
+		_hit.image_angle = _dir
+		
 	}
 
-	/*
-	var _ptype1 = part_type_create();
-	part_type_sprite(_ptype1, spr_self_electricity, false, 0, 0);
-	part_type_size( _ptype1, 0.5, 0.5, 0, 0 );
-	var enemy_size = sprite_get_width(sprite_index) * image_xscale
-	var par_size = sprite_get_width(spr_self_electricity)
-	var _scale =   enemy_size / par_size
-	part_type_scale( _ptype1, _scale,_scale);
-	part_type_speed( _ptype1, 0, 0, 0, 0);
-	part_type_direction( _ptype1, 0, 0, 0, 0);
-	part_type_gravity( _ptype1, 0, 270);
-	part_type_orientation( _ptype1, 0, 360, 0, 0, false);
-	part_type_colour3( _ptype1, $FFCE0A ,$55FF00  , $55FF00 );
-	part_type_alpha3( _ptype1, 1, 1, 1);
-	part_type_blend( _ptype1, false);
-	part_type_life( _ptype1, 30, 30);
-	part_particles_create(P_System,x,y,_ptype1,1)
-	*/
-	//part_emitter_region(P_System, 0,  x, x, y, y, ps_shape_ellipse, ps_distr_invgaussian);
-	//part_system_destroy(P_System);
 }

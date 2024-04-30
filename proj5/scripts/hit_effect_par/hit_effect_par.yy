@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"hit_effect_par",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"hit_effect_par",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

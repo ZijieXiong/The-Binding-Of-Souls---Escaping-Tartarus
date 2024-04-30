@@ -2,14 +2,14 @@
 shoot = mouse_check_button(mb_left);
 #endregion
 
-x = obj_player.x;
-y = obj_player.y;
+x = _obj_player.x;
+y = _obj_player.y;
 direction = point_direction(x,y,mouse_x,mouse_y);
 
 if (direction > 90) && (direction < 270) image_yscale = -1; else image_yscale = 1;
 
 image_angle = direction;
-depth = obj_player.depth-1;
+depth = _obj_player.depth-1;
 
 
 
