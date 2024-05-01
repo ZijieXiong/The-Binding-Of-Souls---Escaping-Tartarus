@@ -9,6 +9,7 @@
   "ResourceOrderSettings":[
     {"name":"obj_blood","order":1,"path":"objects/obj_blood/obj_blood.yy",},
     {"name":"obj_musicboss","order":1,"path":"objects/obj_musicboss/obj_musicboss.yy",},
+    {"name":"obj_shop_view_whole_map","order":1,"path":"objects/obj_shop_view_whole_map/obj_shop_view_whole_map.yy",},
     {"name":"oBossFire","order":5,"path":"objects/oBossFire/oBossFire.yy",},
     {"name":"oSkull","order":1,"path":"objects/oSkull/oSkull.yy",},
     {"name":"oSkullFrail","order":4,"path":"objects/oSkullFrail/oSkullFrail.yy",},
@@ -26,7 +27,6 @@
     {"name":"snd_boss","order":6,"path":"sounds/snd_boss/snd_boss.yy",},
     {"name":"spikeFall","order":4,"path":"sounds/spikeFall/spikeFall.yy",},
     {"name":"spikeHit","order":2,"path":"sounds/spikeHit/spikeHit.yy",},
-    {"name":"spr_toon_smoke_white","order":1,"path":"sprites/spr_toon_smoke_white/spr_toon_smoke_white.yy",},
     {"name":"spr_blood2","order":1,"path":"sprites/spr_blood2/spr_blood2.yy",},
     {"name":"spr_blood3","order":2,"path":"sprites/spr_blood3/spr_blood3.yy",},
     {"name":"spr_decoy_1","order":3,"path":"sprites/spr_decoy_1/spr_decoy_1.yy",},
@@ -37,5 +37,6 @@
     {"name":"spr_fake_player_idle","order":5,"path":"sprites/spr_fake_player_idle/spr_fake_player_idle.yy",},
     {"name":"spr_fake_player_pickup","order":6,"path":"sprites/spr_fake_player_pickup/spr_fake_player_pickup.yy",},
     {"name":"spr_red_fire","order":1,"path":"sprites/spr_red_fire/spr_red_fire.yy",},
+    {"name":"spr_toon_smoke_white","order":1,"path":"sprites/spr_toon_smoke_white/spr_toon_smoke_white.yy",},
   ],
 }
