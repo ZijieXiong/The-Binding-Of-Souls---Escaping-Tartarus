@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_missle_pickup",
-    "path":"sprites/spr_missle_pickup/spr_missle_pickup.yy",
+    "name":"spr_missle_pickup_gai",
+    "path":"sprites/spr_missle_pickup_gai/spr_missle_pickup_gai.yy",
   },
   "spriteMaskId":null,
   "visible":true,

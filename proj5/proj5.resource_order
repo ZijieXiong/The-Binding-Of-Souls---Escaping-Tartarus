@@ -48,6 +48,7 @@
     {"name":"spr_frail_final","order":2,"path":"sprites/spr_frail_final/spr_frail_final.yy",},
     {"name":"spr_frail_shadow_2","order":1,"path":"sprites/spr_frail_shadow_2/spr_frail_shadow_2.yy",},
     {"name":"spr_map","order":1,"path":"sprites/spr_map/spr_map.yy",},
+    {"name":"spr_missle_pickup_gai","order":1,"path":"sprites/spr_missle_pickup_gai/spr_missle_pickup_gai.yy",},
     {"name":"spr_pyramid_obstacle_2","order":1,"path":"sprites/spr_pyramid_obstacle_2/spr_pyramid_obstacle_2.yy",},
     {"name":"spr_pyramid_obstacle_3","order":2,"path":"sprites/spr_pyramid_obstacle_3/spr_pyramid_obstacle_3.yy",},
     {"name":"spr_red_fire","order":1,"path":"sprites/spr_red_fire/spr_red_fire.yy",},
