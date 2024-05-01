@@ -34,7 +34,12 @@ for (var i = 0; i < global.upgradeNum; i++) {
 
 // Add the special health limit upgrade
 var healthLimitUpgradePosX = startX + (upgradeWidth + spacing) * global.upgradeNum;
-var healthLimitUpgrade = instance_create_layer(healthLimitUpgradePosX, guiHeight / 2, "Instances", obj_upgrade_health_limit);
+var healthUpgrade = obj_upgrade_health_limit;
+if(_obj_player.playerLives <= 2)
+{
+	healthUpgrade = obj_upgrade_restore_all_health;
+}
+var healthLimitUpgrade = instance_create_layer(healthLimitUpgradePosX, guiHeight / 2, "Instances",healthUpgrade);
 healthLimitUpgrade.createUI(healthLimitUpgradePosX, guiHeight / 2);
 ds_list_add(global.upgrade_objs, healthLimitUpgrade);
 
