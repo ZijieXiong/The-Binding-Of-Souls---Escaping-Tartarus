@@ -33,8 +33,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"toon_smoke",
-    "path":"folders/Sprites/Effects/toon_smoke.yy",
+    "name":"particleSprites",
+    "path":"folders/Sprites/Effects/particleSprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

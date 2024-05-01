@@ -74,6 +74,8 @@ switch (current_state) {
 			direction = point_direction(x, y, obj_player_main.x, obj_player_main.y);
 			is_hit = false;
 			audio_play_sound(pangoRoll, 0, true);
+			alarm[1] = 1;
+			is_trail = true;
 		}
         
         break;
@@ -92,7 +94,7 @@ switch (current_state) {
 			speed = 0;
 			alarm[0] = 60 * stoproll_time;
 			audio_stop_sound(pangoRoll);
-			
+			is_trail = false;
 		}
         break;
         
