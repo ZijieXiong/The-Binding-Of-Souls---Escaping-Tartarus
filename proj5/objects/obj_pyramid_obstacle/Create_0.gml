@@ -1,0 +1,1 @@
+sprite_index=choose(spr_pyramid_obstacle,spr_pyramid_obstacle_2,spr_pyramid_obstacle_3);
