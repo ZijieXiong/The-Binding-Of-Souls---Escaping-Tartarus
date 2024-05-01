@@ -9,7 +9,7 @@ if(fading_in){
 		show_debug_message("fade in");
 		if(!callback_triggered){
 			global.currLevel += 1;
-			if global.currLevel == 10{
+			if global.currLevel >= global.boss_layer{
 				room_goto(rmBoss)
 			}else{
 				dm.GenerateNewDungeon();
