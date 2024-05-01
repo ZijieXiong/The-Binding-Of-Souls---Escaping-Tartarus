@@ -5,7 +5,7 @@
     {"name":"SFX_boss","order":7,"path":"folders/Sounds/SFX_boss.yy",},
     {"name":"toon_smoke","order":2,"path":"folders/Sprites/Effects/toon_smoke.yy",},
     {"name":"boss","order":2,"path":"folders/Sprites/enemy/boss.yy",},
-    {"name":"health","order":2,"path":"folders/Sprites/health.yy",},
+    {"name":"Spr_boss_room","order":2,"path":"folders/Sprites/Spr_boss_room.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"obj_blood","order":1,"path":"objects/obj_blood/obj_blood.yy",},
@@ -32,6 +32,9 @@
     {"name":"spikeFall","order":4,"path":"sounds/spikeFall/spikeFall.yy",},
     {"name":"spikeHit","order":2,"path":"sounds/spikeHit/spikeHit.yy",},
     {"name":"validSound","order":10,"path":"sounds/validSound/validSound.yy",},
+    {"name":"freelavatileset_bonfire","order":2,"path":"sprites/freelavatileset_bonfire/freelavatileset_bonfire.yy",},
+    {"name":"freelavatileset_chest","order":3,"path":"sprites/freelavatileset_chest/freelavatileset_chest.yy",},
+    {"name":"freelavatileset_Sheet_frames","order":1,"path":"sprites/freelavatileset_Sheet_frames/freelavatileset_Sheet_frames.yy",},
     {"name":"ground_obstacle_2","order":1,"path":"sprites/ground_obstacle_2/ground_obstacle_2.yy",},
     {"name":"ground_obstacle_3","order":2,"path":"sprites/ground_obstacle_3/ground_obstacle_3.yy",},
     {"name":"spr_full_health","order":1,"path":"sprites/spr_full_health/spr_full_health.yy",},
@@ -56,5 +59,6 @@
     {"name":"spr_tech_obstacle_2","order":2,"path":"sprites/spr_tech_obstacle_2/spr_tech_obstacle_2.yy",},
     {"name":"spr_tech_obstacle_3","order":3,"path":"sprites/spr_tech_obstacle_3/spr_tech_obstacle_3.yy",},
     {"name":"spr_trail","order":2,"path":"sprites/spr_trail/spr_trail.yy",},
+    {"name":"TileSet7","order":1,"path":"tilesets/TileSet7/TileSet7.yy",},
   ],
 }
