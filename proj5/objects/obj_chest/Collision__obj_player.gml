@@ -19,11 +19,11 @@ var guiWidth = display_get_gui_width();
 var guiHeight = display_get_gui_height();
 
 var upgradeWidth = 130;
-var spacing = 130 
+var spacing = 105;
 if global.upgradeNum == 2 spacing = floor(guiWidth / 3) - 120;
 var totalUpgradeWidth = upgradeWidth * global.upgradeNum + spacing * (global.upgradeNum - 1);
 
-var startX = 120;
+var startX = 110;
 if global.upgradeNum == 2 starX = 140;
 for (var i = 0; i < global.upgradeNum; i++) {
     var posX = startX + (spacing + upgradeWidth) * i;  // Position each upgrade evenly
