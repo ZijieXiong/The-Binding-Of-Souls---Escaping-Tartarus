@@ -26,6 +26,7 @@
     {"name":"snd_boss_spin_hit","order":2,"path":"sounds/snd_boss_spin_hit/snd_boss_spin_hit.yy",},
     {"name":"snd_boss","order":6,"path":"sounds/snd_boss/snd_boss.yy",},
     {"name":"snd_win","order":9,"path":"sounds/snd_win/snd_win.yy",},
+    {"name":"validSound","order":10,"path":"sounds/validSound/validSound.yy",},
     {"name":"spikeFall","order":4,"path":"sounds/spikeFall/spikeFall.yy",},
     {"name":"spikeHit","order":2,"path":"sounds/spikeHit/spikeHit.yy",},
     {"name":"spr_blood2","order":1,"path":"sprites/spr_blood2/spr_blood2.yy",},
