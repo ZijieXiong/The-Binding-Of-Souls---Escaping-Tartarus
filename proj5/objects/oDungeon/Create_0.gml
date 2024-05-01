@@ -482,8 +482,8 @@ GenerateNewDungeon = function() {
 				var elite_type = choose(oElitePango, oEliteTurret, oEliteSlime,oEliteTeleportRobotX, oEliteMummyWithLaser, oEliteMummy);
 				if(global.currLevel < global.pyramid_layer)
 				{
-					//elite_type = oEliteSlime;
-					elite_type = choose(oElitePango, oEliteSlime);
+					elite_type = oElitePango;
+					//elite_type = choose(oElitePango, oEliteSlime);
 				}
 				//var enemyType = oEliteMummy;
 				else if (global.currLevel < global.tech_layer) {

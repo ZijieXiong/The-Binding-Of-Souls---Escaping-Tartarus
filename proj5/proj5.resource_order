@@ -9,6 +9,7 @@
   "ResourceOrderSettings":[
     {"name":"obj_blood","order":1,"path":"objects/obj_blood/obj_blood.yy",},
     {"name":"obj_musicboss","order":1,"path":"objects/obj_musicboss/obj_musicboss.yy",},
+    {"name":"obj_shop_view_whole_map","order":1,"path":"objects/obj_shop_view_whole_map/obj_shop_view_whole_map.yy",},
     {"name":"oBossFire","order":5,"path":"objects/oBossFire/oBossFire.yy",},
     {"name":"oSkull","order":1,"path":"objects/oSkull/oSkull.yy",},
     {"name":"oSkullFrail","order":4,"path":"objects/oSkullFrail/oSkullFrail.yy",},

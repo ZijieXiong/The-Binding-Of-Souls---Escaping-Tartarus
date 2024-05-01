@@ -1,0 +1,1 @@
+sprite_index=choose(spr_tech_obstacle,spr_tech_obstacle_2,spr_tech_obstacle_3);
