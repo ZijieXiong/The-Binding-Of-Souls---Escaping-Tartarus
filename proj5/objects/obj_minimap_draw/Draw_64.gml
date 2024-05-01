@@ -34,12 +34,16 @@ if global._draw_map{
 draw_map()
 draw_set_halign(fa_right);
 draw_set_color(c_white);
-draw_text(display_get_gui_width()-10, 110, "Current Level: " + string(global.currLevel));
-draw_text(display_get_gui_width()-10, 130, "Soul: " + string(global.soul));
+draw_text(display_get_gui_width()-10, 110, "Level: " + string(global.currLevel));
+draw_sprite(soul,0,display_get_gui_width()-60,140)
+draw_text(display_get_gui_width()-6, 140, string(global.soul));
+//draw_text(display_get_gui_width()-10, 130, "Soul: " + string(global.soul));
 }else{
 draw_set_halign(fa_right);
 draw_set_color(c_white);
-draw_text(display_get_gui_width()-10, 20, "Current Level: " + string(global.currLevel));
-draw_text(display_get_gui_width()-10, 40, "Soul: " + string(global.soul));
+draw_text(display_get_gui_width()-10, 20, "Level: " + string(global.currLevel));
+draw_sprite_ext(soul,0,display_get_gui_width()-40,40,1,1,0,c_white,1)
+draw_text(display_get_gui_width()-6, 40, string(global.soul));
+//draw_text(display_get_gui_width()-10, 40, "Soul: " + string(global.soul));
 }
 
