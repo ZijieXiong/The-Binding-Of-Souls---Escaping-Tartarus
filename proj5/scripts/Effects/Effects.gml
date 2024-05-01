@@ -33,7 +33,7 @@ function get_poisoned(_time, _magnitude, _fade)
 
 function get_radius_blur(_time, _obj,  _magnitude, _radius,  _fade)
 {
-	show_debug_message("Zoom-in blur!");
+	//show_debug_message("Zoom-in blur!");
 	with (obj_screen_zoomblur)
 	{
 		is_effected = true;
@@ -43,5 +43,15 @@ function get_radius_blur(_time, _obj,  _magnitude, _radius,  _fade)
 		effect_radius = _radius;
 		effect_target_obj = _obj;
 		set_params();
+	}
+}
+
+function end_radius_blur()
+{
+	with (obj_screen_zoomblur)
+	{
+		is_effected = false;
+		effect_time = 0;
+		layer_set_visible(blur_lay_id, false);
 	}
 }

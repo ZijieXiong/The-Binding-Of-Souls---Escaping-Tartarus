@@ -3,5 +3,6 @@
 
 // Inherit the parent event
 event_inherited();
-audio_stop_sound(laserElite)
 
+end_radius_blur();
+screenshake(1, 0.2, 0.2);
