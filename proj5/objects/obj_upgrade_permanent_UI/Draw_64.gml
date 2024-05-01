@@ -9,7 +9,8 @@ var step = 20;
 draw_set_font(fnt_label);
 draw_set_color(c_white);
 draw_set_halign(fa_right);
-draw_text(start_x, _y - 20, "Soul: " + string(global.soul));
+draw_sprite_ext(soul,0,start_x - 60,_y - 20,1,1,0,c_white,1)
+draw_text(start_x, _y - 20, string(global.soul));
 
 draw_text(start_x, _y, "Upgrades");
 _y += step;
