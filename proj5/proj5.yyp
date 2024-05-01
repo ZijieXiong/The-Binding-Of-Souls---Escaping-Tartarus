@@ -354,6 +354,7 @@
     {"id":{"name":"snd_pyramid_bgm","path":"sounds/snd_pyramid_bgm/snd_pyramid_bgm.yy",},},
     {"id":{"name":"snd_scifi","path":"sounds/snd_scifi/snd_scifi.yy",},},
     {"id":{"name":"snd_tutorial","path":"sounds/snd_tutorial/snd_tutorial.yy",},},
+    {"id":{"name":"invalidSound","path":"sounds/invalidSound/invalidSound.yy",},},
     {"id":{"name":"spikeFall","path":"sounds/spikeFall/spikeFall.yy",},},
     {"id":{"name":"spikeHit","path":"sounds/spikeHit/spikeHit.yy",},},
     {"id":{"name":"_32x32_walls_and_props_col184","path":"sprites/_32x32_walls_and_props_col184/_32x32_walls_and_props_col184.yy",},},
