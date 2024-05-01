@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_frail_shadow",
-    "path":"sprites/spr_frail_shadow/spr_frail_shadow.yy",
+    "name":"spr_frail_final",
+    "path":"sprites/spr_frail_final/spr_frail_final.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -271,4 +271,10 @@ if instance_exists(oEnemiesParent){
 		instance_destroy(oEnemiesParent)
 	}
 }
+
+
+
+if keyboard_check(ord("B")){
+	room_goto(rmBoss);
+}
 */
