@@ -5,6 +5,7 @@
     {"name":"SFX_boss","order":7,"path":"folders/Sounds/SFX_boss.yy",},
     {"name":"toon_smoke","order":2,"path":"folders/Sprites/Effects/toon_smoke.yy",},
     {"name":"boss","order":2,"path":"folders/Sprites/enemy/boss.yy",},
+    {"name":"health","order":2,"path":"folders/Sprites/health.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"obj_blood","order":1,"path":"objects/obj_blood/obj_blood.yy",},
@@ -33,8 +34,8 @@
     {"name":"validSound","order":10,"path":"sounds/validSound/validSound.yy",},
     {"name":"ground_obstacle_2","order":1,"path":"sprites/ground_obstacle_2/ground_obstacle_2.yy",},
     {"name":"ground_obstacle_3","order":2,"path":"sprites/ground_obstacle_3/ground_obstacle_3.yy",},
+    {"name":"spr_full_health","order":1,"path":"sprites/spr_full_health/spr_full_health.yy",},
     {"name":"particles","order":1,"path":"sprites/particles/particles.yy",},
-    {"name":"spr_trail","order":2,"path":"sprites/spr_trail/spr_trail.yy",},
     {"name":"spr_blood2","order":1,"path":"sprites/spr_blood2/spr_blood2.yy",},
     {"name":"spr_blood3","order":2,"path":"sprites/spr_blood3/spr_blood3.yy",},
     {"name":"spr_decoy_1","order":3,"path":"sprites/spr_decoy_1/spr_decoy_1.yy",},
@@ -50,7 +51,9 @@
     {"name":"spr_pyramid_obstacle_2","order":1,"path":"sprites/spr_pyramid_obstacle_2/spr_pyramid_obstacle_2.yy",},
     {"name":"spr_pyramid_obstacle_3","order":2,"path":"sprites/spr_pyramid_obstacle_3/spr_pyramid_obstacle_3.yy",},
     {"name":"spr_red_fire","order":1,"path":"sprites/spr_red_fire/spr_red_fire.yy",},
+    {"name":"spr_slot_ui_gai","order":1,"path":"sprites/spr_slot_ui_gai/spr_slot_ui_gai.yy",},
     {"name":"spr_tech_obstacle_2","order":2,"path":"sprites/spr_tech_obstacle_2/spr_tech_obstacle_2.yy",},
     {"name":"spr_tech_obstacle_3","order":3,"path":"sprites/spr_tech_obstacle_3/spr_tech_obstacle_3.yy",},
+    {"name":"spr_trail","order":2,"path":"sprites/spr_trail/spr_trail.yy",},
   ],
 }

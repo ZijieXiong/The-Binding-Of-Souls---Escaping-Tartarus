@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_slot_ui",
-    "path":"sprites/spr_slot_ui/spr_slot_ui.yy",
+    "name":"spr_slot_ui_gai",
+    "path":"sprites/spr_slot_ui_gai/spr_slot_ui_gai.yy",
   },
   "spriteMaskId":null,
   "visible":true,
