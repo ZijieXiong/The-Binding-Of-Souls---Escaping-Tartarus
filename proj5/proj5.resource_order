@@ -32,7 +32,6 @@
     {"name":"spikeHit","order":2,"path":"sounds/spikeHit/spikeHit.yy",},
     {"name":"ground_obstacle_2","order":1,"path":"sprites/ground_obstacle_2/ground_obstacle_2.yy",},
     {"name":"ground_obstacle_3","order":2,"path":"sprites/ground_obstacle_3/ground_obstacle_3.yy",},
-    {"name":"neo_zero_props_and_items_01","order":1,"path":"sprites/neo_zero_props_and_items_01/neo_zero_props_and_items_01.yy",},
     {"name":"spr_tech_obstacle_3","order":3,"path":"sprites/spr_tech_obstacle_3/spr_tech_obstacle_3.yy",},
     {"name":"spr_blood2","order":1,"path":"sprites/spr_blood2/spr_blood2.yy",},
     {"name":"spr_blood3","order":2,"path":"sprites/spr_blood3/spr_blood3.yy",},
