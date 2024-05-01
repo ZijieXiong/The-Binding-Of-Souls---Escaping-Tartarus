@@ -19,7 +19,8 @@ function upgrade()
 	}
 	else
 	{
-		show_debug_message("purchase failed")
+		show_debug_message("purchase failed");
+		audio_play_sound(invalidSound, 0, false);
 	}
 }
 
