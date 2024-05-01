@@ -122,4 +122,21 @@ summon_spike = function(_hit_x, _hit_y, _ply_x, _ply_y)
 		_curr_y = _curr_y + lengthdir_y(_spike_interval, _dir);
 	} until (place_meeting(_curr_x, _curr_y, obj_wall));
 	
+	
+	
 }
+
+
+is_trail = false;
+
+particleSystem = part_system_create();
+
+particleType_trail = part_type_create();
+
+part_type_sprite(particleType_trail, spr_trail, 1, 1, 0);
+part_type_size(particleType_trail, 1,2, 0, 0);
+part_type_life(particleType_trail, 20, 20);
+part_type_alpha3(particleType_trail, 1, 1, 0);
+part_type_color1(particleType_trail, make_color_rgb(255,255,255));
+
+

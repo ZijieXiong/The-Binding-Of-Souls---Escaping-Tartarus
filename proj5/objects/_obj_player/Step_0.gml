@@ -261,10 +261,7 @@ if keyboard_check(ord("5")){
 	playerLives = 5
 }
 
-if (keyboard_check(ord("0")) && !is_summon_elite) {
-		instance_create_layer(x, y, "Instances", oElitePango);
-		is_summon_elite = true;
-}
+
 
 if instance_exists(oEnemiesParent){
 	if keyboard_check(ord("P")){
@@ -273,8 +270,13 @@ if instance_exists(oEnemiesParent){
 }
 
 
-
+*/
 if keyboard_check(ord("B")){
 	room_goto(rmBoss);
 }
-*/
+
+
+if (keyboard_check(ord("0")) && !is_summon_elite) {
+		instance_create_layer(x, y, "Instances", oElitePango);
+		is_summon_elite = true;
+}

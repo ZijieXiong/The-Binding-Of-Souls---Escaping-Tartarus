@@ -14,6 +14,7 @@ enum FRAIL_STATE {
 }
 
 frail_shadow = instance_create_layer(x, y, "Instances", oSkullFrailShadow);
+frail_shadow.depth = depth+2;
 
 current_state = FRAIL_STATE.IDLE;
 
@@ -151,10 +152,11 @@ function play_hit_part_effect(_spr,_dir,_color1,_color2,_life1,_life2, _burst){
 	instance_effect.set_size(0.5,1);
 	instance_effect.set_sprite(_spr,false,false,true);
 	instance_effect.set_orientation(0,360);
+	instance_effect.set_depth(depth+1);
 	if _color1 	instance_effect.set_color_mix(_color1,_color2);
 	instance_effect.set_alpha(random_range(0.6,1),0);
 	instance_effect.set_direction(_dir-90,_dir+90);
-	instance_effect.set_speed(5,10,-1);
+	instance_effect.set_speed(3,5,-0.3);
 	instance_effect.set_life(_life1,_life2);
 	instance_effect.set_timer(120);
 	instance_effect.burst(_burst);

@@ -7,7 +7,9 @@ enum PIT_STATE {
 	BURST
 }
 
-depth = _obj_player.depth+1;
+
+//depth = 100;
+depth = max(_obj_player.depth, oSkull.depth+2)+1;
 
 current_state = PIT_STATE.IDLE;
 
