@@ -4,3 +4,10 @@ if(++life_time_counter>life_time) {
 	audio_stop_sound(laserElite);
 	instance_destroy();
 }
+
+if(!instance_exists(oEliteTeleportRobotX)) {
+	
+	audio_stop_sound(laserElite);
+	instance_destroy();
+	
+}

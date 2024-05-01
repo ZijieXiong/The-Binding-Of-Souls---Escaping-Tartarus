@@ -251,11 +251,7 @@ if (place_meeting(x, y, obj_rifle_justforview)) {
 }
 
 /*
-if instance_exists(oEnemiesParent){
-	if keyboard_check(ord("P")){
-		instance_destroy(oEnemiesParent)
-	}
-}
+
 
 if keyboard_check(ord("4")){
 	pickup_item(spr_fake_player_pickup,obj_decoy)
@@ -269,3 +265,10 @@ if (keyboard_check(ord("0")) && !is_summon_elite) {
 		instance_create_layer(x, y, "Instances", oElitePango);
 		is_summon_elite = true;
 }
+
+if instance_exists(oEnemiesParent){
+	if keyboard_check(ord("P")){
+		instance_destroy(oEnemiesParent)
+	}
+}
+*/
