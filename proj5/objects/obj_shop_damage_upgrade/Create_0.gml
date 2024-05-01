@@ -16,6 +16,7 @@ function upgrade()
 		record_upgrade_permanent_accum("Damage +", 0.25);
 		show_debug_message("purchase success");
 		price += 5;
+		audio_play_sound(validSound, 0, false);
 	}
 	else
 	{
