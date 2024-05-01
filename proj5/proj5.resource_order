@@ -24,6 +24,7 @@
     {"name":"snd_boss_movement","order":3,"path":"sounds/snd_boss_movement/snd_boss_movement.yy",},
     {"name":"snd_boss_spin_hit","order":2,"path":"sounds/snd_boss_spin_hit/snd_boss_spin_hit.yy",},
     {"name":"snd_boss","order":6,"path":"sounds/snd_boss/snd_boss.yy",},
+    {"name":"invalidSound","order":8,"path":"sounds/invalidSound/invalidSound.yy",},
     {"name":"spikeFall","order":4,"path":"sounds/spikeFall/spikeFall.yy",},
     {"name":"spikeHit","order":2,"path":"sounds/spikeHit/spikeHit.yy",},
     {"name":"spr_trail","order":2,"path":"sprites/spr_trail/spr_trail.yy",},

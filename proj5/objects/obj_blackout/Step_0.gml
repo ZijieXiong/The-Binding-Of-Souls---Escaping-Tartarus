@@ -9,8 +9,13 @@ if(fading_in){
 		show_debug_message("fade in");
 		if(!callback_triggered){
 			global.currLevel += 1;
-			dm.GenerateNewDungeon();
-			callback_triggerd = true;
+			if global.currLevel == 10{
+				room_goto(rmBoss)
+			}else{
+				dm.GenerateNewDungeon();
+				callback_triggerd = true;
+			}
+
 		}
 	}
 }
