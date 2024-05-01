@@ -4,6 +4,10 @@
 // Inherit the parent event
 event_inherited();
 
+if (_health < 0) {
+	audio_stop_sound(pangoRoll);
+}
+
 
 
 switch (current_state) {
@@ -100,6 +104,7 @@ switch (current_state) {
         // Handle stoproll animation or effects
 		if(idle_timer_flag)
 		{
+			audio_stop_sound(pangoRoll);
 			current_state = EPANGO_STATE.REST;
 			idle_timer_flag = false;
 			sprite_index = Spr_Idle;
