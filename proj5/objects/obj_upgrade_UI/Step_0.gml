@@ -14,6 +14,7 @@ if (mouse_check_button_released(mb_left))
 	{
 		show_debug_message("clicked");
 		if (parentUpgrade != noone) {
+			global.playerFreeze = false;
 			show_debug_message("upgrade");
 		    with (parentUpgrade) {
 		        applyUpgrade();

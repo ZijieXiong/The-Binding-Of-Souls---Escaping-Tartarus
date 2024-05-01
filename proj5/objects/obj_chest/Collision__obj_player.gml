@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+global.playerFreeze = true;
 var chosenUpgrades = chooseNDifferentUpgrades(global.upgrade_pool, global.upgradeNum);
 
 /*var midX = display_get_gui_width() / 2;
