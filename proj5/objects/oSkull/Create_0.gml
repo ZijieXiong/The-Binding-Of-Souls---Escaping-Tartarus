@@ -3,8 +3,8 @@
 event_inherited();
 
 image_speed = 0;
-image_xscale = 1;
-image_yscale = 1;
+image_xscale = 4;
+image_yscale = 4;
 image_angle = -90;
 
 frail_radius = 50;
