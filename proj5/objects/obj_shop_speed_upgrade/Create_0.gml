@@ -16,6 +16,7 @@ function upgrade()
 		record_upgrade_permanent_accum("Player Speed +", 0.1);
 		show_debug_message("purchase success");
 		price += 10;
+		audio_play_sound(validSound, 0, false);
 	}
 	else
 	{
