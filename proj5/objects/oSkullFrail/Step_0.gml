@@ -31,7 +31,7 @@ switch(current_state)
 			activate_nearby_firepit();
 			shoot(true);
 			audio_play_sound(snd_boss_hit, 0, false);
-			play_hit_part_effect(spr_toon_smoke_white,270,make_color_rgb(255,255,255),make_color_rgb(255,255,255),40,60,20);
+			play_hit_part_effect(spr_toon_smoke_white,270,make_color_rgb(255,255,255),make_color_rgb(255,255,255),50,90,20);
 			//play_hit_part_effect(spr_toon_smoke_white,270,make_color_rgb(158,136,98),make_color_rgb(158,136,98),50,90,20);
 			//hit_effect_par(spr_toon_smoke_white,270,make_color_rgb(158,136,98),make_color_rgb(158,136,98),50,90,20)
 		}
@@ -69,7 +69,7 @@ switch(current_state)
 			activate_all_firepit();
 			audio_play_sound(snd_boss_hit, 0, false);
 			alarm[1] =fire_pit_erruption_delay_time;
-			play_hit_part_effect(spr_toon_smoke_white,270,make_color_rgb(255,255,255),make_color_rgb(255,255,255),40,60,20);
+			
 		}
 		
 		break;
@@ -107,7 +107,6 @@ switch(current_state)
 			screenshake(10, 5, 0.2);
 			audio_play_sound(snd_boss_spin_hit, 0, false);
 			activate_nearby_firepit();
-			play_hit_part_effect(spr_toon_smoke_white,270,make_color_rgb(255,255,255),make_color_rgb(255,255,255),40,60,20);
 			if(stop_bounce) {
 				current_state = FRAIL_STATE.IDLE;
 				stop_bounce = false;
