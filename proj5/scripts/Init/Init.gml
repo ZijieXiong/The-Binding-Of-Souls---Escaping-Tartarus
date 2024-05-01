@@ -22,6 +22,7 @@ global.obj_inventory[2] = -1
 
 global.pyramid_layer = 4;
 global.tech_layer = 7;
+global.boss_layer = 10;
 
 global.view_whole_map = false;
 global.draw_map = true;

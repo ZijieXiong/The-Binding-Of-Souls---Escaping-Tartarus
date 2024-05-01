@@ -51,6 +51,7 @@
     {"name":"spr_pyramid_obstacle_2","order":1,"path":"sprites/spr_pyramid_obstacle_2/spr_pyramid_obstacle_2.yy",},
     {"name":"spr_pyramid_obstacle_3","order":2,"path":"sprites/spr_pyramid_obstacle_3/spr_pyramid_obstacle_3.yy",},
     {"name":"spr_red_fire","order":1,"path":"sprites/spr_red_fire/spr_red_fire.yy",},
+    {"name":"spr_slot_ui_gai","order":1,"path":"sprites/spr_slot_ui_gai/spr_slot_ui_gai.yy",},
     {"name":"spr_tech_obstacle_2","order":2,"path":"sprites/spr_tech_obstacle_2/spr_tech_obstacle_2.yy",},
     {"name":"spr_tech_obstacle_3","order":3,"path":"sprites/spr_tech_obstacle_3/spr_tech_obstacle_3.yy",},
     {"name":"spr_trail","order":2,"path":"sprites/spr_trail/spr_trail.yy",},

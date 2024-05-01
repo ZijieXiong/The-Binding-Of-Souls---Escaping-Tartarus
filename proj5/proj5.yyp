@@ -562,6 +562,7 @@
     {"id":{"name":"spr_slime_jump","path":"sprites/spr_slime_jump/spr_slime_jump.yy",},},
     {"id":{"name":"spr_slime","path":"sprites/spr_slime/spr_slime.yy",},},
     {"id":{"name":"spr_slot_ui","path":"sprites/spr_slot_ui/spr_slot_ui.yy",},},
+    {"id":{"name":"spr_slot_ui_gai","path":"sprites/spr_slot_ui_gai/spr_slot_ui_gai.yy",},},
     {"id":{"name":"spr_smoke_hit","path":"sprites/spr_smoke_hit/spr_smoke_hit.yy",},},
     {"id":{"name":"spr_solid","path":"sprites/spr_solid/spr_solid.yy",},},
     {"id":{"name":"Spr_Stop_Roll","path":"sprites/Spr_Stop_Roll/Spr_Stop_Roll.yy",},},
