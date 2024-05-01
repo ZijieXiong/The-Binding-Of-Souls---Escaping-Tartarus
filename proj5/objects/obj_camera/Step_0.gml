@@ -16,17 +16,18 @@ window_set_size(player_viewW, player_viewH);
 
 
 cam = view_camera[0];
-/*
-if(keyboard_check_pressed(ord("O"))){
-	camera_mode = 1 - camera_mode;
+if(global.view_whole_map)
+{
+	if(keyboard_check_pressed(ord("O"))){
+		camera_mode = 1 - camera_mode;
 	
-	canToggleCameraMode = false;
-	show_debug_message("Camera Mode: " + string(camera_mode) + ", Can Toggle: " + string(canToggleCameraMode));
+		canToggleCameraMode = false;
+		show_debug_message("Camera Mode: " + string(camera_mode) + ", Can Toggle: " + string(canToggleCameraMode));
+	}
+	else if(!keyboard_check(ord("O"))){
+		canToggleCameraMode = true;
+	}
 }
-else if(!keyboard_check(ord("O"))){
-	canToggleCameraMode = true;
-}
-*/
 
 if(camera_mode == 0)
 {
@@ -65,7 +66,7 @@ if (shake)
       } 
    } 
 }
-window_set_size(960,960);
+window_set_size(900,900);
 
 
 
