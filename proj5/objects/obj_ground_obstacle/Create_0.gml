@@ -1,0 +1,1 @@
+sprite_index=choose(ground_obstacle,ground_obstacle_2,ground_obstacle_3);
