@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"hitHurt.ogg",
   "type":0,
-  "volume":0.64,
+  "volume":0.9,
 }

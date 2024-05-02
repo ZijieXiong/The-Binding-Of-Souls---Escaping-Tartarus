@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"rifleContinuousShoot.ogg",
   "type":0,
-  "volume":0.52,
+  "volume":0.46,
 }

@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"openChest.ogg",
   "type":0,
-  "volume":0.49,
+  "volume":0.4,
 }
