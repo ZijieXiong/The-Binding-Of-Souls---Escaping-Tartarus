@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.864,
+  "duration":0.696,
   "name":"openChest",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"openChest.mp3",
+  "soundFile":"openChest.ogg",
   "type":0,
-  "volume":0.35,
+  "volume":0.49,
 }

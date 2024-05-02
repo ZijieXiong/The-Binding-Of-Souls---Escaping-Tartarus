@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":3.888,
+  "duration":0.453125,
   "name":"rifleContinuousShoot",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"rifleContinuousShoot.mp3",
+  "soundFile":"rifleContinuousShoot.ogg",
   "type":0,
-  "volume":0.57,
+  "volume":0.52,
 }
