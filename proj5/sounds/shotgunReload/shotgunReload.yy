@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":3.216,
+  "duration":0.450667,
   "name":"shotgunReload",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"shotgunReload.mp3",
+  "soundFile":"shotgunReload.ogg",
   "type":0,
-  "volume":0.58,
+  "volume":0.48,
 }
