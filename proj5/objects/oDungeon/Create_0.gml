@@ -487,9 +487,11 @@ GenerateNewDungeon = function() {
 				}
 				//var enemyType = oEliteMummy;
 				else if (global.currLevel < global.tech_layer) {
+					//elite_type = oEliteMummyWithLaser;
 					elite_type = choose(oEliteMummy, oEliteMummyWithLaser);
 				}
 				else{
+					//elite_type = oEliteTurret;
 					elite_type = choose(oEliteTeleportRobot, oEliteTurret, oEliteTeleportRobotX);
 				}
 	            //var elite_type = oEliteTeleportRobotX;

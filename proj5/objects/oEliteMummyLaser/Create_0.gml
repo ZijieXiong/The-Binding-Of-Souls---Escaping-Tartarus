@@ -6,3 +6,5 @@ target_y = y;
 damage_radius = 16;
 
 owner_id = noone;
+
+audio_play_sound(laserElite,0,true);

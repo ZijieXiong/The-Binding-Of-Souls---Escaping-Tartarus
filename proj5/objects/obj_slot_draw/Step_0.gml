@@ -1,7 +1,7 @@
 if(global.spr_inventory[0] != -1){
 	var _spr =  global.spr_inventory[0]
 	var _obj =  global.obj_inventory[0]
-	if _spr == spr_missle_pickup{
+	if _spr == spr_missle_pickup_gai{
 		var closest_enemy = instance_nearest(_obj_player.x,_obj_player.y,oEnemiesParent)
 		if closest_enemy{
 			var enemy_width = closest_enemy.sprite_width

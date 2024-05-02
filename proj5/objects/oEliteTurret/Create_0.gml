@@ -3,8 +3,8 @@ attack_cooldown = 0;
 
 bulletSpiralCount = 18; // Amount of bullets to be spawned
 bulletSpiralIterator = 0; // Iterator used for spawning bullets
-bulletSpiralInterval = max(2, 13 - global.currLevel); // Spawn 4 bullets/sec
-bulletSpiralSpeed = 2.5  + 0.2 * global.currLevel;; // Speed of the bullet
+bulletSpiralInterval = max(2, 15 - global.currLevel); // Spawn 4 bullets/sec
+bulletSpiralSpeed = 2.5  + 0.1 * global.currLevel;; // Speed of the bullet
 initial_direction = 0;
 self.image_xscale = 2;
 self.image_yscale = 2;
