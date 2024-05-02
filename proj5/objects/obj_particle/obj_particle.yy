@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"particle",
-    "path":"folders/Objects/Effects/particle.yy",
+    "path":"folders/Objects/Enemies/Boss/Effects/particle.yy",
   },
   "parentObjectId":null,
   "persistent":false,

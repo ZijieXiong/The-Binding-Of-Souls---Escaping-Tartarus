@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.664,
+  "duration":2.064,
   "name":"rifleChargedShoot",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"rifleChargedShoot.mp3",
+  "soundFile":"rifleChargedShoot.ogg",
   "type":0,
-  "volume":0.28,
+  "volume":0.44,
 }

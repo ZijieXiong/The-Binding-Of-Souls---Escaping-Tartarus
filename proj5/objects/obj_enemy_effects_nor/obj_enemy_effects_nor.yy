@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Effects",
-    "path":"folders/Objects/Effects.yy",
+    "path":"folders/Objects/Enemies/Boss/Effects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

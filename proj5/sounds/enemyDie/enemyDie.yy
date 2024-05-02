@@ -21,5 +21,5 @@
   "sampleRate":48000,
   "soundFile":"enemyDie.wav",
   "type":1,
-  "volume":0.58,
+  "volume":0.71,
 }

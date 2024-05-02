@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.632,
+  "duration":1.056,
   "name":"pistolShoot",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"pistolShoot.mp3",
+  "soundFile":"pistolShoot.ogg",
   "type":0,
-  "volume":0.42,
+  "volume":0.73,
 }
