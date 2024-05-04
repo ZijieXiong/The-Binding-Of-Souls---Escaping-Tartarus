@@ -1270,8 +1270,8 @@ function ChooseEliteEnemy(){
 			elite_type = choose(oEliteMummy, oEliteMummyWithLaser);
 		}
 		else{
-			elite_type = oEliteTeleportRobotX;
-			//elite_type = choose(oEliteTeleportRobot, oEliteTurret, oEliteTeleportRobotX);
+			//elite_type = oEliteTeleportRobotX;
+			elite_type = choose(oEliteTeleportRobot, oEliteTurret, oEliteTeleportRobotX);
 		}
 		iter++;
 		if iter >=50{
