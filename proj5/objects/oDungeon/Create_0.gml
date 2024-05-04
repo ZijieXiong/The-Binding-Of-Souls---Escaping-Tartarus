@@ -479,21 +479,7 @@ GenerateNewDungeon = function() {
 	    if (roomInd != reloadRoomInd && roomInd != chestRoomInd) {
 	        if (random(1) <= 1) {
 				show_debug_message("elite room");
-				var elite_type = choose(oElitePango, oEliteTurret, oEliteSlime,oEliteTeleportRobotX, oEliteMummyWithLaser, oEliteMummy);
-				if(global.currLevel < global.pyramid_layer)
-				{
-					//elite_type = oEliteSlime;
-					elite_type = choose(oElitePango, oEliteSlime);
-				}
-				//var enemyType = oEliteMummy;
-				else if (global.currLevel < global.tech_layer) {
-					//elite_type = oEliteMummyWithLaser;
-					elite_type = choose(oEliteMummy, oEliteMummyWithLaser);
-				}
-				else{
-					//elite_type = oEliteTurret;
-					elite_type = choose(oEliteTeleportRobot, oEliteTurret, oEliteTeleportRobotX);
-				}
+				var elite_type = ChooseEliteEnemy();
 	            //var elite_type = oEliteTeleportRobotX;
 				var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2 + 1) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2 + 1) / 2 * CELL_SIZE, "Dungeon", obj_enemy_portal);
 				CreateDoors(roomId, true);
@@ -1252,6 +1238,30 @@ CreateDoors = function(eliteRoom, isEnemy){
 		doors[array_length(doors)] = doorInstance;
     }
 	eliteRoom.room_obj.doors = doors;
+}
+
+function ChooseEliteEnemy(){
+	var elite_type;
+	if(global.currLevel < global.pyramid_layer)
+	{
+		//elite_type = oEliteSlime;
+		elite_type = choose(oElitePango, oEliteSlime);
+	}
+	//var enemyType = oEliteMummy;
+	else if (global.currLevel < global.tech_layer) {
+		//elite_type = oEliteMummyWithLaser;
+		elite_type = choose(oEliteMummy, oEliteMummyWithLaser);
+	}
+	else{
+		//elite_type = oEliteTurret;
+		elite_type = choose(oEliteTeleportRobot, oEliteTurret, oEliteTeleportRobotX);
+	}
+	if(elite_type == global.last_elite_type)
+	{
+		elite_type = ChooseEliteEnemy();
+	}
+	global.last_elite_type = elite_type;
+	return elite_type;
 }
 
 CreateItemUI = function() {

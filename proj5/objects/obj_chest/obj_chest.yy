@@ -3,6 +3,7 @@
   "%Name":"obj_chest",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"_obj_player","path":"objects/_obj_player/_obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_chest",
@@ -30,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_chest",
-    "path":"sprites/spr_chest/spr_chest.yy",
+    "name":"freelavatileset_chest_idle",
+    "path":"sprites/freelavatileset_chest_idle/freelavatileset_chest_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,
