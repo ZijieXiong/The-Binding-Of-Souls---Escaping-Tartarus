@@ -4,7 +4,12 @@
 // Inherit the parent event
 event_inherited();
 text = "Press O to \nview whole map";
-price = 2000;
+price = 100;
+if(global.view_whole_map)
+{
+	instance_destroy(button);
+	price = "inf";
+}
 
 function upgrade()
 {
@@ -13,7 +18,9 @@ function upgrade()
 	{
 		global.soul -= price;
 		global.view_whole_map = true;
+		price = "inf"
 		record_upgrade_permanent_once("View whole map");
+		instance_destroy(button);
 		show_debug_message("purchase success");
 	}
 	else

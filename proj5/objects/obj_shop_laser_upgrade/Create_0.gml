@@ -1,8 +1,13 @@
 event_inherited();
 
 text = "laser drone";
-if !global.has_drone price = 100
-else price = 999999
+price = 100;
+if(global.has_drone)
+{
+	instance_destroy(button);
+	price = "inf";
+}
+
 
 function upgrade()
 {
@@ -13,7 +18,8 @@ function upgrade()
 		global.has_drone += true;
 		record_upgrade_once("laser drone")
 		show_debug_message("purchase success");
-		price = 999999
+		price = "inf"
+		instance_destroy(button);
 		audio_play_sound(validSound, 0, false);
 	}
 	else
