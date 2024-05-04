@@ -309,6 +309,7 @@
     {"id":{"name":"fireSmokeParicle","path":"particles/fireSmokeParicle/fireSmokeParicle.yy",},},
     {"id":{"name":"itemParticle","path":"particles/itemParticle/itemParticle.yy",},},
     {"id":{"name":"ParticleSystem3","path":"particles/ParticleSystem3/ParticleSystem3.yy",},},
+    {"id":{"name":"sparkleParticle","path":"particles/sparkleParticle/sparkleParticle.yy",},},
     {"id":{"name":"rm_turtorial","path":"rooms/rm_turtorial/rm_turtorial.yy",},},
     {"id":{"name":"rmBoss","path":"rooms/rmBoss/rmBoss.yy",},},
     {"id":{"name":"rmDungeon","path":"rooms/rmDungeon/rmDungeon.yy",},},

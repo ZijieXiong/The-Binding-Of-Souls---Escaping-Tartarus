@@ -174,7 +174,7 @@ switch (current_state) {
 			}
 			
 			
-			if (abs(_angle_difference) < 1) {
+			if (abs(_angle_difference) < 3) {
 			    // Close enough to directly set the direction
 				
 				/*

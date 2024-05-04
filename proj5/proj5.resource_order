@@ -23,6 +23,7 @@
     {"name":"oSkullFrail","order":4,"path":"objects/oSkullFrail/oSkullFrail.yy",},
     {"name":"oSkullFrailShadow","order":2,"path":"objects/oSkullFrailShadow/oSkullFrailShadow.yy",},
     {"name":"oTracker","order":3,"path":"objects/oTracker/oTracker.yy",},
+    {"name":"sparkleParticle","order":1,"path":"particles/sparkleParticle/sparkleParticle.yy",},
     {"name":"hit_effect_par","order":1,"path":"scripts/hit_effect_par/hit_effect_par.yy",},
     {"name":"bulletExplode","order":5,"path":"sounds/bulletExplode/bulletExplode.yy",},
     {"name":"fireBurst","order":1,"path":"sounds/fireBurst/fireBurst.yy",},
@@ -69,8 +70,6 @@
     {"name":"spr_tech_obstacle_2","order":2,"path":"sprites/spr_tech_obstacle_2/spr_tech_obstacle_2.yy",},
     {"name":"spr_tech_obstacle_3","order":3,"path":"sprites/spr_tech_obstacle_3/spr_tech_obstacle_3.yy",},
     {"name":"spr_trail","order":2,"path":"sprites/spr_trail/spr_trail.yy",},
-    {"name":"texture_laser","order":1,"path":"sprites/texture_laser/texture_laser.yy",},
-    {"name":"Tiny","order":2,"path":"sprites/Tiny/Tiny.yy",},
     {"name":"TileSet7","order":1,"path":"tilesets/TileSet7/TileSet7.yy",},
   ],
 }
