@@ -51,6 +51,7 @@ function ChangeWeapon(arg){
 	}
 }
 ChangeWeapon(0)
+if global.has_drone instance_create_layer(x,y,"Instances",obj_laser_drone)
 /*
 _shotgun  = instance_create_layer(x,y,"Instances",obj_shotgun)
 _pistol = instance_create_layer(x,y,"Instances",obj_pistol)

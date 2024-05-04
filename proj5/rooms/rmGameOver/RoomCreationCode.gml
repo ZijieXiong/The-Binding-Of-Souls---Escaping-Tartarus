@@ -13,3 +13,7 @@ if instance_exists(obj_rifle){
 if instance_exists(obj_shotgun){
 	instance_destroy(obj_shotgun)
 }
+
+if instance_exists(obj_laser_drone){
+	instance_destroy(obj_laser_drone)
+}

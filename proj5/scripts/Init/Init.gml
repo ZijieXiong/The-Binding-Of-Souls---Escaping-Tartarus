@@ -9,6 +9,8 @@
 ////generated powerup
 //#macro RICHOCHET false
 //#macro HEALTH_BOOST false
+global.has_drone = false
+
 global.max_items = 3
 global._draw_map = true
 
