@@ -1257,7 +1257,7 @@ function ChooseEliteEnemy(){
 		//elite_type = choose(oEliteTeleportRobot, oEliteTurret, oEliteTeleportRobotX);
 	}
 	var iter = 0;
-	while(elite_type != global.last_elite_type)
+	while(elite_type == global.last_elite_type)
 	{
 		if(global.currLevel < global.pyramid_layer)
 		{

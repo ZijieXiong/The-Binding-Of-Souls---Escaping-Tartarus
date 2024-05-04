@@ -1,7 +1,7 @@
 event_inherited();
 
 text = "laser drone";
-price = 100;
+price = 0;
 if(global.has_drone)
 {
 	instance_destroy(button);
@@ -16,7 +16,7 @@ function upgrade()
 	{
 		global.soul -= price;
 		global.has_drone += true;
-		record_upgrade_once("laser drone")
+		record_upgrade_permanent_once("laser drone")
 		show_debug_message("purchase success");
 		price = "inf"
 		instance_destroy(button);
