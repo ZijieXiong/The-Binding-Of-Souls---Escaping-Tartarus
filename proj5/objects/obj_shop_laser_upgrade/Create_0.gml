@@ -1,7 +1,7 @@
 event_inherited();
 
 text = "laser drone";
-price = 0;
+price = 200;
 if(global.has_drone)
 {
 	instance_destroy(button);

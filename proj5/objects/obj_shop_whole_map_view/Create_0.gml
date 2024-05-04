@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 text = "Press O to \nview whole map";
-price = 100;
+price = 200;
 if(global.view_whole_map)
 {
 	instance_destroy(button);

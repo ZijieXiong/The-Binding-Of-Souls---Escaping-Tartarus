@@ -479,7 +479,7 @@ GenerateNewDungeon = function() {
 	    if (roomInd != reloadRoomInd && roomInd != chestRoomInd) {
 	        if (random(1) <= 1) {
 				show_debug_message("elite room");
-				var elite_type = ChooseEliteEnemy();
+				var elite_type = noone;
 	            //var elite_type = oEliteTeleportRobotX;
 				var eliteEnemy = instance_create_layer((roomId.x1 + roomId.x2 + 1) / 2 * CELL_SIZE, (roomId.y1 + roomId.y2 + 1) / 2 * CELL_SIZE, "Dungeon", obj_enemy_portal);
 				CreateDoors(roomId, true);

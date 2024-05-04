@@ -4,7 +4,7 @@ function applyUpgrade()
 {
 	global.riffleChargingSpeed += 0.5;
 	show_debug_message("Upgrade applied: Charging Speed");
-	record_upgrade_accum("Riffle Charging Speed +", 50);
+	record_upgrade_accum("Riffle Charging Speed +", 0.5);
 }
 
 function createUI(_x, _y)

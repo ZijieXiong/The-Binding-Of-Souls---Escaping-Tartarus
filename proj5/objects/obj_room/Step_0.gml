@@ -39,15 +39,24 @@ function doorClose()
 		instance_destroy(obj_decoy)
 	}
 	is_open = false;
+	if(is_elite)
+	{
+		for(var i = 0; i < array_length(enemies); i++)
+		{
+			//show_debug_message(enemies[i]);
+			enemies[i].enemy_type = oDungeon.ChooseEliteEnemy();
+		}
+		if(!elite_sound)
+		{
+			elite_sound = audio_play_sound(eliteEnemyDetected,0,false);
+		}
+	}
 	for(var i = 0; i < array_length(enemies); i++)
 	{
 		//show_debug_message(enemies[i]);
 		enemies[i].openPortal();
 	}
-	if(is_elite && !elite_sound)
-	{
-		elite_sound = audio_play_sound(eliteEnemyDetected,0,false);
-	}
+
 	audio_play_sound(enemy_portal_open, 0, false);
 	for(var i = 0; i < array_length(doors);i++)
 	{
