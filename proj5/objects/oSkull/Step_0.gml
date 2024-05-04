@@ -321,7 +321,8 @@ function die(){
 	global.game_pass = true;
 	audio_play_sound(enemyDie, 0, false);
 	show_debug_message("boss die")
-	room_goto(rmGameOver)
 	instance_destroy();
+	room_goto(rmGameOver)
+	
 
 }
