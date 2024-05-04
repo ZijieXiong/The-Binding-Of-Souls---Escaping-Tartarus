@@ -6,3 +6,4 @@ if(++life_time_counter>life_time)
 
 if(!instance_exists(oEliteTeleportRobotX))
 	instance_destroy();
+	
