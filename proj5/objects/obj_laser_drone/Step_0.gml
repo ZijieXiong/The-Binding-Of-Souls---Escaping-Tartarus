@@ -10,12 +10,18 @@ image_angle = direction
 //if mouse_check_button_pressed(mb_left){
 	if instance_exists(oEnemiesParent){
 		var furest_enemy = instance_furthest(x,y,oEnemiesParent)
-		if !instance_exists(oLaser){
-			laser = instance_create_layer(furest_enemy.x,furest_enemy.y,"Instances",oLaser)
+		if(furest_enemy.x >= 20 || furest_enemy.y >= 20){
+			if !instance_exists(oLaser){
+				laser = instance_create_layer(furest_enemy.x,furest_enemy.y,"Instances",oLaser)
+			}
+			if instance_exists(laser){
+				laser.image_angle = point_direction(x,y,furest_enemy.x,furest_enemy.y)
+				laser._enemy = furest_enemy
+			}
 		}
-		if instance_exists(laser){
-			laser.image_angle = point_direction(x,y,furest_enemy.x,furest_enemy.y)
-			laser._enemy = furest_enemy
+		else
+		{
+			instance_destroy(laser);
 		}
 	}else{
 		instance_destroy(laser)

@@ -1253,12 +1253,30 @@ function ChooseEliteEnemy(){
 		elite_type = choose(oEliteMummy, oEliteMummyWithLaser);
 	}
 	else{
-		//elite_type = oEliteTurret;
-		elite_type = choose(oEliteTeleportRobot, oEliteTurret, oEliteTeleportRobotX);
+		elite_type = oEliteTeleportRobotX;
+		//elite_type = choose(oEliteTeleportRobot, oEliteTurret, oEliteTeleportRobotX);
 	}
-	if(elite_type == global.last_elite_type)
+	var iter = 0;
+	while(elite_type != global.last_elite_type)
 	{
-		elite_type = ChooseEliteEnemy();
+		if(global.currLevel < global.pyramid_layer)
+		{
+			//elite_type = oEliteSlime;
+			elite_type = choose(oElitePango, oEliteSlime);
+		}
+		//var enemyType = oEliteMummy;
+		else if (global.currLevel < global.tech_layer) {
+			//elite_type = oEliteMummyWithLaser;
+			elite_type = choose(oEliteMummy, oEliteMummyWithLaser);
+		}
+		else{
+			elite_type = oEliteTeleportRobotX;
+			//elite_type = choose(oEliteTeleportRobot, oEliteTurret, oEliteTeleportRobotX);
+		}
+		iter++;
+		if iter >=50{
+			break;
+		}
 	}
 	global.last_elite_type = elite_type;
 	return elite_type;

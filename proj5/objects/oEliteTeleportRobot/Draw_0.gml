@@ -1,6 +1,6 @@
 
 
-draw_sprite_ext(sprite_index,image_index,x,y,_facing,1,0,c_white,1)
+draw_sprite_ext(sprite_index,image_index,x,y,_facing,1,0,c_red,1)
 
 if( _flash > 0 )
 {
@@ -10,7 +10,7 @@ if( _flash > 0 )
 	var shd_alpha = shader_get_uniform(shd_flash,"_alpha");
 	shader_set_uniform_f(shd_alpha, _flash);
 	
-	draw_sprite_ext(sprite_index,image_index,x,y,_facing,1,0,c_white,1)
+	draw_sprite_ext(sprite_index,image_index,x,y,_facing,1,0,c_red,1)
 	
 	
 	shader_reset();
