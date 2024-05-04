@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"bulletExplode.ogg",
   "type":0,
-  "volume":0.63,
+  "volume":1.0,
 }

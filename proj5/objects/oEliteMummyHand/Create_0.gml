@@ -3,7 +3,7 @@
 image_angle = 0;
 angle = 180;
 distance = 0;
-spiral_speed = 1;
+spiral_speed = 2;
 max_distance = 230;
 returning = false;
 owner_id = noone;

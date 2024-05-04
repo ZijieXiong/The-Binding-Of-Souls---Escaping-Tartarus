@@ -20,6 +20,6 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_boss.ogg",
-  "type":0,
-  "volume":0.29,
+  "type":1,
+  "volume":0.3,
 }

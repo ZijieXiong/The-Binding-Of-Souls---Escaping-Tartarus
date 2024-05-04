@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_boss_hit.ogg",
   "type":0,
-  "volume":0.81,
+  "volume":0.75,
 }

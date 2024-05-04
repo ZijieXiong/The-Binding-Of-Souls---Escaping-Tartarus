@@ -9,6 +9,8 @@
 ////generated powerup
 //#macro RICHOCHET false
 //#macro HEALTH_BOOST false
+global.has_drone = false
+
 global.max_items = 3
 global._draw_map = true
 
@@ -99,8 +101,8 @@ ds_map_add(global.common_upgrade, "obj_upgrade_shotgun", 10);
 ds_map_add(global.common_upgrade, "obj_upgrade_riffle", 10);
 ds_map_add(global.common_upgrade, "obj_upgrade_speed", 10);
 ds_map_add(global.common_upgrade, "obj_upgrade_shooting_interval", 20);
-ds_map_add(global.common_upgrade, "obj_upgrade_revive", 5);
-ds_map_add(global.common_upgrade, "obj_upgrade_add_upgrade_option", 5);
+ds_map_add(global.common_upgrade, "obj_upgrade_revive", 4);
+ds_map_add(global.common_upgrade, "obj_upgrade_add_upgrade_option", 4);
 
 //shotgun upgrade init 
 ds_map_add(global.shotgun_upgrade, "obj_upgrade_shotgun_range", 10);

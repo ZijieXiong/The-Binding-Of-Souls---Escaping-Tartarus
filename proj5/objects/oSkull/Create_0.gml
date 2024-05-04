@@ -19,7 +19,7 @@ right_frail = instance_create_layer(x + frail_radius, y, "Instances", oSkullFrai
 trackerSpeed = 1.5;
 trackerLives = 2;
 dm = instance_find(oDungeon, 0);
-_health = 500 ;
+_health = 1500 ;
 health_bar.max_health = _health;
 
 enum SKULL_STATE {

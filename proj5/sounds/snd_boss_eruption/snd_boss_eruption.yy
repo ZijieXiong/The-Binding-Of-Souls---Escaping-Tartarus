@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_boss_eruption.ogg",
   "type":0,
-  "volume":0.8,
+  "volume":0.88,
 }
