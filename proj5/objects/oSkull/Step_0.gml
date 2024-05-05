@@ -275,7 +275,7 @@ switch (current_state) {
 			}
 			
 			
-			if (abs(_angle_difference) < 1 && idle_timer_flag) {
+			if (abs(_angle_difference) < 3 && idle_timer_flag) {
 				cast_spell_A(2*60, 0.5*60);
 			}
 			
