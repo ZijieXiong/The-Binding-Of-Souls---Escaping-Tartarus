@@ -276,7 +276,9 @@ if keyboard_check(ord("B")){
 }
 
 
+/*
 if (keyboard_check(ord("0")) && !is_summon_elite) {
 		instance_create_layer(x, y, "Instances", oElitePango);
 		is_summon_elite = true;
 }
+*/
