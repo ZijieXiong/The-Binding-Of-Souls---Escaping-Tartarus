@@ -5,10 +5,10 @@
 //sprite_index = spr_list[spr_index]
 image_xscale = 0.5;
 image_yscale = 0.5;
-decoyLives = 5;
+decoyLives = 7;
 _flash = 0
 is_vulnerable = true;
-invulnerable_time_after_damage =0.5;
+invulnerable_time_after_damage =1;
 
 function TakeDamage(){
 	if(is_vulnerable && !global.globalFreeze)
